@@ -1,6 +1,6 @@
 # simple-i18n-example
 
-This is a simple example of a multilingual site implemented in [Next.js](https://nextjs.org/) using [dynamic routing](https://nextjs.org/docs#dynamic-routing).
+This is a simple example of a multilingual site implemented in [Next.js](https://nextjs.org/) using [dynamic routing](https://nextjs.org/docs#dynamic-routing) created by Bryce Watson.
 
 # Features
 
@@ -13,10 +13,3 @@ This is a simple example of a multilingual site implemented in [Next.js](https:/
 - written in TypeScript
 - uses only basic Next.js and React APIs (no custom server required, etc.)
 
-# Demo
-
-Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
-
-# Blog post
-
-This is a companion repo to a blog post which can be found [here](https://w11i.me/how-to-build-multilingual-website-in-next-js).
