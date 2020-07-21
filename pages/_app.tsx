@@ -37,6 +37,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
         <CssBaseline />
         
+        
+        <App/>
         <Grid container direction='row' alignItems='center' >
             <Grid item>
               
@@ -48,7 +50,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               
             </Grid>
             </Grid>
-        <App></App>
         {isMounted && <Component {...pageProps} />}
     </ThemeProvider>
     </div>)

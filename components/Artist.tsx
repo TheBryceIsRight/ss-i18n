@@ -1,13 +1,22 @@
 import React from 'react'
 import useTranslation from '../hooks/useTranslation'
+import {Typography} from '@material-ui/core';
+
+
+const imgStyles = {
+  width: '100%',
+};
 
 const Artist: React.FC = () => {
   const { locale, t } = useTranslation()
   return (
     <div>
-      <h1>René Magritte</h1>
-      <img src="/img/magritte.jpg" alt="Rene Magritte" />
-      <p>{t('bio')}</p>
+      <Typography variant='h2'>René Magritte</Typography>
+      <br/>
+      <img src="/img/magritte.jpg" alt="Rene Magritte" style={imgStyles}/>
+      <br/>
+      <br/>
+      <Typography variant='body1'>{t('bio')}</Typography>
       <a href={`http://${locale}.wikipedia.org/wiki/René_Magritte`}>{t('readMore')}</a>
     </div>
   )

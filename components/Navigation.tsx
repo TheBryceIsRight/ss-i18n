@@ -2,23 +2,31 @@ import React from 'react'
 import Link from 'next/link'
 import useTranslation from '../hooks/useTranslation'
 import LocaleSwitcher from './LocaleSwitcher'
+import {Typography} from '@material-ui/core';
+
 
 const Navigation = () => {
   const { locale, t } = useTranslation()
+
   return (
     <ul className="root">
+      
       <li>
         <LocaleSwitcher />
       </li>
       <li>
+      <Typography variant='body1'>
         <Link href="/[lang]" as={`/${locale}`}>
           <a>{t('painting')}</a>
         </Link>
+        </Typography>
       </li>
       <li>
+        <Typography variant='body1'>
         <Link href="/[lang]/artist" as={`/${locale}/artist`}>
           <a>{t('artist')}</a>
         </Link>
+        </Typography>
       </li>
       <style jsx>{`
         .root {
@@ -33,11 +41,12 @@ const Navigation = () => {
         a:link,
         a:visited {
           text-decoration: none;
-          color: navy;
+          color: white;
           text-transform: uppercase;
         }
         a:hover {
           text-decoration: underline;
+          color: #B5CDFD
         }
       `}</style>
     </ul>
