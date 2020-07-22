@@ -35,12 +35,8 @@ import UpdateIcon from '@material-ui/icons/Update';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import BugReportIcon from '@material-ui/icons/BugReport';  
 import { MemoryRouter as Router } from 'react-router'
-import { useRouter } from 'next/router';
-import { locales, languageNames} from '../../translations/config';
+import { languageNames} from '../../translations/config';
 import { LocaleContext } from '../../context/LocaleContext';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
 
 
 
@@ -126,18 +122,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const NavigationBar: React.FC = () => {
 
-    const router = useRouter()
     const { locale } = React.useContext(LocaleContext)
-
-    type handleLocaleChange = (arg0: React.ChangeEvent<HTMLSelectElement>) => void;
-
-    const handleLocaleChange = React.useCallback(
-        (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const regex = new RegExp(`^/(${locales.join('|')})`)
-        router.push(router.pathname, router.asPath.replace(regex, `/${e.target.value}`))
-        },
-        [router]
-    )
 
     const classes = useStyles();
 
@@ -495,19 +480,6 @@ const NavigationBar: React.FC = () => {
             ))}
             </select>
             */}
-            <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">Language</InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={locale}
-                onChange={() => handleLocaleChange}
-                >
-                {locales.map(locale => (
-                    <MenuItem key={locale} value={locale}>{languageNames[locale]}</MenuItem>
-                ))}
-                </Select>
-            </FormControl>
             {renderMobileMenu}
             {renderTranslateMenu}
             {renderMenu}
