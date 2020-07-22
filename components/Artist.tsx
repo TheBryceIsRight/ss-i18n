@@ -1,6 +1,7 @@
 import React from 'react'
 import useTranslation from '../hooks/useTranslation'
 import {Typography} from '@material-ui/core';
+import {Link} from '@material-ui/core';
 
 
 const imgStyles = {
@@ -17,7 +18,7 @@ const Artist: React.FC = () => {
       <br/>
       <br/>
       <Typography variant='body1'>{t('bio')}</Typography>
-      <a href={`http://${locale}.wikipedia.org/wiki/René_Magritte`}>{t('readMore')}</a>
+      <Link href={`http://${locale}.wikipedia.org/wiki/René_Magritte`}>{t('readMore')}</Link>
     </div>
   )
 }

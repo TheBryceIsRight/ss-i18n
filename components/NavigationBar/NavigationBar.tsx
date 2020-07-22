@@ -37,6 +37,7 @@ import BugReportIcon from '@material-ui/icons/BugReport';
 import { MemoryRouter as Router } from 'react-router'
 import { languageNames} from '../../translations/config';
 import { LocaleContext } from '../../context/LocaleContext';
+import { Link as MuiLink} from '@material-ui/core';
 
 
 
@@ -183,21 +184,21 @@ const NavigationBar: React.FC = () => {
         <Link
             href="/en"
             passHref>
-            <a style={{color:'#9A9999'}}>{languageNames['en']}</a>
+            <MuiLink>{languageNames['en']}</MuiLink>
         </Link>
         </MenuItem>
         <MenuItem key='fr' value='fr'>
         <Link
             href="/fr"
             passHref>
-            <a style={{color:'#9A9999'}}>{languageNames['fr']}</a>
+            <MuiLink >{languageNames['fr']}</MuiLink>
         </Link>
         </MenuItem>
         <MenuItem key='pl' value={locale}>
         <Link
             href="/pl"
             passHref>
-            <a style={{color:'#9A9999'}}>{languageNames['pl']}</a>
+            <MuiLink>{languageNames['pl']}</MuiLink>
         </Link>
         </MenuItem>
         </Menu>
@@ -219,21 +220,21 @@ const NavigationBar: React.FC = () => {
         <Link
             href="/api/login"
             passHref>
-            <a>Login</a>
+            <MuiLink>Login</MuiLink>
         </Link>
         </MenuItem>
         <MenuItem>
         <Link
             href="/api/profile"
             passHref>
-            <a>Profile</a>
+            <MuiLink>Profile</MuiLink>
         </Link>
         </MenuItem>
         <MenuItem>
         <Link
             href="/api/logout"
             passHref>
-            <a>Logout</a>
+            <MuiLink>Logout</MuiLink>
         </Link>
         </MenuItem>
         </Menu>
@@ -415,12 +416,11 @@ const NavigationBar: React.FC = () => {
                 
                   
                   <Link href='/'>
-                  <a>
+                  <MuiLink>
                     <Typography color="primary" className={classes.title} variant="h6" >
                       Status
                     </Typography>
-                  </a>
-                  
+                  </MuiLink>
                   </Link>
                     
                 <div className={classes.search}>
