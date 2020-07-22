@@ -11,7 +11,7 @@ const theme = {
       },
       text: {
         fill: "white",
-        fontFamily: "Roboto"
+        fontFamily: "'Roboto', sans-serif",
       }
     }
   },
@@ -23,7 +23,7 @@ const theme = {
   },
   legends: {
     text: {
-      fontFamily: "Roboto",
+      fontFamily: "'Roboto', sans-serif",
       fill: 'white'
     }
   },

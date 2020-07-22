@@ -138,11 +138,11 @@ class WorkLifeBalance extends React.Component {
     const legend = [
       {
         name: `Coding at work`,
-        color: "#2C2E57"
+        color: "#e8c1a0"
       },
       {
         name: `Coding outside of work hours`,
-        color: "#7E9EF5"
+        color: "#f47560"
       }
     ];
 
