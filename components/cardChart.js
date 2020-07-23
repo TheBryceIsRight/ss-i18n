@@ -17,6 +17,7 @@ import LineGraph from '../components/line';
 import Sunburst from '../components/sunburst';
 import Sankey from '../components/sankey';
 import SankeyCard from '../components/sankeyCard';
+import Chord from '../components/Chord';
 
 import item from "../public/item"; // import data
 
@@ -123,6 +124,33 @@ class CardChart extends React.Component {
 
             <div className={classes.container}>
               <Sunburst />
+            </div>
+
+          </CardContent>
+        </Card>
+        <Card className={classes.card} elevation={0}>
+          <CardHeader
+            classes={{
+              title: classes.title,
+              subheader: classes.subheader
+            }}
+            avatar={
+              <Avatar aria-label="Chord Example" className={classes.avatar}>
+                <WbSunnyIcon />
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label='Menu icon'>
+                <MoreVert className={classes.menuIcon} />
+              </IconButton>
+            }
+            title="Sunburst Example"
+            subheader={`Hierarchy data visualization`}
+          />
+          <CardContent>
+
+            <div className={classes.container}>
+              <Chord />
             </div>
 
           </CardContent>
