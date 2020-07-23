@@ -72,7 +72,6 @@ function LineChart(props) {
                 <WorkLifeBalance/>
             </div>
         </div>
-        <br/>      
         <div className="App">
             <div className="Chart">
                 <CardChart/>
