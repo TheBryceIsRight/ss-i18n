@@ -62,7 +62,7 @@ class LineGraph extends Component {
                             "orient": "bottom",
                             "tickSize": 5,
                             "tickPadding": 13,
-                            "format": '%b'
+                            "format": '%d %b'
                         }}
                         axisLeft={{
                             "orient": "center",

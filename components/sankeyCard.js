@@ -7,16 +7,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import EventAvailableTwoTone from "@material-ui/icons/EventAvailableTwoTone";
-import WbSunnyIcon from '@material-ui/icons/WbSunny';
-import TimelineIcon from '@material-ui/icons/Timeline';
 import MoreVert from "@material-ui/icons/MoreVert";
 import { withStyles } from "@material-ui/core/styles";
 
-import LineGraph from '../components/line';
-import Sunburst from '../components/sunburst';
 import Sankey from '../components/sankey';
-import SankeyCard from '../components/sankeyCard';
+import SyncAltIcon from '@material-ui/icons/SyncAlt';
 
 import item from "../public/item"; // import data
 
@@ -24,21 +19,21 @@ const styles = theme => ({
   card: {
     maxWidth: 748,
     margin: "24px auto",
-    backgroundColor: '#101123',
+    backgroundColor: '#D3E1FE',
   },
   avatar: {
-    background: "#CBF5FE",
-    color: "#01CEFC"
+    background: "#1A1B36",
+    color: "#FFFFFF"
   },
   container: {
     margin: "0 auto",
     height: 350
   },
   menuIcon: {
-    color: "white"
+    color: "#1A1B36"
   },
   title: {
-    color: "white",
+    color: "#1A1B36",
     fontSize: 15,
     fontWeight: 500,
     fontFamily: "'Roboto', sans-serif",
@@ -46,7 +41,7 @@ const styles = theme => ({
     textAlign: "left"
   },
   subheader: {
-    color: "#919eab",
+    color: "#9A9999",
     fontFamily: "'Roboto', sans-serif",
     fontSize: 14,
     fontWeight: 500,
@@ -65,8 +60,7 @@ const styles = theme => ({
 });
 
 
-
-class CardChart extends React.Component {
+class SankeyCard extends React.Component {
 
   render() {
     const { classes } = this.props;
@@ -80,35 +74,8 @@ class CardChart extends React.Component {
               subheader: classes.subheader
             }}
             avatar={
-              <Avatar aria-label="Line Chart Example" className={classes.avatar}>
-                <TimelineIcon />
-              </Avatar>
-            }
-            action={
-              <IconButton aria-label='Menu icon'>
-                <MoreVert className={classes.menuIcon} />
-              </IconButton>
-            }
-            title="Line Chart Example"
-            subheader={`Week of Sun, Jun 28 to Sat, Jul 4`}
-          />
-          <CardContent>
-
-            <div className={classes.container}>
-              <LineGraph />
-            </div>
-
-          </CardContent>
-        </Card>
-        <Card className={classes.card} elevation={0}>
-          <CardHeader
-            classes={{
-              title: classes.title,
-              subheader: classes.subheader
-            }}
-            avatar={
               <Avatar aria-label="Sunburst Example" className={classes.avatar}>
-                <WbSunnyIcon />
+                <SyncAltIcon />
               </Avatar>
             }
             action={
@@ -116,21 +83,20 @@ class CardChart extends React.Component {
                 <MoreVert className={classes.menuIcon} />
               </IconButton>
             }
-            title="Sunburst Example"
-            subheader={`Hierarchy data visualization`}
+            title="Sankey Example"
+            subheader={`Flow data visualization`}
           />
           <CardContent>
 
             <div className={classes.container}>
-              <Sunburst />
+              <Sankey />
             </div>
 
           </CardContent>
         </Card>
-        
       </React.Fragment>
     );
   }
 }
 
-export default withStyles(styles)(CardChart);
+export default withStyles(styles)(SankeyCard);

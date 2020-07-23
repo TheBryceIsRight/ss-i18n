@@ -10,6 +10,7 @@ import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { makeStyles, ThemeProvider, withStyles } from '@material-ui/core/styles'
+import SankeyCard from "../components/sankeyCard";
 
 //Nivo imports
 import WorkLifeBalance from "../components/WorkLifeBalance";
@@ -77,6 +78,7 @@ function LineChart(props) {
                 <CardChart/>
             </div>
         </div>
+        <SankeyCard/>
         </React.Fragment> 
 }
 
