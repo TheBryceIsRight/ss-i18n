@@ -38,7 +38,7 @@ import { MemoryRouter as Router } from 'react-router'
 import { languageNames} from '../../translations/config';
 import { LocaleContext } from '../../context/LocaleContext';
 import { Link as MuiLink} from '@material-ui/core';
-
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -387,6 +387,15 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><BugReportIcon/></ListItemIcon><ListItemText primary='Chart Debugging'/>
             </ListItem>
             </Link>
+        <Link
+        href="/dashboard"
+        passHref>
+        <ListItem button>
+            <ListItemIcon><DashboardIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Dashboard' />
+        </ListItem>
+        </Link>
         </List>
         </Router>
         </div>
