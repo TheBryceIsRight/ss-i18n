@@ -7,8 +7,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import App from '../components/App/App';
-import { MemoryRouter as Router } from 'react-router'
-
+import { MemoryRouter as Router } from 'react-router';
+import '../styles/mapbox-gl.css';
+import '../styles/global.css';
+import Footer from '../components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -51,6 +53,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Grid>
             </Grid>
         {isMounted && <Component {...pageProps} />}
+        <br/>
+        <Footer/>
     </ThemeProvider>
     </div>)
 
