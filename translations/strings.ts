@@ -20,7 +20,7 @@ const strings: Strings = {
     painting: 'La peinture',
     artist: "L'Artiste",
     notAPipe: "Ceci n'est pas une pipe",
-    bio: `René Magritte est un peintre surréaliste belge, né le 21 novembre 1898 à Lessines1 dans le Hainaut (Belgique) et mort à Schaerbeek le 15 août 1967.`,
+    bio: `René François Ghislain Magritte (21 novembre 1898 - 15 août 1967) était un artiste surréaliste belge. Il est devenu bien connu pour créer un certain nombre d'images spirituelles et stimulantes. Représentant souvent des objets ordinaires dans un contexte inhabituel, son travail est connu pour remettre en question les perceptions préconditionnées de la réalité par les observateurs. Son imagerie a influencé le pop art, l'art minimaliste et l'art conceptuel.`,
     readMore: 'Lire plus sur Wikipedia...',
     summary: 'Résumé',
     dashboard: 'Tableau de bord',
