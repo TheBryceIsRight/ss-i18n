@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import useTranslation from '../hooks/useTranslation'
-import LocaleSwitcher from './LocaleSwitcher'
+import useTranslation from '../hooks/useTranslation';
 import {Typography} from '@material-ui/core';
 
 
@@ -11,9 +10,6 @@ const Navigation = () => {
   return (
     <ul className="root">
       
-      <li>
-        <LocaleSwitcher />
-      </li>
       <li>
       <Typography variant='body1'>
         <Link href="/[lang]" as={`/${locale}`}>

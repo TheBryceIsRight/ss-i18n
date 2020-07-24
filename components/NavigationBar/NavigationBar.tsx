@@ -201,6 +201,13 @@ const NavigationBar: React.FC = () => {
             <MuiLink>{languageNames['pl']}</MuiLink>
         </Link>
         </MenuItem>
+        <MenuItem key='es' value={locale}>
+        <Link
+            href="/es"
+            passHref>
+            <MuiLink>{languageNames['es']}</MuiLink>
+        </Link>
+        </MenuItem>
         </Menu>
     );
 
@@ -256,7 +263,7 @@ const NavigationBar: React.FC = () => {
             <IconButton aria-label="show 1 new notifications" color="primary">
             <TranslateIcon />
             </IconButton>
-            <p>English</p>
+            <p>Language</p>
         </MenuItem>
         <MenuItem onClick={handleProfileMenuOpen}>
             <IconButton
@@ -480,15 +487,6 @@ const NavigationBar: React.FC = () => {
               </Toolbar>
             </AppBar>
             <br/>
-             {/*
-            <select value={locale} onChange={handleLocaleChange}>
-            {locales.map(locale => (
-                <option key={locale} value={locale}>
-                {languageNames[locale]}
-                </option>
-            ))}
-            </select>
-            */}
             {renderMobileMenu}
             {renderTranslateMenu}
             {renderMenu}

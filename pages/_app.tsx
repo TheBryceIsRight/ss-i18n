@@ -11,6 +11,7 @@ import { MemoryRouter as Router } from 'react-router';
 import '../styles/mapbox-gl.css';
 import '../styles/global.css';
 import Footer from '../components/footer';
+import LocaleSwitcher from '../components/LocaleSwitcher';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -41,15 +42,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         
         
         <App/>
-        <Grid container direction='row' alignItems='center' >
+        <Grid container direction='row' alignItems='center' spacing={2}>
             <Grid item>
-              
             <Router>
             <FormControlLabel
                 label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                 />
               </Router>
-              
+            
+            </Grid>
+            <Grid item>
+              <LocaleSwitcher/>
             </Grid>
             </Grid>
         {isMounted && <Component {...pageProps} />}

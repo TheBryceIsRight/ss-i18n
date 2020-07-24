@@ -1,3 +1,4 @@
+import React from 'react';
 import { Typography } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import dynamic from 'next/dynamic';
@@ -5,33 +6,16 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSizes } from '@material-ui/core/styles'
-import PublicIcon from '@material-ui/icons/Public';
 import Head from 'next/head';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid'
-import { MemoryRouter as Router } from 'react-router';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import BuildIcon from '@material-ui/icons/Build';
-import Divider from '@material-ui/core/Divider';
 
-import InfoIcon from '@material-ui/icons/Info';
-import AnnouncementIcon from '@material-ui/icons/Announcement';
-import WorkIcon from '@material-ui/icons/Work';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
-import PhoneIcon from '@material-ui/icons/Phone';
-import MailIcon from '@material-ui/icons/Mail';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import PolicyIcon from '@material-ui/icons/Policy';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -47,12 +31,14 @@ import HelpIcon from '@material-ui/icons/Help';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/styles';
 
-function Alert(props) {
+function Alert(props : any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
-const useStyles = makeStyles((theme) => ({
+
+  const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
       display: 'flex',
       underline: 'none',
@@ -69,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-  const useStyle1 = makeStyles({
+  const useStyles1 = makeStyles({
     root: {
       width: 200,
       display: 'flex',
@@ -77,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     },
   });
 
-  const useStyles3 = makeStyles((theme) => ({
+  const useStyles3 = makeStyles((theme: Theme) => createStyles({
     root: {
       width: '100%',
       '& > * + *': {
@@ -95,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     },
   })(Rating);
   
-  const labels = {
+  const labels: { [index: string]: string } = {
     0.5: 'Useless',
     1: 'Useless+',
     1.5: 'Poor',
@@ -108,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
     5: 'Excellent+',
   };
 
-  const StyledButton = withStyles((darkTheme) => ({
+  const StyledButton = withStyles(() => ({
     root: {
       color: 'primary',
       backgroundColor: 'primary',
@@ -136,12 +122,12 @@ const useStyles = makeStyles((theme) => ({
   });
 
   
-function Dashboard(props) {
+function Dashboard(props : any) {
     const { loading = false } = props;
     const classes = useStyles();
-    const classes1 = useStyle1();
+    const classes1 = useStyles1();
     const classes3 = useStyles3();
-    const [value, setValue] = React.useState(3);
+    const [value, setValue] = React.useState<number | null>(3);
     const [open, setOpen] = React.useState(true);
     const [hover, setHover] = React.useState(-1);
     const [openSnack, setOpenSnack] = React.useState(false);
@@ -154,7 +140,7 @@ function Dashboard(props) {
     setOpenSnack(true);
     };
 
-    const handleClose = (event, reason) => {
+    const handleClose = (_event : any, reason : any) => {
     if (reason === 'clickaway') {
         return;
     }
@@ -190,7 +176,7 @@ function Dashboard(props) {
         </Grid>
         <Grid item>
           <div className={classes3.root}>
-          <Tooltip title="These blog posts come with the next.js tutorial">
+          <Tooltip title="These are the top level numbers for issues and maintenance">
           <IconButton aria-label="help" color='primary' onClick={handleClickSnack}>
             <HelpIcon />
           </IconButton>
@@ -300,7 +286,7 @@ function Dashboard(props) {
         <br/>
         <Grid container direction={'row'} spacing={1}>
             <Grid item>
-                <Button variant="outlined" color="primary" startIcon={<CheckCircle />}>
+                <Button variant="outlined" startIcon={<CheckCircle />}>
                 {'United States'}
                 </Button>
         </Grid>
@@ -333,19 +319,19 @@ function Dashboard(props) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
@@ -363,19 +349,19 @@ function Dashboard(props) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
@@ -393,19 +379,19 @@ function Dashboard(props) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
@@ -423,19 +409,19 @@ function Dashboard(props) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
@@ -464,11 +450,11 @@ function Dashboard(props) {
               getLabelText={(value) => `${value} Star${value !== 1 ? 's' : ''}`}
               precision={0.5}
               icon={<StarIcon fontSize="inherit" />}
-              onChange={(event, newValue) => {
+              onChange={(_event, newValue) => {
                 setValue(newValue);
                 console.log('User rated this page ',newValue,' stars');
               }}
-              onChangeActive={(event, newHover) => {
+              onChangeActive={(_event, newHover) => {
                 setHover(newHover);
               }}
             />
