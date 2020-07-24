@@ -42,8 +42,15 @@ import StarIcon from '@material-ui/icons/Star';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import ThumbsUpDown from '@material-ui/icons/ThumbsUpDown';
+import Tooltip from '@material-ui/core/Tooltip';
+import HelpIcon from '@material-ui/icons/Help';
+import IconButton from '@material-ui/core/IconButton';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
-
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
 const useStyles = makeStyles((theme) => ({
     link: {
@@ -69,6 +76,15 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
     },
   });
+
+  const useStyles3 = makeStyles((theme) => ({
+    root: {
+      width: '100%',
+      '& > * + *': {
+        marginTop: theme.spacing(2),
+      },
+    },
+  }));
 
   const StyledRating = withStyles({
     iconFilled: {
@@ -124,6 +140,7 @@ function Dashboard(props) {
     const { loading = false } = props;
     const classes = useStyles();
     const classes1 = useStyle1();
+    const classes3 = useStyles3();
     const [value, setValue] = React.useState(3);
     const [open, setOpen] = React.useState(true);
     const [hover, setHover] = React.useState(-1);
@@ -165,7 +182,27 @@ function Dashboard(props) {
         <Typography variant='h1'>{loading ? <Skeleton /> : 'Dashboard'}</Typography>
         <br/>
         <br/>
-        <Typography variant='h2'>{loading ? <Skeleton /> : 'Summary'}</Typography>
+        <Grid container spacing={1} direction='row' alignItems='center' >
+        <Grid item>
+          <Typography variant="h2" color='primary'>
+              {loading ? <Skeleton /> : 'Summary'}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <div className={classes3.root}>
+          <Tooltip title="These blog posts come with the next.js tutorial">
+          <IconButton aria-label="help" color='primary' onClick={handleClickSnack}>
+            <HelpIcon />
+          </IconButton>
+          </Tooltip>
+          <Snackbar open={openSnack} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              You sucessfully clicked a button, congrats!
+            </Alert>
+          </Snackbar>
+          </div>
+        </Grid>
+      </Grid>
         <Grid container direction={'row'} spacing={2} justify='space-evenly' alignItems='center'>
                 <Grid item>
                 {/* How to pass a dynamically generated link through a material ui button
