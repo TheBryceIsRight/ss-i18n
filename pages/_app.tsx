@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import React, { useState, useEffect } from 'react'
 import { lightTheme, darkTheme } from '../components/Theme'
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
@@ -29,7 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 		setDarkState(!darkState);
 	  };
 
-	const theme = darkState ? darkTheme : lightTheme
+  let theme = darkState ? darkTheme : lightTheme
+  
+  theme = responsiveFontSizes(theme)
 
 	useEffect(() => {
 	  setIsMounted(true)
