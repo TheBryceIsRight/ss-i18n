@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { locales, languageNames } from '../translations/config';
-import { LocaleContext } from '../context/LocaleContext';
 import MenuItem from '@material-ui/core/MenuItem';
 import TranslateIcon from '@material-ui/icons/Translate';
 import Grid from '@material-ui/core/Grid';
@@ -24,8 +23,7 @@ const useStyles = makeStyles((theme) =>
 
 const LocaleSwitcher: React.FC = () => {
   const classes = useStyles();
-  const router = useRouter()
-  const { locale } = React.useContext(LocaleContext)
+  const router = useRouter();
   
 
   const handleLocaleChange = React.useCallback( (e: React.ChangeEvent<{ name?: string; value: unknown }>) => {
@@ -65,7 +63,7 @@ const LocaleSwitcher: React.FC = () => {
             </MenuItem>
           ))}
         </TextField>       
-      </FormControl>
+        </FormControl>
 
         </Grid>
       </Grid>
