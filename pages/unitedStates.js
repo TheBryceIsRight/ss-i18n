@@ -5,8 +5,6 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import ErrorIcon from '@material-ui/icons/Error';
-import DescriptionIcon from '@material-ui/icons/Description';
 import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSizes } from '@material-ui/core/styles'
 import PublicIcon from '@material-ui/icons/Public';
 import Head from 'next/head'
@@ -57,7 +55,7 @@ function UnitedStates(props) {
         <br/>
         <br/>
           <DynamicComponentWithNoSSR/>
-          </React.Fragment> 
+          </React.Fragment>
 }
 
 export default UnitedStates

@@ -6,10 +6,6 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import ErrorIcon from '@material-ui/icons/Error';
-import DescriptionIcon from '@material-ui/icons/Description';
-import PublicIcon from '@material-ui/icons/Public';
-import dynamic from 'next/dynamic';
 import Head from 'next/head'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSizes } from '@material-ui/core/styles'

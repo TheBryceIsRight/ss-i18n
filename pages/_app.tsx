@@ -13,6 +13,7 @@ import '../styles/global.css';
 import Footer from '../components/footer';
 import LocaleSwitcher from '../components/LocaleSwitcher';
 
+
 function MyApp({ Component, pageProps }: AppProps) {
 
   const container = {
