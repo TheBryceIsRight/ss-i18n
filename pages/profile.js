@@ -57,9 +57,7 @@ function Profile(props) {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <ThemeProvider theme={responsiveTheme}>
           <Typography variant='h1'>{loading ? <Skeleton /> : 'Profile'}</Typography>
-        </ThemeProvider>
         <br/>
       {loading ? < Skeleton/> : <ProfileCard user={user} />}
       </React.Fragment>
