@@ -4,7 +4,15 @@ import RoomIcon from '@material-ui/icons/Room';
 import Button from '@material-ui/core/Button'
 import { Typography } from '@material-ui/core';
 import { createMuiTheme, makeStyles, ThemeProvider, withStyles } from '@material-ui/core/styles'
-
+import BuildIcon from '@material-ui/icons/Build';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import WarningIcon from '@material-ui/icons/Warning';
+import ErrorIcon from '@material-ui/icons/Error';
+import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 class UnitedStatesMap extends Component {
 
@@ -104,11 +112,29 @@ class UnitedStatesMap extends Component {
               latitude={parseFloat(this.state.selectedHotspot.latitude)}
               longitude={parseFloat(this.state.selectedHotspot.longitude)}
               onClose={this.closePopup}
-              
             >
                <div>
-                <Typography variant='h5'>Hello World!</Typography>
-                <Typography variant='body2'>I'm a fully customized popup! (holy crap this took a while)</Typography>
+                <Typography variant='h5'>United States</Typography>
+                <List component="nav" aria-label="united states systems" dense={true}>
+                  <ListItem>
+                    <ListItemIcon>
+                      <CheckCircleIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="System 1" secondary='Nominal' />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <BuildIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="System 2" secondary='Under maintenance' />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ErrorIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="System 3" secondary='Experiencing a service disruption' />
+                  </ListItem>
+                </List>
               </div>
             </Popup>
             ) : null}  
