@@ -232,7 +232,7 @@ const NavigationBar: React.FC = () => {
         </MenuItem>
         <MenuItem>
         <Link
-            href="/api/profile"
+            href="/profile"
             passHref>
             <MuiLink>Profile</MuiLink>
         </Link>

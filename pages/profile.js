@@ -11,11 +11,6 @@ import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSi
 import { useFetchUser } from '../lib/user'
 
 
-let responsiveTheme = createMuiTheme();
-responsiveTheme = responsiveFontSizes(responsiveTheme);
-
-
-
 const useStyles = makeStyles((theme) => ({
     link: {
       display: 'flex',
@@ -45,8 +40,7 @@ function Profile(props) {
 
     const classes = useStyles();
 
-    return <Layout>
-        <Head>
+    return <React.Fragment><Head>
           <title>
           Profile
           </title>
@@ -67,11 +61,8 @@ function Profile(props) {
           <Typography variant='h1'>{loading ? <Skeleton /> : 'Profile'}</Typography>
         </ThemeProvider>
         <br/>
-      {loading ? <>Loading...</> : <ProfileCard user={user} />}
-    
-  
-        
-    </Layout>
+      {loading ? < Skeleton/> : <ProfileCard user={user} />}
+      </React.Fragment>
 }
 
 export default Profile
