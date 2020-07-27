@@ -15,7 +15,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import BuildIcon from '@material-ui/icons/Build';
-
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -32,6 +31,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/styles';
+
 
 function Alert(props : any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -258,17 +258,35 @@ function Dashboard(props : any) {
         <br/>
         <Grid container direction={'row'} spacing={1}>
             <Grid item>
-                <Button variant="outlined" color="primary" startIcon={<CheckCircle />}>
+                <Button 
+                  variant="outlined" 
+                  color="primary" 
+                  startIcon={<CheckCircle />}>
                 {'United States'}
                 </Button>
         </Grid>
         <Grid item>
-            <Button startIcon={<Warning/>} variant='outlined' style={{borderColor: '#FFA631', backgroundColor: '#FFA631', color: "#1A1B36" }}>Mexico</Button>
+            <Button 
+              startIcon={<Warning/>} 
+              variant='outlined' 
+              style={{borderColor: '#FFA631', 
+              backgroundColor: '#FFA631', 
+              color: "#1A1B36" }}
+              >Mexico</Button>
         </Grid>
         <Grid item>
-            <Button startIcon={<Error style={{color: '#FFA631' }} />} variant='outlined' style={{borderColor: '#FFA631' }}>Canada</Button>
+            <Button 
+              startIcon={<Error style={{color: '#FFA631' }} />} 
+              variant='outlined' 
+              style={{borderColor: '#FFA631' }}
+              >Canada</Button>
         </Grid>
-        <Grid item><Button startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} variant='outlined' style={{borderColor: '#7E9EF5'}}>Europe</Button>
+        <Grid item>
+          <Button 
+            startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} 
+            variant='outlined' 
+            style={{borderColor: '#7E9EF5'}}
+            >Europe</Button>
         </Grid>
         </Grid>
         <br/>
@@ -291,12 +309,26 @@ function Dashboard(props : any) {
                 </Button>
         </Grid>
         <Grid item>
-            <Button startIcon={<Warning/>} variant='outlined' style={{borderColor: '#FFA631', backgroundColor: '#FFA631', color: "#1A1B36" }}>Mexico</Button>
+          <Button 
+            startIcon={<Warning/>} 
+            variant='outlined' 
+            style= {{borderColor: '#FFA631', 
+                    backgroundColor: '#FFA631', 
+                    color: "#1A1B36" }}
+            >Mexico</Button>
         </Grid>
         <Grid item>
-            <Button startIcon={<Error style={{color: '#FFA631' }} />} variant='outlined' style={{borderColor: '#FFA631' }}>Canada</Button>
+            <Button 
+            startIcon={<Error style={{color: '#FFA631' }} />} 
+            variant='outlined' 
+            style={{borderColor: '#FFA631' }}
+            >Canada</Button>
         </Grid>
-        <Grid item><Button startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} variant='outlined' style={{borderColor: '#7E9EF5'}}>Europe</Button>
+        <Grid item>
+            <Button startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} 
+            variant='outlined' 
+            style={{borderColor: '#7E9EF5'}}
+            >Europe</Button>
         </Grid>
         </Grid>
         <br/>
@@ -314,7 +346,12 @@ function Dashboard(props : any) {
               <ListItemIcon>
                 <BuildIcon style={{ color: "#7E9EF5" }}/>
               </ListItemIcon>
-              <ListItemText primary="Canada" primaryTypographyProps={{color:'primary'}} secondary="1 system undergoing maintenance" secondaryTypographyProps={{color:'secondary'}}/>
+              <ListItemText 
+                primary="Canada" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondary="1 system undergoing maintenance" 
+                secondaryTypographyProps={{color:'secondary'}}
+              />
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
@@ -323,19 +360,30 @@ function Dashboard(props : any) {
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 3 is undgergoing maintenance" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 3 is undgergoing maintenance" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
                 </ListItem>
               </List>
             </Collapse>
@@ -344,7 +392,12 @@ function Dashboard(props : any) {
               <ListItemIcon>
                     <CheckCircle color='primary'/>
               </ListItemIcon>
-              <ListItemText primary="Mexico" primaryTypographyProps={{color:'primary'}} secondary="All systems nominal" secondaryTypographyProps={{color:'secondary'}}/>
+              <ListItemText 
+                primary="Mexico" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondary="All systems nominal"
+                secondaryTypographyProps={{color:'secondary'}}
+              />
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
@@ -353,19 +406,31 @@ function Dashboard(props : any) {
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 3 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}} />
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}} 
+                  />
                 </ListItem>
               </List>
             </Collapse>
@@ -374,7 +439,12 @@ function Dashboard(props : any) {
               <ListItemIcon>
                     <CheckCircle color='primary'/>
               </ListItemIcon>
-              <ListItemText primary="Europe" secondary="All systems nominal" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+              <ListItemText 
+                primary="Europe" 
+                secondary="All systems nominal" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondaryTypographyProps={{color:'secondary'}}
+                />
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
@@ -383,19 +453,31 @@ function Dashboard(props : any) {
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 3 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
                 </ListItem>
               </List>
             </Collapse>
@@ -404,7 +486,12 @@ function Dashboard(props : any) {
               <ListItemIcon>
                 <CheckCircle color='primary'/>
               </ListItemIcon>
-              <ListItemText primary="United States" secondary="All systems nominal" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+              <ListItemText 
+                primary="United States" 
+                secondary="All systems nominal" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondaryTypographyProps={{color:'secondary'}}
+                />
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
@@ -413,19 +500,31 @@ function Dashboard(props : any) {
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 1 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 2 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}}/>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
                     <CheckCircle color='primary'/>
                   </ListItemIcon>
-                  <ListItemText primary="System 3 is available" primaryTypographyProps={{color:'primary'}} secondaryTypographyProps={{color:'secondary'}} />
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}} 
+                    />
                 </ListItem>
               </List>
             </Collapse>

@@ -16,7 +16,6 @@ const Navigation = () => {
         <Link href="/[lang]" as={`/${locale}`}>
           <Button>{t('painting')}</Button>
         </Link>
-   
       </li>
       <li>
         <Typography variant='body1'>
