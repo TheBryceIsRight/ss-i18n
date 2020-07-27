@@ -2,14 +2,28 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { locales, languageNames } from '../translations/config';
 import { LocaleContext } from '../context/LocaleContext';
-import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TranslateIcon from '@material-ui/icons/Translate';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 
+
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
+    },
+  }),
+);
 
 const LocaleSwitcher: React.FC = () => {
+  const classes = useStyles();
   const router = useRouter()
   const { locale } = React.useContext(LocaleContext)
   
@@ -27,9 +41,6 @@ const LocaleSwitcher: React.FC = () => {
           <TranslateIcon />
         </Grid>
         <Grid item>
-          <Typography variant='body1'>Language</Typography>
-        </Grid>
-        <Grid item>
         {/*
         <select value={locale} onChange={handleLocaleChange}>
           {locales.map(locale => (
@@ -39,16 +50,23 @@ const LocaleSwitcher: React.FC = () => {
           ))}
         </select>
         */}
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          label = {locale}
-          onChange= {handleLocaleChange}
+
+        <FormControl variant="outlined" className={classes.formControl}>
+        <TextField 
+          id="outlined-basic" 
+          select
+          variant="outlined"
+          label = 'Language'
+          onChange= {handleLocaleChange} 
         >
-          {locales.map((locale, index) =>
-            <MenuItem key={index} value={locale} >{languageNames[locale]}</MenuItem>
-          )}
-        </Select>
+          {locales.map((locale, index) => (
+            <MenuItem key={index} value={locale} >
+              {languageNames[locale]}
+            </MenuItem>
+          ))}
+        </TextField>       
+      </FormControl>
+
         </Grid>
       </Grid>
   </React.Fragment>
