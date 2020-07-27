@@ -157,60 +157,6 @@ const NavigationBar: React.FC = () => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
-    const menuId2 = 'translate-menu';
-
-    {/*
-    <select value={locale} onChange={handleLocaleChange}>
-      {locales.map(locale => (
-        <option key={locale} value={locale}>
-          {languageNames[locale]}
-        </option>
-      ))}
-    </select>
-    */}
-
-    const renderTranslateMenu = (
-        <Menu
-        anchorEl={anchorTr}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={menuId2}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isTranslateMenuOpen}
-        onClose={handleMenuClose}
-        >
-
-        <MenuItem key='en' value={locale}>
-        <Link
-            href="/en"
-            passHref>
-            <MuiLink>{languageNames['en']}</MuiLink>
-        </Link>
-        </MenuItem>
-        <MenuItem key='fr' value='fr'>
-        <Link
-            href="/fr"
-            passHref>
-            <MuiLink >{languageNames['fr']}</MuiLink>
-        </Link>
-        </MenuItem>
-        <MenuItem key='pl' value={locale}>
-        <Link
-            href="/pl"
-            passHref>
-            <MuiLink>{languageNames['pl']}</MuiLink>
-        </Link>
-        </MenuItem>
-        <MenuItem key='es' value={locale}>
-        <Link
-            href="/es"
-            passHref>
-            <MuiLink>{languageNames['es']}</MuiLink>
-        </Link>
-        </MenuItem>
-        </Menu>
-    );
-
     const menuId = 'primary-search-account-menu';
 
     const renderMenu = (
@@ -258,13 +204,6 @@ const NavigationBar: React.FC = () => {
         open={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
         >
-        <MenuItem onClick={handleTranslateMenuOpen}>
-            
-            <IconButton aria-label="show 1 new notifications" color="primary">
-            <TranslateIcon />
-            </IconButton>
-            <p>Language</p>
-        </MenuItem>
         <MenuItem onClick={handleProfileMenuOpen}>
             <IconButton
             aria-label="account of current user"
@@ -454,14 +393,6 @@ const NavigationBar: React.FC = () => {
                 </div>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
-                  <IconButton 
-                    aria-label="change language" 
-                    color="primary"
-                    aria-haspopup="true"
-                    aria-controls={menuId2}
-                    onClick={handleTranslateMenuOpen}>
-                    <TranslateIcon />
-                  </IconButton>
                   <IconButton
                     edge="end"
                     aria-label="account of current user"
@@ -488,7 +419,6 @@ const NavigationBar: React.FC = () => {
             </AppBar>
             <br/>
             {renderMobileMenu}
-            {renderTranslateMenu}
             {renderMenu}
           </div>
     );
