@@ -1,5 +1,4 @@
 import CustomTable from '../components/customTable';
-import Layout, { siteTitle } from '../components/layout'
 import { Typography } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
