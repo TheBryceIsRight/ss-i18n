@@ -21,7 +21,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Divider from '@material-ui/core/Divider';
-import TranslateIcon from '@material-ui/icons/Translate';
 import PublicIcon from '@material-ui/icons/Public';
 import ErrorIcon from '@material-ui/icons/Error';
 
@@ -35,8 +34,6 @@ import UpdateIcon from '@material-ui/icons/Update';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import BugReportIcon from '@material-ui/icons/BugReport';  
 import { MemoryRouter as Router } from 'react-router'
-import { languageNames} from '../../translations/config';
-import { LocaleContext } from '../../context/LocaleContext';
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 
@@ -123,25 +120,18 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const NavigationBar: React.FC = () => {
 
-    const { locale } = React.useContext(LocaleContext)
-
     const classes = useStyles();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [anchorTr, setAnchorTr] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
-    const isTranslateMenuOpen = Boolean(anchorTr);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
     const handleProfileMenuOpen = (event: any) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handleTranslateMenuOpen = (event: any) => {
-        setAnchorTr(event.currentTarget);
-    };
 
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
@@ -149,7 +139,6 @@ const NavigationBar: React.FC = () => {
 
     const handleMenuClose = () => {
         setAnchorEl(null);
-        setAnchorTr(null);
         handleMobileMenuClose();
     };
 
