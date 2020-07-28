@@ -1,13 +1,14 @@
 import { Typography } from '@material-ui/core';
-import Skeleton from '@material-ui/lab/Skeleton';
-import dynamic from 'next/dynamic';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSizes } from '@material-ui/core/styles'
 import PublicIcon from '@material-ui/icons/Public';
-import Head from 'next/head'
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles'
+
 
 const useStyles = makeStyles((theme) => ({
     link: {
@@ -19,25 +20,21 @@ const useStyles = makeStyles((theme) => ({
       width: 20,
       height: 20,
     },
-    typography: {
-      color: 'black',
-    },
-
-
   }));
 
-const DynamicComponentWithNoSSR = dynamic(() => import('../components/unitedStatesMap' ), {
-  ssr: false
+const DynamicComponentWithNoSSR = dynamic(() => import('../components/mexicoMap' ), {
+    ssr: false
 });
 
-  
-function UnitedStates(props) {
-    const { loading = false } = props;
+
+function Mexico() {
     const classes = useStyles();
 
-
-    return <React.Fragment><Head>
-        <title>United States</title>
+    return <React.Fragment>
+      <Head>
+        <title>
+        Mexico
+        </title>
       </Head>
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
@@ -47,15 +44,15 @@ function UnitedStates(props) {
             </Link>
             <Typography color="textPrimary" className={classes.link}>
               <PublicIcon className={classes.icon} />
-                United States
+                Mexico
             </Typography>
           </Breadcrumbs>
         <br/>
-          <Typography variant='h1'>{loading ? <Skeleton /> : 'United States'}</Typography>
+          <Typography variant='h1'>Mexico</Typography>
         <br/>
         <br/>
-          <DynamicComponentWithNoSSR/>
-          </React.Fragment>
+        <DynamicComponentWithNoSSR/>
+    </React.Fragment> 
 }
 
-export default UnitedStates
+export default Mexico

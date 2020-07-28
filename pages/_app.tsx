@@ -6,12 +6,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
-import App from '../components/App/App';
 import { MemoryRouter as Router } from 'react-router';
 import '../styles/mapbox-gl.css';
 import '../styles/global.css';
 import Footer from '../components/footer';
 import LocaleSwitcher from '../components/LocaleSwitcher';
+import NavigationBar from '../components/NavigationBar/NavigationBar';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -42,9 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   <div style={container} >
     <ThemeProvider theme={theme}>
         <CssBaseline />
-        
-        
-        <App/>
+        <NavigationBar/>
         <Grid container direction='row' alignItems='center' spacing={2}>
             <Grid item>
             <Router>
@@ -52,7 +50,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                 />
               </Router>
-            
             </Grid>
             <Grid item>
               <LocaleSwitcher/>
