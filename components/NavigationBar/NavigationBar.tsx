@@ -36,7 +36,7 @@ import BugReportIcon from '@material-ui/icons/BugReport';
 import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-
+import ListIcon from '@material-ui/icons/List';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     body: {
@@ -329,6 +329,18 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><DashboardIcon/>
             </ListItemIcon>
             <ListItemText primary='Dashboard' />
+        </ListItem>
+        </Link>
+        </List>
+        <Divider />
+        <List>
+        <Link
+        href="/formPage"
+        passHref>
+        <ListItem button>
+            <ListItemIcon><ListIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Form Demo' />
         </ListItem>
         </Link>
         </List>

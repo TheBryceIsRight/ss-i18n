@@ -30,7 +30,8 @@ class Footer extends Component {
     render() {
       return (
           <React.Fragment>
-
+          <br/>
+          {/*Embedded Feedback Component */}  
           <Grid container spacing={1}  direction="column">
             <Grid item>
               <ThumbsUpDown color='primary'/>
