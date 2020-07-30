@@ -20,8 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     maxWidth: '36rem',
     padding: '0 1rem',
     margin: '3rem auto 6rem'
-  
-};
+    };
 
   const [isMounted, setIsMounted] = useState(false);
 	const [darkState, setDarkState] = useState(true);
@@ -36,7 +35,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 	  setIsMounted(true)
-	}, [])
+  }, [])
+  
+  React.useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+
+    if (jssStyles === null || jssStyles.parentElement === null ) {
+      console.log('oops, document is null');
+    } else {
+      jssStyles.parentElement.removeChild(jssStyles)!;
+    }
+  }, []);
 
   return (
   <div style={container} >
