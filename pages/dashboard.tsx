@@ -21,10 +21,6 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import Warning from '@material-ui/icons/Warning';
 import Error from '@material-ui/icons/Error';
-import StarIcon from '@material-ui/icons/Star';
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
-import ThumbsUpDown from '@material-ui/icons/ThumbsUpDown';
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpIcon from '@material-ui/icons/Help';
 import IconButton from '@material-ui/core/IconButton';
@@ -36,7 +32,6 @@ import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/s
 function Alert(props : any) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
-
 
   const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -55,13 +50,6 @@ function Alert(props : any) {
   }));
 
 
-  const useStyles1 = makeStyles({
-    root: {
-      width: 200,
-      display: 'flex',
-      alignItems: 'center',
-    },
-  });
 
   const useStyles3 = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -72,28 +60,7 @@ function Alert(props : any) {
     },
   }));
 
-  const StyledRating = withStyles({
-    iconFilled: {
-      color: '#40BBEF'
-    },
-    iconHover: {
-      color: '#73D6F9',
-    },
-  })(Rating);
-  
-  const labels: { [index: string]: string } = {
-    0.5: 'Useless',
-    1: 'Useless+',
-    1.5: 'Poor',
-    2: 'Poor+',
-    2.5: 'Ok',
-    3: 'Ok+',
-    3.5: 'Good',
-    4: 'Good+',
-    4.5: 'Excellent',
-    5: 'Excellent+',
-  };
-
+ 
   const StyledButton = withStyles(() => ({
     root: {
       color: 'primary',
@@ -125,11 +92,8 @@ function Alert(props : any) {
 function Dashboard(props : any) {
     const { loading = false } = props;
     const classes = useStyles();
-    const classes1 = useStyles1();
     const classes3 = useStyles3();
-    const [value, setValue] = React.useState<number | null>(3);
     const [open, setOpen] = React.useState(true);
-    const [hover, setHover] = React.useState(-1);
     const [openSnack, setOpenSnack] = React.useState(false);
 
     const handleClick = () => {
@@ -532,36 +496,7 @@ function Dashboard(props : any) {
         </List>
         <br/>
         <br/>
-        <Grid container spacing={1}  direction="column">
-            <Grid item>
-            
-              <ThumbsUpDown color='primary'/>
-              <Typography variant="body1" color='primary'>
-                {loading ? <Skeleton /> : 'Was this page helpful?'}
-              </Typography>
-            </Grid>
-            <Grid item>
-            <div className={classes1.root}>
-            <StyledRating
-              name="customized-hover-feedback"
-              defaultValue={2}
-              value={value}
-              getLabelText={(value) => `${value} Star${value !== 1 ? 's' : ''}`}
-              precision={0.5}
-              icon={<StarIcon fontSize="inherit" />}
-              onChange={(_event, newValue) => {
-                setValue(newValue);
-                console.log('User rated this page ',newValue,' stars');
-              }}
-              onChangeActive={(_event, newHover) => {
-                setHover(newHover);
-              }}
-            />
-            {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
-            </div>
-            
-            </Grid>
-          </Grid>
+        
         </React.Fragment>
 }
 

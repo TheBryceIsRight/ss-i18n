@@ -4,9 +4,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import BuildIcon from '@material-ui/icons/Build';
 import Divider from '@material-ui/core/Divider';
-
+import Grid from '@material-ui/core/Grid';
 import InfoIcon from '@material-ui/icons/Info';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
 import WorkIcon from '@material-ui/icons/Work';
@@ -19,14 +18,44 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import PolicyIcon from '@material-ui/icons/Policy';
 import HomeIcon from '@material-ui/icons/Home';
+import Rating from '../components/rating';
+import ThumbsUpDown from '@material-ui/icons/ThumbsUpDown';
+import { Typography } from '@material-ui/core';
+import TextField from '../components/textField';
+import Button from '@material-ui/core/Button';
 
 
 class Footer extends Component {
-    
   
     render() {
       return (
-          <React.Fragment><List 
+          <React.Fragment>
+
+          <Grid container spacing={1}  direction="column">
+            <Grid item>
+              <ThumbsUpDown color='primary'/>
+              <Typography variant="body1" color='primary'>
+                 Was this page helpful?
+              </Typography>
+            </Grid>
+            <Grid item>
+            <Rating/>
+            </Grid>
+            <Grid item>
+            <br/>
+            <Typography variant="body1" color='primary'>
+                 Would you mind explaining why?
+            </Typography>
+            <TextField/>
+            </Grid>
+            <Grid item>
+            <br/>
+            <Button variant="outlined">Submit Feedback</Button>
+            </Grid>
+          </Grid>
+        <br/>
+        <br/>
+          <List 
           component="nav" 
           aria-label="company links"
           subheader={
