@@ -12,7 +12,8 @@ import '../styles/global.css';
 import Footer from '../components/footer';
 import LocaleSwitcher from '../components/LocaleSwitcher';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
-
+import { Media, MediaContextProvider } from "../utils/media"
+import { Typography } from '@material-ui/core';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     maxWidth: '36rem',
     padding: '0 1rem',
     margin: '3rem auto 6rem'
-    };
+  };
 
   const [isMounted, setIsMounted] = useState(false);
 	const [darkState, setDarkState] = useState(true);
@@ -65,11 +66,16 @@ function MyApp({ Component, pageProps }: AppProps) {
               <LocaleSwitcher/>
             </Grid>
             </Grid>
+            <MediaContextProvider>
+              <Media at="xs"><Typography variant='body1'>Hello mobile!</Typography></Media>
+              <Media greaterThan="xs"><Typography variant='body1'>Hello desktop!</Typography></Media>
+            </MediaContextProvider>
         {isMounted && <Component {...pageProps} />}
         <br/>
         <Footer/>
     </ThemeProvider>
-    </div>)
+    </div>
+    )
 
 }
 
