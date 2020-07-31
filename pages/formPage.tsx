@@ -36,10 +36,13 @@ import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 
-interface Values {
+//Zapier webhook:  https://hooks.zapier.com/hooks/catch/8157500/okazqvp/
+
+  interface Values {
     email: string;
   }
-  
+
+
   const ranges = [
     {
       value: 'none',
@@ -102,6 +105,10 @@ interface Values {
           setSubmitting(false);
           alert(JSON.stringify(values, null, 2));
         }, 500);
+        fetch(`https://hooks.zapier.com/hooks/catch/8157500/okazqvp/`, {
+          method: 'POST',
+          body: JSON.stringify(values, null, 2),
+        });
       }}
       render={({submitForm, isSubmitting}) => (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -222,6 +229,7 @@ interface Values {
 
 function FormPage() {
 
+    
 
     return <React.Fragment>
       <Head>
