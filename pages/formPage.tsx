@@ -229,8 +229,6 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 
 function FormPage() {
 
-    
-
     return <React.Fragment>
       <Head>
         <title>
