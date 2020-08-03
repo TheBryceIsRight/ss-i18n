@@ -36,7 +36,6 @@ import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 
-//Zapier webhook:  https://hooks.zapier.com/hooks/catch/8157500/okazqvp/
 
   interface Values {
     email: string;

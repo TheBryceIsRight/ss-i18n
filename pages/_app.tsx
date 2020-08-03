@@ -12,13 +12,31 @@ import '../styles/global.css';
 import Footer from '../components/footer';
 import LocaleSwitcher from '../components/LocaleSwitcher';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
-import { Media, MediaContextProvider } from "../utils/media"
-import { Typography } from '@material-ui/core';
+import { Media, MediaContextProvider } from "../utils/media";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  const container = {
+  const containerSmall = {
     maxWidth: '36rem',
+    padding: '0 1rem',
+    margin: '3rem auto 6rem'
+  };
+
+  const containerMedium = {
+    maxWidth: '45rem',
+    padding: '0 1rem',
+    margin: '3rem auto 6rem'
+  };
+
+  const containerLarge = {
+    maxWidth: '56rem',
+    padding: '0 1rem',
+    margin: '3rem auto 6rem'
+  };
+
+  const containerHuge = {
+    maxWidth: '72rem',
     padding: '0 1rem',
     margin: '3rem auto 6rem'
   };
@@ -50,7 +68,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-  <div style={container} >
+  <MediaContextProvider>
+  <Media at="sm">
+  <div style={containerSmall} >
     <ThemeProvider theme={theme}>
         <CssBaseline />
         <NavigationBar/>
@@ -66,15 +86,82 @@ function MyApp({ Component, pageProps }: AppProps) {
               <LocaleSwitcher/>
             </Grid>
             </Grid>
-            <MediaContextProvider>
-              <Media at="xs"><Typography variant='body1'>Hello mobile!</Typography></Media>
-              <Media greaterThan="xs"><Typography variant='body1'>Hello desktop!</Typography></Media>
-            </MediaContextProvider>
         {isMounted && <Component {...pageProps} />}
         <br/>
         <Footer/>
     </ThemeProvider>
     </div>
+    </Media>
+    <Media at="md">
+      <div style={containerMedium} >
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <NavigationBar/>
+            <Grid container direction='row' alignItems='center' spacing={2}>
+                <Grid item>
+                <Router>
+                <FormControlLabel
+                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    />
+                  </Router>
+                </Grid>
+                <Grid item>
+                  <LocaleSwitcher/>
+                </Grid>
+                </Grid>
+            {isMounted && <Component {...pageProps} />}
+            <br/>
+            <Footer/>
+        </ThemeProvider>
+      </div>
+    </Media>
+    <Media at="lg">
+      <div style={containerLarge} >
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <NavigationBar/>
+            <Grid container direction='row' alignItems='center' spacing={2}>
+                <Grid item>
+                <Router>
+                <FormControlLabel
+                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    />
+                  </Router>
+                </Grid>
+                <Grid item>
+                  <LocaleSwitcher/>
+                </Grid>
+                </Grid>
+            {isMounted && <Component {...pageProps} />}
+            <br/>
+            <Footer/>
+        </ThemeProvider>
+      </div>
+    </Media>
+    <Media greaterThan="lg">
+      <div style={containerHuge} >
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <NavigationBar/>
+            <Grid container direction='row' alignItems='center' spacing={2}>
+                <Grid item>
+                <Router>
+                <FormControlLabel
+                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    />
+                  </Router>
+                </Grid>
+                <Grid item>
+                  <LocaleSwitcher/>
+                </Grid>
+                </Grid>
+            {isMounted && <Component {...pageProps} />}
+            <br/>
+            <Footer/>
+        </ThemeProvider>
+      </div>
+    </Media>
+    </MediaContextProvider>  
     )
 
 }

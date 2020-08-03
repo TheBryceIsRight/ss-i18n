@@ -2,10 +2,11 @@ import { createMedia } from "@artsy/fresnel"
 
 const ExampleAppMedia = createMedia({
   breakpoints: {
-    xs: 0,
-    sm: 768,
-    md: 1000,
-    lg: 1200,
+    sm: 0,    //small
+    md: 768,  //medium
+    lg: 1024, //large
+    xl: 1192, //extra large
+    el: 1398, //even larger
   },
 })
 

@@ -11,8 +11,13 @@ import Box from '@material-ui/core/Box';
 import ThumbsUpDown from '@material-ui/icons/ThumbsUpDown';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
-//Zapier webhook:  https://hooks.zapier.com/hooks/catch/8157500/okgyawz/
+
+function Alert(props : any) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
   const ranges = [
     {
@@ -38,6 +43,23 @@ import { Typography } from '@material-ui/core';
   ];
 
 
+  
+
+function FeedbackFormComponent() {
+  const [openSnack, setOpenSnack] = React.useState(false);
+
+  const handleClickSnack = () => {
+    setOpenSnack(true);
+    };
+
+  const handleClose = (_event : any, reason : any) => {
+  if (reason === 'clickaway') {
+      return;
+  }
+
+  setOpenSnack(false);
+  };
+
   const FeedbackForm = () => (
     <Formik
       initialValues={{
@@ -48,12 +70,13 @@ import { Typography } from '@material-ui/core';
       onSubmit={(values, {setSubmitting}) => {
         setTimeout(() => {
           setSubmitting(false);
-          alert(JSON.stringify(values, null, 2));
+          alert('Debug Log: ' + JSON.stringify(values, null, 2));
         }, 500);
         fetch(`https://hooks.zapier.com/hooks/catch/8157500/okgyawz/`, {
           method: 'POST',
           body: JSON.stringify(values, null, 2),
         });
+        handleClickSnack();
       }}
       render={({submitForm, isSubmitting}) => (
           <Form>
@@ -104,7 +127,6 @@ import { Typography } from '@material-ui/core';
     />
   );
 
-function FeedbackFormComponent() {
 
     return <React.Fragment>
       <br/>
@@ -117,6 +139,11 @@ function FeedbackFormComponent() {
             </Grid>
             </Grid>
       <FeedbackForm/>
+      <Snackbar open={openSnack} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              Feedback successfully submitted, thank you for helping us improve!
+            </Alert>
+          </Snackbar>
     </React.Fragment> 
 }
 

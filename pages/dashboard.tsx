@@ -27,6 +27,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/styles';
+import { Media, MediaContextProvider } from "../utils/media";
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import Badge from '@material-ui/core/Badge';
+import FeedbackForm from '../components/feedbackForm';
 
 
 function Alert(props : any) {
@@ -49,6 +54,25 @@ function Alert(props : any) {
     },
   }));
 
+  {/*GridList styles */}
+  const useStyles1 = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+      width: 1100,
+      height: 'auto',
+    },
+    icon: {
+      color: 'rgba(255, 255, 255, 0.54)',
+    },
+  }),
+);
 
 
   const useStyles3 = makeStyles((theme: Theme) => createStyles({
@@ -60,13 +84,21 @@ function Alert(props : any) {
     },
   }));
 
+  const StyledBadge = withStyles(() =>
+    createStyles({
+      badge: {
+        padding: '14px 14px',
+        fontSize: '20px'
+      },
+    }),
+  )(Badge);
+
  
   const StyledButton = withStyles(() => ({
     root: {
       color: 'primary',
       backgroundColor: 'primary',
       borderRadius: 3,
-      border: 2,
       height: 48,
       fontSize: '60px', 
       maxWidth: '180px', 
@@ -84,6 +116,30 @@ function Alert(props : any) {
     }
   }))(Button);
 
+  const LongButton = withStyles(() => ({
+    root: {
+      color: 'primary',
+      backgroundColor: 'primary',
+      borderRadius: 3,
+      padding: '15px 15px',
+      height: 40,
+      justifyContent: 'flex-start',
+      fontSize: '30px', 
+      minWidth: '400px', 
+      minHeight: '70px',
+      spacing: 15,
+      '&:hover': {
+        backgroundColor: '#2C2E57',
+        color: 'white',
+        textDecoration:'none',
+      },
+    },
+    label: {
+      textTransform: 'capitalize',
+
+    }
+  }))(Button);
+
   const DynamicComponentWithNoSSR = dynamic(() => import('../components/mexicoMap' ), {
     ssr: false
   });
@@ -92,6 +148,7 @@ function Alert(props : any) {
 function Dashboard(props : any) {
     const { loading = false } = props;
     const classes = useStyles();
+    const classes1 = useStyles1();
     const classes3 = useStyles3();
     const [open, setOpen] = React.useState(true);
     const [openSnack, setOpenSnack] = React.useState(false);
@@ -111,13 +168,16 @@ function Dashboard(props : any) {
 
     setOpenSnack(false);
     };
-    
 
     return <React.Fragment><Head>
         <title>Dashboard</title>
       </Head>
-        <br/>
+      <MediaContextProvider>
         
+        {/*Tablet version */}
+        <Media lessThan='lg'>
+        <br/>
+  
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
             <Link color="inherit" href="/" className={classes.link}>
               <HomeIcon className={classes.icon} />
@@ -129,6 +189,7 @@ function Dashboard(props : any) {
             </Typography>
           </Breadcrumbs>
         <br/>
+
         <Typography variant='h1'>{loading ? <Skeleton /> : 'Dashboard'}</Typography>
         <br/>
         <br/>
@@ -155,19 +216,6 @@ function Dashboard(props : any) {
       </Grid>
         <Grid container direction={'row'} spacing={2} justify='space-evenly' alignItems='center'>
                 <Grid item>
-                {/* How to pass a dynamically generated link through a material ui button
-                <Link
-                href={'/static/[dynamic]'}
-                as={'/static/' + someJsString}
-                passHref>
-                <Button
-                    component="a">
-                    // other component ...
-                </Button>
-                </Link>
-                
-                */}
-
                 {loading ? (
                 <Skeleton animation="wave" variant="rect" width={180} height={180} />
             ) : (
@@ -496,8 +544,409 @@ function Dashboard(props : any) {
         </List>
         <br/>
         <br/>
+        </Media>
+
+        {/*Desktop view */}
+        <Media greaterThanOrEqual='lg'>
+        <br/>
+  
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
+            <Link color="inherit" href="/" className={classes.link}>
+              <HomeIcon className={classes.icon} />
+              Home
+            </Link>
+            <Typography color="textPrimary" className={classes.link}>
+              <DashboardIcon className={classes.icon} />
+                Dashboard
+            </Typography>
+          </Breadcrumbs>
+        <br/>
         
+
+        <Typography variant='h1'>{loading ? <Skeleton /> : 'Dashboard'}</Typography>
+        <br/>
+        <br/>
+        
+        <GridList cellHeight='auto' className={classes1.gridList} spacing={10}>
+          <GridListTile>
+          <Grid container spacing={1} direction='row' alignItems='center' >
+          <Grid item>
+            <Typography variant="h2" color='primary'>Summary</Typography>
+
+          </Grid>
+          <Grid item>
+            <div className={classes3.root}>
+            <Tooltip title="These are the top level numbers for issues and maintenance">
+            <IconButton aria-label="help" color='primary' onClick={handleClickSnack}>
+              <HelpIcon />
+            </IconButton>
+            </Tooltip>
+              <Snackbar open={openSnack} autoHideDuration={4000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                You sucessfully clicked a button, congrats!
+                </Alert>
+              </Snackbar>
+              </div>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <Grid container direction='column' spacing={7} justify='space-evenly' alignItems='center'>
+                <Grid item>
+                {loading ? (
+                <Skeleton animation="wave" variant="rect" width={180} height={180} />
+            ) : (
+              <StyledBadge badgeContent={5} color="secondary" anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }} >
+                <LongButton>Active Issues</LongButton>
+              </StyledBadge>   
+                )}
+ 
+                
+            </Grid>
+                <Grid item>
+
+            {loading ? (
+                <Skeleton animation="wave" variant="rect" width={180} height={180} />
+            ) : (
+              <StyledBadge badgeContent={3} color="secondary" anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }} >
+                <LongButton>Active Maintenance</LongButton>
+                </StyledBadge>
+                )}
+
+                </Grid>
+                <Grid item>
+                
+                {loading ? (
+                <Skeleton animation="wave" variant="rect" width={180} height={180} />
+            ) : (
+              <StyledBadge badgeContent={8} color="secondary" anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }} >
+                <LongButton>Future Maintenance</LongButton>
+                </StyledBadge>
+                )}
+                
+                </Grid>
+            </Grid>
+            </GridListTile>
+            <GridListTile>
+            <Typography variant='h2'>{loading ? <Skeleton /> : 'Locations'}</Typography>
+            {/*Mapbox */}
+            <DynamicComponentWithNoSSR/>
+            </GridListTile>
+            <GridListTile>
+            <Grid container direction={'column'} spacing={1}  alignItems='baseline'>
+            <Grid item>
+            <Typography variant="h2" color='primary'>
+              {loading ? <Skeleton /> : 'Regions'}
+            </Typography>
+            <br/>
+            <Typography variant="h3" color='primary'>
+              {loading ? <Skeleton /> : 'System 1'}
+            </Typography>
+            </Grid>
+            <Grid item>
+            <Typography variant="body1" color='primary'>
+                {loading ? <Skeleton /> : 'Experiencing a service disruption'}
+            </Typography>
+          </Grid>
+          </Grid>
+          <br/>
+          <Grid container direction={'row'} spacing={1}>
+              <Grid item>
+                  <Button 
+                    variant="outlined" 
+                    color="primary" 
+                    startIcon={<CheckCircle />}>
+                  {'United States'}
+                  </Button>
+          </Grid>
+          <Grid item>
+              <Button 
+                startIcon={<Warning/>} 
+                variant='outlined' 
+                style={{borderColor: '#FFA631', 
+                backgroundColor: '#FFA631', 
+                color: "#1A1B36" }}
+                >Mexico</Button>
+          </Grid>
+          <Grid item>
+              <Button 
+                startIcon={<Error style={{color: '#FFA631' }} />} 
+                variant='outlined' 
+                style={{borderColor: '#FFA631' }}
+                >Canada</Button>
+          </Grid>
+          <Grid item>
+            <Button 
+              startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} 
+              variant='outlined' 
+              style={{borderColor: '#7E9EF5'}}
+              >Europe</Button>
+          </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <Typography variant="h3" color='primary'>
+            {loading ? <Skeleton /> : 'System 2'}
+          </Typography>
+            <Grid container direction={'column'} spacing={1}  alignItems='baseline'>
+                <Grid item>
+                <Typography variant="body1" color='primary'>
+                    {loading ? <Skeleton /> : 'Experiencing a service disruption'}
+                </Typography>
+            </Grid>
+            </Grid>
+            <br/>
+            <Grid container direction={'row'} spacing={1}>
+                <Grid item>
+                    <Button variant="outlined" startIcon={<CheckCircle />}>
+                    {'United States'}
+                    </Button>
+            </Grid>
+            <Grid item>
+              <Button 
+                startIcon={<Warning/>} 
+                variant='outlined' 
+                style= {{borderColor: '#FFA631', 
+                        backgroundColor: '#FFA631', 
+                        color: "#1A1B36" }}
+                >Mexico</Button>
+            </Grid>
+            <Grid item>
+                <Button 
+                startIcon={<Error style={{color: '#FFA631' }} />} 
+                variant='outlined' 
+                style={{borderColor: '#FFA631' }}
+                >Canada</Button>
+            </Grid>
+            <Grid item>
+                <Button startIcon={<BuildIcon style={{color: '#7E9EF5' }}/>} 
+                variant='outlined' 
+                style={{borderColor: '#7E9EF5'}}
+                >Europe</Button>
+            </Grid>
+            </Grid>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <FeedbackForm/> 
+
+            </GridListTile> 
+            <GridListTile>
+            <Typography variant="h2" color='primary'>
+              {loading ? <Skeleton /> : 'Countries'}
+            </Typography>
+            <br/>
+            <List 
+          component="nav" 
+          aria-label="country list"
+          >
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                <BuildIcon style={{ color: "#7E9EF5" }}/>
+              </ListItemIcon>
+              <ListItemText 
+                primary="Canada" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondary="1 system undergoing maintenance" 
+                secondaryTypographyProps={{color:'secondary'}}
+              />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 3 is undgergoing maintenance" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
+                </ListItem>
+              </List>
+            </Collapse>
+
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                    <CheckCircle color='primary'/>
+              </ListItemIcon>
+              <ListItemText 
+                primary="Mexico" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondary="All systems nominal"
+                secondaryTypographyProps={{color:'secondary'}}
+              />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                  />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}} 
+                  />
+                </ListItem>
+              </List>
+            </Collapse>
+            
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                    <CheckCircle color='primary'/>
+              </ListItemIcon>
+              <ListItemText 
+                primary="Europe" 
+                secondary="All systems nominal" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondaryTypographyProps={{color:'secondary'}}
+                />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
+                </ListItem>
+              </List>
+            </Collapse>
+
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                <CheckCircle color='primary'/>
+              </ListItemIcon>
+              <ListItemText 
+                primary="United States" 
+                secondary="All systems nominal" 
+                primaryTypographyProps={{color:'primary'}} 
+                secondaryTypographyProps={{color:'secondary'}}
+                />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 1 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 2 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}}
+                    />
+                </ListItem>
+                <ListItem button >
+                  <ListItemIcon>
+                    <CheckCircle color='primary'/>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="System 3 is available" 
+                    primaryTypographyProps={{color:'primary'}} 
+                    secondaryTypographyProps={{color:'secondary'}} 
+                    />
+                </ListItem>
+              </List>
+            </Collapse>
+
+        </List>
+            </GridListTile>
+        </GridList>
+        <br/>
+        <br/>
+
+        </Media>
+        </MediaContextProvider>
         </React.Fragment>
+
 }
 
 export default Dashboard
