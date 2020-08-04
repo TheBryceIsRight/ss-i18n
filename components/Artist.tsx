@@ -6,6 +6,7 @@ import { Media, MediaContextProvider } from "../utils/media";
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 
 
 const imgStyles = {
@@ -53,9 +54,13 @@ const Artist: React.FC = () => {
     <Media greaterThanOrEqual='lg'>
     <Typography variant='h2'>René Magritte</Typography>
     <br/>
-    <GridList cellHeight='auto' className={classes.gridList} spacing={10}>
+    <GridList cellHeight={550} className={classes.gridList} spacing={20}>
       <GridListTile>
-      <img src="/img/magritte.jpg" alt="Rene Magritte" style={imgStyles}/>
+      <img src="/img/magritte.jpg" alt="Rene Magritte" />
+      <GridListTileBar
+        title='Rene Magritte'
+        subtitle= 'Portrait of Magritte in front The Pilgrim, taken by Lothar Wolleh in 1967'
+      />
       </GridListTile>
       <GridListTile>
         <Typography variant='body1'>{t('bio')}</Typography>

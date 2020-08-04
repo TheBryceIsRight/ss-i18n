@@ -73,7 +73,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   <div style={containerSmall} >
     <ThemeProvider theme={theme}>
         <CssBaseline />
+        <nav role='navigation'>
         <NavigationBar/>
+        </nav>
+        <main role='main'>
         <Grid container direction='row' alignItems='center' spacing={2}>
             <Grid item>
             <Router>
@@ -88,7 +91,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Grid>
         {isMounted && <Component {...pageProps} />}
         <br/>
+        </main>
+        <div role='contentinfo'>
         <Footer/>
+        </div>
     </ThemeProvider>
     </div>
     </Media>
@@ -96,7 +102,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div style={containerMedium} >
         <ThemeProvider theme={theme}>
             <CssBaseline />
+            <nav role='navigation'>
             <NavigationBar/>
+            </nav>
+            <main role='main'>
             <Grid container direction='row' alignItems='center' spacing={2}>
                 <Grid item>
                 <Router>
@@ -111,7 +120,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Grid>
             {isMounted && <Component {...pageProps} />}
             <br/>
+            </main>
+            <div role='contentinfo'>
             <Footer/>
+            </div>
         </ThemeProvider>
       </div>
     </Media>
@@ -119,7 +131,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div style={containerLarge} >
         <ThemeProvider theme={theme}>
             <CssBaseline />
+            <nav role='navigation'>
             <NavigationBar/>
+            </nav>
+            <main role='main'>
             <Grid container direction='row' alignItems='center' spacing={2}>
                 <Grid item>
                 <Router>
@@ -134,7 +149,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Grid>
             {isMounted && <Component {...pageProps} />}
             <br/>
+            </main>
+            <div role='contentinfo'>
             <Footer/>
+            </div>
         </ThemeProvider>
       </div>
     </Media>
@@ -142,7 +160,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div style={containerHuge} >
         <ThemeProvider theme={theme}>
             <CssBaseline />
+            <nav role='navigation'>
             <NavigationBar/>
+            </nav>
+            <main>
             <Grid container direction='row' alignItems='center' spacing={2}>
                 <Grid item>
                 <Router>
@@ -157,7 +178,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Grid>
             {isMounted && <Component {...pageProps} />}
             <br/>
+            </main>
+            <div role='contentinfo'>
             <Footer/>
+            </div>
         </ThemeProvider>
       </div>
     </Media>

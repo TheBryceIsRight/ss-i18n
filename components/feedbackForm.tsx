@@ -42,9 +42,7 @@ function Alert(props : any) {
     },
   ];
 
-
   
-
 function FeedbackFormComponent() {
   const [openSnack, setOpenSnack] = React.useState(false);
 
@@ -70,7 +68,7 @@ function FeedbackFormComponent() {
       onSubmit={(values, {setSubmitting}) => {
         setTimeout(() => {
           setSubmitting(false);
-          alert('Debug Log: ' + JSON.stringify(values, null, 2));
+          console.log('Debug Log: ' + JSON.stringify(values, null, 2));
         }, 500);
         fetch(`https://hooks.zapier.com/hooks/catch/8157500/okgyawz/`, {
           method: 'POST',
@@ -102,13 +100,13 @@ function FeedbackFormComponent() {
               </Field>
             </Box>
             <Box margin={1}>
-              <Field
-                component={TextField}
-                type="text"
-                label="Feedback"
-                name="feedback"
-                helperText="We love hearing from our users"
-              />
+                <Field
+                  component={TextField}
+                  type="text"
+                  name="feedback"
+                  label="Feedback"
+                  helperText="We love hearing from our users"
+                />
             </Box>
             {isSubmitting && <LinearProgress />}
             <br/>

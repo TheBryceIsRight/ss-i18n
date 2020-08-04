@@ -2,24 +2,16 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 
 //Theme set-up
-
-declare module '@material-ui/core/styles/createMuiTheme' {
-  interface Theme {
-    status: {
-      success: React.CSSProperties['color'],
-    }
+declare module "@material-ui/core/styles/createPalette" {
+  interface Palette {
+    nuetral: Palette['primary'];
   }
-  interface ThemeOptions {
-    status: {
-      success: React.CSSProperties['color']
-    }
+  interface PaletteOptions {
+    nuetral: PaletteOptions['primary'];
   }
 }
 
 const dark = createMuiTheme({
-    status: {
-      success: '#5FDFC7',
-    },
     palette: {
       type: 'dark',  
       primary: {
@@ -31,6 +23,9 @@ const dark = createMuiTheme({
       error: {
         main: red.A400,
       },
+      nuetral: {
+        main: '#4DDF65',
+      },
       background: {
         default: '#1A1B36',
       },
@@ -38,9 +33,6 @@ const dark = createMuiTheme({
   });
 
 const light = createMuiTheme({
-    status: {
-      success: '#004D60',
-    },
     palette: {
         type: 'light',
         primary: {
@@ -51,6 +43,9 @@ const light = createMuiTheme({
         },
         error: {
           main: red.A400,
+        },
+        nuetral: {
+          main: '#025D25',
         },
         background: {
           default: '#fff',

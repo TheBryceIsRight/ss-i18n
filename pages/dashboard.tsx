@@ -20,7 +20,6 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import Warning from '@material-ui/icons/Warning';
-import Error from '@material-ui/icons/Error';
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpIcon from '@material-ui/icons/Help';
 import IconButton from '@material-ui/core/IconButton';
@@ -140,7 +139,7 @@ function Alert(props : any) {
     }
   }))(Button);
 
-  const DynamicComponentWithNoSSR = dynamic(() => import('../components/mexicoMap' ), {
+  const DynamicComponentWithNoSSR = dynamic(() => import('../components/SSMap' ), {
     ssr: false
   });
 
@@ -152,6 +151,7 @@ function Dashboard(props : any) {
     const classes3 = useStyles3();
     const [open, setOpen] = React.useState(true);
     const [openSnack, setOpenSnack] = React.useState(false);
+    const successGreen = '#2CC951';
 
     const handleClick = () => {
         setOpen(!open);
@@ -174,8 +174,8 @@ function Dashboard(props : any) {
       </Head>
       <MediaContextProvider>
         
-        {/*Tablet version */}
-        <Media lessThan='lg'>
+        {/*Tablet & Mobile version */}
+        <Media lessThan='xl'>
         <br/>
   
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
@@ -273,7 +273,7 @@ function Dashboard(props : any) {
                 <Button 
                   variant="outlined" 
                   color="primary" 
-                  startIcon={<CheckCircle />}>
+                  startIcon={<CheckCircle style={{ color: successGreen }}/>}>
                 {'United States'}
                 </Button>
         </Grid>
@@ -288,7 +288,7 @@ function Dashboard(props : any) {
         </Grid>
         <Grid item>
             <Button 
-              startIcon={<Error style={{color: '#FFA631' }} />} 
+              startIcon={<Warning style={{color: '#FFA631' }} />} 
               variant='outlined' 
               style={{borderColor: '#FFA631' }}
               >Canada</Button>
@@ -316,7 +316,7 @@ function Dashboard(props : any) {
         <br/>
         <Grid container direction={'row'} spacing={1}>
             <Grid item>
-                <Button variant="outlined" startIcon={<CheckCircle />}>
+                <Button variant="outlined" startIcon={<CheckCircle style={{ color: successGreen }}/>}>
                 {'United States'}
                 </Button>
         </Grid>
@@ -331,7 +331,7 @@ function Dashboard(props : any) {
         </Grid>
         <Grid item>
             <Button 
-            startIcon={<Error style={{color: '#FFA631' }} />} 
+            startIcon={<Warning style={{color: '#FFA631' }} />} 
             variant='outlined' 
             style={{borderColor: '#FFA631' }}
             >Canada</Button>
@@ -370,7 +370,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -380,7 +380,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" 
                     primaryTypographyProps={{color:'primary'}} 
@@ -389,7 +389,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is undgergoing maintenance" 
@@ -402,7 +402,7 @@ function Dashboard(props : any) {
 
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="Mexico" 
@@ -416,7 +416,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -426,7 +426,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -436,7 +436,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
@@ -449,7 +449,7 @@ function Dashboard(props : any) {
             
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="Europe" 
@@ -463,7 +463,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -473,7 +473,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -483,7 +483,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
@@ -496,7 +496,7 @@ function Dashboard(props : any) {
 
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                <CheckCircle color='primary'/>
+                <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="United States" 
@@ -510,7 +510,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -520,7 +520,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -530,7 +530,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                    <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
@@ -547,7 +547,7 @@ function Dashboard(props : any) {
         </Media>
 
         {/*Desktop view */}
-        <Media greaterThanOrEqual='lg'>
+        <Media greaterThanOrEqual='xl'>
         <br/>
   
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
@@ -591,7 +591,7 @@ function Dashboard(props : any) {
           </Grid>
           <br/>
           <br/>
-          <Grid container direction='column' spacing={7} justify='space-evenly' alignItems='center'>
+          <Grid container direction='column' spacing={8} justify='space-evenly' alignItems='center'>
                 <Grid item>
                 {loading ? (
                 <Skeleton animation="wave" variant="rect" width={180} height={180} />
@@ -664,7 +664,7 @@ function Dashboard(props : any) {
                   <Button 
                     variant="outlined" 
                     color="primary" 
-                    startIcon={<CheckCircle />}>
+                    startIcon={<CheckCircle style={{ color: successGreen }}/>}>
                   {'United States'}
                   </Button>
           </Grid>
@@ -679,7 +679,7 @@ function Dashboard(props : any) {
           </Grid>
           <Grid item>
               <Button 
-                startIcon={<Error style={{color: '#FFA631' }} />} 
+                startIcon={<Warning style={{color: '#FFA631' }} />} 
                 variant='outlined' 
                 style={{borderColor: '#FFA631' }}
                 >Canada</Button>
@@ -707,7 +707,7 @@ function Dashboard(props : any) {
             <br/>
             <Grid container direction={'row'} spacing={1}>
                 <Grid item>
-                    <Button variant="outlined" startIcon={<CheckCircle />}>
+                    <Button variant="outlined" startIcon={<CheckCircle style={{ color: successGreen }}/>}>
                     {'United States'}
                     </Button>
             </Grid>
@@ -722,7 +722,7 @@ function Dashboard(props : any) {
             </Grid>
             <Grid item>
                 <Button 
-                startIcon={<Error style={{color: '#FFA631' }} />} 
+                startIcon={<Warning style={{color: '#FFA631' }} />} 
                 variant='outlined' 
                 style={{borderColor: '#FFA631' }}
                 >Canada</Button>
@@ -766,7 +766,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -776,7 +776,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText primary="System 2 is available" 
                     primaryTypographyProps={{color:'primary'}} 
@@ -785,7 +785,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is undgergoing maintenance" 
@@ -798,7 +798,7 @@ function Dashboard(props : any) {
 
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                    <CheckCircle color='primary'/>
+              <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="Mexico" 
@@ -812,7 +812,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -822,7 +822,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -832,7 +832,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
@@ -845,7 +845,7 @@ function Dashboard(props : any) {
             
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                    <CheckCircle color='primary'/>
+              <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="Europe" 
@@ -859,7 +859,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -869,7 +869,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -879,7 +879,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
@@ -892,7 +892,7 @@ function Dashboard(props : any) {
 
             <ListItem button onClick={handleClick}>
               <ListItemIcon>
-                <CheckCircle color='primary'/>
+              <CheckCircle style={{ color: successGreen }}/>
               </ListItemIcon>
               <ListItemText 
                 primary="United States" 
@@ -906,7 +906,7 @@ function Dashboard(props : any) {
               <List component="div" disablePadding>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 1 is available" 
@@ -916,7 +916,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 2 is available" 
@@ -926,7 +926,7 @@ function Dashboard(props : any) {
                 </ListItem>
                 <ListItem button >
                   <ListItemIcon>
-                    <CheckCircle color='primary'/>
+                  <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
                     primary="System 3 is available" 
