@@ -38,6 +38,8 @@ import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ListIcon from '@material-ui/icons/List';
 
+
+
 const useStyles = makeStyles((theme: Theme) => createStyles({
     body: {
         margin:0,
@@ -323,7 +325,7 @@ const NavigationBar: React.FC = () => {
             </ListItem>
             </Link>
         <Link
-        href="/dashboard"
+        href="/en/dashboard"
         passHref>
         <ListItem button>
             <ListItemIcon><DashboardIcon/>

@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   );
 };
 
-const Standings: React.FC = () => {
+const Dashboard: React.FC = () => {
   return (
     <h1>Standings</h1>
   );
@@ -25,9 +25,9 @@ const Routes = [
     component: Home
   },
   {
-    path: '/standings',
-    sidebarName: 'Standings',
-    component: Standings
+    path: '/dashboard',
+    sidebarName: 'Dashboard',
+    component: Dashboard
   },
   {
     path: '/teams',

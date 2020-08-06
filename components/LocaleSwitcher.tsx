@@ -39,16 +39,6 @@ const LocaleSwitcher: React.FC = () => {
           <TranslateIcon />
         </Grid>
         <Grid item>
-        {/*
-        <select value={locale} onChange={handleLocaleChange}>
-          {locales.map(locale => (
-            <option key={locale} value={locale}>
-              {languageNames[locale]}
-            </option>
-          ))}
-        </select>
-        */}
-
         <FormControl variant="outlined" className={classes.formControl}>
         <TextField 
           id="outlined-basic" 
