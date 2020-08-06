@@ -27,6 +27,7 @@ const strings: Strings = {
     europe: 'Europe',
     systemsGood: 'All Systems Nominal',
     undergoingMain: '1 system undergoing maintenance',
+    countries: 'Countries',
   },
   fr: {
     about: 'Sur René Magritte',
@@ -54,6 +55,7 @@ const strings: Strings = {
     europe: 'L\'Europe',
     systemsGood: 'Tous les systèmes nominaux',
     undergoingMain: '1 système en maintenance',
+    countries: 'Des pays',
   },
   pl: {
     about: 'O René Magritte',
@@ -80,6 +82,7 @@ const strings: Strings = {
     europe: 'Europa',
     systemsGood: 'Wszystkie systemy nominalne',
     undergoingMain: '1 system w trakcie konserwacji',
+    countries: 'Kraje',
   },
   es: {
     about: 'Sobre René Magritte',
@@ -106,6 +109,7 @@ const strings: Strings = {
     europe: 'Europa',
     systemsGood: 'Todos los sistemas nominales',
     undergoingMain: '1 sistema en mantenimiento',
+    countries: 'Países',
   }
 }
 

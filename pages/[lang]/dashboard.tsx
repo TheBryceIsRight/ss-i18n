@@ -353,6 +353,9 @@ function Dashboard(props : any) {
         {/*Mapbox */}
         <DynamicComponentWithNoSSR/>
         <br/>
+        <Typography variant="h2" color='primary'>
+              {t('countries')}
+            </Typography>
         <List 
           component="nav" 
           aria-label="country list"
@@ -746,7 +749,7 @@ function Dashboard(props : any) {
             </GridListTile> 
             <GridListTile>
             <Typography variant="h2" color='primary'>
-              {loading ? <Skeleton /> : 'Countries'}
+              {t('countries')}
             </Typography>
             <br/>
             <List 
