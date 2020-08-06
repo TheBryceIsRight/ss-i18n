@@ -33,6 +33,8 @@ import Badge from '@material-ui/core/Badge';
 import FeedbackForm from '../../components/feedbackForm';
 import useTranslation from '../../hooks/useTranslation';
 import withLocale from '../../hocs/withLocale';
+import Footer from '../../components/footer';
+
 
 
 function Alert(props : any) {
@@ -398,7 +400,7 @@ function Dashboard(props : any) {
                     <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
-                    primary="System 3 is undgergoing maintenance" 
+                    primary={t('system3GettingFixed')} 
                     primaryTypographyProps={{color:'primary'}} 
                     secondaryTypographyProps={{color:'secondary'}}
                   />
@@ -550,6 +552,7 @@ function Dashboard(props : any) {
         </List>
         <br/>
         <br/>
+        <Footer/>
         </Media>
 
         {/*Desktop view */}
@@ -794,7 +797,7 @@ function Dashboard(props : any) {
                   <CheckCircle style={{ color: successGreen }}/>
                   </ListItemIcon>
                   <ListItemText 
-                    primary="System 3 is undgergoing maintenance" 
+                    primary={t('system3GettingFixed')} 
                     primaryTypographyProps={{color:'primary'}} 
                     secondaryTypographyProps={{color:'secondary'}}
                   />
@@ -948,7 +951,7 @@ function Dashboard(props : any) {
         </GridList>
         <br/>
         <br/>
-
+        <Footer/>
         </Media>
         </MediaContextProvider>
         </React.Fragment>

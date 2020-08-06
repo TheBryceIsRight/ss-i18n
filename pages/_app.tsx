@@ -9,7 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import { MemoryRouter as Router } from 'react-router';
 import '../styles/mapbox-gl.css';
 import '../styles/global.css';
-import Footer from '../components/footer';
 import LocaleSwitcher from '../components/LocaleSwitcher';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import { Media, MediaContextProvider } from "../utils/media";
@@ -93,7 +92,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <br/>
         </main>
         <div role='contentinfo'>
-        <Footer/>
         </div>
     </ThemeProvider>
     </div>
@@ -121,9 +119,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             {isMounted && <Component {...pageProps} />}
             <br/>
             </main>
-            <div role='contentinfo'>
-            <Footer/>
-            </div>
+
         </ThemeProvider>
       </div>
     </Media>
@@ -150,9 +146,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             {isMounted && <Component {...pageProps} />}
             <br/>
             </main>
-            <div role='contentinfo'>
-            <Footer/>
-            </div>
+
         </ThemeProvider>
       </div>
     </Media>
@@ -179,9 +173,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             {isMounted && <Component {...pageProps} />}
             <br/>
             </main>
-            <div role='contentinfo'>
-            <Footer/>
-            </div>
+
         </ThemeProvider>
       </div>
     </Media>
