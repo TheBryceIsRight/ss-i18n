@@ -552,6 +552,7 @@ function Dashboard(props : any) {
         </List>
         <br/>
         <br/>
+        <FeedbackForm/>
         <Footer/>
         </Media>
 

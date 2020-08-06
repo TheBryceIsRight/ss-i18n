@@ -13,38 +13,42 @@ import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import useTranslation from '../hooks/useTranslation';
 
 
 function Alert(props : any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-  const ranges = [
-    {
-      value: '1',
-      label: 'Horrible',
-    },
-    {
-      value: '2',
-      label: 'Bad',
-    },
-    {
-      value: '3',
-      label: 'OK',
-    },
-    {
-      value: '4',
-      label: 'Good',
-    },
-    {
-      value: '5',
-      label: 'Excellent',
-    },
-  ];
+  
 
   
 function FeedbackFormComponent() {
+  const { t } = useTranslation();
   const [openSnack, setOpenSnack] = React.useState(false);
+
+  let ranges = [
+    {
+      value: '1',
+      label: t('horrible'),
+    },
+    {
+      value: '2',
+      label: t('bad'),
+    },
+    {
+      value: '3',
+      label: t('ok'),
+    },
+    {
+      value: '4',
+      label: t('good'),
+    },
+    {
+      value: '5',
+      label: t('excellent'),
+    },
+  ];
 
   const handleClickSnack = () => {
     setOpenSnack(true);
@@ -83,10 +87,10 @@ function FeedbackFormComponent() {
                 component={TextField}
                 type="text"
                 name="select"
-                label="Rating"
+                label={t('rating')}
                 select
                 variant="standard"
-                helperText="Your experience of this page"
+                helperText={t('yourExperience')}
                 margin="normal"
                 InputLabelProps={{
                   shrink: true,
@@ -104,8 +108,8 @@ function FeedbackFormComponent() {
                   component={TextField}
                   type="text"
                   name="feedback"
-                  label="Feedback"
-                  helperText="We love hearing from our users"
+                  label={t('feedback')}
+                  helperText={t('weLoveHearing')}
                 />
             </Box>
             {isSubmitting && <LinearProgress />}
@@ -117,7 +121,7 @@ function FeedbackFormComponent() {
                 disabled={isSubmitting}
                 onClick={submitForm}
               >
-                Submit
+                {t('submit')}
               </Button>
             </Box>
           </Form>
@@ -133,7 +137,7 @@ function FeedbackFormComponent() {
                 <ThumbsUpDown/>
             </Grid>
             <Grid item>
-                <Typography variant='body1'>Was this page helpful?</Typography>
+                <Typography variant='body1'>{t('wasHelpful')}</Typography>
             </Grid>
             </Grid>
       <FeedbackForm/>
