@@ -42,6 +42,7 @@ const strings: Strings = {
     legal: 'Legal',
     privacyPolicy: 'Privacy & Cookie Policy',
     mondayToFriday: 'Monday - Friday, 9AM - 7PM EST',
+    topLevel: 'These are the top level numbers for issues and maintenance',
   },
   fr: {
     about: 'Sur René Magritte',
@@ -84,6 +85,7 @@ const strings: Strings = {
     legal: 'Légal',
     privacyPolicy: 'Politique de confidentialité et de cookies',
     mondayToFriday: 'Lundi - vendredi, 9AM - 7PM EST',
+    topLevel: 'Ce sont les numéros de premier niveau pour les problèmes et la maintenance',
   },
   pl: {
     about: 'O René Magritte',
@@ -126,6 +128,7 @@ const strings: Strings = {
     legal: 'Prawny',
     privacyPolicy: 'Polityka prywatności i plików cookie',
     mondayToFriday: 'Poniedziałek - piątek, 9AM - 7PM EST',
+    topLevel: 'To są najważniejsze liczby dotyczące problemów i konserwacji',
   },
   es: {
     about: 'Sobre René Magritte',
@@ -168,6 +171,7 @@ const strings: Strings = {
     legal: 'Legal',
     privacyPolicy: 'Política de privacidad y cookies',
     mondayToFriday: 'Lunes - Viernes, 9AM - 7PM EST',
+    topLevel: 'Estos son los números de nivel superior para problemas y mantenimiento',
   }
 }
 

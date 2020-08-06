@@ -206,7 +206,7 @@ function Dashboard(props : any) {
         </Grid>
         <Grid item>
           <div className={classes3.root}>
-          <Tooltip title="These are the top level numbers for issues and maintenance">
+          <Tooltip title={t('topLevel')}>
           <IconButton aria-label="help" color='primary' onClick={handleClickSnack}>
             <HelpIcon />
           </IconButton>
@@ -585,7 +585,7 @@ function Dashboard(props : any) {
           </Grid>
           <Grid item>
             <div className={classes3.root}>
-            <Tooltip title="These are the top level numbers for issues and maintenance">
+            <Tooltip title={t('topLevel')}>
             <IconButton aria-label="help" color='primary' onClick={handleClickSnack}>
               <HelpIcon />
             </IconButton>
