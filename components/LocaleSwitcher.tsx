@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles, createStyles } from '@material-ui/core/styles'
+import useTranslation from '../hooks/useTranslation';
 
 
 const useStyles = makeStyles((theme) =>
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) =>
 const LocaleSwitcher: React.FC = () => {
   const classes = useStyles();
   const router = useRouter();
-  
+  const { t } = useTranslation();
 
   const handleLocaleChange = React.useCallback( (e: React.ChangeEvent<{ name?: string; value: unknown }>) => {
       const regex = new RegExp(`^/(${locales.join('|')})`)
@@ -44,7 +45,7 @@ const LocaleSwitcher: React.FC = () => {
           id="outlined-basic" 
           select
           variant="outlined"
-          label = 'Language'
+          label = {t('language')}
           onChange= {handleLocaleChange} 
         >
           {locales.map((locale, index) => (

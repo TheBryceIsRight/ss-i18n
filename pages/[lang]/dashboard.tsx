@@ -563,11 +563,11 @@ function Dashboard(props : any) {
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
             <Link color="inherit" href="/" className={classes.link}>
               <HomeIcon className={classes.icon} />
-              Home
+              {t('home')}
             </Link>
             <Typography color="textPrimary" className={classes.link}>
               <DashboardIcon className={classes.icon} />
-                Dashboard
+                {t('dashboard')}
             </Typography>
           </Breadcrumbs>
         <br/>

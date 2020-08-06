@@ -12,9 +12,11 @@ import '../styles/global.css';
 import LocaleSwitcher from '../components/LocaleSwitcher';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import { Media, MediaContextProvider } from "../utils/media";
+import useTranslation from '../hooks/useTranslation';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { t } = useTranslation();
 
   const containerSmall = {
     maxWidth: '36rem',
@@ -80,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Grid item>
             <Router>
             <FormControlLabel
-                label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                label={t('darkMode')} control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                 />
               </Router>
             </Grid>
@@ -108,7 +110,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Grid item>
                 <Router>
                 <FormControlLabel
-                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    label={t('darkMode')} control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                     />
                   </Router>
                 </Grid>
@@ -135,7 +137,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Grid item>
                 <Router>
                 <FormControlLabel
-                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    label={t('darkMode')} control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                     />
                   </Router>
                 </Grid>
@@ -162,7 +164,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Grid item>
                 <Router>
                 <FormControlLabel
-                    label='Dark mode' control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
+                    label={t('darkMode')} control={<Switch checked={darkState} onChange={handleThemeChange} name="darkSwitchSideBar" color='secondary'/>}
                     />
                   </Router>
                 </Grid>

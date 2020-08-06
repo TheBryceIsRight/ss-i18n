@@ -54,6 +54,8 @@ const strings: Strings = {
     ok: 'OK',
     good: 'Good',
     excellent: 'Excellent',
+    darkMode: 'Dark Mode',
+    language: 'Language',
   },
   fr: {
     about: 'Sur René Magritte',
@@ -108,6 +110,8 @@ const strings: Strings = {
     ok: 'D\'accord',
     good: 'Bien',
     excellent: 'Excellent',
+    darkMode: 'Mode sombre',
+    language: 'Langue',
   },
   pl: {
     about: 'O René Magritte',
@@ -162,6 +166,8 @@ const strings: Strings = {
     ok: 'Dobrze',
     good: 'Dobry',
     excellent: 'Doskonały',
+    darkMode: 'Tryb ciemny',
+    language: 'Język',
   },
   es: {
     about: 'Sobre René Magritte',
@@ -205,7 +211,7 @@ const strings: Strings = {
     privacyPolicy: 'Política de privacidad y cookies',
     mondayToFriday: 'Lunes - Viernes, 9AM - 7PM EST',
     topLevel: 'Estos son los números de nivel superior para problemas y mantenimiento',
-    wasHelpful: '¿Fue útil esta página',
+    wasHelpful: '¿Fue útil esta página?',
     rating: 'Clasificación',
     yourExperience: 'Tu experiencia de esta página',
     feedback: 'Realimentación',
@@ -216,6 +222,8 @@ const strings: Strings = {
     ok: 'Okay',
     good: 'Bueno',
     excellent: 'Excelente',
+    darkMode: 'Modo oscuro',
+    language: 'Idioma',
   }
 }
 
