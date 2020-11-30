@@ -39,8 +39,6 @@ import SimpleCard from '../../components/Card';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import useTranslation from '../../hooks/useTranslation';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
 
 
@@ -256,7 +254,6 @@ import CheckboxesGroup from '../../components/CheckboxesGroup';
 function DIY() {
 
   const classes1 = useStyles1();
-  const { t } = useTranslation();
 
     return <React.Fragment>
       <Head>

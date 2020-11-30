@@ -119,6 +119,7 @@ export default function CheckboxesGroup() {
           />
         </FormGroup>
     </FormControl>
+    <br/>
     <DiscreteSlider/>
     </div>
   );
