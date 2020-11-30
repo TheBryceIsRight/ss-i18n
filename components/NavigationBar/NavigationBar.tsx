@@ -227,6 +227,7 @@ const NavigationBar: React.FC = () => {
     };
 
     const list = (anchor:any) => (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
         className={clsx(classes.list, {
             [classes.fullList]: anchor === 'top' || anchor === 'bottom',
@@ -343,6 +344,15 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><ListIcon/>
             </ListItemIcon>
             <ListItemText primary='Form Demo' />
+        </ListItem>
+        </Link>
+        <Link
+        href="/en/diy"
+        passHref>
+        <ListItem button>
+            <ListItemIcon><ListIcon/>
+            </ListItemIcon>
+            <ListItemText primary='DIY Sales Demo' />
         </ListItem>
         </Link>
         </List>

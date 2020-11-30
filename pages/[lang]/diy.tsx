@@ -35,7 +35,13 @@ import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
-
+import SimpleCard from '../../components/Card';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import useTranslation from '../../hooks/useTranslation';
+import CheckboxesGroup from '../../components/CheckboxesGroup';
 
 
   interface Values {
@@ -61,6 +67,26 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
       label: '51 to 100',
     },
   ];
+
+  {/*GridList styles */}
+  const useStyles1 = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+      width: 'auto',
+      height: 'auto',
+    },
+    icon: {
+      color: 'rgba(255, 255, 255, 0.54)',
+    },
+  }),
+);
   
   function UpperCasingTextField(props: TextFieldProps) {
     const {
@@ -227,17 +253,51 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
   
  
 
-function FormPage() {
+function DIY() {
+
+  const classes1 = useStyles1();
+  const { t } = useTranslation();
 
     return <React.Fragment>
       <Head>
         <title>
-        Form Testing
+        DIY Sales Demo Testing
         </title>
       </Head>
+      <Typography variant="h3" component="h2">
+          Offerings
+      </Typography>
+      <br/>
+      <Typography variant="h5" component="h3">
+          Introducing Talech Mobile
+      </Typography>
+      <Typography variant="subtitle1" component="h4">
+          Your business in your pocket
+      </Typography>
+      <Typography variant="body2" component="h4">
+          $0 in software fees
+      </Typography>
+      <Typography variant="body2" component="h4">
+          Use your own mobile device
+      </Typography>
+      <br/>
+      <CheckboxesGroup/>
+      <GridList cellHeight='auto' className={classes1.gridList} spacing={5} cols={3}>
+          <GridListTile>
+          <SimpleCard/>
+          </GridListTile>
+          <GridListTile>
+            <SimpleCard/>
+          </GridListTile>
+          <GridListTile>
+            <SimpleCard/>
+          </GridListTile>
+          </GridList>
+
+        <br/>
       <NewForm/>
       
     </React.Fragment> 
 }
 
-export default FormPage
+export default DIY
