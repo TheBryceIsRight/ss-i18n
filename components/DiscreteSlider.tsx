@@ -29,7 +29,7 @@ const marks = [
   },
   {
     value: 80,
-    label: '$10 mil',
+    label: '$8 mil',
   },
 ];
 

@@ -35,11 +35,13 @@ import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
-import SimpleCard from '../../components/Card';
+import StarterBundle from '../../components/StarterBundle';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
+import StandardBundle from '../../components/StandardBundle';
+import PremiumBundle from '../../components/PremiumBundle';
 
 
   interface Values {
@@ -261,16 +263,15 @@ function DIY() {
         DIY Sales Demo Testing
         </title>
       </Head>
+
       <Typography variant="h3" component="h2">
           Offerings
       </Typography>
-      <br/>
+
       <Typography variant="h5" component="h3">
           Introducing Talech Mobile
       </Typography>
-      <Typography variant="subtitle1" component="h4">
-          Your business in your pocket
-      </Typography>
+      <br/>
       <Typography variant="body2" component="h4">
           $0 in software fees
       </Typography>
@@ -279,15 +280,15 @@ function DIY() {
       </Typography>
       <br/>
       <CheckboxesGroup/>
-      <GridList cellHeight='auto' className={classes1.gridList} spacing={5} cols={3}>
+      <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={3}>
           <GridListTile>
-          <SimpleCard/>
+            <StarterBundle/>
           </GridListTile>
           <GridListTile>
-            <SimpleCard/>
+            <StandardBundle/>
           </GridListTile>
           <GridListTile>
-            <SimpleCard/>
+            <PremiumBundle/>
           </GridListTile>
           </GridList>
 
