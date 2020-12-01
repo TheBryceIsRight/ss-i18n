@@ -34,7 +34,7 @@ export default function StarterBundle() {
           Talech Starter
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Great for a growing business
+          Great for a new business
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>

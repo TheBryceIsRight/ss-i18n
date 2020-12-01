@@ -42,6 +42,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
 import StandardBundle from '../../components/StandardBundle';
 import PremiumBundle from '../../components/PremiumBundle';
+import { Media, MediaContextProvider } from "../../utils/media";
 
 
   interface Values {
@@ -263,37 +264,159 @@ function DIY() {
         DIY Sales Demo Testing
         </title>
       </Head>
+      <MediaContextProvider>
+        
+        {/*Tablet & Mobile version */}
+        <Media lessThan='md'>
+          <Typography variant="h3" component="h2">
+              Offerings
+          </Typography>
 
-      <Typography variant="h3" component="h2">
-          Offerings
-      </Typography>
+          <Typography variant="h5" component="h3">
+              Introducing Talech Mobile
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h4">
+              $0 in software fees
+          </Typography>
+          <Typography variant="body2" component="h4">
+              Use your own mobile device
+          </Typography>
+          <br/>
+          <CheckboxesGroup/>
+          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={1}>
+              <GridListTile>
+                <StarterBundle/>
+              </GridListTile>
+              <GridListTile>
+                <StandardBundle/>
+              </GridListTile>
+              <GridListTile>
+                <PremiumBundle/>
+              </GridListTile>
+              </GridList>
+        </Media>
+        <Media at='md'>
+          <Typography variant="h3" component="h2">
+              Offerings
+          </Typography>
 
-      <Typography variant="h5" component="h3">
-          Introducing Talech Mobile
-      </Typography>
-      <br/>
-      <Typography variant="body2" component="h4">
-          $0 in software fees
-      </Typography>
-      <Typography variant="body2" component="h4">
-          Use your own mobile device
-      </Typography>
-      <br/>
-      <CheckboxesGroup/>
-      <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={3}>
-          <GridListTile>
-            <StarterBundle/>
-          </GridListTile>
-          <GridListTile>
-            <StandardBundle/>
-          </GridListTile>
-          <GridListTile>
-            <PremiumBundle/>
-          </GridListTile>
-          </GridList>
+          <Typography variant="h5" component="h3">
+              Introducing Talech Mobile
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h4">
+              $0 in software fees
+          </Typography>
+          <Typography variant="body2" component="h4">
+              Use your own mobile device
+          </Typography>
+          <br/>
+          <CheckboxesGroup/>
+          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={2}>
+              <GridListTile>
+                <StarterBundle/>
+              </GridListTile>
+              <GridListTile>
+                <StandardBundle/>
+              </GridListTile>
+              <GridListTile>
+                <PremiumBundle/>
+              </GridListTile>
+              </GridList>
+        </Media>
+        <Media at='lg'>
+          <Typography variant="h3" component="h2">
+              Offerings
+          </Typography>
+
+          <Typography variant="h5" component="h3">
+              Introducing Talech Mobile
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h4">
+              $0 in software fees
+          </Typography>
+          <Typography variant="body2" component="h4">
+              Use your own mobile device
+          </Typography>
+          <br/>
+          <CheckboxesGroup/>
+          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={3}>
+              <GridListTile>
+                <StarterBundle/>
+              </GridListTile>
+              <GridListTile>
+                <StandardBundle/>
+              </GridListTile>
+              <GridListTile>
+                <PremiumBundle/>
+              </GridListTile>
+              </GridList>
+        </Media>
+        <Media at='xl'>
+          <Typography variant="h3" component="h2">
+              Offerings
+          </Typography>
+
+          <Typography variant="h5" component="h3">
+              Introducing Talech Mobile
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h4">
+              $0 in software fees
+          </Typography>
+          <Typography variant="body2" component="h4">
+              Use your own mobile device
+          </Typography>
+          <br/>
+          <CheckboxesGroup/>
+          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={4}>
+              <GridListTile>
+                <StarterBundle/>
+              </GridListTile>
+              <GridListTile>
+                <StandardBundle/>
+              </GridListTile>
+              <GridListTile>
+                <PremiumBundle/>
+              </GridListTile>
+              </GridList>
+        </Media>
+        <Media greaterThanOrEqual='el'>
+          <Typography variant="h3" component="h2">
+              Offerings
+          </Typography>
+
+          <Typography variant="h5" component="h3">
+              Introducing Talech Mobile
+          </Typography>
+          <br/>
+          <Typography variant="body2" component="h4">
+              $0 in software fees
+          </Typography>
+          <Typography variant="body2" component="h4">
+              Use your own mobile device
+          </Typography>
+          <br/>
+          <CheckboxesGroup/>
+          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={4}>
+              <GridListTile>
+                <StarterBundle/>
+              </GridListTile>
+              <GridListTile>
+                <StandardBundle/>
+              </GridListTile>
+              <GridListTile>
+                <PremiumBundle/>
+              </GridListTile>
+              </GridList>
+        </Media>
+        </MediaContextProvider>
+
+      
 
         <br/>
-      <NewForm/>
       
     </React.Fragment> 
 }

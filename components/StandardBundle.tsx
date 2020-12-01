@@ -34,7 +34,7 @@ export default function StandardBundle() {
           Talech Standard
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Great for a growing business
+          Great for an existing business
         </Typography>
         <Typography variant="h6" component='h3'>
             Reporting
