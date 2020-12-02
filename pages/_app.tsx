@@ -46,27 +46,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const [darkState, setDarkState] = useState(true);
 
 	const handleThemeChange = () => {
-		setDarkState(!darkState);
-	  };
+		setDarkState(!darkState); };
 
   let theme = darkState ? darkTheme : lightTheme
   
   theme = responsiveFontSizes(theme)
 
 	useEffect(() => {
-	  setIsMounted(true)
-  }, [])
-  
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
+    setIsMounted(true)}, [])
 
-    if (jssStyles === null || jssStyles.parentElement === null ) {
-      console.log('oops, document is null');
-    } else {
-      jssStyles.parentElement.removeChild(jssStyles)!;
-    }
-  }, []);
 
   return (
   <MediaContextProvider>

@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import useTranslation from '../hooks/useTranslation';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,11 +40,12 @@ function valuetext(value: number) {
 
 export default function DiscreteSlider() {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider-always" gutterBottom>
-        Monthly Credit Card Sales      
+        {t('monthly_sales')}     
     </Typography>
       <Slider
         defaultValue={80}

@@ -7,6 +7,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import DiscreteSlider from '../components/DiscreteSlider';
 import Grid from '@material-ui/core/Grid';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import useTranslation from '../hooks/useTranslation';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,6 +25,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function CheckboxesGroup() {
+
+  const { t } = useTranslation();
   const classes = useStyles();
   const [state, setState] = React.useState({
     Retail: false,
@@ -42,71 +48,63 @@ export default function CheckboxesGroup() {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const { Retail, Restaurant, Services, Hospitality, New, Existing, Growing, Same, Next, Ingenico, Poynt, Talech, Verifone } = state;
+  const [value, setValue] = React.useState('new');
+
+  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
+
+
+  const { Retail, Restaurant, Services, Hospitality, Ingenico, Poynt, Talech, Verifone } = state;
 
   return (
     <div className={classes.root}>
-        <Grid container spacing={1} direction='row' alignItems='flex-start' >
+        <Grid container spacing={1} direction='row' alignItems='flex-start'>
           <Grid item>
             <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Industry</FormLabel>
+            <FormLabel component="legend">{t('industry')}</FormLabel>
                 <FormGroup>
                 <FormControlLabel
                     control={<Checkbox checked={Retail} onChange={handleChange} name="Retail" />}
-                    label="Retail"
+                    label={t('retail')}
                 />
                 <FormControlLabel
                     control={<Checkbox checked={Restaurant} onChange={handleChange} name="Restaurant" />}
-                    label="Restaurant"
+                    label={t('restaurant')}
                 />
                 <FormControlLabel
                     control={<Checkbox checked={Services} onChange={handleChange} name="Services" />}
-                    label="Services"
+                    label={t('services')}
                 />
                 <FormControlLabel
                     control={<Checkbox checked={Hospitality} onChange={handleChange} name="Hospitality" />}
-                    label="Hospitality"
+                    label={t('hospitality')}
                 />
                 </FormGroup>
             </FormControl>
           </Grid>
           <Grid item>
-            <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Business Size</FormLabel>
-                <FormGroup>
-                <FormControlLabel
-                    control={<Checkbox checked={New} onChange={handleChange} name="New" />}
-                    label="New"
-                />
-                <FormControlLabel
-                    control={<Checkbox checked={Existing} onChange={handleChange} name="Existing" />}
-                    label="Existing"
-                />
-                <FormControlLabel
-                    control={<Checkbox checked={Growing} onChange={handleChange} name="Growing" />}
-                    label="Growing"
-                />
-                </FormGroup>
+          <FormControl component="fieldset" className={classes.formControl}>
+            <FormLabel component="legend">{t('business_size')}</FormLabel>
+                <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
+                <FormControlLabel value="New" control={<Radio />} label={t('new')} />
+                <FormControlLabel value="Existing" control={<Radio />} label={t('existing')} />
+                <FormControlLabel value="Growing" control={<Radio />} label={t('growing')}/>
+              </RadioGroup>
+            </FormControl>
+          </Grid>
+          <Grid item>
+          <FormControl component="fieldset" className={classes.formControl}>
+                <FormLabel component="legend">{t('settlement')}</FormLabel>
+                <RadioGroup aria-label="settlement" name="settlement" value={value} onChange={handleChangeRadio}>
+                <FormControlLabel value="Same" control={<Radio />} label={t('same_day')} />
+                <FormControlLabel value="Next" control={<Radio />} label={t('next_day')}/>
+              </RadioGroup>
             </FormControl>
           </Grid>
           <Grid item>
             <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Settlement</FormLabel>
-                <FormGroup>
-                <FormControlLabel
-                    control={<Checkbox checked={Same} onChange={handleChange} name="Same" />}
-                    label="Same day"
-                />
-                <FormControlLabel
-                    control={<Checkbox checked={Next} onChange={handleChange} name="Next" />}
-                    label="Next Day"
-                />
-                </FormGroup>
-            </FormControl>
-          </Grid>
-          <Grid item>
-            <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Brand</FormLabel>
+                <FormLabel component="legend">{t('brand')}</FormLabel>
                 <FormGroup>
                 <FormControlLabel
                     control={<Checkbox checked={Ingenico} onChange={handleChange} name="Ingenico" />}

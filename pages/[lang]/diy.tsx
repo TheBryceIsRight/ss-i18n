@@ -4,206 +4,201 @@ import React from 'react';
 import {
   Typography,
 } from '@material-ui/core';
-
-import StarterBundle from '../../components/StarterBundle';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
+import { Media, MediaContextProvider } from "../../utils/media";
+import ProductList from "../../components/ProductList"
+import { IProduct } from "../../components/Product";
+import useTranslation from '../../hooks/useTranslation';
+import withLocale from '../../hocs/withLocale';
+import StarterBundle from '../../components/StarterBundle';
 import StandardBundle from '../../components/StandardBundle';
 import PremiumBundle from '../../components/PremiumBundle';
-import { Media, MediaContextProvider } from "../../utils/media";
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile'; 
 
 
 
-  {/*GridList styles */}
-  const useStyles1 = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      overflow: 'hidden',
-      backgroundColor: theme.palette.background.paper,
-    },
-    gridList: {
-      width: 'auto',
-      height: 'auto',
-    },
-    icon: {
-      color: 'rgba(255, 255, 255, 0.54)',
-    },
-  }),
-);
 
-  
- 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+interface IIndexProps {
+  products: IProduct[]
+} 
 
-function DIY() {
 
-  const classes1 = useStyles1();
+
+function DIY(props: IIndexProps) {
+
+  const { t } = useTranslation();
 
     return <React.Fragment>
       <Head>
         <title>
-        DIY Sales Demo Testing
+        DIY Sales Demo
         </title>
       </Head>
       <MediaContextProvider>
         
-        {/*Tablet & Mobile version */}
+        {/*Mobile */}
         <Media lessThan='md'>
           <Typography variant="h3" component="h2">
-              Offerings
+              {t('offerings')}
           </Typography>
 
           <Typography variant="h5" component="h3">
-              Introducing Talech Mobile
+            {t('introducing_talech')}
           </Typography>
           <br/>
           <Typography variant="body2" component="h4">
-              $0 in software fees
+            {t('no_fees')}
           </Typography>
           <Typography variant="body2" component="h4">
-              Use your own mobile device
+              {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
-          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={1}>
-              <GridListTile>
-                <StarterBundle/>
-              </GridListTile>
-              <GridListTile>
-                <StandardBundle/>
-              </GridListTile>
-              <GridListTile>
-                <PremiumBundle/>
-              </GridListTile>
+          <br/>
+          <GridList className="product-list" cellHeight='auto' spacing={20}>
+                <GridListTile>
+                  <StarterBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <StandardBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <PremiumBundle/>
+                </GridListTile>
               </GridList>
         </Media>
+
+        {/*Tablet */}
         <Media at='md'>
           <Typography variant="h3" component="h2">
-              Offerings
+          {t('offerings')}
           </Typography>
 
           <Typography variant="h5" component="h3">
-              Introducing Talech Mobile
+          {t('introducing_talech')}
           </Typography>
           <br/>
           <Typography variant="body2" component="h4">
-              $0 in software fees
+          {t('no_fees')}
           </Typography>
           <Typography variant="body2" component="h4">
-              Use your own mobile device
+          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
-          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={2}>
-              <GridListTile>
-                <StarterBundle/>
-              </GridListTile>
-              <GridListTile>
-                <StandardBundle/>
-              </GridListTile>
-              <GridListTile>
-                <PremiumBundle/>
-              </GridListTile>
+          <br/>
+          <GridList className="product-list" cellHeight='auto' spacing={20}>
+                <GridListTile>
+                  <StarterBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <StandardBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <PremiumBundle/>
+                </GridListTile>
               </GridList>
         </Media>
+
+        {/*Desktop */}
         <Media at='lg'>
           <Typography variant="h3" component="h2">
-              Offerings
+          {t('offerings')}
           </Typography>
 
           <Typography variant="h5" component="h3">
-              Introducing Talech Mobile
+          {t('introducing_talech')}
           </Typography>
           <br/>
           <Typography variant="body2" component="h4">
-              $0 in software fees
+          {t('no_fees')}
           </Typography>
           <Typography variant="body2" component="h4">
-              Use your own mobile device
+          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
-          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={3}>
-              <GridListTile>
-                <StarterBundle/>
-              </GridListTile>
-              <GridListTile>
-                <StandardBundle/>
-              </GridListTile>
-              <GridListTile>
-                <PremiumBundle/>
-              </GridListTile>
+              <br/>
+              <GridList className="product-list" cellHeight='auto' spacing={20}>
+                <GridListTile>
+                  <StarterBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <StandardBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <PremiumBundle/>
+                </GridListTile>
               </GridList>
         </Media>
+
+        {/*High Resolution Desktop */}
         <Media at='xl'>
           <Typography variant="h3" component="h2">
-              Offerings
+          {t('offerings')}
           </Typography>
-
           <Typography variant="h5" component="h3">
-              Introducing Talech Mobile
+          {t('introducing_talech')}
           </Typography>
           <br/>
           <Typography variant="body2" component="h4">
-              $0 in software fees
+          {t('no_fees')}
           </Typography>
           <Typography variant="body2" component="h4">
-              Use your own mobile device
+          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
-          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={4}>
-              <GridListTile>
-                <StarterBundle/>
-              </GridListTile>
-              <GridListTile>
-                <StandardBundle/>
-              </GridListTile>
-              <GridListTile>
-                <PremiumBundle/>
-              </GridListTile>
-              </GridList>
+          <br/>
+              <ProductList products={props.products} />
         </Media>
+        
+        {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
           <Typography variant="h3" component="h2">
-              Offerings
+          {t('offerings')}
           </Typography>
 
           <Typography variant="h5" component="h3">
-              Introducing Talech Mobile
+          {t('introducing_talech')}
           </Typography>
           <br/>
           <Typography variant="body2" component="h4">
-              $0 in software fees
+          {t('no_fees')}
           </Typography>
           <Typography variant="body2" component="h4">
-              Use your own mobile device
+          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
-          <GridList cellHeight='auto' className={classes1.gridList} spacing={20} cols={4}>
-              <GridListTile>
-                <StarterBundle/>
-              </GridListTile>
-              <GridListTile>
-                <StandardBundle/>
-              </GridListTile>
-              <GridListTile>
-                <PremiumBundle/>
-              </GridListTile>
+          <br/>
+          <GridList className="product-list" cellHeight='auto' spacing={20}>
+                <GridListTile>
+                  <StarterBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <StandardBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <PremiumBundle/>
+                </GridListTile>
               </GridList>
         </Media>
         </MediaContextProvider>
-
-      
-
-        <br/>
-      
     </React.Fragment> 
 }
 
-export default DIY
+DIY.getInitialProps = async () => {
+
+  return {
+    products: [
+      {id: "test_product", name: "Talech Starter", price: 25.00, description: "Great for a new business", settlement: "2 Days"} as IProduct,
+      {id: "test_product2", name: "Talech Standard", price: 50.00, description: "Great for an existing business", settlement:'Next Day'} as IProduct,
+      {id: "test_product3", name: "Talech Premium", price: 75.00, description: "Great for an growing business", settlement:'Same Day'} as IProduct,
+    ]
+  }
+}
+
+export default withLocale(DIY) 

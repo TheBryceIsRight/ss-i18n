@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import useTranslation from '../hooks/useTranslation';
+
 
 const useStyles = makeStyles({
   root: {
@@ -26,70 +28,72 @@ const useStyles = makeStyles({
 
 export default function StarterBundle() {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <Card className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          Talech Starter
+        {t('talech_starter')}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Great for a new business
+          {t('new_business')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            Reporting
+          {t('reporting')}
         </Typography>
         <Typography variant="body2" component="p">
-          Basic Sales
+          {t('basic_sales')}
         </Typography>
         <Typography variant="body2" component="p">
-          Basic Reporting
+          {t('basic_reporting')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            Security
+        {t('security')}
         </Typography>
         <Typography variant="body2" component="p">
-          PCI Compliance Tools
+        {t('compliance_tools')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            Settlement
+        {t('settlement')}
         </Typography>
         <Typography variant="body2" component="p">
-          2 business days
+        {t('two_days')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            All card types supported?
+        {t('cards_supported')}
         </Typography>
         <Typography variant="body2" component="p">
-          Yes
+        {t('yes')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            Rental Fee
+        {t('rental_fee')} 
         </Typography>
         <Typography variant="body2" component="p">
-          $XX a month
+        {t('price')}
         </Typography>
         <br/>
         <Typography variant="h6" component='h3'>
-            Rates
+        {t('rates')} 
         </Typography>
         <Typography variant="body2" component="p">
-            Clear and Simple Pricing (in-person)
+        {t('clear_inperson')} 
         </Typography>
         <Typography variant="body2" component="p">
-            Clear and Simple Pricing (keyed)
+        {t('clear_keyed')} 
         </Typography>
         <Typography variant="body2" component="p">
-            Clear and Simple Pricing (online)
+        {t('clear_online')} 
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" startIcon={<AddShoppingCartIcon />}>Add to Cart</Button>
+        <Button size="small" startIcon={<AddShoppingCartIcon />}>{t('apply_now')}</Button>
+        <Button size="small" >{t('learn_more')}</Button>
       </CardActions>
     </Card>
   );
