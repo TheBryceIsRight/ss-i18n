@@ -37,7 +37,7 @@ import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ListIcon from '@material-ui/icons/List';
-
+import useTranslation from '../../hooks/useTranslation';
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -123,6 +123,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const NavigationBar: React.FC = () => {
 
     const classes = useStyles();
+
+    const { locale} = useTranslation()
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -325,9 +327,7 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><BugReportIcon/></ListItemIcon><ListItemText primary='Chart Debugging'/>
             </ListItem>
             </Link>
-        <Link
-        href="/en/dashboard"
-        passHref>
+            <Link href="/[lang]/dashboard" as={`/${locale}/dashboard`} passHref>
         <ListItem button>
             <ListItemIcon><DashboardIcon/>
             </ListItemIcon>
@@ -346,9 +346,7 @@ const NavigationBar: React.FC = () => {
             <ListItemText primary='Form Demo' />
         </ListItem>
         </Link>
-        <Link
-        href="/en/diy"
-        passHref>
+          <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
         <ListItem button>
             <ListItemIcon><ListIcon/>
             </ListItemIcon>

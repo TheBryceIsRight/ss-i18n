@@ -100,6 +100,9 @@ const strings: Strings = {
     talech_premium: "Talech Premium",
     price:'$XX a month',
     compliance_tools: 'PCI Compliance Tools',
+    get_started:'Let\'s get started',
+    registration:'Registration',
+    registration_motivation: 'Signing up for Elavon is free and quick - no commitments required.',
 
 
   },
@@ -202,6 +205,9 @@ const strings: Strings = {
     talech_premium: "Talech Premium",
     price:'$XX par mois',
     compliance_tools: 'Outils de conformité PCI',
+    get_started:'Commençons',
+    registration:'Enregistrement',
+    registration_motivation: 'Inscription à Elavon est gratuite et rapide - aucun engagement requis.',
     
   
   },
@@ -304,6 +310,9 @@ const strings: Strings = {
     talech_premium: "Talech Premium",
     price:'$XX miesięcznie',
     compliance_tools: 'Narzędzia zgodności PCI',
+    get_started:'Zacznijmy',
+    registration:'Rejestracja',
+    registration_motivation: 'Rejestracja w Elavon jest bezpłatna i szybka - nie wymaga żadnych zobowiązań.',
 
   },
   es: {
@@ -361,7 +370,7 @@ const strings: Strings = {
     excellent: 'Excelente',
     darkMode: 'Modo oscuro',
     language: 'Idioma',
-    offerings: 'Ofrendas',
+    offerings: 'Ofertas',
     introducing_talech: 'Presentamos Talech Mobile',
     no_fees: '$ 0 en tarifas de software',
     use_your_mobile: 'Utilice su propio dispositivo móvil',
@@ -388,23 +397,27 @@ const strings: Strings = {
     monthly_sales: "Ventas mensuales con tarjeta de crédito",
     two_days:'2 dias laborales',
     profit_margin: 'Margen de beneficio',
-    advanced_inventory: "Advanced Inventory",
+    advanced_inventory: "Inventario Avanzado",
     encryption: "Inventario avanzado",
     light_touch: "Cumplimiento de PCI Light Touch",
     cards_supported: "¿Todos los tipos de tarjetas son compatibles?",
     yes: "Si",
-    rental_fee: "Precio de renta",
+    rental_fee: "Precio de alquiler",
     rates: "Tarifas",
     clear_inperson:"Precios claros y sencillos (en persona)",
     clear_keyed:"Precios claros y sencillos (con clave)",
     clear_online:"Precios claros y sencillos (en línea)",
     apply_now:"Aplica ya",
     learn_more: "Aprende más",
-    talech_starter: "Arrancador Talech",
-    talech_standard: "Estándar Talech",
-    talech_premium: "Talech Premium",
+    talech_starter: "Talech básico",
+    talech_standard: "Talech estándar",
+    talech_premium: "Talech premium",
     price:'$XX al mes',
     compliance_tools: 'Herramientas de cumplimiento de PCI',
+    get_started:'Empecemos',
+    registration:'Registro',
+    registration_motivation: 'Registrarse en Elavon es gratis y rápido, no se requieren compromisos.',
+    
 
     
   }

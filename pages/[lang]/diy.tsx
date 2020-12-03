@@ -6,8 +6,6 @@ import {
 } from '@material-ui/core';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
 import { Media, MediaContextProvider } from "../../utils/media";
-import ProductList from "../../components/ProductList"
-import { IProduct } from "../../components/Product";
 import useTranslation from '../../hooks/useTranslation';
 import withLocale from '../../hocs/withLocale';
 import StarterBundle from '../../components/StarterBundle';
@@ -15,20 +13,20 @@ import StandardBundle from '../../components/StandardBundle';
 import PremiumBundle from '../../components/PremiumBundle';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile'; 
-
-
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
+{/*
 interface IIndexProps {
   products: IProduct[]
 } 
+*/}
 
+function DIY() {
 
-
-function DIY(props: IIndexProps) {
-
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
     return <React.Fragment>
       <Head>
@@ -152,11 +150,27 @@ function DIY(props: IIndexProps) {
           <br/>
           <CheckboxesGroup/>
           <br/>
-              <ProductList products={props.products} />
+          <GridList className="product-list" cellHeight='auto' spacing={20}>
+                <GridListTile>
+                  <StarterBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <StandardBundle/>
+                </GridListTile>
+                <GridListTile>
+                  <PremiumBundle/>
+                </GridListTile>
+              </GridList>
         </Media>
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />} >
+            <Typography color="textPrimary">
+                {t('home')}
+            </Typography>
+          </Breadcrumbs>
+        <br/>
           <Typography variant="h3" component="h2">
           {t('offerings')}
           </Typography>
@@ -190,6 +204,8 @@ function DIY(props: IIndexProps) {
     </React.Fragment> 
 }
 
+{/*In case I want to turn on eCommerce in the future */}
+{/*  
 DIY.getInitialProps = async () => {
 
   return {
@@ -200,5 +216,7 @@ DIY.getInitialProps = async () => {
     ]
   }
 }
+
+*/}
 
 export default withLocale(DIY) 
