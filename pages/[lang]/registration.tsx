@@ -307,6 +307,11 @@ function Registration() {
                     <Grid item>
                         <NewForm/>
                     </Grid>
+                    <Grid item>
+                        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+                            <Button variant='outlined'>{t('skip')} </Button>
+                        </Link>
+                    </Grid>
                 </Grid>
               </Grid>
 
@@ -398,6 +403,11 @@ function Registration() {
                 <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
+                    </Grid>
+                    <Grid item>
+                        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+                            <Button variant='outlined'>{t('skip')} </Button>
+                        </Link>
                     </Grid>
                 </Grid>
               </Grid>
@@ -491,6 +501,11 @@ function Registration() {
                     <Grid item>
                         <NewForm/>
                     </Grid>
+                    <Grid item>
+                        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+                            <Button variant='outlined'>{t('skip')} </Button>
+                        </Link>
+                    </Grid>
                 </Grid>
               </Grid>
         </Media>
@@ -581,6 +596,11 @@ function Registration() {
                 <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
+                    </Grid>
+                    <Grid item>
+                        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+                            <Button variant='outlined'>{t('skip')} </Button>
+                        </Link>
                     </Grid>
                 </Grid>
               </Grid>
@@ -673,6 +693,11 @@ function Registration() {
                 <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
+                    </Grid>
+                    <Grid item>
+                        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+                            <Button variant='outlined'>{t('skip')} </Button>
+                        </Link>
                     </Grid>
                 </Grid>
               </Grid>

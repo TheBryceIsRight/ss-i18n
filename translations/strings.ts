@@ -144,6 +144,7 @@ const strings: Strings = {
     average_visits:"Average visits per customer",
     positive_feedback:"Positive feedback",
     negative_feedback:"Negative feedback",
+    skip:"Skip Registration",
 
 
   },
@@ -290,6 +291,7 @@ const strings: Strings = {
     average_visits:"Visites moyennes par client",
     positive_feedback:"Commentaire positif",
     negative_feedback:"Retours négatifs",
+    skip:"Sauter l'inscription",
 
   },
   pl: {
@@ -435,6 +437,7 @@ const strings: Strings = {
     average_visits:"Średnia liczba wizyt na klienta",
     positive_feedback:"Pozytywne opinie",
     negative_feedback:"Negatywne opinie",
+    skip:"Pomiń rejestrację",
 
 
   },
@@ -581,6 +584,7 @@ const strings: Strings = {
     average_visits:"Visitas promedio por cliente",
     positive_feedback:"Retroalimentación positiva",
     negative_feedback:"Retroalimentación negativa",
+    skip:"Evitar el registro",
 
 
   }
