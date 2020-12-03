@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import useTranslation from '../hooks/useTranslation';
-import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 
@@ -18,11 +17,9 @@ const Navigation = () => {
         </Link>
       </li>
       <li>
-        <Typography variant='body1'>
         <Link href="/[lang]/artist" as={`/${locale}/artist`}>
           <Button>{t('artist')}</Button>
         </Link>
-        </Typography>
       </li>
       <style jsx>{`
         .root {

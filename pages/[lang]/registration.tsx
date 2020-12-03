@@ -145,6 +145,7 @@ function Registration() {
                     name="email"
                     type="email"
                     label={t('email')}
+                    variant='outlined'
                 />
                 </Box>
                 <Box margin={1}>
@@ -153,6 +154,7 @@ function Registration() {
                     name="email_confirm"
                     type="email"
                     label={t('confirm_email')}
+                    variant='outlined'
                 />
                 </Box>
                 <Box margin={1}>
@@ -161,6 +163,7 @@ function Registration() {
                     type="password"
                     label={t('password')}
                     name="password"
+                    variant='outlined'
                 />
                 </Box>
                 <Box margin={1}>
@@ -170,7 +173,7 @@ function Registration() {
                     name="select"
                     label={t('country')}
                     select
-                    variant="standard"
+                    variant="outlined"
                     helperText={t('where_you_live')}
                     margin="normal"
                     InputLabelProps={{
@@ -221,6 +224,16 @@ function Registration() {
         
         {/*Mobile */}
         <Media lessThan='md'>
+        <br/>
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
+        
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+            <Button>{t('home')}</Button>
+            </Link>
+            <Typography color="textPrimary">
+                {t('registration')}
+            </Typography>
+          </Breadcrumbs>
         <br/>
         <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
@@ -302,6 +315,17 @@ function Registration() {
 
         {/*Tablet */}
         <Media at='md'>
+
+        <br/>
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
+        
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+            <Button>{t('home')}</Button>
+            </Link>
+            <Typography color="textPrimary">
+                {t('registration')}
+            </Typography>
+          </Breadcrumbs>
         <br/>
         <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
@@ -383,6 +407,17 @@ function Registration() {
 
         {/*Desktop */}
         <Media at='lg'>
+
+        <br/>
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
+        
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+            <Button>{t('home')}</Button>
+            </Link>
+            <Typography color="textPrimary">
+                {t('registration')}
+            </Typography>
+          </Breadcrumbs>
         <br/>
         <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
@@ -466,12 +501,9 @@ function Registration() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/" as={`/${locale}/`} passHref>
-        <Typography color="textPrimary">
-                {t('home')}
-                </Typography>
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+            <Button>{t('home')}</Button>
             </Link>
-            
             <Typography color="textPrimary">
                 {t('registration')}
             </Typography>
@@ -560,11 +592,10 @@ function Registration() {
         <Media greaterThanOrEqual='el'>
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Typography color="textPrimary">
-        <Link href="/[lang]/diy" as={`/${locale}/diy`}>
-                {t('home')}
+        
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+            <Button>{t('home')}</Button>
             </Link>
-            </Typography>
             <Typography color="textPrimary">
                 {t('registration')}
             </Typography>
