@@ -226,7 +226,6 @@ function Registration() {
         <Media lessThan='md'>
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        
         <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
             <Button>{t('home')}</Button>
             </Link>
