@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import useTranslation from '../hooks/useTranslation';
+import Link from 'next/link';
 
 
 const useStyles = makeStyles({
@@ -28,7 +29,7 @@ const useStyles = makeStyles({
 
 export default function StandardBundle() {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   return (
     <Card className={classes.root}>
@@ -97,7 +98,11 @@ export default function StandardBundle() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" startIcon={<AddShoppingCartIcon />}>{t('apply_now')}</Button>
+      <Typography variant='body1'>
+            <Link href="/[lang]/registration" as={`/${locale}/registration`}>
+            <Button size="small" startIcon={<AddShoppingCartIcon />}>{t('apply_now')}</Button>
+            </Link>
+            </Typography>
         <Button size="small" >{t('learn_more')}</Button>
       </CardActions>
     </Card>

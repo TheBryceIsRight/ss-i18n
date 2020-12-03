@@ -103,6 +103,19 @@ const strings: Strings = {
     get_started:'Let\'s get started',
     registration:'Registration',
     registration_motivation: 'Signing up for Elavon is free and quick - no commitments required.',
+    payment_acceptance: 'Payment Acceptance Options',
+    take_cash: 'Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™',
+    menu_management:'Menu Management',
+    build_a_catalog: "Build an in-app catalog or menu of up to 100 items with multi-level tax support.",
+    discounts: "Discounts and Promotions",
+    easily_add_discounts: 'Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour',
+    continue: "Continue",
+    i_accept:"I accept the terms",
+    email: "Email",
+    confirm_email: "Confirm Email",
+    password:"Password",
+    country: "Country",
+    where_you_live: "Where you currently live",
 
 
   },
@@ -208,8 +221,22 @@ const strings: Strings = {
     get_started:'Commençons',
     registration:'Enregistrement',
     registration_motivation: 'Inscription à Elavon est gratuite et rapide - aucun engagement requis.',
-    
-  
+    payment_acceptance: 'Options d\'acceptation de paiement',
+    take_cash: 'Acceptez les espèces et acceptez les cartes de crédit ou de débit, Apple Pay ™ et Google Pay ™',
+    menu_management:'Gestion des menus',
+    build_a_catalog: "Créez un catalogue ou un menu intégré à l'application contenant jusqu'à 100 articles avec une prise en charge fiscale à plusieurs niveaux",
+    discounts: "Réductions et promotions",
+    easily_add_discounts: 'Ajoutez facilement des remises sous forme de pourcentage ou de montant de la commande. Configurez-les pour qu\'ils se produisent à des heures présélectionnées telles que Happy Hour',
+    continue: "Continuer",
+    i_accept:"J'accepte les conditions",
+    email: "Email",
+    confirm_email: "Confirmez votre e-mail",
+    password:"Mot de passe",
+    country: "Pays",
+    where_you_live: "Où vous habitez actuellement",
+
+
+
   },
   pl: {
     about: 'O René Magritte',
@@ -313,6 +340,21 @@ const strings: Strings = {
     get_started:'Zacznijmy',
     registration:'Rejestracja',
     registration_motivation: 'Rejestracja w Elavon jest bezpłatna i szybka - nie wymaga żadnych zobowiązań.',
+    payment_acceptance: 'Opcje akceptacji płatności',
+    take_cash: 'Przyjmuj gotówkę i akceptuj karty kredytowe lub debetowe, Apple Pay ™ i Google Pay ™',
+    menu_management:'Zarządzanie menu',
+    build_a_catalog: "Stwórz w aplikacji katalog lub menu zawierające do 100 pozycji z wielopoziomową obsługą podatkową",
+    discounts: "Rabaty i promocje",
+    easily_add_discounts: 'Z łatwością dodawaj rabaty jako procent lub kwotę zamówienia. Skonfiguruj je tak, aby odbywały się o wstępnie wybranych godzinach, takich jak Happy Hour',
+    continue: "Kontyntynuj",
+    i_accept:"Akceptuję warunki",
+    email: "Email",
+    confirm_email: "Potwierdź email",
+    password:"Hasło",
+    country: "Kraj",
+    where_you_live: "Gdzie obecnie mieszkasz",
+
+
 
   },
   es: {
@@ -417,9 +459,22 @@ const strings: Strings = {
     get_started:'Empecemos',
     registration:'Registro',
     registration_motivation: 'Registrarse en Elavon es gratis y rápido, no se requieren compromisos.',
-    
+    payment_acceptance: 'Opciones de aceptación de pago',
+    take_cash: 'Lleve efectivo y acepte tarjetas de crédito o débito, Apple Pay™ y Google Pay™',
+    menu_management:'Gestión de menús',
+    build_a_catalog: "Cree un catálogo o menú en la aplicación de hasta 100 artículos con soporte de impuestos de varios niveles",
+    discounts: "Descuentos y promociones",
+    easily_add_discounts: 'Agregue fácilmente descuentos como porcentaje o monto del pedido. Configúrelos para que sucedan en momentos preseleccionados, como la hora feliz',
+    continue: "Seguir",
+    i_accept:"Acepto los términos",
+    email: "Correo electrónico",
+    confirm_email: "Confirmar correo",
+    password:"Contraseña",
+    country: "País",
+    where_you_live: "Donde vives actualmente",
 
-    
+
+
   }
 }
 

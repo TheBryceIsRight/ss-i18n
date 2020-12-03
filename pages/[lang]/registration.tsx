@@ -144,7 +144,7 @@ function Registration() {
                     component={UpperCasingTextField}
                     name="email"
                     type="email"
-                    label="Email"
+                    label={t('email')}
                 />
                 </Box>
                 <Box margin={1}>
@@ -152,14 +152,14 @@ function Registration() {
                     component={UpperCasingTextField}
                     name="email_confirm"
                     type="email"
-                    label="Confirm email"
+                    label={t('confirm_email')}
                 />
                 </Box>
                 <Box margin={1}>
                 <Field
                     component={TextField}
                     type="password"
-                    label="Password"
+                    label={t('password')}
                     name="password"
                 />
                 </Box>
@@ -168,10 +168,10 @@ function Registration() {
                     component={TextField}
                     type="text"
                     name="select"
-                    label="Country"
+                    label={t('country')}
                     select
                     variant="standard"
-                    helperText="Please select Range"
+                    helperText={t('where_you_live')}
                     margin="normal"
                     InputLabelProps={{
                     shrink: true,
@@ -189,7 +189,7 @@ function Registration() {
                     control={
                     <Field component={Switch} type="checkbox" name="terms" />
                     }
-                    label="I accept the terms"
+                    label={t('i_accept')}
                 />
                 </Box>
                 {isSubmitting && <LinearProgress />}
@@ -201,7 +201,7 @@ function Registration() {
                     disabled={isSubmitting}
                     onClick={submitForm}
                 >
-                    Continue
+                    {t('continue')}
                 </Button>
                 </Box>
             </Form>
@@ -246,13 +246,13 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Payment Acceptance Options
+                    {t('payment_acceptance')}
                     </Typography>
                     
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™
+                        {t('take_cash')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -264,12 +264,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Menu Management
+                    {t('menu_management')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Build an in-app catalog or menu of up to 100 items with multi-level tax support.
+                        {t('build_a_catalog')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -281,14 +281,19 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Discounts and Promotions
+                    {t('discounts')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour
+                        {t('easily_add_discounts')}
                         </Typography>
                     </Grid>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                    <Grid item>
+                        <NewForm/>
                     </Grid>
                 </Grid>
               </Grid>
@@ -322,13 +327,13 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Payment Acceptance Options
+                    {t('payment_acceptance')}
                     </Typography>
                     
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™
+                        {t('take_cash')}                        
                         </Typography>
                     </Grid>
                     </Grid>
@@ -340,12 +345,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Menu Management
+                    {t('menu_management')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Build an in-app catalog or menu of up to 100 items with multi-level tax support.
+                        {t('build_a_catalog')}                        
                         </Typography>
                     </Grid>
                     </Grid>
@@ -357,14 +362,19 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Discounts and Promotions
+                    {t('discounts')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour
+                        {t('easily_add_discounts')}
                         </Typography>
                     </Grid>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                    <Grid item>
+                        <NewForm/>
                     </Grid>
                 </Grid>
               </Grid>
@@ -398,13 +408,13 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Payment Acceptance Options
+                    {t('payment_acceptance')}
                     </Typography>
                     
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™
+                        {t('take_cash')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -416,12 +426,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Menu Management
+                    {t('menu_management')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Build an in-app catalog or menu of up to 100 items with multi-level tax support.
+                        {t('build_a_catalog')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -433,14 +443,19 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Discounts and Promotions
+                    {t('discounts')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour
+                        {t('easily_add_discounts')}
                         </Typography>
                     </Grid>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                    <Grid item>
+                        <NewForm/>
                     </Grid>
                 </Grid>
               </Grid>
@@ -487,13 +502,13 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Payment Acceptance Options
+                    {t('payment_acceptance')}
                     </Typography>
                     
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™
+                        {t('take_cash')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -505,12 +520,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Menu Management
+                    {t('menu_management')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Build an in-app catalog or menu of up to 100 items with multi-level tax support.
+                        {t('build_a_catalog')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -522,17 +537,21 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Discounts and Promotions
+                    {t('discounts')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour
+                        E{t('easily_add_discounts')}
                         </Typography>
                     </Grid>
                     </Grid>
                 </Grid>
-                
+                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                    <Grid item>
+                        <NewForm/>
+                    </Grid>
+                </Grid>
               </Grid>
             
         </Media>
@@ -562,6 +581,7 @@ function Registration() {
                     {t('registration_motivation')}
                 </Typography>
             </Grid>
+            
         </Grid>
         
           
@@ -575,13 +595,13 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Payment Acceptance Options
+                    {t('payment_acceptance')}
                     </Typography>
                     
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Take cash and accept credit or debit cards, Apple Pay™ and Google Pay™
+                        {t('take_cash')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -593,12 +613,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Menu Management
+                    {t('menu_management')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Build an in-app catalog or menu of up to 100 items with multi-level tax support.
+                        {t('build_a_catalog')}
                         </Typography>
                     </Grid>
                     </Grid>
@@ -610,12 +630,12 @@ function Registration() {
                     </Grid>
                     <Grid item>
                     <Typography variant="subtitle1" component="h6">
-                    Discounts and Promotions
+                    {t('discounts')}
                     </Typography>
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        Easily add discounts as a percentage or amount of the order. Set them up to happen at pre-selected times such as Happy Hour
+                        {t('easily_add_discounts')}
                         </Typography>
                     </Grid>
                     </Grid>
