@@ -313,13 +313,6 @@ const NavigationBar: React.FC = () => {
         <Divider />
         
         <List>
-        <ListItem>
-            <ListItemIcon>
-            <FormControlLabel label='Dark mode'
-            control={<Switch name="darkSwitchSideBar" />}
-            />
-            </ListItemIcon>
-            </ListItem>
             <Link
             href="/barChart"
             passHref>
@@ -331,24 +324,15 @@ const NavigationBar: React.FC = () => {
         <ListItem button>
             <ListItemIcon><DashboardIcon/>
             </ListItemIcon>
-            <ListItemText primary='Dashboard' />
+            <ListItemText primary='System Status' />
         </ListItem>
         </Link>
         </List>
         <Divider />
         <List>
-        <Link
-        href="/formPage"
-        passHref>
-        <ListItem button>
-            <ListItemIcon><ListIcon/>
-            </ListItemIcon>
-            <ListItemText primary='Form Demo' />
-        </ListItem>
-        </Link>
           <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
         <ListItem button>
-            <ListItemIcon><ListIcon/>
+            <ListItemIcon><DashboardIcon/>
             </ListItemIcon>
             <ListItemText primary='DIY Sales Demo' />
         </ListItem>
