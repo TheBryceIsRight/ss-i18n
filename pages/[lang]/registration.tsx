@@ -35,7 +35,8 @@ import {
   import Breadcrumbs from '@material-ui/core/Breadcrumbs';
   import Link from 'next/link';
   import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-
+  import Card from '@material-ui/core/Card';
+  import CardContent from '@material-ui/core/CardContent';
 
 
  
@@ -102,7 +103,9 @@ function Registration() {
 
 
     const NewForm = () => (
-        <Formik
+        <Card>
+            <CardContent>
+            <Formik
         initialValues={{
             email: '',
             email_confirm: '',
@@ -211,6 +214,10 @@ function Registration() {
             </MuiPickersUtilsProvider>
         )}
         />
+            </CardContent>
+        </Card>
+
+        
     );
 
     return <React.Fragment>
@@ -303,7 +310,7 @@ function Registration() {
                     </Grid>
                     </Grid>
                 </Grid>
-                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
                     </Grid>
@@ -400,7 +407,7 @@ function Registration() {
                     </Grid>
                     </Grid>
                 </Grid>
-                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
                     </Grid>
@@ -497,7 +504,7 @@ function Registration() {
                     </Grid>
                     </Grid>
                 </Grid>
-                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
                     </Grid>
@@ -593,7 +600,7 @@ function Registration() {
                     </Grid>
                     </Grid>
                 </Grid>
-                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
                     </Grid>
@@ -690,7 +697,7 @@ function Registration() {
                     </Grid>
                     </Grid>
                 </Grid>
-                <Grid container spacing={1} direction='column' alignItems='center' justify='center' className={classes.root} >
+                <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
                     <Grid item>
                         <NewForm/>
                     </Grid>
