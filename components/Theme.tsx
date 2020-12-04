@@ -27,8 +27,10 @@ const dark = createMuiTheme({
         main: '#4DDF65',
       },
       background: {
-        default: '#303030',
+        default: '#1A1B36',
+        paper: '#101123',
       },
+    
     },
   });
 
@@ -48,7 +50,8 @@ const light = createMuiTheme({
           main: '#025D25',
         },
         background: {
-          default: '#F2F2F2',
+          default: '#F6F7FC',
+          paper: '#EBEFF5',
         },
     },
 });
