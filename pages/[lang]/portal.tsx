@@ -1195,7 +1195,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'588px'}} >
+                <Card className={classes.root} style={{minWidth:'588px', maxWidth:'588px'}} >
             <CardHeader
                 title={t('top_discussions')}
             />

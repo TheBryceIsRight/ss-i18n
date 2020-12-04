@@ -24,19 +24,16 @@ import Divider from '@material-ui/core/Divider';
 import PublicIcon from '@material-ui/icons/Public';
 import ErrorIcon from '@material-ui/icons/Error';
 
-import Switch from '@material-ui/core/Switch';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import InputBase from '@material-ui/core/InputBase';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import UpdateIcon from '@material-ui/icons/Update';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import BugReportIcon from '@material-ui/icons/BugReport';  
 import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ListIcon from '@material-ui/icons/List';
 import useTranslation from '../../hooks/useTranslation';
 
 
