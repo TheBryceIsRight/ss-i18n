@@ -5,13 +5,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
-
-import paw from "../public/paw";
+import InfoIcon from '@material-ui/icons/Info';
 
 const styles = theme => ({
-  info: {
-    background: "#070F45",
-  },
   text: {
     padding: 0,
   }
@@ -22,7 +18,7 @@ function Message({ classes, children }) {
     <Paper elevation={0} className={classes.info}>
       <ListItem>
         <ListItemIcon>
-          <img src={paw} height="28" alt="A dog's pawprint"/>
+          <InfoIcon/>
         </ListItemIcon>
         <ListItemText className={classes.text}>{children}</ListItemText>
       </ListItem>

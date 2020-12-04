@@ -35,7 +35,7 @@ function Legend({ classes, data }) {
         return (
           <ul key={i}>
             <li className={classes.marker} style={{ backgroundColor: color }} />
-            <li style={{ color: "#FFFFFF" }}>{name}</li>
+            <li >{name}</li>
           </ul>
         );
       })}

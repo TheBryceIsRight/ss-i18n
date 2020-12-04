@@ -9,14 +9,15 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import { makeStyles, ThemeProvider, withStyles } from '@material-ui/core/styles'
+import { makeStyles} from '@material-ui/core/styles'
 import SankeyCard from "../components/sankeyCard";
 
 //Nivo imports
-import WorkLifeBalance from "../components/WorkLifeBalance";
+import WorkLifeBalance from "../components/WeeklySales";
 import CardChart from "../components/cardChart";
 
 //Data imports
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import data from '../components/data';
 
 
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function handleClick(event) {
     event.preventDefault();
     console.info('You clicked a breadcrumb.');
@@ -42,6 +44,7 @@ function LineChart(props) {
     const { loading = false } = props;
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const handleClick = () => {
       setOpen(!open);
     };

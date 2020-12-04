@@ -1,6 +1,7 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
+
 // Nivo theming
 const theme = {
   axis: {
@@ -29,12 +30,15 @@ const theme = {
   },
   tooltip: {
     container: {
-        background: '#1A1B36',
+        background: 'background',
     },
 },
 };
 
+
+
 class BarChart extends React.Component {
+
   render() {
     const { data, keys, index, groupMode, colors, tickValues, colorBy, customTooltip, layout } = this.props;
 

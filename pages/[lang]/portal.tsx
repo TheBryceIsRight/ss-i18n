@@ -32,6 +32,8 @@ import BuildIcon from '@material-ui/icons/Build';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
+import WeeklySales from "../../components/WeeklySales";
+
 
 
 
@@ -62,9 +64,6 @@ function Portal() {
         },
         pos: {
         marginBottom: 12,
-        },
-        card: {
-            backgroundColor:'#101123',
         },
         
     });
@@ -134,17 +133,17 @@ function Portal() {
                     </Card>
                 </Grid>
             </Grid>
-            <br/>
-            <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <WeeklySales/>
+            <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'567px'}} >
+                    <CardContent >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
                         </Grid>
                         <Grid item>
-                        <Typography variant="h4">
+                        <Typography variant="h5">
                         {t('covid')}
                         </Typography>
                         <Typography variant="subtitle1">
@@ -160,12 +159,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-            <Card className={classes.root} style={{minWidth:'567px'}} >
+                <Card className={classes.root}>
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -362,7 +356,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -378,7 +372,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -394,17 +388,21 @@ function Portal() {
                     </Card>
                 </Grid>
             </Grid>
-            <br/>
-            <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container direction='column' alignItems='flex-start'>
+                <Grid item>
+                    <WeeklySales/>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'567px'}} >
+                    <CardContent style={{minWidth:'588px'}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
                         </Grid>
                         <Grid item>
-                        <Typography variant="h4">
+                        <Typography variant="h5">
                         {t('covid')}
                         </Typography>
                         <Typography variant="subtitle1">
@@ -420,12 +418,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-            <Card className={classes.root} style={{minWidth:'567px'}} >
+                <Card className={classes.root} style={{minWidth:'588px'}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -622,7 +615,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -638,7 +631,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -654,17 +647,21 @@ function Portal() {
                     </Card>
                 </Grid>
             </Grid>
-            <br/>
-            <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container direction='column' alignItems='flex-start'>
+                <Grid item>
+                    <WeeklySales/>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'567px'}} >
+                    <CardContent style={{minWidth:'588px'}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
                         </Grid>
                         <Grid item>
-                        <Typography variant="h4">
+                        <Typography variant="h5">
                         {t('covid')}
                         </Typography>
                         <Typography variant="subtitle1">
@@ -680,12 +677,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-            <Card className={classes.root} style={{minWidth:'567px'}} >
+                <Card className={classes.root} style={{minWidth:'588px'}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -882,8 +874,8 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}>
-                    <CardContent>
+                <Card className={classes.root} style={{minWidth:'286px'}} >
+                    <CardContent >
                         <Typography variant="h5">
                         {t('gross_sales')}
                         </Typography>
@@ -898,8 +890,8 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}>
-                    <CardContent>
+                <Card className={classes.root} style={{minWidth:'286px'}}>
+                    <CardContent >
                     <Typography variant="h5">
                     {t('transactions')}
                         </Typography>
@@ -914,17 +906,21 @@ function Portal() {
                     </Card>
                 </Grid>
             </Grid>
-            <br/>
-            <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container direction='column' alignItems='flex-start'>
+                <Grid item>
+                    <WeeklySales/>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'567px'}} >
+                    <CardContent style={{minWidth:'588px'}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
                         </Grid>
                         <Grid item>
-                        <Typography variant="h4">
+                        <Typography variant="h5">
                         {t('covid')}
                         </Typography>
                         <Typography variant="subtitle1">
@@ -940,12 +936,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-            <Card className={classes.root} style={{minWidth:'567px'}} >
+                <Card className={classes.root} style={{minWidth:'588px'}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -1142,7 +1133,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -1158,7 +1149,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}>
+                <Card className={classes.root}  style={{minWidth:'286px'}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -1174,17 +1165,21 @@ function Portal() {
                     </Card>
                 </Grid>
             </Grid>
-            <br/>
-            <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container direction='column' alignItems='flex-start'>
+                <Grid item>
+                    <WeeklySales/>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'567px'}} >
+                    <CardContent style={{minWidth:'588px'}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
                         </Grid>
                         <Grid item>
-                        <Typography variant="h4">
+                        <Typography variant="h5">
                         {t('covid')}
                         </Typography>
                         <Typography variant="subtitle1">
@@ -1200,12 +1195,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-            <Card className={classes.root} style={{minWidth:'567px'}} >
+                <Card className={classes.root} style={{minWidth:'588px'}} >
             <CardHeader
                 title={t('top_discussions')}
             />

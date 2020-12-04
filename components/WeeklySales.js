@@ -17,25 +17,20 @@ import Legend from "./Legend";
 
 import item from "../public/item"; // import data
 
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const styles = theme => ({
-  card: {
-    maxWidth: 748,
-    margin: "24px auto",
-    backgroundColor: '#101123',
-  },
   avatar: {
-    background: "#CBF5FE",
-    color: "#01CEFC"
+    color: 'background.paper',
+  },
+  card: {
+    margin: "24px auto",
   },
   container: {
     margin: "0 auto",
-    height: 240
-  },
-  menuIcon: {
-    color: "white"
+    height: 260
   },
   title: {
-    color: "white",
     fontSize: 15,
     fontWeight: 500,
     fontFamily: "'Roboto', sans-serif",
@@ -43,7 +38,6 @@ const styles = theme => ({
     textAlign: "left"
   },
   subheader: {
-    color: "#E5E7E5",
     fontFamily: "'Roboto', sans-serif",
     fontSize: 14,
     fontWeight: 500,
@@ -53,7 +47,6 @@ const styles = theme => ({
     margin: "24 24"
   },
   text: {
-    color: "white",
     fontFamily: "'Roboto', sans-serif",
     fontSize: 14,
     fontWeight: 400
@@ -61,17 +54,21 @@ const styles = theme => ({
 
 });
 
-class WorkLifeBalance extends React.Component {
+
+class WeeklySales extends React.Component {
+
+
 
   render() {
+    
     const { classes } = this.props;
     const { entries, from, to } = item;
 
     const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]; // x-axis labels
 
-    let wlbData = []; // hours coded during and outside of work per day
-    let codingAtWorkMinutes = []; // minutes coded at work per day
-    let codingOutsideWorkMinutes = []; // minutes coded outside work per day
+    const wlbData = []; // hours coded during and outside of work per day
+    const codingAtWorkMinutes = []; // minutes coded at work per day
+    const codingOutsideWorkMinutes = []; // minutes coded outside work per day
 
     let codingAtWorkTotalMinutes; // minutes for the entire week
     let codingOutsideWorkTotalMinutes; // minutes for the entire week
@@ -81,6 +78,7 @@ class WorkLifeBalance extends React.Component {
     let codingTotalHours;
 
     // create the dataset
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const workLifeBalanceCalcs = (item) => {
       // map data to two new arrays
       entries.map(day => {
@@ -94,10 +92,10 @@ class WorkLifeBalance extends React.Component {
       for (i = 0; i < days.length; i++) {
         wlbData[i] = {
           "Day": days[i],
-          "Coding at work": parseFloat((codingAtWorkMinutes[i] / 60).toFixed(2)),
-          "Coding outside work": parseFloat((codingOutsideWorkMinutes[i] / 60).toFixed(2)),
-          "Coding at workColor": "#2C2E57",
-          "Coding outside workColor": "#7E9EF5"
+          "In-person": parseFloat((codingAtWorkMinutes[i] / 60).toFixed(2)),
+          "Online": parseFloat((codingOutsideWorkMinutes[i] / 60).toFixed(2)),
+          "In-personColor": "#2C2E57",
+          "OnlineColor": "#7E9EF5"
 
         };
       }
@@ -112,8 +110,11 @@ class WorkLifeBalance extends React.Component {
       codingAtWorkTotalMinutes = codingAtWorkMinutes.reduce(total);
       codingOutsideWorkTotalMinutes = codingOutsideWorkMinutes.reduce(total);
     }
+    // eslint-disable-next-line prefer-const
     codingAtWorkTotalHours = (codingAtWorkTotalMinutes / 60).toFixed(1);
+    // eslint-disable-next-line prefer-const
     codingOutsideWorkTotalHours = (codingOutsideWorkTotalMinutes / 60).toFixed(1);
+    // eslint-disable-next-line prefer-const
     codingTotalHours = (parseFloat(codingAtWorkTotalHours) + parseFloat(codingOutsideWorkTotalHours)).toFixed(1);
 
     // create 5 evenly-spaced tick values
@@ -128,20 +129,20 @@ class WorkLifeBalance extends React.Component {
     // create the message
     let message;
     if (codingAtWorkTotalMinutes > codingOutsideWorkTotalMinutes) {
-      message = `Most of your code time occured during work hours (${codingAtWorkTotalHours} out of ${codingTotalHours} total hours).`;
+      message = `Most of your sales occured during work hours (${codingAtWorkTotalHours} out of ${codingTotalHours} total hours).`;
     } else {
-      message = `Most of your code time occured during nights or on weekends (${codingOutsideWorkTotalHours} out of ${codingTotalHours} total hours).`;
+      message = `Most of your sales occured during nights or on weekends (${codingOutsideWorkTotalHours} out of ${codingTotalHours} total hours).`;
     }
 
     // create legend
-    const keys = ["Coding at work", "Coding outside work"];
+    const keys = ["In-person", "Online"];
     const legend = [
       {
-        name: `Coding at work`,
+        name: `In-person`,
         color: "#e8c1a0"
       },
       {
-        name: `Coding outside of work hours`,
+        name: `Online`,
         color: "#f47560"
       }
     ];
@@ -152,15 +153,15 @@ class WorkLifeBalance extends React.Component {
 
     return (
       <React.Fragment>
-        <Card className={classes.card} elevation={0}>
+        <Card className={classes.card}>
           <CardHeader
             classes={{
               title: classes.title,
               subheader: classes.subheader
             }}
             avatar={
-              <Avatar aria-label="Work-life balance" className={classes.avatar}>
-                <EventAvailableTwoTone />
+              <Avatar aria-label="Weekly Sales" className={classes.avatar}>
+                <EventAvailableTwoTone color='background.paper' />
               </Avatar>
             }
             action={
@@ -168,7 +169,7 @@ class WorkLifeBalance extends React.Component {
                 <MoreVert className={classes.menuIcon} />
               </IconButton>
             }
-            title="Work-life balance"
+            title="Weekly Sales"
             subheader={`Week of ${fromDateLabel} to ${toDateLabel}`}
           />
           <CardContent>
@@ -184,7 +185,7 @@ class WorkLifeBalance extends React.Component {
                 groupMode={"stacked"}
                 layout={"vertical"}
                 colorBy={function (e) {
-                  var t = e.id;
+                  const t = e.id;
                   return e.data["".concat(t, "Color")];
                 }}
               />
@@ -203,4 +204,4 @@ class WorkLifeBalance extends React.Component {
   }
 }
 
-export default withStyles(styles)(WorkLifeBalance);
+export default withStyles(styles)(WeeklySales);
