@@ -145,6 +145,7 @@ const strings: Strings = {
     positive_feedback:"Positive feedback",
     negative_feedback:"Negative feedback",
     skip:"Skip Registration",
+    finance_company: "Finance Company",
 
 
   },
@@ -292,6 +293,7 @@ const strings: Strings = {
     positive_feedback:"Commentaire positif",
     negative_feedback:"Retours négatifs",
     skip:"Sauter l'inscription",
+    finance_company: "Finance Company",
 
   },
   pl: {
@@ -438,6 +440,7 @@ const strings: Strings = {
     positive_feedback:"Pozytywne opinie",
     negative_feedback:"Negatywne opinie",
     skip:"Pomiń rejestrację",
+    finance_company: "Finance Company",
 
 
   },
@@ -585,6 +588,7 @@ const strings: Strings = {
     positive_feedback:"Retroalimentación positiva",
     negative_feedback:"Retroalimentación negativa",
     skip:"Evitar el registro",
+    finance_company: "Finance Company",
 
 
   }

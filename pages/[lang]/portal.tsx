@@ -50,6 +50,7 @@ function Portal() {
     const useStyles = makeStyles({
         root: {
         minWidth: 275,
+        
         },
         bullet: {
         display: 'inline-block',
@@ -62,6 +63,10 @@ function Portal() {
         pos: {
         marginBottom: 12,
         },
+        card: {
+            backgroundColor:'#101123',
+        },
+        
     });
     const classes = useStyles();
 
