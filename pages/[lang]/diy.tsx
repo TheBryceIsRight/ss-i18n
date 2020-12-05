@@ -60,17 +60,6 @@ function DIY() {
           <Typography variant="h3" component="h2">
               {t('offerings')}
           </Typography>
-
-          <Typography variant="h5" component="h3">
-            {t('introducing_talech')}
-          </Typography>
-          <br/>
-          <Typography variant="body2" component="h4">
-            {t('no_fees')}
-          </Typography>
-          <Typography variant="body2" component="h4">
-              {t('use_your_mobile')}
-          </Typography>
           <br/>
           <CheckboxesGroup/>
           <br/>
@@ -91,17 +80,6 @@ function DIY() {
         <Media at='md'>
           <Typography variant="h3" component="h2">
           {t('offerings')}
-          </Typography>
-
-          <Typography variant="h5" component="h3">
-          {t('introducing_talech')}
-          </Typography>
-          <br/>
-          <Typography variant="body2" component="h4">
-          {t('no_fees')}
-          </Typography>
-          <Typography variant="body2" component="h4">
-          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
@@ -124,17 +102,6 @@ function DIY() {
           <Typography variant="h3" component="h2">
           {t('offerings')}
           </Typography>
-
-          <Typography variant="h5" component="h3">
-          {t('introducing_talech')}
-          </Typography>
-          <br/>
-          <Typography variant="body2" component="h4">
-          {t('no_fees')}
-          </Typography>
-          <Typography variant="body2" component="h4">
-          {t('use_your_mobile')}
-          </Typography>
           <br/>
           <CheckboxesGroup/>
               <br/>
@@ -155,16 +122,6 @@ function DIY() {
         <Media at='xl'>
           <Typography variant="h3" component="h2">
           {t('offerings')}
-          </Typography>
-          <Typography variant="h5" component="h3">
-          {t('introducing_talech')}
-          </Typography>
-          <br/>
-          <Typography variant="body2" component="h4">
-          {t('no_fees')}
-          </Typography>
-          <Typography variant="body2" component="h4">
-          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>
@@ -192,17 +149,6 @@ function DIY() {
         <br/>
           <Typography variant="h3" component="h2">
           {t('offerings')}
-          </Typography>
-
-          <Typography variant="h5" component="h3">
-          {t('introducing_talech')}
-          </Typography>
-          <br/>
-          <Typography variant="body2" component="h4">
-          {t('no_fees')}
-          </Typography>
-          <Typography variant="body2" component="h4">
-          {t('use_your_mobile')}
           </Typography>
           <br/>
           <CheckboxesGroup/>

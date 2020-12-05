@@ -35,6 +35,7 @@ import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import useTranslation from '../../hooks/useTranslation';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -125,13 +126,19 @@ const NavigationBar: React.FC = () => {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [notificationsAnchorEl, setNotificationsAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    const isNotificationsMenuOpen = Boolean(notificationsAnchorEl);
 
     const handleProfileMenuOpen = (event: any) => {
         setAnchorEl(event.currentTarget);
     };
+
+    const handleNotificationMenuOpen = (event: any) => {
+      setNotificationsAnchorEl(event.currentTarget);
+  };
 
 
     const handleMobileMenuClose = () => {
@@ -142,6 +149,10 @@ const NavigationBar: React.FC = () => {
         setAnchorEl(null);
         handleMobileMenuClose();
     };
+
+    const handleNotificationsMenuCLose  = () => {
+      setNotificationsAnchorEl(null);
+  };
 
     const handleMobileMenuOpen = (event: any) => {
         setMobileMoreAnchorEl(event.currentTarget);
@@ -204,6 +215,24 @@ const NavigationBar: React.FC = () => {
             <AccountCircle />
             </IconButton>
             <p>Profile</p>
+        </MenuItem>
+        </Menu>
+    );
+
+    const notificationsMenuId = 'notifications-menu';
+
+    const renderNotifcationsMenu = (
+        <Menu
+        anchorEl={notificationsAnchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        id={notificationsMenuId}
+        keepMounted
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isNotificationsMenuOpen}
+        onClose={handleNotificationsMenuCLose}
+        >
+        <MenuItem>
+        All notification are read!
         </MenuItem>
         </Menu>
     );
@@ -353,7 +382,7 @@ const NavigationBar: React.FC = () => {
                     onClick={toggleDrawer('left', true)}
                     > 
                 <MenuIcon />
-            </IconButton>   
+                </IconButton>   
                 <Drawer 
                     anchor={'left'} 
                     open={state['left']} 
@@ -388,6 +417,19 @@ const NavigationBar: React.FC = () => {
                   <IconButton
                     edge="end"
                     aria-label="account of current user"
+                    aria-controls={notificationsMenuId}
+                    aria-haspopup="true"
+                    onClick={handleNotificationMenuOpen}
+                    color="primary"
+                  >
+                    <NotificationsIcon />
+                  </IconButton>
+                </div>
+
+                <div className={classes.sectionDesktop}>
+                  <IconButton
+                    edge="end"
+                    aria-label="account of current user"
                     aria-controls={menuId}
                     aria-haspopup="true"
                     onClick={handleProfileMenuOpen}
@@ -412,6 +454,7 @@ const NavigationBar: React.FC = () => {
             <br/>
             {renderMobileMenu}
             {renderMenu}
+            {renderNotifcationsMenu}
           </div>
     );
     };
