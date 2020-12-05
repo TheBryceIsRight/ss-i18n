@@ -194,6 +194,24 @@ const NavigationBar: React.FC = () => {
         </Menu>
     );
 
+    const notificationsMenuId = 'notifications-menu';
+    const renderNotifcationsMenu = (
+        <Menu
+        anchorEl={notificationsAnchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        id={notificationsMenuId}
+        keepMounted
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isNotificationsMenuOpen}
+        onClose={handleNotificationsMenuCLose}
+        >
+        <MenuItem>
+        All notifications are read!
+        </MenuItem>
+        </Menu>
+    );
+
+
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -214,28 +232,24 @@ const NavigationBar: React.FC = () => {
             >
             <AccountCircle />
             </IconButton>
-            <p>Profile</p>
+            <Typography>Profile</Typography>
         </MenuItem>
+
+        <MenuItem onClick={handleNotificationMenuOpen}>
+          <IconButton
+            aria-label="notifications"
+            aria-controls={notificationsMenuId}
+            aria-haspopup="true"
+            color="primary"
+          >
+            <NotificationsIcon />
+          </IconButton>
+          <Typography>Notifications</Typography>
+        </MenuItem>
+
         </Menu>
     );
 
-    const notificationsMenuId = 'notifications-menu';
-
-    const renderNotifcationsMenu = (
-        <Menu
-        anchorEl={notificationsAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={notificationsMenuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isNotificationsMenuOpen}
-        onClose={handleNotificationsMenuCLose}
-        >
-        <MenuItem>
-        All notification are read!
-        </MenuItem>
-        </Menu>
-    );
 
     const [state, setState] = React.useState({
         top: false,
