@@ -33,6 +33,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
 import WeeklySales from "../../components/WeeklySales";
+import CustomizedDialogs from '../../components/CustomizedDialogs';
 
 
 
@@ -1267,6 +1268,10 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
+            <CustomizedDialogs/>
+            </Grid>
+            <Grid item>
+            
             <br/>
             <br/>
             

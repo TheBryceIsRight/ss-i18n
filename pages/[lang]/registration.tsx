@@ -27,17 +27,16 @@ import {
   Switch,
 } from 'formik-material-ui';
 
-  import {MuiPickersUtilsProvider} from '@material-ui/pickers';
-  import DateFnsUtils from '@date-io/date-fns';
+import {MuiPickersUtilsProvider} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
-  import Box from '@material-ui/core/Box';
+import Box from '@material-ui/core/Box';
 
-  import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-  import Link from 'next/link';
-  import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-  import Card from '@material-ui/core/Card';
-  import CardContent from '@material-ui/core/CardContent';
-
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from 'next/link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
  
 
@@ -77,9 +76,6 @@ interface Values {
     return <MuiTextField {...fieldToTextField(props)} onChange={onChange} />;
   }
 
-  
-
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -95,6 +91,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
+
 
 function Registration() {
 
@@ -225,6 +222,7 @@ function Registration() {
         <title>
         {t('registration')}
         </title>
+
       </Head>
       
       <MediaContextProvider>
@@ -705,7 +703,7 @@ function Registration() {
                         <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
                             <Button variant='outlined'>{t('skip')} </Button>
                         </Link>
-                    </Grid>
+                    </Grid> 
                 </Grid>
               </Grid>
           
