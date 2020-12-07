@@ -2150,7 +2150,7 @@ function GetStepContent(step: number) {
   };
 
   const [state, setState] = React.useState({
-    checkedA: true,
+    checkedA: false,
   });
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
