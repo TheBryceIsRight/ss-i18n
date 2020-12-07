@@ -232,6 +232,9 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
+            <CustomizedDialogs/>
+            </Grid>
+            <Grid item>
             <br/>
             <br/>
             
@@ -489,6 +492,9 @@ function Portal() {
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
+            </Grid>
+            <Grid item>
+            <CustomizedDialogs/>
             </Grid>
             <Grid item>
             <br/>
@@ -750,6 +756,9 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
+            <CustomizedDialogs/>
+            </Grid>
+            <Grid item>
             <br/>
             <br/>
             
@@ -1007,6 +1016,9 @@ function Portal() {
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
+            </Grid>
+            <Grid item>
+            <CustomizedDialogs/>
             </Grid>
             <Grid item>
             <br/>
