@@ -22,9 +22,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import MenuItem from '@material-ui/core/MenuItem';
-
-
-
+import Switch from '@material-ui/core/Switch';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -1871,6 +1869,232 @@ interface MCC {
         { code: 'ZW', label: 'Zimbabwe', phone: '263' },
       ];
 
+      interface StateType {
+        name: string;
+        abbreviation: string;
+      }
+
+      const states = [
+        {name:"Alabama",abbreviation:"AL"},
+        {name:"Alaska",abbreviation:"AK"},
+        {name:"Arizona",abbreviation:"AZ"},
+        {name:"Arkansas",abbreviation:"AR"},
+        {name:"California",abbreviation:"CA"},
+        {name:"Colorado",abbreviation:"CO"},
+        {name:"Connecticut",abbreviation:"CT"},
+        {name:"Delaware",abbreviation:"DE"},
+        {name:"Florida",abbreviation:"FL"},
+        {name:"Georgia",abbreviation:"GA"},
+        {name:"Hawaii",abbreviation:"HI"},
+        {name:"Idaho",abbreviation:"ID"},
+        {name:"Illinois",abbreviation:"IL"},
+        {name:"Indiana",abbreviation:"IN"},
+        {name:"Iowa",abbreviation:"IA"},
+        {name:"Kansas",abbreviation:"KS"},
+        {name:"Kentucky",abbreviation:"KY"},
+        {name:"Louisiana",abbreviation:"LA"},
+        {name:"Maine",abbreviation:"ME"},
+        {name:"Maryland",abbreviation:"MD"},
+        {name:"Massachusetts",abbreviation:"MA"},
+        {name:"Michigan",abbreviation:"MI"},
+        {name:"Minnesota",abbreviation:"MN"},
+        {name:"Mississippi",abbreviation:"MS"},
+        {name:"Missouri",abbreviation:"MO"},
+        {name:"Montana",abbreviation:"MT"},
+        {name:"Nebraska",abbreviation:"NE"},
+        {name:"Nevada",abbreviation:"NV"},
+        {name:"New Hampshire",abbreviation:"NH"},
+        {name:"New Jersey",abbreviation:"NJ"},
+        {name:"New Mexico",abbreviation:"NM"},
+        {name:"New York",abbreviation:"NY"},
+        {name:"North Carolina",abbreviation:"NC"},
+        {name:"North Dakota",abbreviation:"ND"},
+        {name:"Ohio",abbreviation:"OH"},
+        {name:"Oklahoma",abbreviation:"OK"},
+        {name:"Oregon",abbreviation:"OR"},
+        {name:"Pennsylvania",abbreviation:"PA"},
+        {name:"Rhode Island",abbreviation:"RI"},
+        {name:"South Carolina",abbreviation:"SC"},
+        {name:"South Dakota",abbreviation:"SD"},
+        {name:"Tennessee",abbreviation:"TN"},
+        {name:"Texas",abbreviation:"TX"},
+        {name:"Utah",abbreviation:"UT"},
+        {name:"Vermont",abbreviation:"VT"},
+        {name:"Virginia",abbreviation:"VA"},
+        {name:"Washington",abbreviation:"WA"},
+        {name:"West Virginia",abbreviation:"WV"},
+        {name:"Wisconsin",abbreviation:"WI"},
+        {name:"Wyoming",abbreviation:"WY"},
+
+      ];
+
+      interface MonthType {
+        name: string;
+      }
+
+      const months = [
+        {name:"January"},
+        {name:"February"},
+        {name:"March"},
+        {name:"April"},
+        {name:"May"},
+        {name:"June"},
+        {name:"July"},
+        {name:"August"},
+        {name:"September"},
+        {name:"October"},
+        {name:"November"},
+        {name:"December"},
+      ];
+
+      interface DayType {
+        number: string;
+      }
+
+      const days = [
+        {number:"1"},
+        {number:"2"},
+        {number:"3"},
+        {number:"4"},
+        {number:"5"},
+        {number:"6"},
+        {number:"7"},
+        {number:"8"},
+        {number:"9"},
+        {number:"10"},
+        {number:"11"},
+        {number:"12"},
+        {number:"13"},
+        {number:"14"},
+        {number:"15"},
+        {number:"16"},
+        {number:"17"},
+        {number:"18"},
+        {number:"19"},
+        {number:"20"},
+        {number:"21"},
+        {number:"22"},
+        {number:"23"},
+        {number:"24"},
+        {number:"25"},
+        {number:"26"},
+        {number:"27"},
+        {number:"28"},
+        {number:"29"},
+        {number:"30"},
+        {number:"31"},
+      ];
+
+      interface YearType {
+        number: string;
+      }
+
+      const years = [
+        {number:"1900"},
+        {number:"1901"},
+        {number:"1902"},
+        {number:"1903"},
+        {number:"1904"},
+        {number:"1905"},
+        {number:"1906"},
+        {number:"1907"},
+        {number:"1908"},
+        {number:"1909"},
+        {number:"1910"},
+        {number:"1911"},
+        {number:"1912"},
+        {number:"1913"},
+        {number:"1914"},
+        {number:"1915"},
+        {number:"1916"},
+        {number:"1917"},
+        {number:"1918"},
+        {number:"1919"},
+        {number:"1920"},
+        {number:"1921"},
+        {number:"1922"},
+        {number:"1923"},
+        {number:"1924"},
+        {number:"1925"},
+        {number:"1926"},
+        {number:"1927"},
+        {number:"1928"},
+        {number:"1929"},
+        {number:"1930"},
+        {number:"1931"},
+        {number:"1932"},
+        {number:"1933"},
+        {number:"1934"},
+        {number:"1935"},
+        {number:"1936"},
+        {number:"1937"},
+        {number:"1938"},
+        {number:"1939"},
+        {number:"1940"},
+        {number:"1941"},
+        {number:"1942"},
+        {number:"1943"},
+        {number:"1944"},
+        {number:"1945"},
+        {number:"1946"},
+        {number:"1947"},
+        {number:"1948"},
+        {number:"1949"},
+        {number:"1950"},
+        {number:"1951"},
+        {number:"1952"},
+        {number:"1953"},
+        {number:"1954"},
+        {number:"1955"},
+        {number:"1956"},
+        {number:"1957"},
+        {number:"1958"},
+        {number:"1959"},
+        {number:"1960"},
+        {number:"1961"},
+        {number:"1962"},
+        {number:"1963"},
+        {number:"1964"},
+        {number:"1965"},
+        {number:"1966"},
+        {number:"1967"},
+        {number:"1968"},
+        {number:"1969"},
+        {number:"1970"},
+        {number:"1971"},
+        {number:"1972"},
+        {number:"1973"},
+        {number:"1974"},
+        {number:"1975"},
+        {number:"1976"},
+        {number:"1977"},
+        {number:"1978"},
+        {number:"1979"},
+        {number:"1980"},
+        {number:"1981"},
+        {number:"1982"},
+        {number:"1983"},
+        {number:"1984"},
+        {number:"1985"},
+        {number:"1986"},
+        {number:"1987"},
+        {number:"1988"},
+        {number:"1989"},
+        {number:"1990"},
+        {number:"1991"},
+        {number:"1992"},
+        {number:"1993"},
+        {number:"1994"},
+        {number:"1995"},
+        {number:"1996"},
+        {number:"1997"},
+        {number:"1998"},
+        {number:"1999"},
+        {number:"2000"},
+        {number:"2001"},
+        {number:"2002"},
+      ];
+
 function countryToFlag(isoCode: string) {
 return typeof String.fromCodePoint !== 'undefined'
     ? isoCode
@@ -1878,6 +2102,7 @@ return typeof String.fromCodePoint !== 'undefined'
         .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
     : isoCode;
 }
+
 
 const currencies = [
     {
@@ -1914,10 +2139,25 @@ function GetStepContent(step: number) {
   const classes2 = useStyles2();
   
   const [currency, setCurrency] = React.useState('USD');
+  const [value, setValue] = React.useState('new');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value);
   };
+
+  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
+
+  const [state, setState] = React.useState({
+    checkedA: true,
+  });
+
+  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+
+  const { t } = useTranslation();
     
   switch (step) {
     case 0:
@@ -2065,15 +2305,300 @@ function GetStepContent(step: number) {
                     </FormGroup>
                 </FormControl>;
     case 5:
-        return '';
+        return <FormControl component="fieldset" className={classes.formControl}>
+                <FormGroup>
+                    <FormLabel component="legend">Legal Name</FormLabel>
+                    <br/>
+                    <TextField variant='outlined' label='First Name'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Last Name'></TextField>
+                </FormGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                    <FormLabel component="legend">Home Address</FormLabel>
+                    <br/>
+                    <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Apartment/Unit'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='City'></TextField>
+                </FormGroup>
+                <br/>
+                <FormGroup>
+                <Autocomplete
+                            id="state-select-demo"
+                            style={{ width: 300 }}
+                            options={states as StateType[]}
+                            classes={{
+                                option: classes2.option,
+                            }}
+                            autoHighlight
+                            getOptionLabel={(option) => option.name}
+                            renderOption={(option) => (
+                                <React.Fragment>
+                                <span>{countryToFlag(option.abbreviation)}</span>
+                                {option.name}
+                                </React.Fragment>
+                            )}
+                            renderInput={(params) => (
+                                <TextField
+                                {...params}
+                                label="State"
+                                variant="outlined"
+                                inputProps={{
+                                    ...params.inputProps,
+                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                }}
+                                />
+                            )}
+                            />
+                </FormGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                <FormLabel component="legend">Date of Birth</FormLabel>
+                <br/>
+                <Autocomplete
+                            id="month-select-demo"
+                            style={{ width: 300 }}
+                            options={months as MonthType[]}
+                            classes={{
+                                option: classes2.option,
+                            }}
+                            autoHighlight
+                            getOptionLabel={(option) => option.name}
+                            renderInput={(params) => (
+                                <TextField
+                                {...params}
+                                label="Month"
+                                variant="outlined"
+                                inputProps={{
+                                    ...params.inputProps,
+                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                }}
+                                />
+                            )}
+                            />
+                <br/>
+                <Autocomplete
+                            id="month-select-demo"
+                            style={{ width: 300 }}
+                            options={days as DayType[]}
+                            classes={{
+                                option: classes2.option,
+                            }}
+                            autoHighlight
+                            getOptionLabel={(option) => option.number}
+                            renderInput={(params) => (
+                                <TextField
+                                {...params}
+                                label="Day"
+                                variant="outlined"
+                                inputProps={{
+                                    ...params.inputProps,
+                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                }}
+                                />
+                            )}
+                            />
+                <br/>
+                <Autocomplete
+                            id="year-select-demo"
+                            style={{ width: 300 }}
+                            options={years as YearType[]}
+                            classes={{
+                                option: classes2.option,
+                            }}
+                            autoHighlight
+                            getOptionLabel={(option) => option.number}
+                            renderInput={(params) => (
+                                <TextField
+                                {...params}
+                                label="Year"
+                                variant="outlined"
+                                inputProps={{
+                                    ...params.inputProps,
+                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                }}
+                                />
+                            )}
+                            />
+                </FormGroup>
+                <br/>
+                <br/>
+                <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
+                        <FormLabel component="legend">Which identification type do you use?</FormLabel>
+                        <FormControlLabel value="SSN" control={<Radio />} label='Social Security Number' />
+                        <FormControlLabel value="ITIN" control={<Radio />} label='Individual Taxpayer Identification Number' />
+                    </RadioGroup>
+                <FormGroup>
+                <br/>
+                <TextField variant='outlined' label='SSN or ITIN' placeholder='000-00-0000'></TextField>
+                </FormGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                <FormLabel component="legend">Primary phone number</FormLabel>
+                <br/>
+                <TextField variant='outlined' label='Phone Number' placeholder='(000) 000-0000'></TextField>
+                </FormGroup>
+                <FormGroup>
+                <br/>
+                <br/>
+                <FormLabel component="legend">Primary email address</FormLabel>
+                <br/>
+                <TextField variant='outlined' label='Email' placeholder='user@elavon.com'></TextField>
+                </FormGroup>
+            </FormControl>;
     case 6:
-        return '';
+        return <FormControl component="fieldset" className={classes.formControl}>
+                <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
+                        <FormLabel component="legend">Are your personal and business address the same?</FormLabel>
+                        <FormControlLabel value="yes" control={<Radio />} label={t('yes')} />
+                        <FormControlLabel value="no" control={<Radio />} label='No' />
+                    </RadioGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                    <TextField variant='outlined' fullWidth label='Business Name' placeholder='Elavon, Inc.'></TextField>
+                </FormGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                    <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Apartment/Unit'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='City'></TextField>
+                </FormGroup>
+                <br/>
+                <FormGroup>
+                <Autocomplete
+                            id="state-select-demo"
+                            style={{ width: 300 }}
+                            options={states as StateType[]}
+                            classes={{
+                                option: classes2.option,
+                            }}
+                            autoHighlight
+                            getOptionLabel={(option) => option.name}
+                            renderOption={(option) => (
+                                <React.Fragment>
+                                <span>{countryToFlag(option.abbreviation)}</span>
+                                {option.name}
+                                </React.Fragment>
+                            )}
+                            renderInput={(params) => (
+                                <TextField
+                                {...params}
+                                label="State"
+                                variant="outlined"
+                                inputProps={{
+                                    ...params.inputProps,
+                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                }}
+                                />
+                            )}
+                            />
+                </FormGroup>
+                <br/>
+                <br/>
+                <FormGroup>
+                <FormLabel component="legend">Primary business phone number</FormLabel>
+                <br/>
+                <TextField variant='outlined' label='Phone Number' placeholder='(000) 000-0000'></TextField>
+                </FormGroup>
+                <FormGroup>
+                <br/>
+                <br/>
+                <FormLabel component="legend">Primary business email address</FormLabel>
+                <br/>
+                <TextField variant='outlined' label='Email' placeholder='user@elavon.com'></TextField>
+                </FormGroup>
+            </FormControl>;
     case 7:
-        return '';
+        return <FormControl component="fieldset" className={classes.formControl}>
+        <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
+                <FormLabel component="legend">Are your business and legal address the same?</FormLabel>
+                <FormControlLabel value="yes" control={<Radio />} label={t('yes')} />
+                <FormControlLabel value="no" control={<Radio />} label='No' />
+            </RadioGroup>
+        <br/>
+        <FormGroup>
+            <FormLabel component="legend">Legal Address</FormLabel>
+            <br/>
+            <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+            <br/>
+            <TextField variant='outlined' label='Apartment/Unit'></TextField>
+            <br/>
+            <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+            <br/>
+            <TextField variant='outlined' label='City'></TextField>
+        </FormGroup>
+        <br/>
+        <FormGroup>
+        <Autocomplete
+                    id="state-select-demo"
+                    style={{ width: 300 }}
+                    options={states as StateType[]}
+                    classes={{
+                        option: classes2.option,
+                    }}
+                    autoHighlight
+                    getOptionLabel={(option) => option.name}
+                    renderOption={(option) => (
+                        <React.Fragment>
+                        <span>{countryToFlag(option.abbreviation)}</span>
+                        {option.name}
+                        </React.Fragment>
+                    )}
+                    renderInput={(params) => (
+                        <TextField
+                        {...params}
+                        label="State"
+                        variant="outlined"
+                        inputProps={{
+                            ...params.inputProps,
+                            autoComplete: 'new-password', // disable autocomplete and autofill
+                        }}
+                        />
+                    )}
+                    />
+        </FormGroup>
+    </FormControl>;
     case 8:
-        return '';
+        return <FormControl component="fieldset" className={classes.formControl}>
+                <img src='/Check.svg' alt='next' width='100%'/>
+                <FormGroup>
+                    <br/>
+                    <TextField variant='outlined' label='Routing Number' placeholder='012345678'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Account Number' placeholder='01234567891'></TextField>
+                    <br/>
+                    <TextField variant='outlined' label='Employer ID/Tax ID' placeholder='01234567'></TextField>
+                </FormGroup>
+            </FormControl>;
     case 9:
-        return '';
+        return <FormControl component="fieldset" className={classes.formControl}>
+                <FormControlLabel
+                    control={
+                    <Switch
+                        checked={state.checkedA}
+                        onChange={handleCheck}
+                        name="checkedA"
+                        color="primary"
+                    />
+                    }
+                    label={t('i_accept')}
+                />
+        </FormControl>
+        
+    ;
     default:
       return 'Unknown step';
   }
@@ -2326,7 +2851,7 @@ export default function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography>All steps completed - you&apos;re done!</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>
