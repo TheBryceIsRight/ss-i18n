@@ -36,6 +36,9 @@ import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import useTranslation from '../../hooks/useTranslation';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
+import ListSubheader from '@material-ui/core/ListSubheader';
+
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -369,12 +372,25 @@ const NavigationBar: React.FC = () => {
         </Link>
         </List>
         <Divider />
-        <List>
+        <List
+          subheader={
+            <ListSubheader component="div" id="nested-list-subheader">
+              DIY Sales
+            </ListSubheader>
+        }
+        >
           <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
         <ListItem button>
             <ListItemIcon><DashboardIcon/>
             </ListItemIcon>
             <ListItemText primary='DIY Sales Demo' />
+        </ListItem>
+        </Link>
+        <Link href="/[lang]/orders" as={`/${locale}/orders`} passHref>
+        <ListItem button>
+            <ListItemIcon><LocalMallIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Your Orders' />
         </ListItem>
         </Link>
         </List>
@@ -408,7 +424,7 @@ const NavigationBar: React.FC = () => {
                   <Link href='/'>
                   <MuiLink>
                     <Typography color="primary" className={classes.title} variant="h6" >
-                      Status
+                      Elavon
                     </Typography>
                   </MuiLink>
                   </Link>

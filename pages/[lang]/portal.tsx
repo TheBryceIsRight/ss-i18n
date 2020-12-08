@@ -34,10 +34,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
 import WeeklySales from "../../components/WeeklySales";
 import CustomizedDialogs from '../../components/CustomizedDialogs';
-
-
-
-
+import OrderPreview from '../../components/OrderPreview';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 {/*
@@ -69,7 +66,8 @@ function Portal() {
         
     });
     const classes = useStyles();
-
+    const card_width = '588px';
+    const card_half_width = '286px';
 
     return <React.Fragment>
       <Head>
@@ -158,6 +156,9 @@ function Portal() {
                         <Button size="small" >{t('learn_more')}</Button>
                     </CardActions>
                     </Card>
+                </Grid>
+                <Grid item>
+                  <OrderPreview/>
                 </Grid>
                 <Grid item>
                 <Card className={classes.root}>
@@ -360,7 +361,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -376,7 +377,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -400,7 +401,7 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'588px'}} >
+                    <CardContent style={{minWidth: card_width}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
@@ -422,7 +423,10 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'588px'}} >
+                  <OrderPreview/>
+                </Grid>
+                <Grid item>
+                <Card className={classes.root} style={{minWidth:card_width}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -622,7 +626,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -638,7 +642,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -662,7 +666,7 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'588px'}} >
+                    <CardContent style={{minWidth:card_width}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
@@ -684,7 +688,11 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'588px'}} >
+                  <OrderPreview/>
+                </Grid>
+                <Grid item>
+                
+                <Card className={classes.root} style={{minWidth:card_width}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -884,7 +892,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'286px'}} >
+                <Card className={classes.root} style={{minWidth:card_half_width}} >
                     <CardContent >
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -900,7 +908,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'286px'}}>
+                <Card className={classes.root} style={{minWidth:card_half_width}}>
                     <CardContent >
                     <Typography variant="h5">
                     {t('transactions')}
@@ -924,7 +932,7 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'588px'}} >
+                    <CardContent style={{minWidth: card_width}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
@@ -946,7 +954,11 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'588px'}} >
+                  <OrderPreview/>
+                </Grid>
+                <Grid item>
+                
+                <Card className={classes.root} style={{minWidth:card_width}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -1146,7 +1158,7 @@ function Portal() {
 
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                         <Typography variant="h5">
                         {t('gross_sales')}
@@ -1162,7 +1174,7 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root}  style={{minWidth:'286px'}}>
+                <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
                     <Typography variant="h5">
                     {t('transactions')}
@@ -1186,7 +1198,7 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:'588px'}} >
+                    <CardContent style={{minWidth:card_width}} >
                     <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                         <Grid item>
                         <HelpIcon fontSize="large"/>
@@ -1208,58 +1220,61 @@ function Portal() {
                     </Card>
                 </Grid>
                 <Grid item>
-                <Card className={classes.root} style={{minWidth:'588px', maxWidth:'588px'}} >
-            <CardHeader
-                title={t('top_discussions')}
-            />
-                <CardContent >
-                <List>
-                    <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                        <PersonIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={t('cashflow')}
-                        secondary={t('author_1')}
-                    />
-                    </ListItem>
-                    <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                        <PersonIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={t('invoice_question')}
-                        secondary={t('author_2')}
-                    />
-                    </ListItem>
-                    <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                        <PersonIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={t('getting_started_converge')}
-                        secondary={t('author_3')}
-                    />
-                    </ListItem>
-                    <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                        <PersonIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={t('getting_started_talech')}
-                        secondary={t('author_4')}
-                    />
-                    </ListItem>
-                </List>
-                    </CardContent>
+                  <OrderPreview/>
+                </Grid>
+                <Grid item>
+                <Card className={classes.root} style={{minWidth:card_width, maxWidth: card_width}} >
+              <CardHeader
+                  title={t('top_discussions')}
+              />
+                  <CardContent >
+                    <List>
+                        <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                            <PersonIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={t('cashflow')}
+                            secondary={t('author_1')}
+                        />
+                        </ListItem>
+                        <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                            <PersonIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={t('invoice_question')}
+                            secondary={t('author_2')}
+                        />
+                        </ListItem>
+                        <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                            <PersonIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={t('getting_started_converge')}
+                            secondary={t('author_3')}
+                        />
+                        </ListItem>
+                        <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                            <PersonIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={t('getting_started_talech')}
+                            secondary={t('author_4')}
+                        />
+                        </ListItem>
+                    </List>
+                      </CardContent>
 
                     </Card>
                 </Grid>

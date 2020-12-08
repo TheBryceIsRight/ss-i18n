@@ -123,7 +123,7 @@ const strings: Strings = {
     transactions:'Transactions',
     covid:'COVID-19 Resources',
     top_discussions:"Top Discussions in the Seller Community",
-    here_for_you: "We/'re here for you in this challenging environment",
+    here_for_you: "We're here for you in this challenging environment",
     cashflow: "How to improve cashflow in one chart",
     invoice_question: "A question about invoices",
     getting_started_converge: "Getting started with Converge",

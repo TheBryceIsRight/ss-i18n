@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Registration() {
 
-    const { locale, t } = useTranslation()
+    const { locale, t } = useTranslation();
     const classes = useStyles();
 
 
