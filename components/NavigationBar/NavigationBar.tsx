@@ -419,9 +419,8 @@ const NavigationBar: React.FC = () => {
                     onClose={toggleDrawer('left', false)}>{list('left')}
                 </Drawer>
                 </React.Fragment>
-                
-                  
-                  <Link href='/'>
+    
+                  <Link href="/[lang]/" as={`/${locale}/`} passHref >
                   <MuiLink>
                     <Typography color="primary" className={classes.title} variant="h6" >
                       Elavon
