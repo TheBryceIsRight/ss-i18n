@@ -154,12 +154,8 @@ export default function OrderCard() {
                                         <Button variant='outlined' style={{minWidth: '240px'}}>View your item</Button>
                                     </Grid>
                                 </Grid>
-
-                                
                             </Grid>
                         </Grid>
-
-                        
                     </Grid>
                 </Grid>
             </CardContent>

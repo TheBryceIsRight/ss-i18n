@@ -40,6 +40,7 @@ function Orders() {
         
         {/*Mobile */}
         <Media lessThan='md'>
+        <OrderGrid/>
 
           <br/>
 
@@ -47,12 +48,14 @@ function Orders() {
 
         {/*Tablet */}
         <Media at='md'>
+        <OrderGrid/>
           <br/>
 
         </Media>
 
         {/*Desktop */}
         <Media at='lg'>
+        <OrderGrid/>
           <br/>
         </Media>
 
