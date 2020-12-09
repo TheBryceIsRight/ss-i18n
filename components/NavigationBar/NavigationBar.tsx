@@ -194,6 +194,15 @@ const NavigationBar: React.FC = () => {
             <MuiLink>Logout</MuiLink>
         </Link>
         </MenuItem>
+        <MenuItem>
+            <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
+              <MuiLink>
+                <Typography>
+                  Settings
+                </Typography>
+              </MuiLink>
+            </Link>
+        </MenuItem>
         </Menu>
     );
 
