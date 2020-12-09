@@ -52,7 +52,7 @@ const useStyles1 = makeStyles((theme: Theme) =>
 export default function OrderCard() {
   const classes = useStyles();
   const classes1 = useStyles1();
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
 
   return ( <Card className={classes.root}>
             <CardHeader
@@ -69,7 +69,7 @@ export default function OrderCard() {
                 </Link>
                 
                 }
-                title="Your Recent Orders"
+                title={t('recent_orders')}
                 subheader=""
             />
             <CardContent>
@@ -80,12 +80,12 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="h6">
-                                            Order Placed
+                                        {t('order_placed')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body1">
-                                            October 22, 2020
+                                        {t('placeholder_date')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -94,12 +94,12 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="h6">
-                                            Total
+                                        {t('total')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body1">
-                                            $20.00
+                                        {t('shipping_price')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -108,12 +108,12 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-end' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="h6">
-                                            Ship to
+                                        {t('ship_to')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body1">
-                                            Bryce Watson
+                                        {t('placeholder_user')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -122,12 +122,12 @@ export default function OrderCard() {
                     </Grid>
                     <Grid item>
                         <Typography variant="h5">
-                            Expected Delivery Friday Afternoon
+                        {t('expected_delivery')}
                         </Typography>
                     </Grid>
                     <Grid item>
                         <Typography variant="h6">
-                            Talech on Poynt
+                        {t('product_name')}
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -138,26 +138,22 @@ export default function OrderCard() {
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
-                                        <Button variant='contained' style={{minWidth: '280px'}}>Track Package</Button>
+                                        <Button variant='contained' style={{minWidth: '280px'}}>{t('track_package')}</Button>
                                     </Grid>
                                     <Grid item>
-                                        <Button variant='outlined' style={{minWidth: '280px'}}>Return or Replace Items</Button>
+                                        <Button variant='outlined' style={{minWidth: '280px'}}>{t('return_items')}</Button>
                                     </Grid>
                                     <Grid item>
-                                        <Button variant='outlined' style={{minWidth: '280px'}}>View your item</Button>
+                                        <Button variant='outlined' style={{minWidth: '280px'}}>{t('view_your_item')}</Button>
                                     </Grid>
                                 </Grid>
-
-                                
                             </Grid>
                         </Grid>
-
-                        
                     </Grid>
                 </Grid>
             </CardContent>
         <CardActions>
-            <Button size="small" >Archive Order</Button>
+            <Button size="small" >{t('archive_order')}</Button>
         </CardActions>
     </Card>
     

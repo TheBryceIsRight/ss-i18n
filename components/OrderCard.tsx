@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import useTranslation from '../hooks/useTranslation';
 
 
 const useStyles = makeStyles({
@@ -44,22 +45,23 @@ const useStyles1 = makeStyles((theme: Theme) =>
 export default function OrderCard() {
   const classes = useStyles();
   const classes1 = useStyles1();
+  const {  t } = useTranslation();
 
   return ( <Card className={classes.root}>
             <CardContent>
                 <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                     <Grid item>
-                        <Grid container spacing={10} direction='row' alignItems='flex-start' justify='flex-start' className={classes1.root} >
+                        <Grid container spacing={7} direction='row' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="subtitle1">
-                                            Order Placed
+                                        {t('order_placed')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body2">
-                                            October 22, 2020
+                                        {t('placeholder_date')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -68,12 +70,12 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="subtitle1">
-                                            Total
+                                        {t('total')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body2">
-                                            $20.00
+                                        {t('shipping_price')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -82,12 +84,12 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="subtitle1">
-                                            Ship to
+                                        {t('ship_to')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
                                         <Typography variant="body2">
-                                            Bryce Watson
+                                        {t('placeholder_user')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -96,11 +98,11 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-end' justify='flex-end' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="subtitle1">
-                                        Order # 111-3478534-3847395
+                                        {t('order_number')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
-                                        <Button>Invoice</Button>
+                                        <Button> {t('invoice')}</Button>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -108,7 +110,7 @@ export default function OrderCard() {
                     </Grid>
                     <Grid item>
                         <Typography variant="h5">
-                            Expected Delivery Friday Afternoon
+                        {t('expected_delivery')}
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -120,22 +122,22 @@ export default function OrderCard() {
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
                                         <Typography variant="h6">
-                                            Talech on Poynt
+                                        {t('product_name')}
                                         </Typography>
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="body1">
-                                            Sold by Elavon
+                                        {t('sold_by')}
                                         </Typography>
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="body1">
-                                            Return eligible until Jan. 31, 2021
+                                        {t('return_policy')}
                                         </Typography>
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="body1">
-                                            $20.00
+                                        {t('shipping_price')}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -162,7 +164,7 @@ export default function OrderCard() {
                 </Grid>
             </CardContent>
         <CardActions>
-            <Button size="small" >Archive Order</Button>
+            <Button size="small" >{t('archive_order')}</Button>
         </CardActions>
     </Card>
     
