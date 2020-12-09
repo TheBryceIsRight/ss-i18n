@@ -75,7 +75,7 @@ export default function OrderCard() {
             <CardContent>
                 <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                     <Grid item>
-                        <Grid container spacing={10} direction='row' alignItems='flex-start' justify='flex-start' className={classes1.root} >
+                        <Grid container spacing={7} direction='row' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
@@ -131,7 +131,7 @@ export default function OrderCard() {
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Grid container spacing={7} direction='row' alignItems='flex-start' justify='flex-end' className={classes1.root} >
+                        <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-end' className={classes1.root} >
                             <Grid item>
                                 <img src='/poynt.svg' alt='next' width='100%'/>
                             </Grid>
