@@ -14,7 +14,6 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from 'next/link';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import CustomizedTabs from '../../components/CustomizedTabs';
-import MaterialTableDemo from '../../components/MaterialTableDemo';
 
 
 function Sales() {
