@@ -154,10 +154,10 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Personal Information" {...a11yProps(0)} />
-        <Tab label="Bank Information" {...a11yProps(1)} />
-        <Tab label="Email Notifications" {...a11yProps(2)} />
-        <Tab label="Authorized Representatives" {...a11yProps(3)} />
+        <Tab label="Personal" {...a11yProps(0)} />
+        <Tab label="Bank Accounts" {...a11yProps(1)} />
+        <Tab label="Emails" {...a11yProps(2)} />
+        <Tab label="Authorized Users" {...a11yProps(3)} />
         <Tab label="Security" {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0}>
@@ -183,7 +183,7 @@ export default function VerticalTabs() {
             <Grid item>
               <Typography variant='h4'>Password</Typography>
             </Grid>
-            <Grid item>
+            <Grid item style={{maxWidth:'600px'}}>
               <Typography variant='body1'>A strong password contains a mix of letters and numbers. It is hard to guess, does not resemble a real word, and should only be used for this account.</Typography>
             </Grid>
             <Grid item>
@@ -197,7 +197,7 @@ export default function VerticalTabs() {
               <Typography variant='h4'>Multi-Factor Authentication</Typography>
             </Grid>
             <Grid item>
-              <Typography variant='body1'>Add an extra layer of security to your account. A confirmation code will be required every time someone logs onto the Elavon Dashboard.</Typography>
+              <Typography variant='body1' style={{maxWidth:'600px'}}>Add an extra layer of security to your account. A confirmation code will be required every time someone logs onto the Elavon Dashboard.</Typography>
             </Grid>
             <Grid item>
               <Button variant='contained'>Enable Multi-factor Authentication</Button>
@@ -210,7 +210,7 @@ export default function VerticalTabs() {
               <Typography variant='h4'>Deactivate Account</Typography>
             </Grid>
             <Grid item>
-              <Typography variant='body1'>Deactivating your Elavon accout means that you will be unable to recieve or recover any of your payment or account information.</Typography>
+              <Typography variant='body1' style={{maxWidth:'600px'}}>Deactivating your Elavon accout means that you will be unable to recieve or recover any of your payment or account information.</Typography>
             </Grid>
             <Grid item>
               <Button variant='outlined'>deactivate account</Button>
@@ -229,10 +229,10 @@ export default function VerticalTabs() {
         <Grid item>
           <Typography variant="body1">Your funds will only be transferred into a verfiied bank account. </Typography>
         </Grid>
-        <Grid item>
-          <Typography variant="body1">Verification usually takes a few minutes, but for some banks it can take up to 4 business days. If you change bank accounts, your money will continue to be transferred into your exisitng account until the new account is verfiied.  </Typography>
+        <Grid item style={{maxWidth:'600px'}}>
+          <Typography variant="body1">Verification usually takes a few minutes, but for some banks it can take up to 4 business days. If you change bank accounts, your money will continue to be transferred into your existing account until the new account is verfiied.  </Typography>
         </Grid>
-        <Grid item>
+        <Grid item style={{maxWidth:'600px'}}>
         Once your bank account is verified, card payments are transferred into your account in 1-2 business days. Online sales are transferred the day after you complete the order.
         </Grid>
         <Grid item>
@@ -329,7 +329,7 @@ export default function VerticalTabs() {
           <Typography variant='h4'>Authorized Representatives</Typography>
         </Grid>
         <Grid item>
-          <Typography variant='body1'>The following people are authorized to contact Customer Support on behalf of your business regarding sensitive account information and transaction details.</Typography>
+          <Typography variant='body1' style={{maxWidth:'600px'}}>The following people are authorized to contact Customer Support on behalf of your business regarding sensitive account information and transaction details.</Typography>
         </Grid>
         <Grid item>
           <Divider orientation='horizontal'/>
@@ -359,25 +359,19 @@ export default function VerticalTabs() {
           <Typography variant='h4'>Team Permissions</Typography>
         </Grid>
         <Grid item>
-          <Typography variant='body1'>Team permissions allow you to set up restrictions for team members using your account. These permissions apply to all access points. </Typography>
+          <Typography variant='body1' style={{maxWidth:'600px'}}>Team permissions allow you to set up restrictions for team members using your account. These permissions apply to all access points. </Typography>
           <br/>
         </Grid>
         <Grid item>
-        <Grid container spacing={10} direction='row' alignItems='center' justify='space-between' className={classes.root} > 
+        <Grid container spacing={4} direction='row' alignItems='center' justify='space-between' className={classes.root} > 
           <Grid item>
-          <Grid container spacing={2} direction='row' alignItems='center' justify='space-between' className={classes.root} >
-            <Grid item>
-            <Avatar alt="Person Icon" className={classes2.large}>
-              <PeopleAltIcon/>
-            </Avatar>
+                <Avatar alt="Person Icon" className={classes2.large}>
+                  <PeopleAltIcon/>
+                </Avatar>
+                </Grid>
+                <Grid item>
+              <Typography variant='h6'>Team Permissions</Typography>
             </Grid>
-            <Grid item>
-            <Typography variant='h6'>Team Permissions</Typography>
-          </Grid>
-          </Grid>
-          
-          </Grid>
-          
           <Grid item>
             <Button variant='contained'>Enable Team Permissions</Button>
           </Grid>
