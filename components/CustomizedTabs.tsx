@@ -4,6 +4,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import EnhancedTable from '../components/EnhancedTable';
+import EnhancedTable1 from '../components/EnhancedTable1';
+import EnhancedTable2 from '../components/EnhancedTable2';
 import Box from '@material-ui/core/Box';
 
 
@@ -99,17 +101,21 @@ export default function CustomizedTabs() {
           <StyledTab label="Recent"> 
             <EnhancedTable/>
             </StyledTab>
-          <StyledTab label="Past Month" />
-          <StyledTab label="Archived" />
+          <StyledTab label="Past Month">
+            <EnhancedTable1/>
+          </StyledTab>
+          <StyledTab label="Archived">
+            <EnhancedTable2/>
+          </StyledTab>
         </StyledTabs>
         <TabPanel value={value} index={0}>
         <EnhancedTable/>
         </TabPanel>
         <TabPanel value={value} index={1}>
-        <EnhancedTable/>
+        <EnhancedTable1/>
         </TabPanel>
         <TabPanel value={value} index={2}>
-        <EnhancedTable/>
+        <EnhancedTable2/>
         </TabPanel>
         <Typography className={classes.padding} />
       </div>

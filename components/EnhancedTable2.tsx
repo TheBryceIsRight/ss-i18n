@@ -215,7 +215,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          Recent sales
+          Archived Sales
         </Typography>
       )}
       {numSelected > 0 ? (
