@@ -38,6 +38,10 @@ import useTranslation from '../../hooks/useTranslation';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import PersonIcon from '@material-ui/icons/Person';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 
 
@@ -174,34 +178,55 @@ const NavigationBar: React.FC = () => {
         onClose={handleMenuClose}
         >
         <MenuItem>
-        <Link
-            href="/api/login"
-            passHref>
-            <MuiLink>Login</MuiLink>
-        </Link>
+        <ListItemIcon>
+          <VpnKeyIcon/>
+        </ListItemIcon>
+        <ListItemText>
+          <Link
+              href="/api/login"
+              passHref>
+              <MuiLink>Login</MuiLink>
+          </Link>
+        </ListItemText>
         </MenuItem>
         <MenuItem>
-        <Link
-            href="/profile"
-            passHref>
-            <MuiLink>Profile</MuiLink>
-        </Link>
+          <ListItemIcon>
+            <ExitToAppIcon/>
+          </ListItemIcon>
+          <ListItemText>
+          <Link
+              href="/api/logout"
+              passHref>
+              <MuiLink>Logout</MuiLink>
+          </Link>
+          </ListItemText>
         </MenuItem>
         <MenuItem>
-        <Link
-            href="/api/logout"
-            passHref>
-            <MuiLink>Logout</MuiLink>
-        </Link>
+        <ListItemIcon>
+          <PersonIcon/>
+        </ListItemIcon>
+        <ListItemText>
+          <Link
+              href="/profile"
+              passHref>
+              <MuiLink>Profile</MuiLink>
+          </Link>
+        </ListItemText>
         </MenuItem>
+        
         <MenuItem>
-            <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
-              <MuiLink>
-                <Typography>
-                  Settings
-                </Typography>
-              </MuiLink>
-            </Link>
+            <ListItemIcon>
+              <SettingsIcon/>
+            </ListItemIcon>
+            <ListItemText>
+              <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
+                <MuiLink>
+                  <Typography>
+                    Settings
+                  </Typography>
+                </MuiLink>
+              </Link>
+            </ListItemText>
         </MenuItem>
         </Menu>
     );

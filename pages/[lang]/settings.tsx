@@ -36,7 +36,7 @@ function Settings() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -54,7 +54,7 @@ function Settings() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -72,7 +72,7 @@ function Settings() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -88,7 +88,7 @@ function Settings() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -104,7 +104,7 @@ function Settings() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
