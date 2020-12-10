@@ -42,6 +42,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 
 
@@ -425,6 +426,13 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><LocalMallIcon/>
             </ListItemIcon>
             <ListItemText primary='Your Orders' />
+        </ListItem>
+        </Link>
+        <Link href="/[lang]/sales" as={`/${locale}/sales`} passHref>
+        <ListItem button>
+            <ListItemIcon><AccountBalanceWalletIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Sales' />
         </ListItem>
         </Link>
         </List>
