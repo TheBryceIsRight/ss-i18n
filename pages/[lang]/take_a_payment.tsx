@@ -297,8 +297,205 @@ function Take_a_payment() {
             Take a payment
             </Typography>
           </Breadcrumbs>
-          <br/>
-          <NewForm/>
+        <br/>
+        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Typography variant='h3'>Take a payment</Typography>
+            </Grid>
+            <Grid item>
+            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                
+                <Grid item>
+                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+
+                        <Grid item>
+                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
+                        }} />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="currency"
+                            label="Currency"
+                            value={items.currency}
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            onChange= {handleChange('currency')}
+                        >
+                            {ranges2.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            type="text"
+                            name="select"
+                            label="Action"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.action}
+                            onChange= {handleChange('action')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                    </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            name="order_ref"
+                            label="Order Ref Number"
+                            variant='outlined'
+                            value= {items.ref}
+                            onChange= {handleChange('ref')}
+                        />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="payment"
+                            label="Payment Method"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.method}
+                            onChange= {handleChange('method')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges1.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="customer"
+                            label="Customer"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.customer}
+                            onChange= {handleChange('customer')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges3.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                                type="text"
+                                name="payment_method"
+                                label="Payment Method"
+                                select
+                                variant="outlined"
+                                margin="normal"
+                                value= {items.payment}
+                                onChange= {handleChange('payment')}
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            >
+                                {ranges4.map(option => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                                ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <NewForm/>
+                        </Grid>
+                        </Grid>
+                    
+                </Grid>
+                <Grid item>
+                <Card className={classes.root}>
+                    <CardContent>
+                    <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
+                        <Grid item>
+                            <Typography variant='h5'>
+                                Amount
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant='h4'>
+                               {items.currency} {name}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <List className={classes.root}>
+                        <ListItem>
+                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Expires" secondary="July 2022" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Customer Name" secondary={items.customer} />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Billing Address" secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                        </ListItem>
+                        </List>
+                    </CardContent>
+                    <CardActions>
+                        <Button size="small" >Print Receipt</Button>
+                    </CardActions>
+                    </Card>
+                </Grid>
+            </Grid>
+            </Grid>
+
+        </Grid>
           
 
         </Media>
@@ -316,47 +513,205 @@ function Take_a_payment() {
             Take a payment
             </Typography>
           </Breadcrumbs>
-          <br/>
-          <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Typography variant='h3'>Take a payment</Typography>
+            </Grid>
+            <Grid item>
+            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                
                 <Grid item>
-                    <NewForm/>
+                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+
+                        <Grid item>
+                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
+                        }} />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="currency"
+                            label="Currency"
+                            value={items.currency}
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            onChange= {handleChange('currency')}
+                        >
+                            {ranges2.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            type="text"
+                            name="select"
+                            label="Action"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.action}
+                            onChange= {handleChange('action')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                    </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            name="order_ref"
+                            label="Order Ref Number"
+                            variant='outlined'
+                            value= {items.ref}
+                            onChange= {handleChange('ref')}
+                        />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="payment"
+                            label="Payment Method"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.method}
+                            onChange= {handleChange('method')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges1.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="customer"
+                            label="Customer"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.customer}
+                            onChange= {handleChange('customer')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges3.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                                type="text"
+                                name="payment_method"
+                                label="Payment Method"
+                                select
+                                variant="outlined"
+                                margin="normal"
+                                value= {items.payment}
+                                onChange= {handleChange('payment')}
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            >
+                                {ranges4.map(option => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                                ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <NewForm/>
+                        </Grid>
+                        </Grid>
+                    
                 </Grid>
                 <Grid item>
                 <Card className={classes.root}>
                     <CardContent>
-                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                    <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
-                            <Typography variant='h5'>{name} </Typography>
+                            <Typography variant='h5'>
+                                Amount
+                            </Typography>
                         </Grid>
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='filled'/>
-                        </Grid>
-                    </Grid>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" >{t('details')}</Button>
-                    </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item>
-                <Card className={classes.root}>
-                    <CardContent>
-                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                            <Typography variant='h5'>{name} </Typography>
-                        </Grid>
-                        <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='filled'/>
+                            <Typography variant='h4'>
+                               {items.currency} {name}
+                            </Typography>
                         </Grid>
                     </Grid>
+                    <List className={classes.root}>
+                        <ListItem>
+                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Expires" secondary="July 2022" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Customer Name" secondary={items.customer} />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Billing Address" secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                        </ListItem>
+                        </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >{t('details')}</Button>
+                        <Button size="small" >Print Receipt</Button>
                     </CardActions>
                     </Card>
                 </Grid>
             </Grid>
-          
+            </Grid>
+
+        </Grid>
 
         </Media>
 
@@ -373,28 +728,205 @@ function Take_a_payment() {
             Take a payment
             </Typography>
           </Breadcrumbs>
-          <br/>
-          <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Typography variant='h3'>Take a payment</Typography>
+            </Grid>
+            <Grid item>
+            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                
                 <Grid item>
-                    <NewForm/>
+                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+
+                        <Grid item>
+                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
+                        }} />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="currency"
+                            label="Currency"
+                            value={items.currency}
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            onChange= {handleChange('currency')}
+                        >
+                            {ranges2.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            type="text"
+                            name="select"
+                            label="Action"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.action}
+                            onChange= {handleChange('action')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                    </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            name="order_ref"
+                            label="Order Ref Number"
+                            variant='outlined'
+                            value= {items.ref}
+                            onChange= {handleChange('ref')}
+                        />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="payment"
+                            label="Payment Method"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.method}
+                            onChange= {handleChange('method')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges1.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="customer"
+                            label="Customer"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.customer}
+                            onChange= {handleChange('customer')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges3.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                                type="text"
+                                name="payment_method"
+                                label="Payment Method"
+                                select
+                                variant="outlined"
+                                margin="normal"
+                                value= {items.payment}
+                                onChange= {handleChange('payment')}
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            >
+                                {ranges4.map(option => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                                ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <NewForm/>
+                        </Grid>
+                        </Grid>
+                    
                 </Grid>
                 <Grid item>
                 <Card className={classes.root}>
                     <CardContent>
-                        <Typography variant="h5">
-                        {t('gross_sales')}
-                        </Typography>
-                        <br/>
-                        <Typography variant='h3'>
-                        $2,178.67
-                        </Typography>
+                    <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
+                        <Grid item>
+                            <Typography variant='h5'>
+                                Amount
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant='h4'>
+                               {items.currency} {name}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <List className={classes.root}>
+                        <ListItem>
+                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Expires" secondary="July 2022" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Customer Name" secondary={items.customer} />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Billing Address" secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                        </ListItem>
+                        </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >{t('details')}</Button>
+                        <Button size="small" >Print Receipt</Button>
                     </CardActions>
                     </Card>
                 </Grid>
             </Grid>
+            </Grid>
+
+        </Grid>
           
         </Media>
 
@@ -410,47 +942,205 @@ function Take_a_payment() {
             Take a payment
             </Typography>
           </Breadcrumbs>
-          <br/>
-          <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Typography variant='h3'>Take a payment</Typography>
+            </Grid>
+            <Grid item>
+            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                
                 <Grid item>
-                <Card className={classes.root}>
-                    <CardContent>
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+
                         <Grid item>
-                            <Typography variant='h5'>{name} </Typography>
+                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
+                        }} />
                         </Grid>
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='filled'/>
+                            <MuiTextField
+                            type="text"
+                            name="currency"
+                            label="Currency"
+                            value={items.currency}
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            onChange= {handleChange('currency')}
+                        >
+                            {ranges2.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
                         </Grid>
-                    </Grid>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" >{t('details')}</Button>
-                    </CardActions>
-                    </Card>
+                        <Grid item>
+                        <MuiTextField
+                            type="text"
+                            name="select"
+                            label="Action"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.action}
+                            onChange= {handleChange('action')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                    </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                        <MuiTextField
+                            name="order_ref"
+                            label="Order Ref Number"
+                            variant='outlined'
+                            value= {items.ref}
+                            onChange= {handleChange('ref')}
+                        />
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="payment"
+                            label="Payment Method"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.method}
+                            onChange= {handleChange('method')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges1.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                            type="text"
+                            name="customer"
+                            label="Customer"
+                            select
+                            variant="outlined"
+                            margin="normal"
+                            value= {items.customer}
+                            onChange= {handleChange('customer')}
+                            InputLabelProps={{
+                            shrink: true,
+                            }}
+                        >
+                            {ranges3.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                            ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <MuiTextField
+                                type="text"
+                                name="payment_method"
+                                label="Payment Method"
+                                select
+                                variant="outlined"
+                                margin="normal"
+                                value= {items.payment}
+                                onChange= {handleChange('payment')}
+                                InputLabelProps={{
+                                shrink: true,
+                                }}
+                            >
+                                {ranges4.map(option => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                                ))}
+                        </MuiTextField>
+                        </Grid>
+                        <Grid item>
+                            <NewForm/>
+                        </Grid>
+                        </Grid>
+                    
                 </Grid>
                 <Grid item>
                 <Card className={classes.root}>
                     <CardContent>
-                    <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+                    <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
-                            <Typography variant='h5'>{name} </Typography>
+                            <Typography variant='h5'>
+                                Amount
+                            </Typography>
                         </Grid>
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='filled'/>
+                            <Typography variant='h4'>
+                               {items.currency} {name}
+                            </Typography>
                         </Grid>
                     </Grid>
+                    <List className={classes.root}>
+                        <ListItem>
+                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Expires" secondary="July 2022" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Customer Name" secondary={items.customer} />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary="Billing Address" secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                        </ListItem>
+                        </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >{t('details')}</Button>
+                        <Button size="small" >Print Receipt</Button>
                     </CardActions>
                     </Card>
-                </Grid>
-                <Grid item>
-                    <NewForm/>
                 </Grid>
             </Grid>
-          
+            </Grid>
+
+        </Grid>
         </Media>
         
         {/*4K & Greater*/}
