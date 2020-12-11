@@ -131,10 +131,10 @@ function Registration() {
             setSubmitting(false);
             alert(JSON.stringify(values, null, 2));
             }, 500);
-            fetch(`https://hooks.zapier.com/hooks/catch/8157500/okazqvp/`, {
-            method: 'POST',
-            body: JSON.stringify(values, null, 2),
-            });
+            // fetch(`https://hooks.zapier.com/hooks/catch/8157500/okazqvp/`, {
+            // method: 'POST',
+            // body: JSON.stringify(values, null, 2),
+            // });
         }}
         render={({submitForm, isSubmitting}) => (
             <MuiPickersUtilsProvider utils={DateFnsUtils}>

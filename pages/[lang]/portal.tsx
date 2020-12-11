@@ -35,6 +35,7 @@ import IconButton from '@material-ui/core/IconButton';
 import WeeklySales from "../../components/WeeklySales";
 import CustomizedDialogs from '../../components/CustomizedDialogs';
 import OrderPreview from '../../components/OrderPreview';
+import Link from 'next/link';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 {/*
@@ -45,7 +46,7 @@ interface IIndexProps {
 
 function Portal() {
 
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   
     const useStyles = makeStyles({
         root: {
@@ -221,7 +222,9 @@ function Portal() {
     <Grid item>
     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
         <Grid item>
-            <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref >
+              <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            </Link>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
@@ -486,7 +489,9 @@ function Portal() {
     <Grid item>
     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
         <Grid item>
-            <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref >
+              <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            </Link>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
@@ -752,7 +757,9 @@ function Portal() {
     <Grid item>
     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
         <Grid item>
-            <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref >
+              <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            </Link>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
@@ -1018,7 +1025,9 @@ function Portal() {
     <Grid item>
     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
         <Grid item>
-            <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref >
+              <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            </Link>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
@@ -1283,7 +1292,9 @@ function Portal() {
     <Grid item>
     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
         <Grid item>
-            <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref >
+              <Button variant="outlined" size='large' startIcon={<AttachMoneyIcon />}> {t('take_a_payment')} </Button>
+            </Link>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>

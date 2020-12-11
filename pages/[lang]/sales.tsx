@@ -40,7 +40,7 @@ function Sales() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-                Settings
+                Sales
             </Typography>
           </Breadcrumbs>
           <br/>
