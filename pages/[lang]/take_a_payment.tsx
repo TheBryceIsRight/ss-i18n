@@ -298,7 +298,7 @@ function Take_a_payment() {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
             <Typography variant='h3'>Take a payment</Typography>
             </Grid>
@@ -514,7 +514,7 @@ function Take_a_payment() {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
             <Typography variant='h3'>Take a payment</Typography>
             </Grid>
@@ -729,7 +729,7 @@ function Take_a_payment() {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
             <Typography variant='h3'>Take a payment</Typography>
             </Grid>
@@ -943,7 +943,7 @@ function Take_a_payment() {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
             <Typography variant='h3'>Take a payment</Typography>
             </Grid>
@@ -1156,12 +1156,12 @@ function Take_a_payment() {
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
             <Grid item>
             <Typography variant='h3'>Take a payment</Typography>
             </Grid>
             <Grid item>
-            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container spacing={10} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 
                 <Grid item>
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
