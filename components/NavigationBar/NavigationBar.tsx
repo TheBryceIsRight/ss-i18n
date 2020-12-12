@@ -43,7 +43,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -414,13 +414,22 @@ const NavigationBar: React.FC = () => {
             </ListSubheader>
         }
         >
-          <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
+        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
         <ListItem button>
-            <ListItemIcon><DashboardIcon/>
+            <ListItemIcon><LoyaltyIcon/>
             </ListItemIcon>
             <ListItemText primary='DIY Sales Demo' />
         </ListItem>
         </Link>
+
+        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref>
+        <ListItem button>
+            <ListItemIcon><DashboardIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Dashboard' />
+        </ListItem>
+        </Link>
+
         <Link href="/[lang]/orders" as={`/${locale}/orders`} passHref>
         <ListItem button>
             <ListItemIcon><LocalMallIcon/>
