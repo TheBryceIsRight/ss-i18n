@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -94,8 +93,8 @@ class WeeklySales extends React.Component {
           "Day": days[i],
           "In-person": parseFloat((codingAtWorkMinutes[i] / 60).toFixed(2)),
           "Online": parseFloat((codingOutsideWorkMinutes[i] / 60).toFixed(2)),
-          "In-personColor": "#2C2E57",
-          "OnlineColor": "#7E9EF5"
+          "In-personColor": "#1F77B4",
+          "OnlineColor": "#FF7F0E"
 
         };
       }
@@ -139,11 +138,11 @@ class WeeklySales extends React.Component {
     const legend = [
       {
         name: `In-person`,
-        color: "#e8c1a0"
+        color: "#1F77B4"
       },
       {
         name: `Online`,
-        color: "#f47560"
+        color: "#FF7F0E"
       }
     ];
 

@@ -113,14 +113,14 @@ interface Values {
     const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-        flexGrow: 1,
+            flexGrow: 1,
         },
         paper: {
-        height: 100,
-        width: 100,
+            height: 100,
+            width: 100,
         },
         control: {
-        padding: theme.spacing(2),
+            padding: theme.spacing(2),
         },
     }),
     );

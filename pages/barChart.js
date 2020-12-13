@@ -13,7 +13,7 @@ import { makeStyles} from '@material-ui/core/styles'
 import SankeyCard from "../components/sankeyCard";
 
 //Nivo imports
-import WorkLifeBalance from "../components/WeeklySales";
+import WeeklySales from "../components/WeeklySales";
 import CardChart from "../components/cardChart";
 
 //Data imports
@@ -72,7 +72,7 @@ function LineChart(props) {
         <br/>
         <div className="App">
             <div className="Chart">
-                <WorkLifeBalance/>
+                <WeeklySales/>
             </div>
         </div>
         <div className="App">

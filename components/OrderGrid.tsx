@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import OrderCard from '../components/OrderCard';
+import ComboBox from '../components/ComboBox';
 
 
 const useStyles1 = makeStyles((theme: Theme) =>
@@ -31,6 +32,9 @@ export default function OrderGrid() {
                 <Typography variant="h3">
                     Your Orders
                 </Typography>
+            </Grid>
+            <Grid item>
+              <ComboBox/>
             </Grid>
             <Grid item>
                 <OrderCard/>

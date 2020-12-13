@@ -44,6 +44,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import MessageIcon from '@material-ui/icons/Message';
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -179,55 +180,64 @@ const NavigationBar: React.FC = () => {
         onClose={handleMenuClose}
         >
         <MenuItem>
-        <ListItemIcon>
-          <VpnKeyIcon/>
-        </ListItemIcon>
-        <ListItemText>
-          <Link
-              href="/api/login"
-              passHref>
-              <MuiLink>Login</MuiLink>
-          </Link>
-        </ListItemText>
+          <Link href="/api/login" passHref >
+            <ListItem>
+              <ListItemIcon>
+                <VpnKeyIcon/>
+              </ListItemIcon>
+              <ListItemText>
+                    <Typography>
+                      Login
+                    </Typography>
+              </ListItemText>
+            </ListItem>
+            </Link>
+
         </MenuItem>
         <MenuItem>
-          <ListItemIcon>
-            <ExitToAppIcon/>
-          </ListItemIcon>
-          <ListItemText>
-          <Link
-              href="/api/logout"
-              passHref>
-              <MuiLink>Logout</MuiLink>
-          </Link>
-          </ListItemText>
+          <Link href="/api/logout" passHref >
+            <ListItem>
+              <ListItemIcon>
+                <ExitToAppIcon/>
+              </ListItemIcon>
+              <ListItemText>
+                    <Typography>
+                      Logout
+                    </Typography>
+              </ListItemText>
+            </ListItem>
+            </Link>
+
         </MenuItem>
         <MenuItem>
-        <ListItemIcon>
-          <PersonIcon/>
-        </ListItemIcon>
-        <ListItemText>
-          <Link
-              href="/profile"
-              passHref>
-              <MuiLink>Profile</MuiLink>
-          </Link>
-        </ListItemText>
+          <Link href="/profile" passHref >
+            <ListItem>
+              <ListItemIcon>
+                <PersonIcon/>
+              </ListItemIcon>
+              <ListItemText>
+                    <Typography>
+                      Profile
+                    </Typography>
+              </ListItemText>
+            </ListItem>
+            </Link>
+
         </MenuItem>
-        
         <MenuItem>
-            <ListItemIcon>
-              <SettingsIcon/>
-            </ListItemIcon>
-            <ListItemText>
-              <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
-                <MuiLink>
-                  <Typography>
-                    Settings
-                  </Typography>
-                </MuiLink>
-              </Link>
-            </ListItemText>
+          <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
+            <ListItem>
+              <ListItemIcon>
+                <SettingsIcon/>
+              </ListItemIcon>
+              <ListItemText>
+                    <Typography>
+                      Settings
+                    </Typography>
+              </ListItemText>
+            </ListItem>
+            </Link>
+
         </MenuItem>
         </Menu>
     );
@@ -442,6 +452,13 @@ const NavigationBar: React.FC = () => {
             <ListItemIcon><AccountBalanceWalletIcon/>
             </ListItemIcon>
             <ListItemText primary='Sales' />
+        </ListItem>
+        </Link>
+        <Link href="/[lang]/invoices" as={`/${locale}/invoices`} passHref>
+        <ListItem button>
+            <ListItemIcon><MessageIcon/>
+            </ListItemIcon>
+            <ListItemText primary='Invoices' />
         </ListItem>
         </Link>
         </List>
