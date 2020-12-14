@@ -26,7 +26,6 @@ import HelpIcon from '@material-ui/icons/Help';
 import Avatar from '@material-ui/core/Avatar';
 import PersonIcon from '@material-ui/icons/Person';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import SendIcon from '@material-ui/icons/Send';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import BuildIcon from '@material-ui/icons/Build';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';

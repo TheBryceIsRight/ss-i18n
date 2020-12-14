@@ -9,9 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import VerticalLinearStepperInvoice from '../components/VerticalLinearStepperInvoice';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 import useTranslation from '../hooks/useTranslation';
-
+import SendIcon from '@material-ui/icons/Send';
 
 
 const styles = (theme: Theme) =>
@@ -74,7 +73,7 @@ export default function SendInvoice() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" startIcon={<AssignmentIcon/> } onClick={handleClickOpen} size='large'>
+      <Button variant="outlined" color="primary" startIcon={<SendIcon/> } onClick={handleClickOpen} size='large'>
       {t('send_an_invoice')}
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
