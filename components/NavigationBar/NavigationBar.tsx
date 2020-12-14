@@ -16,20 +16,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { fade } from '@material-ui/core/styles'
 
-import BuildIcon from '@material-ui/icons/Build';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Divider from '@material-ui/core/Divider';
-import PublicIcon from '@material-ui/icons/Public';
-import ErrorIcon from '@material-ui/icons/Error';
+
 
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import InputBase from '@material-ui/core/InputBase';
-import AssessmentIcon from '@material-ui/icons/Assessment';
-import UpdateIcon from '@material-ui/icons/Update';
+
 import BugReportIcon from '@material-ui/icons/BugReport';  
 import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
@@ -327,78 +324,6 @@ const NavigationBar: React.FC = () => {
         onKeyDown={toggleDrawer(anchor, false)}
         >
         <Router>
-        <List>
-            <ListItem button>
-                <ListItemIcon><AssessmentIcon/></ListItemIcon>
-                <ListItemText primary='All Systems' />
-            </ListItem>
-            <Link
-            href="/activeIssues"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><ErrorIcon/></ListItemIcon>
-                <ListItemText primary='Active Issues' />
-            </ListItem>
-            </Link>
-            <Link
-            href="/activeMaintenance"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><BuildIcon/></ListItemIcon>
-                <ListItemText primary='Active Maintenance' />
-            </ListItem>
-            </Link>
-            <Link
-            href="/scheduledMaintenance"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><UpdateIcon/>
-                </ListItemIcon>
-                <ListItemText primary='Scheduled Maintenance' />
-            </ListItem>
-            </Link>
-            
-            
-        </List>
-        <Divider />
-        <List>
-        <Link
-            href="/canada"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><PublicIcon/>
-                </ListItemIcon>
-                <ListItemText primary='Canada' />
-            </ListItem>
-            </Link>
-            <Link
-            href="/europe"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><PublicIcon/></ListItemIcon>
-                <ListItemText primary='Europe' />
-            </ListItem>
-            </Link>
-            <Link
-            href="/mexico"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><PublicIcon/></ListItemIcon>
-                <ListItemText primary='Mexico' />
-            </ListItem>
-            </Link>
-            <Link
-            href="/unitedStates"
-            passHref>
-            <ListItem button>
-                <ListItemIcon><PublicIcon/>
-                </ListItemIcon>
-                <ListItemText primary='United States' />
-            </ListItem>
-            </Link>
-            
-        </List>
-        <Divider />
         
         <List>
             <Link
