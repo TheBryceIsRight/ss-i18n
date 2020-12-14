@@ -8,8 +8,10 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import VerticalLinearStepper from '../components/VerticalLinearStepper';
+import VerticalLinearStepperInvoice from '../components/VerticalLinearStepperInvoice';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import useTranslation from '../hooks/useTranslation';
+
 
 
 const styles = (theme: Theme) =>
@@ -59,8 +61,9 @@ const DialogActions = withStyles((theme: Theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function CustomizedDialogs() {
+export default function SendInvoice() {
   const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation()
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -72,14 +75,14 @@ export default function CustomizedDialogs() {
   return (
     <div>
       <Button variant="outlined" color="primary" startIcon={<AssignmentIcon/> } onClick={handleClickOpen} size='large'>
-        Finish Signing Up
+      {t('send_an_invoice')}
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Registration
+          Send an Invoice
         </DialogTitle>
         <DialogContent dividers>
-          <VerticalLinearStepper/>
+          <VerticalLinearStepperInvoice/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

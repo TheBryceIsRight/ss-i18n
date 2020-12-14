@@ -13,12 +13,29 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from 'next/link';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import InvoiceTabs from '../../components/InvoiceTabs';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import SendInvoice from '../../components/SendInvoice';
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      height: 100,
+      width: 100,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  }),
+);
 
 function Invoices() {
 
     const { locale, t } = useTranslation();
-
+    const classes = useStyles();
 
     return <React.Fragment>
       <Head>
@@ -43,6 +60,11 @@ function Invoices() {
             </Typography>
           </Breadcrumbs>
           <br/>
+          <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-start' className={classes.root} >
+          <Grid item>
+            <SendInvoice/>
+          </Grid>
+        </Grid>
           <InvoiceTabs/>
 
         </Media>
@@ -61,6 +83,11 @@ function Invoices() {
             </Typography>
           </Breadcrumbs>
           <br/>
+          <Grid container spacing={2} direction='column' alignItems='flex-end' justify='center' className={classes.root} >
+          <Grid item>
+            <SendInvoice/>
+          </Grid>
+        </Grid>
           <InvoiceTabs/>
 
         </Media>
@@ -79,6 +106,11 @@ function Invoices() {
             </Typography>
           </Breadcrumbs>
           <br/>
+          <Grid container spacing={2} direction='column' alignItems='flex-end' justify='center' className={classes.root} >
+          <Grid item>
+            <SendInvoice/>
+          </Grid>
+        </Grid>
           <InvoiceTabs/>
         </Media>
 
@@ -95,6 +127,11 @@ function Invoices() {
             </Typography>
           </Breadcrumbs>
           <br/>
+          <Grid container spacing={2} direction='column' alignItems='flex-end' justify='center' className={classes.root} >
+          <Grid item>
+            <SendInvoice/>
+          </Grid>
+        </Grid>
           <InvoiceTabs/>
         </Media>
         
@@ -111,6 +148,11 @@ function Invoices() {
             </Typography>
           </Breadcrumbs>
         <br/>
+        <Grid container spacing={2} direction='column' alignItems='flex-end' justify='center' className={classes.root} >
+          <Grid item>
+            <SendInvoice/>
+          </Grid>
+        </Grid>
         <InvoiceTabs/>
         </Media>
         </MediaContextProvider>

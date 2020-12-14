@@ -33,7 +33,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
 import WeeklySales from "../../components/WeeklySales";
-import CustomizedDialogs from '../../components/CustomizedDialogs';
+import RegistrationModal from '../../components/RegistrationModal';
+import SendInvoice from '../../components/SendInvoice';
 import OrderPreview from '../../components/OrderPreview';
 import Link from 'next/link';
 
@@ -227,7 +228,7 @@ function Portal() {
             </Link>
             </Grid>
             <Grid item>
-            <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
+            <SendInvoice/>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<AddShoppingCartIcon />}>{t('add_an_item')} </Button>
@@ -236,7 +237,7 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
-            <CustomizedDialogs/>
+            <RegistrationModal/>
             </Grid>
             <Grid item>
             <br/>
@@ -494,7 +495,7 @@ function Portal() {
             </Link>
             </Grid>
             <Grid item>
-            <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
+            <SendInvoice/>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<AddShoppingCartIcon />}>{t('add_an_item')} </Button>
@@ -503,7 +504,7 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
-            <CustomizedDialogs/>
+            <RegistrationModal/>
             </Grid>
             <Grid item>
             <br/>
@@ -762,7 +763,7 @@ function Portal() {
             </Link>
             </Grid>
             <Grid item>
-            <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
+            <SendInvoice/>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<AddShoppingCartIcon />}>{t('add_an_item')} </Button>
@@ -771,7 +772,7 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
-            <CustomizedDialogs/>
+            <RegistrationModal/>
             </Grid>
             <Grid item>
             <br/>
@@ -1030,7 +1031,7 @@ function Portal() {
             </Link>
             </Grid>
             <Grid item>
-            <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
+            <SendInvoice/>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<AddShoppingCartIcon />}>{t('add_an_item')} </Button>
@@ -1039,7 +1040,7 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
-            <CustomizedDialogs/>
+            <RegistrationModal/>
             </Grid>
             <Grid item>
             <br/>
@@ -1297,7 +1298,7 @@ function Portal() {
             </Link>
             </Grid>
             <Grid item>
-            <Button variant="outlined" size='large' startIcon={<SendIcon />}>{t('send_an_invoice')} </Button>
+            <SendInvoice/>
             </Grid>
             <Grid item>
             <Button variant="outlined" size='large' startIcon={<AddShoppingCartIcon />}>{t('add_an_item')} </Button>
@@ -1306,7 +1307,7 @@ function Portal() {
             <Button variant="outlined" size='large' startIcon={<BuildIcon />}> {t('read_the_set_up_guide')}  </Button>
             </Grid>
             <Grid item>
-            <CustomizedDialogs/>
+            <RegistrationModal/>
             </Grid>
             <Grid item>
             
