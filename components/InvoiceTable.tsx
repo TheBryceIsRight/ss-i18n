@@ -17,8 +17,31 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import DetailsIcon from '@material-ui/icons/Details';
+
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import PrintIcon from '@material-ui/icons/Print';
+import ArchiveIcon from '@material-ui/icons/Archive';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import PersonIcon from '@material-ui/icons/Person';
+import EventIcon from '@material-ui/icons/Event';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import StoreIcon from '@material-ui/icons/Store';
+import EventNoteIcon from '@material-ui/icons/EventNote';
+import NoteIcon from '@material-ui/icons/Note';
+import Grid from '@material-ui/core/Grid';
+
 
 interface Data {
   date: string;
@@ -37,6 +60,17 @@ function createData(
 ): Data {
   return { date, customer_name, payment, order_no, status };
 }
+
+const useStyles1 = makeStyles({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+});
+
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 const rows = [
   createData('20 / 02 / 2020   09:42 PM', 'Jenny Bradley', 1234, 1234567890, 'Completed'),
@@ -136,6 +170,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     onRequestSort(event, property);
   };
 
+
+
   return (
     <TableHead>
       <TableRow>
@@ -219,10 +255,10 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
         </Typography>
       )}
       {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
+        <Tooltip title="Details">
+          <IconButton aria-label="details" >
+            <DetailsIcon />
+          </IconButton>            
         </Tooltip>
       ) : (
         <Tooltip title="Filter list">
@@ -322,9 +358,141 @@ export default function EnhancedTable() {
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
+  const classes1 = useStyles1();
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor: Anchor, open: boolean) => (
+    event: React.KeyboardEvent | React.MouseEvent,
+  ) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+
+  
+
+  const list = (anchor: Anchor) => (
+    <div
+      className={clsx(classes1.list, {
+        [classes1.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          Invoice Paid - 100.00 USD
+        </ListSubheader>
+      }>
+          
+          <ListItem button>
+            <ListItemIcon><PrintIcon/> </ListItemIcon>
+            <ListItemText primary={"Print"} />
+          </ListItem>
+          <ListItem button>
+          <ListItemIcon><ArchiveIcon/> </ListItemIcon>
+            <ListItemText primary={"Archive"} />
+          </ListItem>
+          <ListItem button>
+          <ListItemIcon><FileCopyIcon/> </ListItemIcon>
+            <ListItemText primary={"Copy"} />
+          </ListItem>
+          <ListItem button>
+          <ListItemIcon><NoteIcon/> </ListItemIcon>
+            <ListItemText primary={"Add a note"} />
+          </ListItem>
+      </List>
+      <Divider />
+      <List subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          Customer Information
+        </ListSubheader>
+      }>
+        <ListItem >
+          <ListItemIcon><PersonIcon/> </ListItemIcon>
+            <ListItemText primary={"Bill To"} secondary={"Jorgulon Morgulies"} />
+          </ListItem>
+          <ListItem >
+          <ListItemIcon><EventIcon/> </ListItemIcon>
+            <ListItemText primary={"Due Date"} secondary={"2020/10/10"} />
+          </ListItem>
+      </List>
+      <Divider />
+      <List subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          Invoice Details
+        </ListSubheader>
+      }>
+        <ListItem >
+        <ListItemIcon><ReceiptIcon/> </ListItemIcon>
+            <ListItemText primary={"Invoice Number"} secondary={"90511599757059730"} />
+          </ListItem>
+          <ListItem >
+          <ListItemIcon><StoreIcon/> </ListItemIcon>
+            <ListItemText primary={"Merchant Transaction ID"} secondary={"80511599757059730"} />
+          </ListItem>
+          <ListItem >
+          <ListItemIcon><EventNoteIcon/> </ListItemIcon>
+            <ListItemText primary={"Issue Date"} secondary={"2020/09/10"} />
+          </ListItem>
+          <ListItem >
+          <ListItemIcon><LocalShippingIcon/> </ListItemIcon>
+            <ListItemText primary={"Ship to"} secondary={"123 Sesame Street NW, Atlanta, GA, 30318"} />
+          </ListItem>
+      </List>
+      <Divider />
+      <List subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          Invoice History
+        </ListSubheader>
+      }>
+        <ListItem >
+            <ListItemIcon><CheckCircleIcon/> </ListItemIcon>
+            <ListItemText primary={"Paid - 100.00 USD"} secondary={"12/12/2020 03:30 PM"} />
+          </ListItem>
+          <ListItem >
+            <ListItemIcon><RadioButtonUncheckedIcon/> </ListItemIcon>
+            <ListItemText primary={"Unpaid - 100.00 USD"} secondary={"12/12/2020 03:28 PM"} />
+          </ListItem>
+      </List>
+      <Divider />
+      <List subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          Order Details
+        </ListSubheader>
+      }>
+        <ListItem >
+            <ListItemText primary={"Invoice Number"} secondary={"2222: 264264826"} />
+          </ListItem>
+          <ListItem >
+            <ListItemText primary={"Unit Price"} secondary={"$10.00"} />
+          </ListItem>
+          <ListItem >
+            <ListItemText primary={"Quantity"} secondary={"10"} />
+          </ListItem>
+          <ListItem >
+            <ListItemText primary={"Subtotal"} secondary={"$100.00"} />
+          </ListItem>
+      </List>
+    </div>
+  );
+
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
+            <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
@@ -393,10 +561,27 @@ export default function EnhancedTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+      
+      <div>
+          <React.Fragment key={'right'}>
+          <Grid container spacing={2} direction='column' alignItems='flex-end' justify='center' className={classes.root} >
+                <Grid item>
+                <FormControlLabel
+                  control={<Switch checked={dense} onChange={handleChangeDense} />}
+                  label="Dense padding"
+                />
+                </Grid>
+                <Grid item>
+                <Button onClick={toggleDrawer('right', true)} variant='outlined' startIcon={<DetailsIcon/> }>{'Invoice Details'}</Button>
+                <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer('right', false)}>
+                  {list('right')}
+                </Drawer>
+                </Grid>
+          </Grid>
+
+            
+          </React.Fragment>
+      </div>
     </div>
   );
 }

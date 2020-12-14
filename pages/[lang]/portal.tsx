@@ -249,7 +249,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('total_customers')}
-                    secondary='0'
+                    secondary='21'
                   />
                   <ListItemSecondaryAction>
 
@@ -261,7 +261,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('new_customers')}
-                    secondary='0'
+                    secondary='8'
                   />
                   <ListItemSecondaryAction>
 
@@ -516,7 +516,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('total_customers')}
-                    secondary='0'
+                    secondary='21'
                   />
                   <ListItemSecondaryAction>
 
@@ -528,7 +528,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('new_customers')}
-                    secondary='0'
+                    secondary='8'
                   />
                   <ListItemSecondaryAction>
 
@@ -784,7 +784,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('total_customers')}
-                    secondary='0'
+                    secondary='21'
                   />
                   <ListItemSecondaryAction>
 
@@ -796,7 +796,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('new_customers')}
-                    secondary='0'
+                    secondary='8'
                   />
                   <ListItemSecondaryAction>
 
@@ -1052,7 +1052,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('total_customers')}
-                    secondary='0'
+                    secondary='21'
                   />
                   <ListItemSecondaryAction>
 
@@ -1064,7 +1064,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('new_customers')}
-                    secondary='0'
+                    secondary='8'
                   />
                   <ListItemSecondaryAction>
 
@@ -1320,7 +1320,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('total_customers')}
-                    secondary='0'
+                    secondary='21'
                   />
                   <ListItemSecondaryAction>
 
@@ -1332,7 +1332,7 @@ function Portal() {
                 <ListItem>
                   <ListItemText
                     primary={t('new_customers')}
-                    secondary='0'
+                    secondary='8'
                   />
                   <ListItemSecondaryAction>
 

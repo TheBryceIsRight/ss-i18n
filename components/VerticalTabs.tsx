@@ -172,7 +172,7 @@ export default function VerticalTabs() {
                 <Typography variant='h4'>Basic Information</Typography>
               </Grid>
               <Grid item>
-              <TextField variant='outlined' label='Business Name' placeholder='Rreal Tacos'></TextField>
+              <TextField variant='outlined' label='Business Name' placeholder='Elavon'></TextField>
               </Grid>
               <Grid item>
               <TextField variant='outlined' label='Email Address' placeholder='user@elavon.com'></TextField>
@@ -211,7 +211,7 @@ export default function VerticalTabs() {
               <Typography variant='h4'>Deactivate Account</Typography>
             </Grid>
             <Grid item>
-              <Typography variant='body1' style={{maxWidth:text_width}}>Deactivating your Elavon accout means that you will be unable to recieve or recover any of your payment or account information.</Typography>
+              <Typography variant='body1' style={{maxWidth:text_width}}>Deactivating your Elavon accout means that you will be unable to receive or recover any of your payment or account information.</Typography>
             </Grid>
             <Grid item>
               <Button variant='outlined'>deactivate account</Button>
@@ -250,7 +250,7 @@ export default function VerticalTabs() {
           <Typography variant='h4'>Manage your email notifications</Typography>
         </Grid>
         <Grid item>
-          <Typography variant='subtitle1'>Learn about new products or features and recieve updates on how your business is performing.</Typography>
+          <Typography variant='subtitle1'>Learn about new products or features and receive updates on how your business is performing.</Typography>
         </Grid>
 
         <Grid item>
@@ -346,7 +346,7 @@ export default function VerticalTabs() {
               <Typography variant='h5'>Add an authorized representative</Typography>
             </Grid>
             <Grid item>
-              <Typography variant='h6'>Allow team members or individuals to contact Customer Support</Typography>
+              <Typography variant='subtitle1'>Allow team members or individuals to contact Customer Support</Typography>
             </Grid>
             <Grid item>
               <Button variant='outlined'>Create authorized representative</Button>
