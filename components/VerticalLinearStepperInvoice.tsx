@@ -407,7 +407,7 @@ function GetStepContent(step: number) {
   };
 
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date('2014-08-18T21:11:54'),
+    new Date('2020-12-18T21:11:54'),
   );
 
   const handleDateChange = (date: Date | null) => {

@@ -41,6 +41,7 @@ import StoreIcon from '@material-ui/icons/Store';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import NoteIcon from '@material-ui/icons/Note';
 import Grid from '@material-ui/core/Grid';
+import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
 
 
 interface Data {
@@ -462,6 +463,10 @@ export default function EnhancedTable() {
         <ListItem >
             <ListItemIcon><CheckCircleIcon/> </ListItemIcon>
             <ListItemText primary={"Paid - 100.00 USD"} secondary={"12/12/2020 03:30 PM"} />
+          </ListItem>
+          <ListItem >
+            <ListItemIcon><HourglassEmptyIcon/> </ListItemIcon>
+            <ListItemText primary={"Partial - 60.00 USD"} secondary={"40 USD remaining\n12/12/2020 03:29 PM"} />
           </ListItem>
           <ListItem >
             <ListItemIcon><RadioButtonUncheckedIcon/> </ListItemIcon>
