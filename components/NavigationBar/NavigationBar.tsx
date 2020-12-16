@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import Link from 'next/link'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -19,15 +19,10 @@ import { fade } from '@material-ui/core/styles'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Divider from '@material-ui/core/Divider';
 
-
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import InputBase from '@material-ui/core/InputBase';
 
-import BugReportIcon from '@material-ui/icons/BugReport';  
 import { MemoryRouter as Router } from 'react-router'
 import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -42,6 +37,10 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import MessageIcon from '@material-ui/icons/Message';
+
+
+
+
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -402,20 +401,6 @@ const NavigationBar: React.FC = () => {
                     </Typography>
                   </MuiLink>
                   </Link>
-                    
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon color="primary"/>
-                  </div>
-                  <InputBase
-                    placeholder="Search…"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                    }}
-                    inputProps={{ 'aria-label': 'search' }}
-                  />
-                </div>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
                   <IconButton

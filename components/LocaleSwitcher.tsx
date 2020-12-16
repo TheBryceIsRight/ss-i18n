@@ -37,7 +37,7 @@ const LocaleSwitcher: React.FC = () => {
   return ( <React.Fragment>
       <Grid container spacing={1} direction='row' alignItems='center'>
         <Grid item>
-          <TranslateIcon />
+          <TranslateIcon color='primary' />
         </Grid>
         <Grid item>
         <FormControl variant="outlined" className={classes.formControl}>
