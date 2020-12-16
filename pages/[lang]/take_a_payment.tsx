@@ -71,14 +71,19 @@ interface Values {
       label: 'EUR',
     },
     {
-      value: '฿',
-      label: 'Bitcoin',
+      value: '£',
+      label: 'GBP',
+    },
+    {
+      value: '₩',
+      label: 'KRW',
     },
     {
       value: '¥',
-      label: 'Yen',
+      label: 'JPY',
     },
   ];
+
 
   const ranges3 = [
     {

@@ -2113,8 +2113,12 @@ const currencies = [
       label: '€',
     },
     {
-      value: 'BTC',
-      label: '฿',
+      value: 'GBP',
+      label: '£',
+    },
+    {
+      value: 'KRW',
+      label: '₩',
     },
     {
       value: 'JPY',
