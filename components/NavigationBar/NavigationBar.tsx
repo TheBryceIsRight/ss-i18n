@@ -324,24 +324,6 @@ const NavigationBar: React.FC = () => {
         onKeyDown={toggleDrawer(anchor, false)}
         >
         <Router>
-        
-        <List>
-            <Link
-            href="/barChart"
-            passHref>
-            <ListItem button>
-            <ListItemIcon><BugReportIcon/></ListItemIcon><ListItemText primary='Chart Debugging'/>
-            </ListItem>
-            </Link>
-            <Link href="/[lang]/dashboard" as={`/${locale}/dashboard`} passHref>
-        <ListItem button>
-            <ListItemIcon><DashboardIcon/>
-            </ListItemIcon>
-            <ListItemText primary='System Status' />
-        </ListItem>
-        </Link>
-        </List>
-        <Divider />
         <List
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
