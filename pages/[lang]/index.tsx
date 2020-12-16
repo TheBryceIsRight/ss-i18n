@@ -1,13 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
-import Layout from '../../components/Layout'
 import withLocale from '../../hocs/withLocale';
 import useTranslation from '../../hooks/useTranslation';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
 import { Media, MediaContextProvider } from "../../utils/media";
 import { Typography } from '@material-ui/core';
-import Footer from '../../components/footer';
-import FeedbackForm from '../../components/feedbackForm';
 import StarterBundle from '../../components/StarterBundle';
 import StandardBundle from '../../components/StandardBundle';
 import PremiumBundle from '../../components/PremiumBundle';
