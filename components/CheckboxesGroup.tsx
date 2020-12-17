@@ -49,9 +49,14 @@ export default function CheckboxesGroup() {
   };
 
   const [value, setValue] = React.useState('new');
+  const [value1, setValue1] = React.useState('new');
 
   const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
+  };
+
+  const handleChangeRadio1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue1((event.target as HTMLInputElement).value);
   };
 
 
@@ -96,7 +101,7 @@ export default function CheckboxesGroup() {
           <Grid item>
           <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend">{t('settlement')}</FormLabel>
-                <RadioGroup aria-label="settlement" name="settlement" value={value} onChange={handleChangeRadio}>
+                <RadioGroup aria-label="settlement" name="settlement" value={value1} onChange={handleChangeRadio1}>
                 <FormControlLabel value="Same" control={<Radio />} label={t('same_day')} />
                 <FormControlLabel value="Next" control={<Radio />} label={t('next_day')}/>
               </RadioGroup>
