@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import { locales, languageNames } from '../translations/config';
 import MenuItem from '@material-ui/core/MenuItem';
 import TranslateIcon from '@material-ui/icons/Translate';
-import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import useTranslation from '../hooks/useTranslation';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 
 const useStyles = makeStyles((theme) =>
@@ -27,6 +27,7 @@ const LocaleSwitcher: React.FC = () => {
   const router = useRouter();
   const { t } = useTranslation();
 
+
   const handleLocaleChange = React.useCallback( (e: React.ChangeEvent<{ name?: string; value: unknown }>) => {
       const regex = new RegExp(`^/(${locales.join('|')})`)
       router.push(router.pathname, router.asPath.replace(regex, `/${e.target.value}`))
@@ -34,12 +35,7 @@ const LocaleSwitcher: React.FC = () => {
     [router]
   )
 
-  return ( <React.Fragment>
-      <Grid container spacing={1} direction='row' alignItems='center'>
-        <Grid item>
-          <TranslateIcon color='primary' />
-        </Grid>
-        <Grid item>
+  return ( 
         <FormControl variant="outlined" className={classes.formControl}>
         <TextField 
           id="outlined-basic" 
@@ -47,6 +43,9 @@ const LocaleSwitcher: React.FC = () => {
           variant="outlined"
           label = {t('language')}
           onChange= {handleLocaleChange} 
+          InputProps={{
+            startAdornment: <InputAdornment position="start"><TranslateIcon/> </InputAdornment>,
+        }} 
         >
           {locales.map((locale, index) => (
             <MenuItem key={index} value={locale} >
@@ -55,10 +54,6 @@ const LocaleSwitcher: React.FC = () => {
           ))}
         </TextField>       
         </FormControl>
-
-        </Grid>
-      </Grid>
-  </React.Fragment>
   )
 }
 

@@ -31,7 +31,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert'; 
-import { Link as MuiLink} from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ListSubheader from '@material-ui/core/ListSubheader';
@@ -211,6 +210,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     const handleMobileMenuOpen = (event: any) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+
+    function Logo() {
+      if (darkState) {
+        return <img src='/Elavon_logo_white.svg' alt='Elavon' height="80%"/>;
+      }
+      return <img src='/Elavon_logo.svg' alt='Elavon' height="80%"/>;
+    }
   
   
     const menuId = 'primary-search-account-menu';
@@ -443,14 +449,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                     onClose={toggleDrawer('left', false)}>{list('left')}
                 </Drawer>
                 </React.Fragment>
-    
-                  <Link href="/[lang]/" as={`/${locale}/`} passHref >
-                  <MuiLink>
-                    <Typography color="primary" className={classes.title} variant="h6" >
-                      Elavon
-                    </Typography>
-                  </MuiLink>
-                  </Link>
+                <Link href="/[lang]/" as={`/${locale}/`} passHref >
+                <Logo/>
+                </Link>
+                  
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
                   <LocaleSwitcher/>

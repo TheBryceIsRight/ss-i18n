@@ -95,7 +95,7 @@ export default function StarterBundle() {
       <CardActions>
             <Typography variant='body1'>
             <Link href="/[lang]/registration" as={`/${locale}/registration`}>
-            <Button size="small" startIcon={<AddShoppingCartIcon />}>{t('apply_now')}</Button>
+            <Button size="small" startIcon={<AddShoppingCartIcon />} variant='outlined'>{t('apply_now')}</Button>
             </Link>
             </Typography>
             

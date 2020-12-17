@@ -39,10 +39,6 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import MessageIcon from '@material-ui/icons/Message';
 
 
-
-
-
-
 const useStyles = makeStyles((theme: Theme) => createStyles({
     body: {
         margin:0,
