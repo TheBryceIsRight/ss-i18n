@@ -324,29 +324,29 @@ function MyApp({ Component, pageProps }: AppProps) {
         onClose={handleMobileMenuClose}
         >
         <MenuItem onClick={handleProfileMenuOpen}>
-            <IconButton
-            aria-label="account of current user"
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="primary"
-            >
-            <AccountCircle />
-            </IconButton>
-            <Typography>Profile</Typography>
+        <ListItem>
+            <ListItemIcon><AccountCircle />
+            </ListItemIcon>
+            <ListItemText primary='Profile' />
+        </ListItem>
         </MenuItem>
-  
         <MenuItem onClick={handleNotificationMenuOpen}>
-          <IconButton
-            aria-label="notifications"
-            aria-controls={notificationsMenuId}
-            aria-haspopup="true"
-            color="primary"
-          >
-            <NotificationsIcon />
-          </IconButton>
-          <Typography>Notifications</Typography>
+        <ListItem>
+            <ListItemIcon><NotificationsIcon />
+            </ListItemIcon>
+            <ListItemText primary='Notifications' />
+        </ListItem>
         </MenuItem>
-  
+        <MenuItem onClick={handleThemeChange} >
+        <ListItem>
+            <ListItemIcon><Brightness3Icon/>
+            </ListItemIcon>
+            <ListItemText primary='Dark Mode' />
+        </ListItem>
+        </MenuItem>
+        <MenuItem >
+        <LocaleSwitcher/>
+        </MenuItem>
         </Menu>
     );
   
