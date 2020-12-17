@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useContext } from 'react';
 import withLocale from '../../hocs/withLocale';
 import useTranslation from '../../hooks/useTranslation';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
@@ -12,6 +12,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import ThemeContext from '../../components/Theme';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -33,7 +34,7 @@ function IndexPage() {
 
   const { t } = useTranslation();
   const classes = useStyles();
-
+  const theme = useContext(ThemeContext);
 
     return <React.Fragment>
       <Head>
@@ -152,6 +153,7 @@ function IndexPage() {
             <PremiumBundle/>
             </Grid>
           </Grid>
+          <Typography variant='h4'>{theme} </Typography>
         </Media>
         </MediaContextProvider>
     </React.Fragment> 

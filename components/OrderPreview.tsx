@@ -79,12 +79,12 @@ export default function OrderCard() {
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
-                                        <Typography variant="h6">
+                                        <Typography variant="body1">
                                         {t('order_placed')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
-                                        <Typography variant="body1">
+                                        <Typography variant="body2">
                                         {t('placeholder_date')}
                                         </Typography>
                                     </Grid>
@@ -93,12 +93,12 @@ export default function OrderCard() {
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-start' justify='flex-start' className={classes1.root} >
                                     <Grid item>
-                                        <Typography variant="h6">
+                                        <Typography variant="body1">
                                         {t('total')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
-                                        <Typography variant="body1">
+                                        <Typography variant="body2">
                                         {t('shipping_price')}
                                         </Typography>
                                     </Grid>
@@ -107,12 +107,12 @@ export default function OrderCard() {
                             <Grid item>
                                 <Grid container spacing={1} direction='column' alignItems='flex-end' justify='flex-start' className={classes1.root} >
                                     <Grid item>
-                                        <Typography variant="h6">
+                                        <Typography variant="body1">
                                         {t('ship_to')}
                                         </Typography>
                                         </Grid>
                                         <Grid item>
-                                        <Typography variant="body1">
+                                        <Typography variant="body2">
                                         {t('placeholder_user')}
                                         </Typography>
                                     </Grid>
@@ -121,12 +121,12 @@ export default function OrderCard() {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                         {t('expected_delivery')}
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant="h6">
+                        <Typography variant="h5">
                         {t('product_name')}
                         </Typography>
                     </Grid>

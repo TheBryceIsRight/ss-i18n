@@ -1,5 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
+import { createContext } from 'react';
+
+const ThemeContext = createContext(true);
+
 
 //Theme set-up
 declare module "@material-ui/core/styles/createPalette" {
@@ -10,6 +14,7 @@ declare module "@material-ui/core/styles/createPalette" {
     nuetral: PaletteOptions['primary'];
   }
 }
+
 
 const dark = createMuiTheme({
     palette: {
@@ -58,3 +63,5 @@ const light = createMuiTheme({
 
 export const darkTheme = { ...dark }
 export const lightTheme = { ...light }
+
+export default ThemeContext;

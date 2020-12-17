@@ -1,7 +1,8 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-
+import Grid from '@material-ui/core/Grid';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const styles = theme => ({
   legend: {
@@ -30,16 +31,24 @@ const styles = theme => ({
 
 function Legend({ classes, data }) {
   return (
-    <ol className={classes.legend}>
+    <Grid container spacing={3} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+
       {data.map(({ name, color }, i) => {
         return (
-          <ul key={i}>
-            <li className={classes.marker} style={{ backgroundColor: color }} />
-            <li >{name}</li>
-          </ul>
+            <Grid item key={i}>
+            <Grid container spacing={1} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+              <Grid item>
+                <FiberManualRecordIcon style={{ color: color }}/>
+              </Grid>
+              <Grid item>
+                 <Typography variant='body1'>{name}</Typography>
+              </Grid>
+            </Grid>
+            </Grid>
+
         );
       })}
-    </ol>
+          </Grid>
   );
 }
 

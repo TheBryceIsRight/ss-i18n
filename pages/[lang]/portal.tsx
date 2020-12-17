@@ -22,7 +22,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import HelpIcon from '@material-ui/icons/Help';
 import Avatar from '@material-ui/core/Avatar';
 import PersonIcon from '@material-ui/icons/Person';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
@@ -37,6 +36,7 @@ import SendInvoice from '../../components/SendInvoice';
 import OrderPreview from '../../components/OrderPreview';
 import Link from 'next/link';
 
+
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 {/*
 interface IIndexProps {
@@ -46,29 +46,29 @@ interface IIndexProps {
 
 function Portal() {
 
-  const { t, locale } = useTranslation()
+  const { t, locale } = useTranslation();
   
-    const useStyles = makeStyles({
-        root: {
-        minWidth: 275,
-        
-        },
-        bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-        },
-        title: {
-        fontSize: 14,
-        },
-        pos: {
-        marginBottom: 12,
-        },
-        
-    });
-    const classes = useStyles();
-    const card_width = '588px';
-    const card_half_width = '286px';
+  const useStyles = makeStyles({
+      root: {
+      minWidth: 275,
+      
+      },
+      bullet: {
+      display: 'inline-block',
+      margin: '0 2px',
+      transform: 'scale(0.8)',
+      },
+      title: {
+      fontSize: 14,
+      },
+      pos: {
+      marginBottom: 12,
+      },
+      
+  });
+  const classes = useStyles();
+  const card_width = '588px';
+  const card_half_width = '286px';
 
     return <React.Fragment>
       <Head>
@@ -90,11 +90,11 @@ function Portal() {
         <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
             <Grid item>
 
-            <Typography variant="h3" component="h2">
+            <Typography variant="h3" component="h1">
             {t('welcome')}
             </Typography>
             <br/>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h2">
             {t('today')}
             </Typography>
             <br/>
@@ -103,7 +103,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}>
                     <CardContent>
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                         {t('gross_sales')}
                         </Typography>
                         <br/>
@@ -119,7 +119,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}>
                     <CardContent>
-                    <Typography variant="h5">
+                    <Typography variant="h4">
                     {t('transactions')}
                         </Typography>
                         <br/>
@@ -137,20 +137,14 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent >
-                    <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                        <HelpIcon fontSize="large"/>
-                        </Grid>
-                        <Grid item>
-                        <Typography variant="h5">
-                        {t('covid')}
-                        </Typography>
-                        <Typography variant="subtitle1">
+                    <CardHeader
+                        title={t('covid')}
+                    />
+                    <CardContent style={{minWidth: card_width}} >
+                        <Typography variant="body1">
                         {t('here_for_you')}
                         </Typography>
-                        </Grid>
-                        </Grid>
+   
 
                     </CardContent>
                     <CardActions>
@@ -353,11 +347,11 @@ function Portal() {
         <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
             <Grid item>
 
-            <Typography variant="h3" component="h2">
+            <Typography variant="h3" component="h1">
             {t('welcome')}
             </Typography>
             <br/>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h2">
             {t('today')}
             </Typography>
             <br/>
@@ -366,7 +360,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                         {t('gross_sales')}
                         </Typography>
                         <br/>
@@ -382,7 +376,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
-                    <Typography variant="h5">
+                    <Typography variant="h4">
                     {t('transactions')}
                         </Typography>
                         <br/>
@@ -403,21 +397,15 @@ function Portal() {
             </Grid>
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
-                <Card className={classes.root}>
+                      <Card className={classes.root}>
+                        <CardHeader
+                        title={t('covid')}
+                    />
                     <CardContent style={{minWidth: card_width}} >
-                    <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                        <HelpIcon fontSize="large"/>
-                        </Grid>
-                        <Grid item>
-                        <Typography variant="h5">
-                        {t('covid')}
-                        </Typography>
-                        <Typography variant="subtitle1">
+                        <Typography variant="body1">
                         {t('here_for_you')}
                         </Typography>
-                        </Grid>
-                        </Grid>
+   
 
                     </CardContent>
                     <CardActions>
@@ -620,11 +608,11 @@ function Portal() {
         <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
             <Grid item>
 
-            <Typography variant="h3" component="h2">
+            <Typography variant="h3" component="h1">
             {t('welcome')}
             </Typography>
             <br/>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h2">
             {t('today')}
             </Typography>
             <br/>
@@ -633,7 +621,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                         {t('gross_sales')}
                         </Typography>
                         <br/>
@@ -649,7 +637,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
                     <CardContent>
-                    <Typography variant="h5">
+                    <Typography variant="h4">
                     {t('transactions')}
                         </Typography>
                         <br/>
@@ -671,20 +659,14 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:card_width}} >
-                    <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                        <HelpIcon fontSize="large"/>
-                        </Grid>
-                        <Grid item>
-                        <Typography variant="h5">
-                        {t('covid')}
-                        </Typography>
-                        <Typography variant="subtitle1">
+                    <CardHeader
+                        title={t('covid')}
+                    />
+                    <CardContent style={{minWidth: card_width}} >
+                        <Typography variant="body1">
                         {t('here_for_you')}
                         </Typography>
-                        </Grid>
-                        </Grid>
+   
 
                     </CardContent>
                     <CardActions>
@@ -888,11 +870,11 @@ function Portal() {
         <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
             <Grid item>
 
-            <Typography variant="h3" component="h2">
+            <Typography variant="h3" component="h1">
             {t('welcome')}
             </Typography>
             <br/>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h2">
             {t('today')}
             </Typography>
             <br/>
@@ -901,7 +883,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root} style={{minWidth:card_half_width}} >
                     <CardContent >
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                         {t('gross_sales')}
                         </Typography>
                         <br/>
@@ -917,7 +899,7 @@ function Portal() {
                 <Grid item>
                 <Card className={classes.root} style={{minWidth:card_half_width}}>
                     <CardContent >
-                    <Typography variant="h5">
+                    <Typography variant="h4">
                     {t('transactions')}
                         </Typography>
                         <br/>
@@ -939,20 +921,14 @@ function Portal() {
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
+                    <CardHeader
+                        title={t('covid')}
+                    />
                     <CardContent style={{minWidth: card_width}} >
-                    <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                        <HelpIcon fontSize="large"/>
-                        </Grid>
-                        <Grid item>
-                        <Typography variant="h5">
-                        {t('covid')}
-                        </Typography>
-                        <Typography variant="subtitle1">
+                        <Typography variant="body1">
                         {t('here_for_you')}
                         </Typography>
-                        </Grid>
-                        </Grid>
+   
 
                     </CardContent>
                     <CardActions>
@@ -1156,11 +1132,11 @@ function Portal() {
         <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
             <Grid item>
 
-            <Typography variant="h3" component="h2">
+            <Typography variant="h3" component="h1">
             {t('welcome')}
             </Typography>
             <br/>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h2">
             {t('today')}
             </Typography>
             <br/>
@@ -1168,11 +1144,10 @@ function Portal() {
             <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
+                <CardHeader
+                    title={t('gross_sales')}
+                />
                     <CardContent>
-                        <Typography variant="h5">
-                        {t('gross_sales')}
-                        </Typography>
-                        <br/>
                         <Typography variant='h3'>
                         $2,178.67
                         </Typography>
@@ -1184,11 +1159,10 @@ function Portal() {
                 </Grid>
                 <Grid item>
                 <Card className={classes.root}  style={{minWidth:card_half_width}}>
+                    <CardHeader
+                        title={t('transactions')}
+                    />
                     <CardContent>
-                    <Typography variant="h5">
-                    {t('transactions')}
-                        </Typography>
-                        <br/>
                         <Typography variant='h3'>
                         $198.37
                         </Typography>
@@ -1201,27 +1175,19 @@ function Portal() {
             </Grid>
             <Grid container direction='column' alignItems='flex-start'>
                 <Grid item>
-                    <WeeklySales/>
+                    <WeeklySales  />
                 </Grid>
             </Grid>
             <Grid container spacing={3} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 <Grid item>
                 <Card className={classes.root}>
-                    <CardContent style={{minWidth:card_width}} >
-                    <Grid container spacing={2} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-                        <Grid item>
-                        <HelpIcon fontSize="large"/>
-                        </Grid>
-                        <Grid item>
-                        <Typography variant="h5">
-                        {t('covid')}
-                        </Typography>
-                        <Typography variant="subtitle1">
+                    <CardHeader
+                        title={t('covid')}
+                    />
+                    <CardContent style={{minWidth: card_width}} >
+                        <Typography variant="body1">
                         {t('here_for_you')}
                         </Typography>
-                        </Grid>
-                        </Grid>
-
                     </CardContent>
                     <CardActions>
                         <Button size="small" >{t('learn_more')}</Button>

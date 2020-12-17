@@ -36,9 +36,13 @@ const LocaleSwitcher: React.FC = () => {
   )
 
   return ( 
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl 
+        aria-haspopup="true" 
+        variant="outlined" 
+        className={classes.formControl}
+        aria-label='change the language' 
+        role='button'>
         <TextField 
-          id="outlined-basic" 
           select
           variant="outlined"
           label = {t('language')}
@@ -48,7 +52,7 @@ const LocaleSwitcher: React.FC = () => {
         }} 
         >
           {locales.map((locale, index) => (
-            <MenuItem key={index} value={locale} >
+            <MenuItem key={index} value={locale} id={languageNames[locale]}>
               {languageNames[locale]}
             </MenuItem>
           ))}

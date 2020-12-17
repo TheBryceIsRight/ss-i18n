@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 import { ResponsiveBar } from "@nivo/bar";
-import { darkTheme } from '../components/Theme'
+import { darkTheme } from '../components/Theme';
+import { lightTheme } from '../components/Theme'
 import { ThemeProvider } from '@material-ui/core/styles';
+import ThemeContext from '../components/Theme';
 
 
 // Nivo theming
@@ -9,7 +11,7 @@ const theme1 = {
   axis: {
     ticks: {
       line: {
-        stroke: "palette.primary.main",
+        stroke: darkTheme.palette.primary.main,
         strokeWidth: 0
       },
       text: {
@@ -37,19 +39,60 @@ const theme1 = {
 },
 };
 
-
+const theme2 = {
+  axis: {
+    ticks: {
+      line: {
+        stroke: lightTheme.palette.primary.main,
+        strokeWidth: 0
+      },
+      text: {
+        fill: lightTheme.palette.primary.main,
+        fontFamily: "'Roboto', sans-serif",
+      }
+    }
+  },
+  grid: {
+    line: {
+      stroke: lightTheme.palette.primary.main,
+      strokeWidth: 0.5
+    }
+  },
+  legends: {
+    text: {
+      fontFamily: "'Roboto', sans-serif",
+      fill: lightTheme.palette.primary.main,
+    }
+  },
+  tooltip: {
+    container: {
+        background: lightTheme.palette.background.default,
+    },
+},
+};
 
 
 class BarChart extends React.Component {
 
+  static contextType = ThemeContext
+
+  componentDidMount() {
+    const darkModeBoolean = this.context
+
+    console.log(darkModeBoolean) // { name: 'Tania', loggedIn: true }
+  }
+  
   render() {
     const { data, keys, index, groupMode, tickValues, colorBy, customTooltip, layout } = this.props;
+    
+    const theme = this.context ? theme2 : theme1;
+
 
     return (
       <React.Fragment>
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={theme}>
           <ResponsiveBar
-          theme={theme1}
+          theme={theme}
           data={data}
           keys={keys}
           indexBy={index}
@@ -64,7 +107,7 @@ class BarChart extends React.Component {
           padding={0.5}
           colors={{scheme: "category10"}}
           colorBy={colorBy}
-          borderColor={darkTheme.palette.primary.main}
+          borderColor={lightTheme.palette.primary.main}
           axisBottom={{
             orient: "bottom",
             tickSize: 5,
@@ -87,7 +130,7 @@ class BarChart extends React.Component {
           gridYValues={tickValues}
           labelSkipWidth={12}
           labelSkipHeight={12}
-          labelTextColor={darkTheme.palette.primary.main}
+          labelTextColor={lightTheme.palette.primary.main}
           enableLabel={false}
           animate={true}
           motionStiffness={90}
@@ -121,7 +164,6 @@ class BarChart extends React.Component {
         // ]}
         />
         </ThemeProvider>
-        
       </React.Fragment>
       
     );

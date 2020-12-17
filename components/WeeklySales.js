@@ -5,14 +5,17 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import EventAvailableTwoTone from "@material-ui/icons/EventAvailableTwoTone";
 import MoreVert from "@material-ui/icons/MoreVert";
 import { withStyles } from "@material-ui/core/styles";
 
 import BarChart from "./BarChart";
-import Message from "./Message";
 import Legend from "./Legend";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InfoIcon from '@material-ui/icons/Info';
 
 import item from "../public/item"; // import data
 
@@ -43,7 +46,7 @@ const styles = theme => ({
     textAlign: "left"
   },
   info: {
-    margin: "24 24"
+    margin: "20 20"
   },
   text: {
     fontFamily: "'Roboto', sans-serif",
@@ -56,10 +59,11 @@ const styles = theme => ({
 
 class WeeklySales extends React.Component {
 
-
+  
 
   render() {
     
+    const card_width = '588px';
     const { classes } = this.props;
     const { entries, from, to } = item;
 
@@ -128,9 +132,9 @@ class WeeklySales extends React.Component {
     // create the message
     let message;
     if (codingAtWorkTotalMinutes > codingOutsideWorkTotalMinutes) {
-      message = `Most of your sales occured during work hours (${codingAtWorkTotalHours} out of ${codingTotalHours} total hours).`;
+      message = `Most of your sales were in-person (${codingAtWorkTotalHours} out of ${codingTotalHours} total hours).`;
     } else {
-      message = `Most of your sales occured during nights or on weekends (${codingOutsideWorkTotalHours} out of ${codingTotalHours} total hours).`;
+      message = `Most of your sales were online (${codingOutsideWorkTotalHours} out of ${codingTotalHours} total hours).`;
     }
 
     // create legend
@@ -152,7 +156,7 @@ class WeeklySales extends React.Component {
 
     return (
       <React.Fragment>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={{minWidth: card_width}}>
           <CardHeader
             classes={{
               title: classes.title,
@@ -175,8 +179,11 @@ class WeeklySales extends React.Component {
             <div>
               <Legend data={legend} />
             </div>
-            <div className={classes.container} >
+            <div className={classes.container} aria-label='bar chart of weekly sales'>
               <BarChart
+                aria-label='bar chart of weekly sales'
+                alt='bar chart of weekly sales'
+                role='group'
                 data={wlbData}
                 keys={keys}
                 tickValues={tickValues()}
@@ -190,11 +197,15 @@ class WeeklySales extends React.Component {
               />
             </div>
             <div className={classes.info}>
-              <Message>
-                <Typography className={classes.text}>
-                  {message}
-                </Typography>
-              </Message>
+              <List>
+              <ListItem>
+                <ListItemIcon>
+                  <InfoIcon/>
+                </ListItemIcon>
+                <ListItemText>{message}</ListItemText>
+              </ListItem>
+              </List>
+              
             </div>
           </CardContent>
         </Card>

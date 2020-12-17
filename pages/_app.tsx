@@ -45,8 +45,18 @@ import useTranslation from '../hooks/useTranslation';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import LocaleSwitcher from '../components/LocaleSwitcher';
+import ThemeContext from '../components/Theme';
 
 
+
+const themeContext = {
+  name: 'dark',
+  type: [
+    'light',
+    'dark'
+  ],
+  switch: true,
+}
 
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -130,7 +140,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 
-
 function MyApp({ Component, pageProps }: AppProps) {
 
   const containerSmall = {
@@ -161,7 +170,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const [darkState, setDarkState] = useState(true);
 
 	const handleThemeChange = () => {
-		setDarkState(!darkState); };
+    setDarkState(!darkState);
+    themeContext.name = darkState ? themeContext.type[0] : themeContext.type[1] ;
+    themeContext.switch = darkState ? true : false ;
+  };
 
   let theme = darkState ? darkTheme : lightTheme
   
@@ -429,8 +441,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
   
   {/*End of Top */}
-  
+    
+    
     return (
+      
+    
         <div className={classes.grow}>
             <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
               <Toolbar disableGutters={true}>
@@ -460,7 +475,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <div className={classes.sectionDesktop}>
                   <IconButton
                     edge="end"
-                    aria-label="dark mode"
+                    aria-label="Dark mode"
                     aria-haspopup="false"
                     onClick={handleThemeChange}
                     color="primary"
@@ -471,7 +486,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <div className={classes.sectionDesktop}>
                   <IconButton
                     edge="end"
-                    aria-label="account of current user"
+                    aria-label="Notifications menu"
                     aria-controls={notificationsMenuId}
                     aria-haspopup="true"
                     onClick={handleNotificationMenuOpen}
@@ -485,7 +500,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <div className={classes.sectionDesktop}>
                   <IconButton
                     edge="end"
-                    aria-label="account of current user"
+                    aria-label="Account of current user"
                     aria-controls={menuId}
                     aria-haspopup="true"
                     onClick={handleProfileMenuOpen}
@@ -518,6 +533,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
+    <ThemeContext.Provider value={themeContext.switch}>
   <MediaContextProvider>
   <Media at="sm">
   <div style={containerSmall} >
@@ -576,13 +592,13 @@ function MyApp({ Component, pageProps }: AppProps) {
             {isMounted && <Component {...pageProps} />}
             <br/>
             </main>
-
+            
         </ThemeProvider>
       </div>
     </Media>
-    </MediaContextProvider>  
+    </MediaContextProvider> 
+    </ThemeContext.Provider> 
     )
-
 }
 
 export default MyApp
