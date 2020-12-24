@@ -76,12 +76,6 @@ class BarChart extends React.Component {
 
   static contextType = ThemeContext
 
-  componentDidMount() {
-    const darkModeBoolean = this.context
-
-    console.log(darkModeBoolean) // { name: 'Tania', loggedIn: true }
-  }
-  
   render() {
     const { data, keys, index, groupMode, tickValues, colorBy, customTooltip, layout } = this.props;
     

@@ -294,7 +294,6 @@ function Take_a_payment() {
         <Media lessThan='md'>
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        
         <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
             <Button>{t('home')}</Button>
             </Link>

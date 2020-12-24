@@ -172,11 +172,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const handleThemeChange = () => {
     setDarkState(!darkState);
     themeContext.name = darkState ? themeContext.type[0] : themeContext.type[1] ;
-    themeContext.switch = darkState ? true : false ;
+    themeContext.switch = darkState ? false : true ;
   };
-
-  let theme = darkState ? darkTheme : lightTheme
   
+
+  let theme = darkState ? lightTheme : darkTheme;
+
   theme = responsiveFontSizes(theme);
 
 	useEffect(() => {
@@ -224,7 +225,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     function Logo() {
-      if (darkState) {
+      if (!darkState) {
         return <img src='/Elavon_logo_white.svg' alt='Elavon' height="80%"/>;
       }
       return <img src='/Elavon_logo.svg' alt='Elavon' height="80%"/>;
