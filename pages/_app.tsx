@@ -530,7 +530,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       
     
         <div className={classes.grow}>
-            <AppBar position="static" style={{ background: theme.palette.background.default}}>
+            <AppBar position="static" style={{ background: 'transparent', boxShadow:'none'}}>
               <Toolbar disableGutters={true}>
                 <React.Fragment>
                 <IconButton
