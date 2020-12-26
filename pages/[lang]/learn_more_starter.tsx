@@ -15,7 +15,6 @@ import ThemeContext from '../../components/Theme';
 import Link from 'next/link';
 import { Button } from '@material-ui/core';
 
-
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 {/*
 interface IIndexProps {

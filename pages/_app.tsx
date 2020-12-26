@@ -44,8 +44,12 @@ import MessageIcon from '@material-ui/icons/Message';
 import useTranslation from '../hooks/useTranslation';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
-import LocaleSwitcher from '../components/LocaleSwitcher';
 import ThemeContext from '../components/Theme';
+import { useRouter } from 'next/router';
+import { locales, languageNames } from '../translations/config';
+import TranslateIcon from '@material-ui/icons/Translate';
+import Tooltip from '@material-ui/core/Tooltip';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 
 
@@ -56,6 +60,13 @@ const themeContext = {
     'dark'
   ],
   switch: true,
+  language: [
+    'en',
+    'fr',
+    'pl',
+    'es'
+  ],
+  index: 0,
 }
 
 
@@ -186,269 +197,340 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const NavigationBar: React.FC = () => {
   
-    const classes = useStyles();
-  
-    const { locale} = useTranslation()
-  
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-    const [notificationsAnchorEl, setNotificationsAnchorEl] = React.useState(null);
-  
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-    const isNotificationsMenuOpen = Boolean(notificationsAnchorEl);
-  
-    const handleProfileMenuOpen = (event: any) => {
-        setAnchorEl(event.currentTarget);
-    };
-  
-    const handleNotificationMenuOpen = (event: any) => {
-      setNotificationsAnchorEl(event.currentTarget);
-  };
-  
-  
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    };
-  
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
-  
-    const handleNotificationsMenuCLose  = () => {
-      setNotificationsAnchorEl(null);
-  };
-  
-    const handleMobileMenuOpen = (event: any) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-    };
+  const classes = useStyles();
 
-    function Logo() {
-      if (!darkState) {
-        return <img src='/Elavon_logo_white.svg' alt='Elavon' height="80%"/>;
-      }
-      return <img src='/Elavon_logo.svg' alt='Elavon' height="80%"/>;
+  const { locale} = useTranslation()
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [notificationsAnchorEl, setNotificationsAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const isNotificationsMenuOpen = Boolean(notificationsAnchorEl);
+
+  const handleProfileMenuOpen = (event: any) => {
+      setAnchorEl(event.currentTarget);
+  };
+
+  const handleNotificationMenuOpen = (event: any) => {
+    setNotificationsAnchorEl(event.currentTarget);
+  };
+
+
+  const handleMobileMenuClose = () => {
+      setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+      setAnchorEl(null);
+      handleMobileMenuClose();
+  };
+
+  const handleNotificationsMenuCLose  = () => {
+    setNotificationsAnchorEl(null);
+  };
+
+  const handleMobileMenuOpen = (event: any) => {
+      setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  /////////////////////////////
+  //Language Selector
+  /////////////////////////////
+
+  const router = useRouter();
+
+  const [languageAnchorEl, setlanguageAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleMenuItemClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
+    setlanguageAnchorEl(null);
+    themeContext.index = index;
+    const { myValue } = event.currentTarget.dataset;
+    const regex = new RegExp(`^/(${locales.join('|')})`);
+    router.push(router.pathname, router.asPath.replace(regex, `/${myValue}`));
+  };
+
+  const handleLanguageMenuOpen = (event: any) => {
+    setlanguageAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setlanguageAnchorEl(null);
+  };
+
+  ///////////////////////////
+  //End of Language Selector
+  ///////////////////////////
+
+  function Logo() {
+    if (!darkState) {
+      return (
+      <Link href="/[lang]/" as={`/${locale}/`} passHref>
+        <ButtonBase>
+        <img src='/Elavon_logo_white.svg' alt='Elavon' height="36"/>
+        </ButtonBase>
+      </Link>
+      );
+    } else {
+    return (
+      <Link href="/[lang]/" as={`/${locale}/`} passHref>
+        <ButtonBase>
+        <img src='/Elavon_logo.svg' alt='Elavon' height="36"/>
+        </ButtonBase>
+      </Link>
+      );
     }
-  
-  
-    const menuId = 'primary-search-account-menu';
-  
-    const renderMenu = (
-        <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={menuId}
+  }
+
+
+  const menuId = 'primary-search-account-menu';
+
+  const renderMenu = (
+      <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+      >
+      <MenuItem>
+        <Link href="/api/login" passHref >
+          <ListItem>
+            <ListItemIcon>
+              <VpnKeyIcon/>
+            </ListItemIcon>
+            <ListItemText>
+                  <Typography>
+                    Login
+                  </Typography>
+            </ListItemText>
+          </ListItem>
+          </Link>
+
+      </MenuItem>
+      <MenuItem>
+        <Link href="/api/logout" passHref >
+          <ListItem>
+            <ListItemIcon>
+              <ExitToAppIcon/>
+            </ListItemIcon>
+            <ListItemText>
+                  <Typography>
+                    Logout
+                  </Typography>
+            </ListItemText>
+          </ListItem>
+          </Link>
+
+      </MenuItem>
+      <MenuItem>
+        <Link href="/profile" passHref >
+          <ListItem>
+            <ListItemIcon>
+              <PersonIcon/>
+            </ListItemIcon>
+            <ListItemText>
+                  <Typography>
+                    Profile
+                  </Typography>
+            </ListItemText>
+          </ListItem>
+          </Link>
+
+      </MenuItem>
+      <MenuItem>
+        <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
+          <ListItem>
+            <ListItemIcon>
+              <SettingsIcon/>
+            </ListItemIcon>
+            <ListItemText>
+                  <Typography>
+                    Settings
+                  </Typography>
+            </ListItemText>
+          </ListItem>
+          </Link>
+
+      </MenuItem>
+      </Menu>
+  );
+
+  const languageMenuId = 'language settings';
+  const renderLanguageMenu = (
+    <React.Fragment>
+      
+      <Menu
+        id={languageMenuId}
+        anchorEl={languageAnchorEl}
         keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMenuOpen}
-        onClose={handleMenuClose}
-        >
-        <MenuItem>
-          <Link href="/api/login" passHref >
-            <ListItem>
-              <ListItemIcon>
-                <VpnKeyIcon/>
-              </ListItemIcon>
-              <ListItemText>
-                    <Typography>
-                      Login
-                    </Typography>
-              </ListItemText>
-            </ListItem>
-            </Link>
-  
-        </MenuItem>
-        <MenuItem>
-          <Link href="/api/logout" passHref >
-            <ListItem>
-              <ListItemIcon>
-                <ExitToAppIcon/>
-              </ListItemIcon>
-              <ListItemText>
-                    <Typography>
-                      Logout
-                    </Typography>
-              </ListItemText>
-            </ListItem>
-            </Link>
-  
-        </MenuItem>
-        <MenuItem>
-          <Link href="/profile" passHref >
-            <ListItem>
-              <ListItemIcon>
-                <PersonIcon/>
-              </ListItemIcon>
-              <ListItemText>
-                    <Typography>
-                      Profile
-                    </Typography>
-              </ListItemText>
-            </ListItem>
-            </Link>
-  
-        </MenuItem>
-        <MenuItem>
-          <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
-            <ListItem>
-              <ListItemIcon>
-                <SettingsIcon/>
-              </ListItemIcon>
-              <ListItemText>
-                    <Typography>
-                      Settings
-                    </Typography>
-              </ListItemText>
-            </ListItem>
-            </Link>
-  
-        </MenuItem>
-        </Menu>
-    );
-  
-    const notificationsMenuId = 'notifications-menu';
-    const renderNotifcationsMenu = (
-        <Menu
-        anchorEl={notificationsAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={notificationsMenuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isNotificationsMenuOpen}
-        onClose={handleNotificationsMenuCLose}
-        >
-        <MenuItem>
-        All notifications are read!
-        </MenuItem>
-        </Menu>
-    );
-  
-  
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-        <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={mobileMenuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMobileMenuOpen}
-        onClose={handleMobileMenuClose}
-        >
-        <MenuItem onClick={handleProfileMenuOpen}>
-        <ListItem>
-            <ListItemIcon><AccountCircle />
-            </ListItemIcon>
-            <ListItemText primary='Profile' />
-        </ListItem>
-        </MenuItem>
-        <MenuItem onClick={handleNotificationMenuOpen}>
-        <ListItem>
-            <ListItemIcon><NotificationsIcon />
-            </ListItemIcon>
-            <ListItemText primary='Notifications' />
-        </ListItem>
-        </MenuItem>
-        <MenuItem onClick={handleThemeChange} >
-        <ListItem>
-            <ListItemIcon><Brightness3Icon/>
-            </ListItemIcon>
-            <ListItemText primary='Dark Mode' />
-        </ListItem>
-        </MenuItem>
-        <MenuItem >
-        <LocaleSwitcher/>
-        </MenuItem>
-        </Menu>
-    );
-  
-  
-    const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
-        checkedA: true,
-        checkedB: true,
-    });
-  
-    const toggleDrawer = (anchor:any, open:any) => (event:any) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-        return;
-        }
-  
-        setState({ ...state, [anchor]: open });
-    };
-  
-    const list = (anchor:any) => (
-        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-        <div
-        className={clsx(classes.list, {
-            [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-        })}
-        //role="navigation"
-        onClick={toggleDrawer(anchor, false)}
-        onKeyDown={toggleDrawer(anchor, false)}
-        >
-        <Router>
-        <List
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-              DIY Sales
-            </ListSubheader>
-        }
-        >
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
-        <ListItem button>
-            <ListItemIcon><LoyaltyIcon/>
-            </ListItemIcon>
-            <ListItemText primary='DIY Sales Demo' />
-        </ListItem>
-        </Link>
-  
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref>
-        <ListItem button>
-            <ListItemIcon><DashboardIcon/>
-            </ListItemIcon>
-            <ListItemText primary='Dashboard' />
-        </ListItem>
-        </Link>
-  
-        <Link href="/[lang]/orders" as={`/${locale}/orders`} passHref>
-        <ListItem button>
-            <ListItemIcon><LocalMallIcon/>
-            </ListItemIcon>
-            <ListItemText primary='Your Orders' />
-        </ListItem>
-        </Link>
-        <Link href="/[lang]/sales" as={`/${locale}/sales`} passHref>
-        <ListItem button>
-            <ListItemIcon><AccountBalanceWalletIcon/>
-            </ListItemIcon>
-            <ListItemText primary='Sales' />
-        </ListItem>
-        </Link>
-        <Link href="/[lang]/invoices" as={`/${locale}/invoices`} passHref>
-        <ListItem button>
-            <ListItemIcon><MessageIcon/>
-            </ListItemIcon>
-            <ListItemText primary='Invoices' />
-        </ListItem>
-        </Link>
-        </List>
-        </Router>
-        </div>
-    );
-  
-  {/*End of Top */}
+        open={Boolean(languageAnchorEl)}
+        onClose={handleClose}
+      >
+        {locales.map((option, index) => (
+          <MenuItem
+            key={option}
+            data-my-value={[option]}
+            id={languageNames[option]}
+            selected={index === themeContext.index}
+            onClick={(event) => handleMenuItemClick(event, index)}
+          >
+            {languageNames[option]}
+          </MenuItem>
+        ))}
+      </Menu>
+  </React.Fragment> 
+  );
+
+  const notificationsMenuId = 'notifications-menu';
+  const renderNotifcationsMenu = (
+      <Menu
+      anchorEl={notificationsAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={notificationsMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isNotificationsMenuOpen}
+      onClose={handleNotificationsMenuCLose}
+      >
+      <MenuItem>
+      All notifications are read!
+      </MenuItem>
+      </Menu>
+  );
+
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+      <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+      >
+      <MenuItem onClick={handleProfileMenuOpen}>
+      <ListItem>
+          <ListItemIcon><AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary='Profile' />
+      </ListItem>
+      </MenuItem>
+      <MenuItem onClick={handleNotificationMenuOpen}>
+      <ListItem>
+          <ListItemIcon><NotificationsIcon />
+          </ListItemIcon>
+          <ListItemText primary='Notifications' />
+      </ListItem>
+      </MenuItem>
+      <MenuItem onClick={handleThemeChange} >
+      <ListItem>
+          <ListItemIcon><Brightness3Icon/>
+          </ListItemIcon>
+          <ListItemText primary='Dark Mode' />
+      </ListItem>
+      </MenuItem>
+      <MenuItem onClick={handleLanguageMenuOpen}>
+      <ListItem>
+          <ListItemIcon><TranslateIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Language' />
+      </ListItem>
+      </MenuItem>
+      </Menu>
+  );
+
+
+  const [state, setState] = React.useState({
+      top: false,
+      left: false,
+      bottom: false,
+      right: false,
+      checkedA: true,
+      checkedB: true,
+  });
+
+  const toggleDrawer = (anchor:any, open:any) => (event:any) => {
+      if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+      }
+
+      setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor:any) => (
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div
+      className={clsx(classes.list, {
+          [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      //role="navigation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+      >
+      <Router>
+      <List
+        subheader={
+          <ListSubheader component="div" id="nested-list-subheader">
+            DIY Sales
+          </ListSubheader>
+      }
+      >
+      <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
+      <ListItem button>
+          <ListItemIcon><LoyaltyIcon/>
+          </ListItemIcon>
+          <ListItemText primary='DIY Sales Demo' />
+      </ListItem>
+      </Link>
+
+      <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref>
+      <ListItem button>
+          <ListItemIcon><DashboardIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Dashboard' />
+      </ListItem>
+      </Link>
+
+      <Link href="/[lang]/orders" as={`/${locale}/orders`} passHref>
+      <ListItem button>
+          <ListItemIcon><LocalMallIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Your Orders' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/sales" as={`/${locale}/sales`} passHref>
+      <ListItem button>
+          <ListItemIcon><AccountBalanceWalletIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Sales' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/invoices" as={`/${locale}/invoices`} passHref>
+      <ListItem button>
+          <ListItemIcon><MessageIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Invoices' />
+      </ListItem>
+      </Link>
+      </List>
+      </Router>
+      </div>
+  );
+
+{/*End of Top */}
     
     
     return (
       
     
         <div className={classes.grow}>
-            <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+            <AppBar position="static" style={{ background: theme.palette.background.default}}>
               <Toolbar disableGutters={true}>
                 <React.Fragment>
                 <IconButton
@@ -471,9 +553,19 @@ function MyApp({ Component, pageProps }: AppProps) {
                   
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
-                  <LocaleSwitcher/>
+                <Tooltip title="Language">
+                  <IconButton
+                    edge='end'
+                    aria-label='Language Settings'
+                    aria-haspopup='true'
+                    onClick={handleLanguageMenuOpen}
+                    color='primary'>
+                      <TranslateIcon/>
+                    </IconButton>
+                  </Tooltip>
                 </div>
                 <div className={classes.sectionDesktop}>
+                <Tooltip title="Dark Mode">
                   <IconButton
                     edge="end"
                     aria-label="Dark mode"
@@ -483,8 +575,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                   >
                     <Brightness3Icon />
                   </IconButton>
+                  </Tooltip>
                 </div>
                 <div className={classes.sectionDesktop}>
+                <Tooltip title="Notifications">
                   <IconButton
                     edge="end"
                     aria-label="Notifications menu"
@@ -495,20 +589,22 @@ function MyApp({ Component, pageProps }: AppProps) {
                   >
                     <NotificationsIcon />
                   </IconButton>
+                </Tooltip>
                 </div>
                 
   
                 <div className={classes.sectionDesktop}>
+                <Tooltip title="Profile">
                   <IconButton
-                    edge="end"
-                    aria-label="Account of current user"
-                    aria-controls={menuId}
-                    aria-haspopup="true"
-                    onClick={handleProfileMenuOpen}
-                    color="primary"
-                  >
-                    <AccountCircle />
-                  </IconButton>
+                      aria-label="Account of current user"
+                      aria-controls={menuId}
+                      aria-haspopup="true"
+                      onClick={handleProfileMenuOpen}
+                      color="primary"
+                    >
+                      <AccountCircle />
+                    </IconButton>
+                </Tooltip>
                 </div>
                 
                 <div className={classes.sectionMobile}>
@@ -528,13 +624,14 @@ function MyApp({ Component, pageProps }: AppProps) {
             {renderMobileMenu}
             {renderMenu}
             {renderNotifcationsMenu}
+            {renderLanguageMenu}
           </div>
     );
     };
 
 
   return (
-    <ThemeContext.Provider value={themeContext.switch}>
+  <ThemeContext.Provider value={themeContext.switch}>
   <MediaContextProvider>
   <Media at="sm">
   <div style={containerSmall} >
