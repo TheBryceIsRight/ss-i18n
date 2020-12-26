@@ -101,7 +101,7 @@ export default function StarterBundle() {
             
             <Link href="/[lang]/learn_more_starter" as={`/${locale}/learn_more_starter`}>
             <Button size="small" variant='text'>{t('learn_more')}</Button>
-            </Link>k
+            </Link>
       </CardActions>
     </Card>
   );
