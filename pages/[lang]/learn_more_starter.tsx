@@ -423,7 +423,7 @@ function LearnMore() {
         {/*Mobile */}
         <Media lessThan='md'>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -588,7 +588,7 @@ function LearnMore() {
         {/*Tablet */}
         <Media at='md'>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -760,7 +760,7 @@ function LearnMore() {
         {/*Desktop */}
         <Media at='lg'>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -931,7 +931,7 @@ function LearnMore() {
         {/*High Resolution Desktop */}
         <Media at='xl'>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -1106,7 +1106,7 @@ function LearnMore() {
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">

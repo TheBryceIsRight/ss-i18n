@@ -271,7 +271,7 @@ function Registration() {
         <Media lessThan='md'>
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -368,7 +368,7 @@ function Registration() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -465,7 +465,7 @@ function Registration() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -560,7 +560,7 @@ function Registration() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
@@ -657,7 +657,7 @@ function Registration() {
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
-        <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref >
+        <Link href="/[lang]/" as={`/${locale}/`} passHref >
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">

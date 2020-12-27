@@ -488,7 +488,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </ListSubheader>
       }
       >
-      <Link href="/[lang]/diy" as={`/${locale}/diy`} passHref>
+      <Link href="/[lang]/" as={`/${locale}/`} passHref>
       <ListItem button>
           <ListItemIcon><LoyaltyIcon/>
           </ListItemIcon>

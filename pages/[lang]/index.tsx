@@ -162,7 +162,7 @@ class Hero extends React.Component {
         
         <img src={heroImage} alt='Elavon' width="100%"/>
       </div>
-      <div style={{position: 'relative', top: 80, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <div style={{position: 'relative', top: 130, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
         <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
