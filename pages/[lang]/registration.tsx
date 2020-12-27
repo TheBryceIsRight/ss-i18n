@@ -35,8 +35,17 @@ import Link from 'next/link';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import hybrid from 'react-syntax-highlighter/dist/cjs/styles/hljs/hybrid';
 
- 
+
+export interface SimpleDialogProps {
+    open: boolean;
+    selectedValue: string;
+    onClose: (value: string) => void;
+  }
 
 interface Values {
     email: string;
@@ -57,6 +66,24 @@ interface Values {
       label: 'Europe',
     },
   ];
+
+  function SimpleDialog(props: SimpleDialogProps) {
+    const { onClose, selectedValue, open } = props;
+  
+    const handleClose = () => {
+      onClose(selectedValue);
+    };
+  
+  
+    return (
+      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
+        <DialogTitle id="simple-dialog-title">POST JSON API Call</DialogTitle>
+        <SyntaxHighlighter language="JSON" style={hybrid}>
+            {selectedValue}
+        </SyntaxHighlighter>
+      </Dialog>
+    );
+  }
 
 
   function UpperCasingTextField(props: TextFieldProps) {
@@ -96,6 +123,19 @@ function Registration() {
     const { locale, t } = useTranslation();
     const classes = useStyles();
 
+    //Dialog Controls
+    const [open, setOpen] = React.useState(false);
+    const [selectedValue, setSelectedValue] = React.useState("Example String");
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+    ///////////////////
+
 
     const NewForm = () => (
         <Card>
@@ -127,7 +167,8 @@ function Registration() {
         onSubmit={(values, {setSubmitting}) => {
             setTimeout(() => {
             setSubmitting(false);
-            alert(JSON.stringify(values, null, 2));
+            setSelectedValue(JSON.stringify(values, null, 2));
+            handleClickOpen();
             }, 500);
             // fetch(`https://hooks.zapier.com/hooks/catch/8157500/okazqvp/`, {
             // method: 'POST',
@@ -210,6 +251,7 @@ function Registration() {
         )}
         />
             </CardContent>
+            <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
         </Card>
 
         
