@@ -1,19 +1,26 @@
+
 import Head from 'next/head';
-import React, { useContext } from 'react';
-import withLocale from '../../hocs/withLocale';
-import useTranslation from '../../hooks/useTranslation';
+import React from 'react';
+import {
+  Typography,
+} from '@material-ui/core';
 import CheckboxesGroup from '../../components/CheckboxesGroup';
 import { Media, MediaContextProvider } from "../../utils/media";
-import { Typography } from '@material-ui/core';
+import withLocale from '../../hocs/withLocale';
 import StarterBundle from '../../components/StarterBundle';
 import StandardBundle from '../../components/StandardBundle';
 import PremiumBundle from '../../components/PremiumBundle';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import ThemeContext from '../../components/Theme';
+import { Button } from '@material-ui/core';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+{/*
+interface IIndexProps {
+  products: IProduct[]
+} 
+*/}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,11 +37,158 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function IndexPage() {
+class Hero extends React.Component {
+  static contextType = ThemeContext;
 
-  const { t } = useTranslation();
+  render() {
+    const heroImage = this.context ? '/Main.png' : '/Main_Dark.png' ;
+    const text_width_small = "200px";
+    const text_width = "300px";
+    const text_width_tablet = "400px";
+    const text_width_desktop = "500px";
+
+    return <React.Fragment>
+      <MediaContextProvider>
+          {/*Smaller than mobile */}
+          <Media at='sm'>
+      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 120, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width_small}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_small}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+      </Media>
+
+         {/*Mobile */}
+      <Media at='mo'>
+      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 190, left: 70, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+      </Media>
+
+      {/*Tablet */}
+      <Media at='md'>
+      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 80, left: 260, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_tablet}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+        
+      </Media>
+
+      {/*Desktop */}
+      <Media at='lg'>
+      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 80, left: 400, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+        
+      </Media>
+
+      {/*High Resolution Desktop */}
+      <Media at='xl'>
+      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 80, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+      </Media>
+      
+      {/*4K & Greater*/}
+      <Media greaterThanOrEqual='el'>
+      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        
+        <img src={heroImage} alt='Elavon' width="100%"/>
+      </div>
+      <div style={{position: 'relative', top: 80, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+        <Grid item>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        </Grid>
+        <Grid item>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        </Grid>
+        <Grid item>
+          <Button variant='contained' size='large'>Try talech now</Button>
+        </Grid>
+      </Grid>          
+      </div>
+      </Media>
+      </MediaContextProvider>
+      
+    </React.Fragment>;
+    
+    
+  }
+  
+}
+
+function DIY() {
+
   const classes = useStyles();
-  const theme = useContext(ThemeContext);
+
 
     return <React.Fragment>
       <Head>
@@ -46,9 +200,20 @@ function IndexPage() {
         
         {/*Mobile */}
         <Media lessThan='md'>
-          <Typography variant="h3" component="h2">
-              {t('offerings')}
-          </Typography>
+        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Hero/>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <CheckboxesGroup/>
           <br/>
@@ -67,9 +232,17 @@ function IndexPage() {
 
         {/*Tablet */}
         <Media at='md'>
-          <Typography variant="h3" component="h2">
-          {t('offerings')}
-          </Typography>
+        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Hero/>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <CheckboxesGroup/>
           <br/>
@@ -88,9 +261,17 @@ function IndexPage() {
 
         {/*Desktop */}
         <Media at='lg'>
-          <Typography variant="h3" component="h2">
-          {t('offerings')}
-          </Typography>
+        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Hero/>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <CheckboxesGroup/>
               <br/>
@@ -109,9 +290,21 @@ function IndexPage() {
 
         {/*High Resolution Desktop */}
         <Media at='xl'>
-          <Typography variant="h3" component="h2">
-          {t('offerings')}
-          </Typography>
+        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Hero/>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <CheckboxesGroup/>
           <br/>
@@ -130,15 +323,25 @@ function IndexPage() {
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
-        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />} >
-            <Typography color="textPrimary">
-                {t('home')}
-            </Typography>
-          </Breadcrumbs>
-        <br/>
-          <Typography variant="h3" component="h2">
-          {t('offerings')}
-          </Typography>
+          <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid item>
+            <Hero/>
+            </Grid>
+          </Grid>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <CheckboxesGroup/>
           <br/>
@@ -153,7 +356,6 @@ function IndexPage() {
             <PremiumBundle/>
             </Grid>
           </Grid>
-          <Typography variant='h4'>{theme} </Typography>
         </Media>
         </MediaContextProvider>
     </React.Fragment> 
@@ -175,4 +377,4 @@ DIY.getInitialProps = async () => {
 
 */}
 
-export default withLocale(IndexPage)
+export default withLocale(DIY) 

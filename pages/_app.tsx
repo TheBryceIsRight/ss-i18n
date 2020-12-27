@@ -296,8 +296,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       open={isMenuOpen}
       onClose={handleMenuClose}
       >
+      <Link href="/api/login" passHref >
       <MenuItem>
-        <Link href="/api/login" passHref >
           <ListItem>
             <ListItemIcon>
               <VpnKeyIcon/>
@@ -308,11 +308,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Typography>
             </ListItemText>
           </ListItem>
-          </Link>
 
       </MenuItem>
+      </Link>
+
+      <Link href="/api/logout" passHref >
       <MenuItem>
-        <Link href="/api/logout" passHref >
+        
           <ListItem>
             <ListItemIcon>
               <ExitToAppIcon/>
@@ -323,11 +325,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Typography>
             </ListItemText>
           </ListItem>
-          </Link>
 
       </MenuItem>
+      </Link>
+
+      <Link href="/profile" passHref >
       <MenuItem>
-        <Link href="/profile" passHref >
+        
           <ListItem>
             <ListItemIcon>
               <PersonIcon/>
@@ -338,11 +342,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Typography>
             </ListItemText>
           </ListItem>
-          </Link>
 
       </MenuItem>
+      </Link>
+
+      <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
       <MenuItem>
-        <Link href="/[lang]/settings" as={`/${locale}/settings`} passHref >
+        
           <ListItem>
             <ListItemIcon>
               <SettingsIcon/>
@@ -353,9 +359,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Typography>
             </ListItemText>
           </ListItem>
-          </Link>
 
       </MenuItem>
+      </Link>
+
       </Menu>
   );
 
