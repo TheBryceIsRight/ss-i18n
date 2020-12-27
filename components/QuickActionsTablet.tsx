@@ -5,7 +5,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { CardHeader } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Link from 'next/link';
 import useTranslation from '../hooks/useTranslation';
@@ -14,7 +13,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
@@ -119,11 +117,6 @@ export default function QuickActionsMobile() {
 
   return ( <Card className={classes.root}>
             <CardHeader
-                avatar={
-                <Avatar aria-label="shopping bag">
-                    <AddCircleIcon/>
-                </Avatar>
-                }
                 title="Quick Actions"
                 subheader=""
             />
