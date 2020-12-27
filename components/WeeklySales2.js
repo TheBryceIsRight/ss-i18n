@@ -62,7 +62,7 @@ class WeeklySales2 extends React.Component {
 
   render() {
     
-    const card_width = '350px';
+    const card_width = '360px';
     const { classes } = this.props;
     const { entries } = item;
 

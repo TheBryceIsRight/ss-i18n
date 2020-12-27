@@ -48,12 +48,13 @@ export default function DiscreteSlider() {
         {t('monthly_sales')}     
     </Typography>
       <Slider
+        track={false}
         defaultValue={80}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
-        step={5}
+        step={1}
         marks={marks}
-        valueLabelDisplay="on"
+        valueLabelDisplay="off"
       />
     </div>
   );

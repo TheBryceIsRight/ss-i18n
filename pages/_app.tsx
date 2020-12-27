@@ -649,6 +649,22 @@ function MyApp({ Component, pageProps }: AppProps) {
     </ThemeProvider>
     </div>
     </Media>
+    <Media at="mo">
+    <div style={containerSmall} >
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <nav role='navigation'>
+          <NavigationBar/>
+          </nav>
+          <main role='main'>
+          {isMounted && <Component {...pageProps} />}
+          <br/>
+          </main>
+          <div role='contentinfo'>
+          </div>
+      </ThemeProvider>
+      </div>
+    </Media>
     <Media at="md">
       <div style={containerMedium} >
         <ThemeProvider theme={theme}>

@@ -45,7 +45,7 @@ const styles = theme => ({
     textAlign: "left"
   },
   info: {
-    margin: "20 20"
+    margin: "10 10"
   },
   text: {
     fontFamily: "'Roboto', sans-serif",
@@ -60,7 +60,7 @@ class WeeklySales3 extends React.Component {
 
   render() {
     
-    const card_width = '250px';
+    const card_width = '275px';
     const { classes } = this.props;
     const { entries } = item;
 
