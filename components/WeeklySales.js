@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -16,8 +15,10 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InfoIcon from '@material-ui/icons/Info';
+import useTranslation from '../hooks/useTranslation';
 
 import item from "../public/item"; // import data
+
 
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -56,18 +57,21 @@ const styles = theme => ({
 
 });
 
+function TranslateDays() {
+  const { t } = useTranslation();
 
-class WeeklySales extends React.Component {
+  return [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')]
 
-  
+}
 
-  render() {
-    
-    const card_width = '588px';
-    const { classes } = this.props;
-    const { entries, from, to } = item;
 
-    const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]; // x-axis labels
+function WeeklySales(props) {
+  const { t } = useTranslation();
+  const card_width = '588px';
+    const { classes } = props;
+    const { entries } = item;
+
+    const days = TranslateDays(); // x-axis labels
 
     const wlbData = []; // hours coded during and outside of work per day
     const codingAtWorkMinutes = []; // minutes coded at work per day
@@ -132,7 +136,7 @@ class WeeklySales extends React.Component {
     // create the message
     let message;
     if (codingAtWorkTotalMinutes > codingOutsideWorkTotalMinutes) {
-      message = `Most of your sales were in-person (${codingAtWorkTotalHours} out of ${codingTotalHours} total hours).`;
+      message = t('most_in_person');
     } else {
       message = `Most of your sales were online (${codingOutsideWorkTotalHours} out of ${codingTotalHours} total hours).`;
     }
@@ -141,29 +145,29 @@ class WeeklySales extends React.Component {
     const keys = ["In-person", "Online"];
     const legend = [
       {
-        name: `In-person`,
+        name: t('in_person'),
         color: "#1F77B4"
       },
       {
-        name: `Online`,
+        name: t('online'),
         color: "#FF7F0E"
       }
     ];
 
     // create date range for the card subheader
-    const fromDateLabel = moment.unix(parseInt(from, 10)).format("ddd, MMM D");
-    const toDateLabel = moment.unix(parseInt(to, 10)).format("ddd, MMM D");
+    // const fromDateLabel = moment.unix(parseInt(from, 10)).format("ddd, MMM D");
+    // const toDateLabel = moment.unix(parseInt(to, 10)).format("ddd, MMM D");
 
     return (
       <React.Fragment>
-        <Card className={classes.card} style={{minWidth: card_width}}>
+        <Card className={classes.card} style={{maxWidth: card_width}}>
           <CardHeader
             classes={{
               title: classes.title,
               subheader: classes.subheader
             }}
             avatar={
-              <Avatar aria-label="Weekly Sales" className={classes.avatar}>
+              <Avatar aria-label={t('weekly_sales')} className={classes.avatar}>
                 <EventAvailableTwoTone color='background.paper' />
               </Avatar>
             }
@@ -172,8 +176,8 @@ class WeeklySales extends React.Component {
                 <MoreVert className={classes.menuIcon} />
               </IconButton>
             }
-            title="Weekly Sales"
-            subheader={`Week of ${fromDateLabel} to ${toDateLabel}`}
+            title= {t('weekly_sales')}
+            subheader={t('week_of')}
           />
           <CardContent>
             <div>
@@ -212,6 +216,6 @@ class WeeklySales extends React.Component {
       </React.Fragment>
     );
   }
-}
+
 
 export default withStyles(styles)(WeeklySales);
