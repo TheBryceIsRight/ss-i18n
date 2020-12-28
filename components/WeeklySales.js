@@ -160,7 +160,7 @@ function WeeklySales(props) {
 
     return (
       <React.Fragment>
-        <Card className={classes.card} style={{minWidth: card_width}}>
+        <Card className={classes.card} style={{minWidth: card_width, maxWidth: card_width}}>
           <CardHeader
             classes={{
               title: classes.title,
