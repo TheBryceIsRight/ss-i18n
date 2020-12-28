@@ -60,7 +60,7 @@ const styles = theme => ({
 function TranslateDays() {
   const { t } = useTranslation();
 
-  return [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')]
+  return [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
 
 }
 

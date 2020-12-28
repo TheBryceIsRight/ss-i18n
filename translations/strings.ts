@@ -175,6 +175,13 @@ const strings: Strings = {
     weekly_sales: "Weekly Sales",
     week_of: "Week of Sun, Dec 2 to Sun, Dec 9",
     most_in_person: "Most of your sales were in-person (9.1 out of 14.1 total hours).",
+    sun: "Sun",
+    mon: "Mon",
+    tue: "Tue",
+    wed: "Wed",
+    thu: "Thu",
+    fri: "Fri",
+    sat: "Sat",
 
 
 
@@ -353,7 +360,13 @@ const strings: Strings = {
     weekly_sales: "Ventes hebdomadaires",
     week_of: "Semaine du dimanche 2 décembre au dimanche 9 décembre",
     most_in_person: "La plupart de vos ventes ont été effectuées en personne (9,1 heures sur 14,1 au total).",
-
+    sun: "dim",
+    mon: "lun",
+    tue: "mar",
+    wed: "mer",
+    thu: "jeu",
+    fri: "ven",
+    sat: "sam",
   },
   pl: {
     about: 'O René Magritte',
@@ -529,7 +542,13 @@ const strings: Strings = {
     weekly_sales: "Cotygodniowe wyprzedaże",
     week_of: "Tydzień od niedzieli, 2 grudnia do niedzieli, 9 grudnia",
     most_in_person: "Większość sprzedaży odbywała się osobiście (9,1 z 14,1 wszystkich godzin).",
-
+    sun: "nie",
+    mon: "pon",
+    tue: "wto",
+    wed: "śro",
+    thu: "czw",
+    fri: "pią",
+    sat: "sob",
 
   },
   es: {
@@ -706,7 +725,13 @@ const strings: Strings = {
     weekly_sales: "Ventas semanales",
     week_of: "Semana del domingo 2 de diciembre al domingo 9 de diciembre",
     most_in_person: "La mayoría de sus ventas fueron en persona (9.1 de un total de 14.1 horas).",
-
+    sun: "Do",
+    mon: "Lu",
+    tue: "Ma",
+    wed: "Mi",
+    thu: "Ju",
+    fri: "Vi",
+    sat: "Sa",
 
   }
 }
