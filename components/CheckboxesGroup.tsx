@@ -63,8 +63,7 @@ export default function CheckboxesGroup() {
   const { Retail, Restaurant, Services, Hospitality, Ingenico, Poynt, Talech, Verifone } = state;
 
   return (
-    <div className={classes.root}>
-        <Grid container spacing={1} direction='row' alignItems='flex-start'>
+        <Grid container spacing={1} direction='row' alignItems='flex-start' justify='center'>
           <Grid item>
             <FormControl component="fieldset" className={classes.formControl}>
             <FormLabel component="legend">{t('industry')}</FormLabel>
@@ -131,10 +130,13 @@ export default function CheckboxesGroup() {
             </FormControl>
           </Grid>
           <Grid item>
-          <DiscreteSlider/>
+          <br/>
+          <Grid container spacing={4} direction='column' alignItems='center' justify='center'>
+            <Grid item>
+            <DiscreteSlider/>
+            </Grid>
+          </Grid>
           </Grid>
       </Grid>
-    
-    </div>
   );
 }

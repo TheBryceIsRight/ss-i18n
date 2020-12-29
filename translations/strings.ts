@@ -182,6 +182,20 @@ const strings: Strings = {
     thu: "Thu",
     fri: "Fri",
     sat: "Sat",
+    revenue_optimization: "Revenue optimization in the palm of your hand",
+    start_taking_payments: "Start Taking Payments Quickly",
+    you_can_accept: "You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.",
+    no_costly_hardware: "There are no costly hardware or software commitments so your business can hit the ground running.",
+    try_mobile_now: "Try talech Mobile Now",
+    by_your_side: "By Your Side As You Grow",
+    as_your_business_grows: "As your business grows, talech can support you with features and hardware suited to your needs.",
+    upgrade_seamlessly: "Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.",
+    big_features: "Big Features, compact design",
+    get_going: "Get Started with talech Mobile",
+    mobile_is_free:"talech Mobile is free, but to get started, we need to get some things set up on our end.",
+    simply: "Simply give us a few details, and our sales team will contact you soon to help.",
+    legal_disclaimer: "*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, Promotions, Sales Campaigns, and Questionnaires/Research Surveys",
+
 
 
 
@@ -367,6 +381,22 @@ const strings: Strings = {
     thu: "jeu",
     fri: "ven",
     sat: "sam",
+    revenue_optimization: "Optimisation des revenus dans la paume de votre main",
+    start_taking_payments: "Commencez à accepter les paiements rapidement",
+    you_can_accept: "Vous pouvez accepter des transactions de paiement rapidement, facilement et en toute sécurité où que vous soyez avec talech Mobile.",
+    no_costly_hardware: "Il n'y a aucun engagement matériel ou logiciel coûteux pour que votre entreprise puisse démarrer.",
+    try_mobile_now: "Essayez talech Mobile maintenant",
+    by_your_side: "À vos côtés à mesure que vous grandissez",
+    as_your_business_grows: "Au fur et à mesure de la croissance de votre entreprise, talech peut vous accompagner avec des fonctionnalités et du matériel adaptés à vos besoins.",
+    upgrade_seamlessly: "Mettez à niveau en toute transparence, conservez vos données historiques et offrez à votre personnel un produit familier pour vous aider à offrir une excellente expérience client.",
+    big_features: "Grandes fonctionnalités, conception compacte",
+    get_going: "Premiers pas avec talech Mobile",
+    mobile_is_free:"talech Mobile est gratuit, mais pour commencer, nous devons mettre en place certaines choses de notre côté.",
+    simply: "Donnez-nous simplement quelques détails et notre équipe commerciale vous contactera bientôt pour vous aider.",
+    legal_disclaimer: "* En nous fournissant une adresse e-mail, vous consentez expressément à recevoir des communications par e-mail - y compris, mais sans s'y limiter, du matériel marketing / publicité, promotions, campagnes de vente et questionnaires / enquêtes de recherche",
+    
+
+
   },
   pl: {
     about: 'O René Magritte',
@@ -549,6 +579,20 @@ const strings: Strings = {
     thu: "czw",
     fri: "pią",
     sat: "sob",
+    revenue_optimization: "Optymalizacja przychodów w Twojej dłoni",
+    start_taking_payments: "Zacznij szybko przyjmować płatności",
+    you_can_accept: "Dzięki talech Mobile możesz szybko, łatwo i bezpiecznie przyjmować transakcje płatnicze, gdziekolwiek jesteś.",
+    no_costly_hardware: "Nie ma żadnych kosztownych zobowiązań dotyczących sprzętu ani oprogramowania, więc Twoja firma może zacząć działać.",
+    try_mobile_now: "Wypróbuj talech Mobile teraz",
+    by_your_side: "U Twego boku w miarę rozwoju",
+    as_your_business_grows: "W miarę rozwoju Twojej firmy talech może wspierać Cię funkcjami i sprzętem dostosowanymi do Twoich potrzeb.",
+    upgrade_seamlessly: "Uaktualnij bezproblemowo, zachowaj dane historyczne i zapewnij swoim pracownikom znajomy produkt, który pomoże zapewnić doskonałą obsługę klienta.",
+    big_features: "Duże funkcje, kompaktowa konstrukcja",
+    get_going: "Premiers pas avec talech Mobile",
+    mobile_is_free:"aplikacja talech Mobile jest bezpłatna, ale aby rozpocząć, musimy skonfigurować kilka rzeczy po naszej stronie.",
+    simply: "Po prostu podaj nam kilka szczegółów, a nasz zespół sprzedaży wkrótce skontaktuje się z Tobą, aby pomóc.",
+    legal_disclaimer: "* Podając nam adres e-mail, wyrażasz wyraźną zgodę na otrzymywanie wiadomości e-mail - w tym między innymi materiałów marketingowych / reklam, promocji, kampanii sprzedażowych i kwestionariuszy / ankiet badawczych",
+    
 
   },
   es: {
@@ -732,6 +776,20 @@ const strings: Strings = {
     thu: "Ju",
     fri: "Vi",
     sat: "Sa",
+    revenue_optimization: "Optimización de ingresos en la palma de su mano",
+    start_taking_payments: "Empiece a recibir pagos rápidamente",
+    you_can_accept: "Puede aceptar transacciones de pago de forma rápida, fácil y segura dondequiera que esté con talech Mobile.",
+    no_costly_hardware: "No hay compromisos costosos de hardware o software para que su empresa pueda comenzar a trabajar.",
+    try_mobile_now: "Prueba talech Mobile ahora",
+    by_your_side: "A tu lado a medida que creces",
+    as_your_business_grows: "A medida que su negocio crece, talech puede brindarle soporte con características y hardware que se adapten a sus necesidades.",
+    upgrade_seamlessly: "Actualice sin problemas, mantenga sus datos históricos y brinde a su personal un producto familiar para ayudar a brindar una excelente experiencia al cliente.",
+    big_features: "Grandes características, diseño compacto",
+    get_going: "Empiece a utilizar talech Mobile",
+    mobile_is_free:"talech Mobile es gratis, pero para comenzar, necesitamos configurar algunas cosas por nuestra parte.",
+    simply: "Simplemente dénos algunos detalles y nuestro equipo de ventas se comunicará con usted pronto para ayudarlo.",
+    legal_disclaimer: "* Al proporcionarnos una dirección de correo electrónico, usted acepta expresamente recibir comunicaciones por correo electrónico, que incluyen, entre otros, material de marketing / publicidad, promociones, campañas de ventas y cuestionarios / encuestas de investigación.",
+    
 
   }
 }

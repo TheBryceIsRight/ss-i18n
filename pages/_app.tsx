@@ -50,6 +50,12 @@ import { locales, languageNames } from '../translations/config';
 import TranslateIcon from '@material-ui/icons/Translate';
 import Tooltip from '@material-ui/core/Tooltip';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Divider from '@material-ui/core/Divider';
+import SmartphoneIcon from '@material-ui/icons/Smartphone';
+import SendIcon from '@material-ui/icons/Send';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+
 
 
 
@@ -523,6 +529,42 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ListItemIcon><MessageIcon/>
           </ListItemIcon>
           <ListItemText primary='Invoices' />
+      </ListItem>
+      </Link>
+      <Divider/>
+      <ListSubheader component="div" id="nested-list-subheader">
+      Marketing
+      </ListSubheader>
+      <Link href="/[lang]/learn_more_starter" as={`/${locale}/learn_more_starter`} passHref>
+      <ListItem button>
+          <ListItemIcon><SmartphoneIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Talech Mobile' />
+      </ListItem>
+      </Link>
+      <Divider/>
+      <ListSubheader component="div" id="nested-list-subheader">
+      Quick Actions
+      </ListSubheader>
+      <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref>
+      <ListItem button>
+          <ListItemIcon><AttachMoneyIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Take a payment' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/send_an_invoice" as={`/${locale}/send_an_invoice`} passHref>
+      <ListItem button>
+          <ListItemIcon><SendIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Send an Invoice' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/finish_registration" as={`/${locale}/finish_registration`} passHref>
+      <ListItem button>
+          <ListItemIcon><AssignmentIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Finish signing up' />
       </ListItem>
       </Link>
       </List>

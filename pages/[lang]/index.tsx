@@ -76,19 +76,20 @@ class Hero extends React.Component {
         
         <img src={heroImage} alt='Elavon' width="100%"/>
       </div>
-      <div style={{position: 'relative', top: 190, left: 70, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
+      <div style={{position: 'relative', top: 200, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start'  >
         <Grid item>
         <Typography variant='h3' style={{maxWidth:text_width}}>Flexibility to run your business better</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1' style={{maxWidth:text_width}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
         </Grid>
         <Grid item>
           <Button variant='contained' size='large'>Try talech now</Button>
         </Grid>
-      </Grid>          
+      </Grid> 
       </div>
+              
       </Media>
 
       {/*Tablet */}
@@ -97,7 +98,7 @@ class Hero extends React.Component {
         
         <img src={heroImage} alt='Elavon' width="100%"/>
       </div>
-      <div style={{position: 'relative', top: 80, left: 260, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <div style={{position: 'relative', top: 100, left: 260, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
         <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Flexibility to run your business better</Typography>
@@ -215,9 +216,12 @@ function DIY() {
           <br/>
           <br/>
           <br/>
+          <br/>
+          <br/>
+          <br/>
           <CheckboxesGroup/>
           <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='center' className={classes.root} >
             <Grid item>
             <StarterBundle/>
             </Grid>
@@ -232,7 +236,7 @@ function DIY() {
 
         {/*Tablet */}
         <Media at='md'>
-        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
+        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='center' className={classes.root} >
             <Grid item>
             <Hero/>
             </Grid>

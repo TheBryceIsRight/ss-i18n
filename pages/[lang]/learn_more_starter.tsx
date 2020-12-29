@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   Typography,
 } from '@material-ui/core';
@@ -128,16 +128,18 @@ function SimpleDialog(props: SimpleDialogProps) {
   );
 }
 
-class Hero extends React.Component {
-    static contextType = ThemeContext;
 
-    render() {
-      const heroImage = this.context ? '/Sucker_Punch.png' : '/New_Hero_Dark.png' ;
-      const text_width = "300px";
-      const text_width_tablet = "400px";
-      const text_width_desktop = "500px";
 
-      return <React.Fragment>
+function Hero() {
+
+    const theme = useContext(ThemeContext);
+    const { t } = useTranslation();
+    const heroImage = theme ? '/Sucker_Punch.png' : '/New_Hero_Dark.png' ;
+    const text_width = "300px";
+    const text_width_tablet = "400px";
+    const text_width_desktop = "500px";
+
+      return (<React.Fragment>
         <MediaContextProvider>
            {/*Mobile */}
         <Media lessThan='md'>
@@ -148,16 +150,16 @@ class Hero extends React.Component {
         <div style={{position: 'relative', top: 80, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
           <Grid item style={{maxWidth:text_width}}>
-          <Typography variant='h3'>Start Taking Payments Quickly</Typography>
+          <Typography variant='h3'>{t('start_taking_payments')}</Typography>
           </Grid>
           <Grid item style={{maxWidth:text_width}}>
-          <Typography variant='subtitle1'> You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.</Typography>
+          <Typography variant='subtitle1'>{t('you_can_accept')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1' style={{maxWidth:text_width}}>There are no costly hardware or software commitments so your business can hit the ground running.</Typography>
+          <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("no_costly_hardware")}</Typography>
           </Grid>
           <Grid item>
-            <Button variant='contained' size='large'>Try talech mobile now</Button>
+            <Button variant='contained' size='large'>{t("try_mobile_now")}</Button>
           </Grid>
         </Grid>          
         </div>
@@ -172,16 +174,16 @@ class Hero extends React.Component {
         <div style={{position: 'relative', top: 90, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
           <Grid item>
-          <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Start Taking Payments Quickly</Typography>
+          <Typography variant='h3' style={{maxWidth:text_width_tablet}}>{t('start_taking_payments')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.</Typography>
+          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t('you_can_accept')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>There are no costly hardware or software commitments so your business can hit the ground running.</Typography>
+          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t("no_costly_hardware")}</Typography>
           </Grid>
           <Grid item>
-            <Button variant='contained' size='large'>Try talech mobile now</Button>
+            <Button variant='contained' size='large'>{t("try_mobile_now")}</Button>
           </Grid>
         </Grid>          
         </div>
@@ -197,16 +199,16 @@ class Hero extends React.Component {
         <div style={{position: 'relative', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
           <Grid item>
-          <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Start Taking Payments Quickly</Typography>
+          <Typography variant='h3' style={{maxWidth:text_width_tablet}}>{t('start_taking_payments')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.</Typography>
+          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t('you_can_accept')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>There are no costly hardware or software commitments so your business can hit the ground running.</Typography>
+          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t("no_costly_hardware")}</Typography>
           </Grid>
           <Grid item>
-            <Button variant='contained' size='large'>Try talech mobile now</Button>
+            <Button variant='contained' size='large'>{t("try_mobile_now")}</Button>
           </Grid>
         </Grid>          
         </div>
@@ -222,16 +224,16 @@ class Hero extends React.Component {
         <div style={{position: 'relative', top: 180, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
           <Grid item>
-          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Start Taking Payments Quickly</Typography>
+          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t('start_taking_payments')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.</Typography>
+          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t('you_can_accept')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>There are no costly hardware or software commitments so your business can hit the ground running.</Typography>
+          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t('no_costly_hardware')}</Typography>
           </Grid>
           <Grid item>
-            <Button variant='contained' size='large'>Try talech mobile now</Button>
+            <Button variant='contained' size='large'>{t("try_mobile_now")}</Button>
           </Grid>
         </Grid>          
         </div>
@@ -246,34 +248,31 @@ class Hero extends React.Component {
         <div style={{position: 'relative', top: 180, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
           <Grid item>
-          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Start Taking Payments Quickly</Typography>
+          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t('start_taking_payments')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>You can accept payment transactions quickly, easily and securely wherever you are with talech Mobile.</Typography>
+          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t('you_can_accept')}</Typography>
           </Grid>
           <Grid item>
-          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>There are no costly hardware or software commitments so your business can hit the ground running.</Typography>
+          <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("no_costly_hardware")}</Typography>
           </Grid>
           <Grid item>
-            <Button variant='contained' size='large'>Try talech mobile now</Button>
+            <Button variant='contained' size='large'>{t("try_mobile_now")}</Button>
           </Grid>
         </Grid>          
         </div>
         </Media>
         </MediaContextProvider>
         
-      </React.Fragment>;
-      
-      
-    }
-    
+      </React.Fragment>
+      );
   }
 
 function LearnMore() {
 
   const { locale, t } = useTranslation();
   const classes = useStyles();
-  const text_width_small = "150px";
+  const text_width_small = "250px";
   const text_width = "300px";
   const text_width_tablet = "400px";
   const text_width_desktop = "450px";
@@ -439,7 +438,7 @@ function LearnMore() {
             </Grid>
             <Grid item>
             <Typography variant="h4">
-            Revenue optimization in the palm of your hand
+            {t('revenue_optimization')}
             </Typography>
             </Grid>
             <Grid item>
@@ -453,20 +452,20 @@ function LearnMore() {
             <br/>
             <br/>
             <Grid item >
-              <Grid container spacing={5} direction='row' alignItems='center' justify='center'>
+              <Grid container spacing={3} direction='row' alignItems='center' justify='center'>
                 <Grid item>
                   <WeeklySales3/>
                 </Grid>
                 <Grid item>
                 <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                       <Grid item>
-                      <Typography variant='h3' style={{maxWidth:text_width_small}}>By Your Side As You Grow</Typography>
+                      <Typography variant='h3' style={{maxWidth:text_width_small}}>{t("by_your_side")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>As your business grows, talech can support you with features and hardware suited to your needs.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>{t("upgrade_seamlessly")}</Typography>
                       </Grid>
                     </Grid> 
                 </Grid>
@@ -479,9 +478,9 @@ function LearnMore() {
               <br/>
               <br/>
               <br/>
-            <Grid container spacing={5} direction='row' alignItems='center' justify='center' className={classes.root} >
+            <Grid container spacing={5} direction='column' alignItems='center' justify='center'>
                 <Grid item>
-                <Typography variant='h3'>Big Features, compact design</Typography>
+                <Typography variant='h3'>{t("big_features")}</Typography>
                 </Grid>
             </Grid>
             <br/>
@@ -553,18 +552,17 @@ function LearnMore() {
                       <Grid item>
                         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                           <Grid item>
-                          <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Get Started with talech Mobile</Typography>
+                          <Typography variant='h3' style={{maxWidth:text_width_small}}>{t("get_going")}</Typography>
                           <br/>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>talech Mobile is free, but to get started, we need to get some things set up on our end.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>{t("mobile_is_free")}</Typography>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>Simply give us a few details, and our sales team will contact you soon to help.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_small}}>{t("simply")}</Typography>
                           </Grid>
                           <Grid item>
-                            <Typography variant='body2' style={{maxWidth:text_width_tablet}}>*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, 
-                            Promotions, Sales Campaigns, and Questionnaires/Research Surveys</Typography>
+                            <Typography variant='body2' style={{maxWidth:text_width_small}}>{t("legal_disclaimer")}</Typography>
                           </Grid>
                         </Grid> 
                       </Grid>
@@ -604,7 +602,7 @@ function LearnMore() {
             </Grid>
             <Grid item>
             <Typography variant="h4">
-            Revenue optimization in the palm of your hand
+            {t('revenue_optimization')}
             </Typography>
             </Grid>
             <Grid item>
@@ -629,13 +627,13 @@ function LearnMore() {
                 <Grid item>
                 <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                       <Grid item>
-                      <Typography variant='h3' style={{maxWidth:text_width}}>By Your Side As You Grow</Typography>
+                      <Typography variant='h3' style={{maxWidth:text_width}}>{t("by_your_side")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width}}>As your business grows, talech can support you with features and hardware suited to your needs.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width}}>Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("upgrade_seamlessly")}</Typography>
                       </Grid>
                     </Grid> 
                 </Grid>
@@ -649,9 +647,9 @@ function LearnMore() {
               <br/>
               <br/>
               <br/>
-            <Grid container spacing={5} direction='row' alignItems='center' justify='center' className={classes.root} >
-                <Grid item>
-                <Typography variant='h3'>Big Features, compact design</Typography>
+            <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root}>
+                <Grid item  >
+                <Typography variant='h3'>{t("big_features")}</Typography>
                 </Grid>
             </Grid>
             <br/>
@@ -723,18 +721,17 @@ function LearnMore() {
                       <Grid item>
                         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                           <Grid item>
-                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Get Started with talech Mobile</Typography>
+                          <Typography variant='h3' style={{maxWidth:text_width}}>{t("get_going")}</Typography>
                           <br/>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>talech Mobile is free, but to get started, we need to get some things set up on our end.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("mobile_is_free")}</Typography>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Simply give us a few details, and our sales team will contact you soon to help.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("simply")}</Typography>
                           </Grid>
                           <Grid item>
-                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, 
-                            Promotions, Sales Campaigns, and Questionnaires/Research Surveys</Typography>
+                            <Typography variant='body2' style={{maxWidth:text_width}}>{t("legal_disclaimer")}</Typography>
                           </Grid>
                         </Grid> 
                       </Grid>
@@ -776,7 +773,7 @@ function LearnMore() {
             </Grid>
             <Grid item>
             <Typography variant="h4">
-            Revenue optimization in the palm of your hand
+            {t('revenue_optimization')}
             </Typography>
             </Grid>
             <Grid item>
@@ -801,13 +798,13 @@ function LearnMore() {
                 <Grid item>
                 <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                       <Grid item>
-                      <Typography variant='h3' style={{maxWidth:text_width_tablet}}>By Your Side As You Grow</Typography>
+                      <Typography variant='h3' style={{maxWidth:text_width_tablet}}>{t("by_your_side")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>As your business grows, talech can support you with features and hardware suited to your needs.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_tablet}}>{t("upgrade_seamlessly")}</Typography>
                       </Grid>
                     </Grid> 
                 </Grid>
@@ -823,7 +820,7 @@ function LearnMore() {
               <br/>
             <Grid container spacing={5} direction='row' alignItems='center' justify='center' className={classes.root} >
                 <Grid item>
-                <Typography variant='h3'>Big Features, compact design</Typography>
+                <Typography variant='h3'>{t("big_features")}</Typography>
                 </Grid>
             </Grid>
             <br/>
@@ -895,18 +892,17 @@ function LearnMore() {
                       <Grid item>
                         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                           <Grid item>
-                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Get Started with talech Mobile</Typography>
+                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("get_going")}</Typography>
                           <br/>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>talech Mobile is free, but to get started, we need to get some things set up on our end.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("mobile_is_free")}</Typography>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Simply give us a few details, and our sales team will contact you soon to help.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("simply")}</Typography>
                           </Grid>
                           <Grid item>
-                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, 
-                            Promotions, Sales Campaigns, and Questionnaires/Research Surveys</Typography>
+                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>{t("legal_disclaimer")}</Typography>
                           </Grid>
                         </Grid> 
                       </Grid>
@@ -947,7 +943,7 @@ function LearnMore() {
             </Grid>
             <Grid item>
             <Typography variant="h4">
-            Revenue optimization in the palm of your hand
+            {t('revenue_optimization')}
             </Typography>
             </Grid>
             <Grid item>
@@ -977,13 +973,13 @@ function LearnMore() {
                 <Grid item>
                 <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                       <Grid item>
-                      <Typography variant='h3' style={{maxWidth:text_width_desktop}}>By Your Side As You Grow</Typography>
+                      <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("by_your_side")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>As your business grows, talech can support you with features and hardware suited to your needs.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                     </Grid> 
                 </Grid>
@@ -999,7 +995,7 @@ function LearnMore() {
               <br/>
             <Grid container spacing={5} direction='row' alignItems='center' justify='center' className={classes.root} >
                 <Grid item>
-                <Typography variant='h3'>Big Features, compact design</Typography>
+                <Typography variant='h3'>{t("big_features")}</Typography>
                 </Grid>
             </Grid>
             <br/>
@@ -1071,18 +1067,17 @@ function LearnMore() {
                       <Grid item>
                         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                           <Grid item>
-                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Get Started with talech Mobile</Typography>
+                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("get_going")}</Typography>
                           <br/>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>talech Mobile is free, but to get started, we need to get some things set up on our end.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("mobile_is_free")}</Typography>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Simply give us a few details, and our sales team will contact you soon to help.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("simply")}</Typography>
                           </Grid>
                           <Grid item>
-                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, 
-                            Promotions, Sales Campaigns, and Questionnaires/Research Surveys</Typography>
+                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>{t("legal_disclaimer")}</Typography>
                           </Grid>
                         </Grid> 
                       </Grid>
@@ -1122,7 +1117,7 @@ function LearnMore() {
             </Grid>
             <Grid item>
             <Typography variant="h4">
-            Revenue optimization in the palm of your hand
+            {t('revenue_optimization')}
             </Typography>
             </Grid>
             <Grid item>
@@ -1155,13 +1150,13 @@ function LearnMore() {
                 <Grid item>
                 <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                       <Grid item>
-                      <Typography variant='h3' style={{maxWidth:text_width_desktop}}>By Your Side As You Grow</Typography>
+                      <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("by_your_side")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>As your business grows, talech can support you with features and hardware suited to your needs.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("as_your_business_grows")}</Typography>
                       </Grid>
                       <Grid item>
-                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Upgrade seamlessly, keep your historical data, and give your staff a familiar product to help deliver an excellent customer experience.</Typography>
+                      <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("upgrade_seamlessly")}</Typography>
                       </Grid>
                     </Grid> 
                 </Grid>
@@ -1177,7 +1172,7 @@ function LearnMore() {
               <br/>
             <Grid container spacing={5} direction='row' alignItems='center' justify='center' className={classes.root} >
                 <Grid item>
-                <Typography variant='h3'>Big Features, compact design</Typography>
+                <Typography variant='h3'>{t("big_features")}</Typography>
                 </Grid>
             </Grid>
             <br/>
@@ -1249,18 +1244,17 @@ function LearnMore() {
                       <Grid item>
                         <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' >
                           <Grid item>
-                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Get Started with talech Mobile</Typography>
+                          <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("get_going")}</Typography>
                           <br/>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>talech Mobile is free, but to get started, we need to get some things set up on our end.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("mobile_is_free")}</Typography>
                           </Grid>
                           <Grid item>
-                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>Simply give us a few details, and our sales team will contact you soon to help.</Typography>
+                          <Typography variant='subtitle1' style={{maxWidth:text_width_desktop}}>{t("simply")}</Typography>
                           </Grid>
                           <Grid item>
-                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>*By providing us with an email address you are expressly consenting to receiving email communications — including but not limited to Marketing material/Advertising, 
-                            Promotions, Sales Campaigns, and Questionnaires/Research Surveys</Typography>
+                            <Typography variant='body2' style={{maxWidth:text_width_desktop}}>{t("legal_disclaimer")}</Typography>
                           </Grid>
                         </Grid> 
                       </Grid>
