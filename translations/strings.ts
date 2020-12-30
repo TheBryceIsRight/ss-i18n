@@ -1078,7 +1078,7 @@ const strings: Strings = {
     legal_disclaimer: "* Al proporcionarnos una dirección de correo electrónico, usted acepta expresamente recibir comunicaciones por correo electrónico, que incluyen, entre otros, material de marketing / publicidad, promociones, campañas de ventas y cuestionarios / encuestas de investigación.",
     
     brick_and_mortar: "Ubicación física",
-    on_the_go: "Sobre la marcha",
+    on_the_go: "Al momento",
     at_an_event: "En un evento",
     through_online: "A través de un sitio web en línea",
     through_invoices: "Mediante facturas enviadas",
@@ -1139,7 +1139,7 @@ const strings: Strings = {
     account_no: "Número de cuenta",
     tax_id: "Identificación del impuesto",
     all_done: "Todos los pasos completados, ¡ya está!",
-    next: "Próximo",
+    next: "Siguiente",
     finish: "Completar",
     back: "Atrás",
     no: "No",
