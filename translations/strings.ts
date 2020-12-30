@@ -1067,7 +1067,7 @@ const strings: Strings = {
     sat: "Sa",
     revenue_optimization: "Optimización de ingresos en la palma de su mano",
     start_taking_payments: "Empiece a recibir pagos rápidamente",
-    you_can_accept: "Puede aceptar transacciones de pago de forma rápida, fácil y segura dondequiera que esté con talech Mobile.",
+    you_can_accept: "Puede aceptar transacciones de pago de forma rápida, fácil y segura donde quiera que esté con talech Mobile.",
     no_costly_hardware: "No hay compromisos costosos de hardware o software para que su empresa pueda comenzar a trabajar.",
     try_mobile_now: "Prueba talech Mobile ahora",
     by_your_side: "A tu lado a medida que creces",
@@ -1076,8 +1076,8 @@ const strings: Strings = {
     big_features: "Grandes características, diseño compacto",
     get_going: "Empiece a utilizar talech Mobile",
     mobile_is_free:"talech Mobile es gratis, pero para comenzar, necesitamos configurar algunas cosas por nuestra parte.",
-    simply: "Simplemente dénos algunos detalles y nuestro equipo de ventas se comunicará con usted pronto para ayudarlo.",
-    legal_disclaimer: "* Al proporcionarnos una dirección de correo electrónico, usted acepta expresamente recibir comunicaciones por correo electrónico, que incluyen, entre otros, material de marketing / publicidad, promociones, campañas de ventas y cuestionarios / encuestas de investigación.",
+    simply: "Simplemente dénos algunos detalles y nuestro equipo de ventas se comunicará con usted para ayudarlo.",
+    legal_disclaimer: "* Al proporcionarnos una dirección de correo electrónico, usted acepta expresamente recibir comunicaciones por correo electrónico que incluyen, entre otros, material de marketing / publicidad, promociones, campañas de ventas y cuestionarios / encuestas de investigación.",
     
     brick_and_mortar: "Ubicación física",
     on_the_go: "Al momento",
@@ -1113,7 +1113,7 @@ const strings: Strings = {
     legal_name: "Nombre legal",
     first_name: "Primer nombre",
     last_name: "Apellido",
-    home_address: "Direccion de casa",
+    home_address: "Direccion de envío",
     street_address: "Dirección",
     placeholder_address: "1234 Peachtree St NW",
     apt_unit: "Dirección 2",
@@ -1153,7 +1153,7 @@ const strings: Strings = {
 
     //Send an Invoice
     general_info: "Información general",
-    find_a_product: "Encuentra un producto",
+    find_a_product: "Ingresa un producto",
     product_descr: "Descripción del producto",
     product_info: "Información del Producto",
     product_code: "Código del producto",
@@ -1172,8 +1172,8 @@ const strings: Strings = {
     shipping_address: "Dirección de Envío",
     invoice_sent: "¡Factura enviada con éxito!",
     please_check_email: "Por favor revise su correo electrónico para obtener un recibo.",
-    event_billing: "Facturación de eventos",
-    billing_address: "Dirección de Envio",
+    event_billing: "Facturación del evento",
+    billing_address: "Dirección de Envío",
     invoice_terms: "Términos de la factura",
     save_changes: "Guardar cambios",
 

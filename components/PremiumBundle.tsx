@@ -70,7 +70,7 @@ export default function StandardBundle() {
         {t('same_day')}
         </Typography>
         <br/>
-        <Typography variant="h6" component='h3'>
+        <Typography variant="h6" component='h3' style={{maxWidth: "200px"}}>
         {t('cards_supported')}
         </Typography>
         <Typography variant="body2" component="p">

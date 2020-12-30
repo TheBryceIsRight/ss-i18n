@@ -307,6 +307,8 @@ function DIY() {
           <br/>
           <br/>
           <br/>
+          <br/>
+          <br/>
           <CheckboxesGroup/>
           <br/>
           <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
@@ -329,8 +331,6 @@ function DIY() {
             <Hero/>
             </Grid>
           </Grid>
-          <br/>
-          <br/>
           <br/>
           <br/>
           <br/>
