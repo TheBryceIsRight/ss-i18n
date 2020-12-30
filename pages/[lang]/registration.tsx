@@ -633,7 +633,7 @@ function Registration() {
                     </Grid>
                     <Grid item wrap='wrap' style = {{maxWidth: "250px"}}>
                         <Typography variant='body1'>
-                        E{t('easily_add_discounts')}
+                        {t('easily_add_discounts')}
                         </Typography>
                     </Grid>
                     </Grid>
