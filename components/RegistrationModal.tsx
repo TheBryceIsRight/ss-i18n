@@ -86,7 +86,7 @@ export default function CustomizedDialogs() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Save changes
+          {t('save_changes')}
           </Button>
         </DialogActions>
       </Dialog>

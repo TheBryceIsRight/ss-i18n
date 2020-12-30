@@ -78,14 +78,14 @@ export default function SendInvoice() {
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Send an Invoice
+        {t('send_an_invoice')}
         </DialogTitle>
         <DialogContent dividers>
           <VerticalLinearStepperInvoice/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Save changes
+          {t('save_changes')}
           </Button>
         </DialogActions>
       </Dialog>
