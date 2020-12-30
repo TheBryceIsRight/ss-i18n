@@ -10,6 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import VerticalLinearStepper from './VerticalLinearStepper';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import useTranslation from '../hooks/useTranslation';
 
 
 const styles = (theme: Theme) =>
@@ -69,14 +70,16 @@ export default function CustomizedDialogs() {
     setOpen(false);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <Button variant="outlined" color="primary" startIcon={<AssignmentIcon/> } onClick={handleClickOpen} size='large'>
-        Finish Signing Up
+      {t("finish_signing_up")}
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Registration
+        {t("registration")}
         </DialogTitle>
         <DialogContent dividers>
           <VerticalLinearStepper/>
