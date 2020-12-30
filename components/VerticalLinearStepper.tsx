@@ -1966,8 +1966,19 @@ const currencies = [
   ];
 
 
-function getSteps() {
-  return ['How will you take payments with us?', 'What will you use to take payments?', 'Getting to know you', 'Tell us about your business', 'More business information', 'Let\'s talk about you', 'Business contact information', 'Legal information', 'Account Setup', 'Terms and Conditions '];
+function GetSteps() {
+  const { t } = useTranslation();
+
+  return [t('how_will_take_payments'), 
+  t('what_will_you_use'), 
+  t('getting_to_know'), 
+  t('tell_us'), 
+  t('more_business_info'), 
+  t('lets_talk_about_you'), 
+  t('business_contact'), 
+  t('legal_information'), 
+  t('account_setup'), 
+  t('terms_and_conditions')];
 }
 
 function GetStepContent(step: number) {
@@ -2011,27 +2022,28 @@ function GetStepContent(step: number) {
     
   switch (step) {
     case 0:
-      return `Select all that apply. You can always adjust this later.`;
+      return <Typography variant="subtitle1" style={{maxWidth: "300px"}} >{t(`select_all_that_apply`)}</Typography>;
     case 1: 
       return '';
     case 2:
       return   <FormControl component="fieldset" className={classes.formControl}>
                     <FormGroup>
-                        <FormLabel component="legend">Are you a Costco member?</FormLabel>
+                        <FormLabel component="legend">{t("costco")}</FormLabel>
                         <br/>
-                        <TextField variant='outlined' label='Membership ID'>Membership ID</TextField>
+                        <TextField variant='outlined' label='Membership ID'>{t("mem_id")} </TextField>
                     </FormGroup>
                 </FormControl>;
     case 3:
         return <Autocomplete
                     {...defaultProps}
                     id="MCC"
-                    renderInput={(params) => <TextField variant="outlined" {...params} label="Business Category" margin="normal" />}
+                    renderInput={(params) => <TextField variant="outlined" {...params} label={t("business_category")} margin="normal" />}
                 />;
     case 4:
         return <FormControl component="fieldset" className={classes.formControl}>
+                    
                     <FormGroup>
-                        <FormLabel component="legend">Where are you a citizen?</FormLabel>
+                        <FormLabel component="legend">{t("where_do_you_operate")}</FormLabel>
                         <br/>
                         <Autocomplete
                             id="country-select-demo"
@@ -2051,7 +2063,7 @@ function GetStepContent(step: number) {
                             renderInput={(params) => (
                                 <TextField
                                 {...params}
-                                label="Choose a country"
+                                label={t("choose_a_country")}
                                 variant="outlined"
                                 inputProps={{
                                     ...params.inputProps,
@@ -2065,7 +2077,7 @@ function GetStepContent(step: number) {
                     <br/>
                     <br/>
                     <FormGroup>
-                        <FormLabel component="legend">Where do you primarily operate?</FormLabel>
+                        <FormLabel component="legend">{t("where_was_your_business_founded")}</FormLabel>
                         <br/>
                         <Autocomplete
                             id="country-select-demo"
@@ -2085,41 +2097,7 @@ function GetStepContent(step: number) {
                             renderInput={(params) => (
                                 <TextField
                                 {...params}
-                                label="Choose a country"
-                                variant="outlined"
-                                inputProps={{
-                                    ...params.inputProps,
-                                    autoComplete: 'new-password', // disable autocomplete and autofill
-                                }}
-                                />
-                            )}
-                            />
-                            
-                    </FormGroup>
-                    <br/>
-                    <br/>
-                    <FormGroup>
-                        <FormLabel component="legend">Where was your business founded?</FormLabel>
-                        <br/>
-                        <Autocomplete
-                            id="country-select-demo"
-                            style={{ width: 300 }}
-                            options={countries as CountryType[]}
-                            classes={{
-                                option: classes2.option,
-                            }}
-                            autoHighlight
-                            getOptionLabel={(option) => option.label}
-                            renderOption={(option) => (
-                                <React.Fragment>
-                                <span>{countryToFlag(option.code)}</span>
-                                {option.label} ({option.code})
-                                </React.Fragment>
-                            )}
-                            renderInput={(params) => (
-                                <TextField
-                                {...params}
-                                label="Choose a country"
+                                label={t("choose_a_country")}
                                 variant="outlined"
                                 inputProps={{
                                     ...params.inputProps,
@@ -2132,11 +2110,11 @@ function GetStepContent(step: number) {
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                    <TextField variant='outlined' label='Business Establishment Year'></TextField>
+                    <TextField variant='outlined' label={t("bus_est_year")}></TextField>
                     </FormGroup>
                     <br/>
                     <FormGroup>
-                    <TextField variant='outlined' label='Monthly Credit Card Sales'></TextField>
+                    <TextField variant='outlined' label= {t("monthly_sales")} ></TextField>
                     <br/>
                     <TextField
                         id="standard-select-currency"
@@ -2157,24 +2135,24 @@ function GetStepContent(step: number) {
     case 5:
         return <FormControl component="fieldset" className={classes.formControl}>
                 <FormGroup>
-                    <FormLabel component="legend">Legal Name</FormLabel>
+                    <FormLabel component="legend">{t("legal_name")}</FormLabel>
                     <br/>
-                    <TextField variant='outlined' label='First Name'></TextField>
+                    <TextField variant='outlined' label={t("first_name")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Last Name'></TextField>
+                    <TextField variant='outlined' label={t("last_name")}></TextField>
                 </FormGroup>
                 <br/>
                 <br/>
                 <FormGroup>
-                    <FormLabel component="legend">Home Address</FormLabel>
+                    <FormLabel component="legend">{t("home_address")}</FormLabel>
                     <br/>
-                    <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+                    <TextField variant='outlined' fullWidth label={t("street_address")} placeholder={t("placeholder_address")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Apartment/Unit'></TextField>
+                    <TextField variant='outlined' label={t("apt_unit")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+                    <TextField variant='outlined' label={t("zip")} placeholder='00000'></TextField>
                     <br/>
-                    <TextField variant='outlined' label='City'></TextField>
+                    <TextField variant='outlined' label={t("city")}></TextField>
                 </FormGroup>
                 <br/>
                 <FormGroup>
@@ -2195,7 +2173,7 @@ function GetStepContent(step: number) {
                             renderInput={(params) => (
                                 <TextField
                                 {...params}
-                                label="State"
+                                label={t("state")}
                                 variant="outlined"
                                 inputProps={{
                                     ...params.inputProps,
@@ -2208,7 +2186,7 @@ function GetStepContent(step: number) {
                 <br/>
                 <br/>
                 <FormGroup>
-                <FormLabel component="legend">Date of Birth</FormLabel>
+                <FormLabel component="legend">{t("dob")}</FormLabel>
                 <br/>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
@@ -2219,7 +2197,7 @@ function GetStepContent(step: number) {
                   value={selectedDate}
                   onChange={handleDateChange}
                   KeyboardButtonProps={{
-                    'aria-label': 'change date',
+                    'aria-label': t("change_date"),
                   }}
                 />
         </MuiPickersUtilsProvider>
@@ -2227,51 +2205,51 @@ function GetStepContent(step: number) {
                 <br/>
                 <br/>
                 <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
-                        <FormLabel component="legend">Which identification type do you use?</FormLabel>
-                        <FormControlLabel value="SSN" control={<Radio />} label='Social Security Number' />
-                        <FormControlLabel value="ITIN" control={<Radio />} label='Individual Taxpayer Identification Number' />
+                        <FormLabel component="legend">{t("id_type")}</FormLabel>
+                        <FormControlLabel value="SSN" control={<Radio />} label={t("ssn")} />
+                        <FormControlLabel value="ITIN" control={<Radio />} label={t("itin")} style={{maxWidth:"300px"}} />
                     </RadioGroup>
                 <FormGroup>
                 <br/>
-                <TextField variant='outlined' label='SSN or ITIN' placeholder='000-00-0000'></TextField>
+                <TextField variant='outlined' label={t("ssn_or_itin")}  placeholder='000-00-0000'></TextField>
                 </FormGroup>
                 <br/>
                 <br/>
                 <FormGroup>
-                <FormLabel component="legend">Primary phone number</FormLabel>
+                <FormLabel component="legend">{t("primary_phone")} </FormLabel>
                 <br/>
-                <TextField variant='outlined' label='Phone Number' placeholder='(000) 000-0000'></TextField>
+                <TextField variant='outlined' label={t("phone_no")} placeholder='(000) 000-0000'></TextField>
                 </FormGroup>
                 <FormGroup>
                 <br/>
                 <br/>
-                <FormLabel component="legend">Primary email address</FormLabel>
+                <FormLabel component="legend">{t("primary_email")}</FormLabel>
                 <br/>
-                <TextField variant='outlined' label='Email' placeholder='user@elavon.com'></TextField>
+                <TextField variant='outlined' label={t('email')} placeholder={t("placeholder_email")}></TextField>
                 </FormGroup>
             </FormControl>;
     case 6:
         return <FormControl component="fieldset" className={classes.formControl}>
                 <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
-                        <FormLabel component="legend">Are your personal and business address the same?</FormLabel>
+                        <FormLabel component="legend">{t("personal_same_as_business")}</FormLabel>
                         <FormControlLabel value="yes" control={<Radio />} label={t('yes')} />
-                        <FormControlLabel value="no" control={<Radio />} label='No' />
+                        <FormControlLabel value="no" control={<Radio />} label={t('no')} />
                     </RadioGroup>
                 <br/>
                 <br/>
                 <FormGroup>
-                    <TextField variant='outlined' fullWidth label='Business Name' placeholder='Elavon, Inc.'></TextField>
+                    <TextField variant='outlined' fullWidth label={t("business_name")} placeholder={t("placeholder_business")}></TextField>
                 </FormGroup>
                 <br/>
                 <br/>
                 <FormGroup>
-                    <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+                    <TextField variant='outlined' fullWidth label={t("street_address")} placeholder={t("placeholder_address")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Apartment/Unit'></TextField>
+                    <TextField variant='outlined' label={t("apt_unit")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+                    <TextField variant='outlined' label={t("zip")} placeholder='00000'></TextField>
                     <br/>
-                    <TextField variant='outlined' label='City'></TextField>
+                    <TextField variant='outlined' label={t("city")}></TextField>
                 </FormGroup>
                 <br/>
                 <FormGroup>
@@ -2292,7 +2270,7 @@ function GetStepContent(step: number) {
                             renderInput={(params) => (
                                 <TextField
                                 {...params}
-                                label="State"
+                                label={t("state")}
                                 variant="outlined"
                                 inputProps={{
                                     ...params.inputProps,
@@ -2305,36 +2283,36 @@ function GetStepContent(step: number) {
                 <br/>
                 <br/>
                 <FormGroup>
-                <FormLabel component="legend">Primary business phone number</FormLabel>
+                <FormLabel component="legend">{t("primary_business_phone")}</FormLabel>
                 <br/>
-                <TextField variant='outlined' label='Phone Number' placeholder='(000) 000-0000'></TextField>
+                <TextField variant='outlined' label={t('phone_no')} placeholder='(000) 000-0000'></TextField>
                 </FormGroup>
                 <FormGroup>
                 <br/>
                 <br/>
-                <FormLabel component="legend">Primary business email address</FormLabel>
+                <FormLabel component="legend">{t("primary_business_email")}</FormLabel>
                 <br/>
-                <TextField variant='outlined' label='Email' placeholder='user@elavon.com'></TextField>
+                <TextField variant='outlined' label={t('email')} placeholder={t('placeholder_email')}></TextField>
                 </FormGroup>
             </FormControl>;
     case 7:
         return <FormControl component="fieldset" className={classes.formControl}>
         <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
-                <FormLabel component="legend">Are your business and legal address the same?</FormLabel>
+                <FormLabel component="legend">{t('business_same_as_legal')}</FormLabel>
                 <FormControlLabel value="yes" control={<Radio />} label={t('yes')} />
-                <FormControlLabel value="no" control={<Radio />} label='No' />
+                <FormControlLabel value="no" control={<Radio />} label={t('no')} />
             </RadioGroup>
         <br/>
         <FormGroup>
-            <FormLabel component="legend">Legal Address</FormLabel>
+            <FormLabel component="legend">{t('legal_address')}</FormLabel>
             <br/>
-            <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+            <TextField variant='outlined' fullWidth label={t("street_address")} placeholder={t("placeholder_address")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Apartment/Unit'></TextField>
+            <TextField variant='outlined' label={t("apt_unit")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+            <TextField variant='outlined' label={t("zip")} placeholder='00000'></TextField>
             <br/>
-            <TextField variant='outlined' label='City'></TextField>
+            <TextField variant='outlined' label={t("city")}></TextField>
         </FormGroup>
         <br/>
         <FormGroup>
@@ -2355,7 +2333,7 @@ function GetStepContent(step: number) {
                     renderInput={(params) => (
                         <TextField
                         {...params}
-                        label="State"
+                        label={t("state")}
                         variant="outlined"
                         inputProps={{
                             ...params.inputProps,
@@ -2371,11 +2349,11 @@ function GetStepContent(step: number) {
                 <img src='/Check.svg' alt='next' width='100%'/>
                 <FormGroup>
                     <br/>
-                    <TextField variant='outlined' label='Routing Number' placeholder='012345678'></TextField>
+                    <TextField variant='outlined' label={t("routing")} placeholder='012345678'></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Account Number' placeholder='01234567891'></TextField>
+                    <TextField variant='outlined' label={t("account_no")} placeholder='01234567891'></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Employer ID/Tax ID' placeholder='01234567'></TextField>
+                    <TextField variant='outlined' label={t("tax_id")} placeholder='01234567'></TextField>
                 </FormGroup>
             </FormControl>;
     case 9:
@@ -2443,7 +2421,7 @@ function GetStepContent1(step: number) {
                                 inputProps={{ 'aria-labelledby': labelId }}
                             />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`Brick and Mortar location`} />
+                        <ListItemText id={labelId} primary={t(`brick_and_mortar`)} />
                     </ListItem>
                     <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 1)}>
                         <ListItemIcon>
@@ -2455,7 +2433,7 @@ function GetStepContent1(step: number) {
                                 inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+1}` }}
                             />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`On-the-go`} />
+                        <ListItemText id={labelId} primary={t(`on_the_go`)} />
                     </ListItem>
                     <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 2)}>
                         <ListItemIcon>
@@ -2467,7 +2445,7 @@ function GetStepContent1(step: number) {
                                 inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+2}` }}
                             />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`At an event`} />
+                        <ListItemText id={labelId} primary={t(`at_an_event`)} />
                     </ListItem>
                     <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 3)}>
                         <ListItemIcon>
@@ -2479,7 +2457,7 @@ function GetStepContent1(step: number) {
                                 inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+3}` }}
                             />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`Through an online website`} />
+                        <ListItemText id={labelId} primary={t(`through_online`)} />
                     </ListItem>
                     <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 4)}>
                         <ListItemIcon>
@@ -2491,7 +2469,7 @@ function GetStepContent1(step: number) {
                                 inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+4}` }}
                             />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`Through sent invoices`} />
+                        <ListItemText id={labelId} primary={t(`through_invoices`)}  />
                     </ListItem>
                 </List>;
       case 1:
@@ -2506,7 +2484,7 @@ function GetStepContent1(step: number) {
                             inputProps={{ 'aria-labelledby': labelId }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={labelId} primary={`Mobile Phone`} />
+                    <ListItemText id={labelId} primary={t(`mobile_phone`)}  />
                 </ListItem>
                 <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 1)}>
                     <ListItemIcon>
@@ -2518,7 +2496,7 @@ function GetStepContent1(step: number) {
                             inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+1}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={labelId} primary={`Tablet`} />
+                    <ListItemText id={labelId} primary={t(`tablet`)} />
                 </ListItem>
                 <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 2)}>
                     <ListItemIcon>
@@ -2530,7 +2508,7 @@ function GetStepContent1(step: number) {
                             inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+2}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={labelId} primary={`Computer`} />
+                    <ListItemText id={labelId} primary={t(`computer`)} />
                 </ListItem>
                 <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 3)}>
                     <ListItemIcon>
@@ -2542,7 +2520,7 @@ function GetStepContent1(step: number) {
                             inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+3}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={labelId} primary={`All-in-one register`} />
+                    <ListItemText id={labelId} primary={t(`all_in_one`)} />
                 </ListItem>
                 <ListItem key={step} role={undefined} dense button onClick={handleToggle(index + 4)}>
                     <ListItemIcon>
@@ -2554,22 +2532,22 @@ function GetStepContent1(step: number) {
                             inputProps={{ 'aria-labelledby': `checkbox-list-label-${step+4}` }}
                         />
                     </ListItemIcon>
-                    <ListItemText id={labelId} primary={`Standalone card reader`} />
+                    <ListItemText id={labelId} primary={t(`standalone`)} />
                 </ListItem>
             </List>;
       case 2:
         return <FormControl component="fieldset" className={classes.formControl}>
                         <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
-                        <FormLabel component="legend">Are you a sole proprietor?</FormLabel>
+                        <FormLabel component="legend">{t(`sole_prop`)}</FormLabel>
                         <FormControlLabel value="Yes" control={<Radio />} label={t('yes')} />
-                        <FormControlLabel value="No" control={<Radio />} label='No' />
+                        <FormControlLabel value="No" control={<Radio />} label={t('no')} />
                         </RadioGroup>
                         <br/>
                         <br/>
                         <FormGroup>
-                        <FormLabel component="legend">What percentage are you responsible for?</FormLabel>
+                        <FormLabel component="legend">{t('responsibilty_percentage')}</FormLabel>
                         <br/>
-                        <TextField variant='outlined' label='Ownership Percentage'>Membership ID</TextField>
+                        <TextField variant='outlined' label='Ownership Percentage'></TextField>
                         </FormGroup>
                 </FormControl>;
     case 3: 
@@ -2595,7 +2573,8 @@ export default function VerticalLinearStepper() {
 
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
+  const steps = GetSteps();
+  const { t } = useTranslation();
   
 
   const handleNext = () => {
@@ -2612,7 +2591,7 @@ export default function VerticalLinearStepper() {
 
 
   return (
-    <div className={classes.root}>
+      <React.Fragment>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
         
@@ -2628,7 +2607,7 @@ export default function VerticalLinearStepper() {
                     onClick={handleBack}
                     className={classes.button}
                   >
-                    Back
+                    {t("back")}
                   </Button>
                   <Button
                     variant="contained"
@@ -2636,7 +2615,7 @@ export default function VerticalLinearStepper() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? t('finish') : t('next')}
                   </Button>
                 </div>
               </div>
@@ -2646,13 +2625,13 @@ export default function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re done!</Typography>
+          <Typography>{t("all_done")} </Typography>
           <Button onClick={handleReset} className={classes.button}>
-            Reset
+            {t("reset")}
           </Button>
         </Paper>
       )}
-    </div>
+      </React.Fragment>
   );
 
   

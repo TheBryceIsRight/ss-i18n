@@ -43,7 +43,7 @@ function Finish_registration() {
     return <React.Fragment>
       <Head>
         <title>
-        Finish Signing Up
+        {t("finish_signing_up")}
         </title>
 
       </Head>
@@ -58,13 +58,13 @@ function Finish_registration() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Finish Signing Up
+            {t("finish_signing_up")}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Finish Signing Up</Typography>
+            <Typography variant='h3'>{t("finish_signing_up")}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepper/>
@@ -82,13 +82,13 @@ function Finish_registration() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Finish Signing Up
+            {t("finish_signing_up")}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Finish Signing Up</Typography>
+            <Typography variant='h3'>{t("finish_signing_up")}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepper/>
@@ -105,13 +105,13 @@ function Finish_registration() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Finish Signing Up
+            {t("finish_signing_up")}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Finish Signing Up</Typography>
+            <Typography variant='h3'>{t("finish_signing_up")}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepper/>
@@ -127,13 +127,13 @@ function Finish_registration() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Finish Signing Up
+            {t("finish_signing_up")}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Finish Signing Up</Typography>
+            <Typography variant='h3'>{t("finish_signing_up")}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepper/>
