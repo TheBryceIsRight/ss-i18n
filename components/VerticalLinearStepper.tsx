@@ -2119,7 +2119,7 @@ function GetStepContent(step: number) {
                     <TextField
                         id="standard-select-currency"
                         select
-                        label="Currency"
+                        label={t("currency")}
                         variant='outlined'
                         value={currency}
                         onChange={handleChange}
@@ -2192,7 +2192,7 @@ function GetStepContent(step: number) {
                 <KeyboardDatePicker
                   margin="normal"
                   id="date-picker-dialog"
-                  label="Event Date"
+                  label={t("event_date")}
                   format="MM/dd/yyyy"
                   value={selectedDate}
                   onChange={handleDateChange}
