@@ -58,13 +58,13 @@ function Send_an_invoice() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Send an Invoice
+            {t('send_an_invoice')}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Send an Invoice</Typography>
+            <Typography variant='h3'>{t('send_an_invoice')}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepperInvoice/>
@@ -82,13 +82,13 @@ function Send_an_invoice() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Send an Invoice
+            {t('send_an_invoice')}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Send an Invoice</Typography>
+            <Typography variant='h3'>{t('send_an_invoice')}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepperInvoice/>
@@ -105,13 +105,13 @@ function Send_an_invoice() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Send an Invoice
+            {t('send_an_invoice')}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Send an Invoice</Typography>
+            <Typography variant='h3'>{t('send_an_invoice')}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepperInvoice/>
@@ -127,13 +127,13 @@ function Send_an_invoice() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Send an Invoice
+            {t('send_an_invoice')}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Send an Invoice</Typography>
+            <Typography variant='h3'>{t('send_an_invoice')}</Typography>
             </Grid>
             <Grid item>
             <VerticalLinearStepperInvoice/>

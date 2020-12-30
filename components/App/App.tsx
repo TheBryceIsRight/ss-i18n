@@ -8,13 +8,13 @@ const App: React.FC = () => {
       <React.Fragment>
       <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' >
         <Grid item>
-        <Skeleton variant="rect" width={100} height={20} />
-        </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={300} height={50} />
+        <Skeleton variant="rect" width={1100} height={400} />
         </Grid>
       </Grid>
-      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <br/>
       <br/>
       <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' >

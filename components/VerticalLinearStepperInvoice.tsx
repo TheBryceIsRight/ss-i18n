@@ -21,6 +21,8 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import useTranslation from '../hooks/useTranslation';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -389,12 +391,14 @@ return typeof String.fromCodePoint !== 'undefined'
 }
 
 
-function getSteps() {
-  return ['General Information', 'Legal Information', 'Event Billing', 'Billing Address', 'Shipping Address', 'Invoice Terms'];
+function GetSteps() {
+  const { t } = useTranslation();
+
+  return [t("general_info"), t("legal_information"), t("event_billing"),  t("billing_address"), t("shipping_address"), t("invoice_terms")];
 }
 
 function GetStepContent(step: number) {
-
+  const { t } = useTranslation();
   
   const classes = useStyles1();
   const classes2 = useStyles2();
@@ -418,79 +422,79 @@ function GetStepContent(step: number) {
     case 0:
       return <FormControl component="fieldset" className={classes.formControl}>
                 <FormGroup>
-                    <TextField variant='outlined' label='Find a product'>Find a product</TextField>
+                    <TextField variant='outlined' label= {t("find_a_product")} ></TextField>
                     <br/>
                     <br/>
                 </FormGroup>
                 <FormGroup>
-                    <FormLabel component="legend">Product Information</FormLabel>
+                    <FormLabel component="legend">{t("product_info")}</FormLabel>
                     <br/>
-                    <TextField variant='outlined' label='Product Description'></TextField>
+                    <TextField variant='outlined' label={t("product_descr")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Product Code'></TextField>
+                    <TextField variant='outlined' label={t("product_code")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Unit Price' InputProps={{
+                    <TextField variant='outlined' label={t("unit_price")} InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
                         }} ></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Quantity'></TextField>
+                    <TextField variant='outlined' label={t("quantity")}></TextField>
                 </FormGroup>
             </FormControl>;
     case 1: 
       return <FormControl component="fieldset" className={classes.formControl}>
                 <FormGroup>
-                    <TextField variant='outlined' label='Invoice Number'></TextField>
+                    <TextField variant='outlined' label={t("invoice_no")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Merchant Transaction ID'></TextField>
+                    <TextField variant='outlined' label={t("mid")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Subtotal' InputProps={{
+                    <TextField variant='outlined' label={t("subtotal")} InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
                         }} ></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Sales Tax'></TextField>
+                    <TextField variant='outlined' label={t("sales_tax")}></TextField>
                     <br/>
-                    <TextField variant='outlined' label='Discount'></TextField>
+                    <TextField variant='outlined' label={t("discount")}></TextField>
                 </FormGroup>
             </FormControl>;
     case 2:
       return   <FormControl component="fieldset" className={classes.formControl}>
       <FormGroup>
-          <FormLabel component="legend">Legal Name</FormLabel>
+          <FormLabel component="legend">{t("legal_name")}</FormLabel>
           <br/>
-          <TextField variant='outlined' label='First Name'></TextField>
+          <TextField variant='outlined' label={t("first_name")}></TextField>
           <br/>
-          <TextField variant='outlined' label='Last Name'></TextField>
+          <TextField variant='outlined' label={t("last_name")}></TextField>
           <br/>
           <br/>
-          <FormLabel component="legend">Company Information</FormLabel>
+          <FormLabel component="legend">{t("company_info")}</FormLabel>
           <br/>
-          <TextField variant='outlined' label='Company Name'></TextField>
+          <TextField variant='outlined' label={t("company_name")}></TextField>
       </FormGroup>
       
       <br/>        
       <br/>
       <FormGroup>
-      <FormLabel component="legend">Primary phone number</FormLabel>
+      <FormLabel component="legend">{t("primary_phone")}</FormLabel>
       <br/>
-      <TextField variant='outlined' label='Phone Number' placeholder='(000) 000-0000'></TextField>
+      <TextField variant='outlined' label={t("phone_no")} placeholder='(000) 000-0000'></TextField>
       </FormGroup>
       <FormGroup>
       <br/>
       <br/>
-      <FormLabel component="legend">Primary email address</FormLabel>
+      <FormLabel component="legend">{t("primary_email")}</FormLabel>
       <br/>
-      <TextField variant='outlined' label='Email' placeholder='user@elavon.com'></TextField>
+      <TextField variant='outlined' label={t("email")} placeholder='user@elavon.com'></TextField>
       <br/>
       <br/>
-    <FormLabel component="legend">Event Information</FormLabel>
+    <FormLabel component="legend">{t("event_info")}</FormLabel>
     <br/>
-    <TextField variant='outlined' label='Event Name'></TextField> 
+    <TextField variant='outlined' label={t("event_name")}></TextField> 
     <br/>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Event Date"
+          label={t("event_date")}
           format="MM/dd/yyyy"
           value={selectedDate}
           onChange={handleDateChange}
@@ -504,29 +508,29 @@ function GetStepContent(step: number) {
     case 3:
         return <FormControl component="fieldset" className={classes.formControl}>
         <FormGroup>
-            <FormLabel component="legend">Legal Name</FormLabel>
+            <FormLabel component="legend">{t("legal_name")}</FormLabel>
             <br/>
-            <TextField variant='outlined' label='First Name'></TextField>
+            <TextField variant='outlined' label={t("first_name")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Last Name'></TextField>
+            <TextField variant='outlined' label={t("last_name")}></TextField>
         </FormGroup>
         <br/>
         <br/>
         <FormGroup>
-            <FormLabel component="legend">Home Address</FormLabel>
+            <FormLabel component="legend">{t("home_address")}</FormLabel>
             <br/>
-            <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+            <TextField variant='outlined' fullWidth label={t("street_address")} placeholder={t("placeholder_address")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Apartment/Unit'></TextField>
+            <TextField variant='outlined' label={t("apt_unit")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+            <TextField variant='outlined' label={t("zip")} placeholder='00000'></TextField>
             <br/>
-            <TextField variant='outlined' label='City'></TextField>
+            <TextField variant='outlined' label={t("city")}></TextField>
         </FormGroup>
         <br/>
         <br/>
         <FormGroup>
-                        <FormLabel component="legend">Country/Region</FormLabel>
+                        <FormLabel component="legend">{t("country")}</FormLabel>
                         <br/>
                         <Autocomplete
                             id="country-select-demo"
@@ -546,7 +550,7 @@ function GetStepContent(step: number) {
                             renderInput={(params) => (
                                 <TextField
                                 {...params}
-                                label="Choose a country"
+                                label={t("choose_a_country")}
                                 variant="outlined"
                                 inputProps={{
                                     ...params.inputProps,
@@ -577,7 +581,7 @@ function GetStepContent(step: number) {
                     renderInput={(params) => (
                         <TextField
                         {...params}
-                        label="State"
+                        label={t("state")}
                         variant="outlined"
                         inputProps={{
                             ...params.inputProps,
@@ -592,32 +596,31 @@ function GetStepContent(step: number) {
     case 4:
         return <FormControl component="fieldset" className={classes.formControl}>
         <RadioGroup aria-label="business size" name="business_size" value={value} onChange={handleChangeRadio}>
-                        <FormLabel component="legend">Same as business address?</FormLabel>
-                        <FormControlLabel value="Yes" control={<Radio />} label='Yes' />
-                        <FormControlLabel value="No" control={<Radio />} label='No' />
+                        <FormLabel component="legend">{t("business_same_as_legal")}</FormLabel>
+                        <FormControlLabel value="Yes" control={<Radio />} label={t("yes")} />
+                        <FormControlLabel value="No" control={<Radio />} label={t("no")} />
                     </RadioGroup>
             <br/>
             <br/>
         <FormGroup>
-            <FormLabel component="legend">Legal Name</FormLabel>
+            <FormLabel component="legend">{t("business_same_as_legal")}</FormLabel>
             <br/>
-            <TextField variant='outlined' label='First Name'></TextField>
+            <TextField variant='outlined' label={t("first_name")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Last Name'></TextField>
-            <br/>
+            <TextField variant='outlined' label={t("last_name")}></TextField>
         </FormGroup>
         <br/>
         <br/>
         <FormGroup>
-            <FormLabel component="legend">Shipping Address</FormLabel>
+            <FormLabel component="legend">{t("shipping_address")}</FormLabel>
             <br/>
-            <TextField variant='outlined' fullWidth label='Street Address' placeholder='1234 Peachtree St NW'></TextField>
+            <TextField variant='outlined' fullWidth label={t("street_address")} placeholder={t("placeholder_address")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Apartment/Unit'></TextField>
+            <TextField variant='outlined' label={t("apt_unit")}></TextField>
             <br/>
-            <TextField variant='outlined' label='Zipcode' placeholder='00000'></TextField>
+            <TextField variant='outlined' label={t("zip")} placeholder='00000'></TextField>
             <br/>
-            <TextField variant='outlined' label='City'></TextField>
+            <TextField variant='outlined' label={t("city")}></TextField>
             
         </FormGroup>
         <br/>
@@ -640,7 +643,7 @@ function GetStepContent(step: number) {
                     renderInput={(params) => (
                         <TextField
                         {...params}
-                        label="State"
+                        label={t("state")}
                         variant="outlined"
                         inputProps={{
                             ...params.inputProps,
@@ -655,9 +658,9 @@ function GetStepContent(step: number) {
     case 5:
         return <FormControl component="fieldset" className={classes.formControl}>
         <FormGroup>
-            <FormLabel component="legend">Addtional Terms</FormLabel>
+            <FormLabel component="legend">{t("addtional_terms")}</FormLabel>
             <br/>
-            <TextField variant='outlined' label='Company Name'></TextField>
+            <TextField variant='outlined' label={t("company")}></TextField>
         </FormGroup>
     </FormControl>;
     default:
@@ -670,7 +673,8 @@ export default function VerticalLinearStepperInvoice() {
 
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
+  const steps = GetSteps();
+  const { t } = useTranslation();
   
 
   const handleNext = () => {
@@ -702,7 +706,7 @@ export default function VerticalLinearStepperInvoice() {
                     onClick={handleBack}
                     className={classes.button}
                   >
-                    Back
+                    {t("back")}
                   </Button>
                   <Button
                     variant="contained"
@@ -710,7 +714,7 @@ export default function VerticalLinearStepperInvoice() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ?  t('finish') : t('next')}
                   </Button>
                 </div>
               </div>
@@ -720,13 +724,13 @@ export default function VerticalLinearStepperInvoice() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography variant='subtitle1'>Invoice sent successfully!</Typography>
+          <Typography variant='subtitle1'>{t('invoice_sent')}</Typography>
           <br/>
-          <Typography variant='subtitle1'>Please check your email for a receipt.</Typography>
+          <Typography variant='subtitle1'>{t('please_check_email')}</Typography>
           <br/>
           <br/>
           <Button onClick={handleReset} className={classes.button}>
-            Reset Invoice
+          {t("reset")}
           </Button>
         </Paper>
       )}
