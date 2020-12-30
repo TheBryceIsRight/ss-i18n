@@ -6,9 +6,9 @@ import Grid from '@material-ui/core/Grid';
 const App: React.FC = () => {
     return (
       <React.Fragment>
-      <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' >
+      <Grid container spacing={5} direction='column' alignItems='center' justify='center' >
         <Grid item>
-        <Skeleton variant="rect" width={1100} height={400} />
+        <Skeleton variant="rect" width={700} height={400} />
         </Grid>
       </Grid>
       <br/>

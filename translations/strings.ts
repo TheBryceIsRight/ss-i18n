@@ -294,6 +294,17 @@ const strings: Strings = {
     invoice_terms: "Invoice Terms",
     save_changes: "Save Changes",
 
+    //App Level
+    login: "Login",
+    your_orders: "Your Orders",
+    invoices: "Invoices",
+    logout: "Logout",
+    profile: "Profile",
+    settings: "Settings",
+    notifications: "Notifications",
+    dark_mode: "Dark Mode",
+    quick_actions: "Quick Actions",
+
 
   },
   fr: {
@@ -589,6 +600,17 @@ const strings: Strings = {
     invoice_terms: "Conditions de facturation",
     save_changes: "Sauvegarder les modifications",
 
+     //App Level
+     login: "S'identifier",
+     your_orders: "Vos commandes",
+     invoices: "Les factures",
+     logout: "Se déconnecter",
+     profile: "Profil",
+     settings: "Réglages",
+     notifications: "Notifications",
+     dark_mode: "Mode sombre",
+     quick_actions: "Actions rapides",
+
   },
   pl: {
     about: 'O René Magritte',
@@ -883,6 +905,17 @@ const strings: Strings = {
     invoice_terms: "Warunki faktury",
     save_changes: "Zapisz zmiany",
 
+     //App Level
+    login: "Zaloguj sie",
+    your_orders: "Twoje rozkazy",
+    invoices: "Faktury",
+    logout: "Wyloguj",
+    profile: "Profil",
+    settings: "Ustawienia",
+    notifications: "Powiadomienia",
+    dark_mode: "Tryb ciemny",
+    quick_actions: "Szybkie akcje",
+
   },
   es: {
     about: 'Sobre René Magritte',
@@ -1176,6 +1209,17 @@ const strings: Strings = {
     billing_address: "Dirección de Envío",
     invoice_terms: "Términos de la factura",
     save_changes: "Guardar cambios",
+
+    //App Level
+    login: "Iniciar sesión",
+    your_orders: "Tus pedidos",
+    invoices: "Facturas",
+    logout: "Cerrar sesión",
+    profile: "Perfil",
+    settings: "Ajustes",
+    notifications: "Notificaciones",
+    dark_mode: "Modo oscuro",
+    quick_actions: "Acciones rápidas",
 
 
   }

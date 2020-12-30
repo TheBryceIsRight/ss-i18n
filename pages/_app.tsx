@@ -205,7 +205,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   
   const classes = useStyles();
 
-  const { locale} = useTranslation()
+  const { t,  locale} = useTranslation()
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -310,7 +310,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ListItemIcon>
             <ListItemText>
                   <Typography>
-                    Login
+                    {t("login")}
                   </Typography>
             </ListItemText>
           </ListItem>
@@ -327,7 +327,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ListItemIcon>
             <ListItemText>
                   <Typography>
-                    Logout
+                  {t("login")}
                   </Typography>
             </ListItemText>
           </ListItem>
@@ -344,7 +344,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ListItemIcon>
             <ListItemText>
                   <Typography>
-                    Profile
+                  {t("profile")}
                   </Typography>
             </ListItemText>
           </ListItem>
@@ -361,7 +361,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ListItemIcon>
             <ListItemText>
                   <Typography>
-                    Settings
+                    {t("settings")}
                   </Typography>
             </ListItemText>
           </ListItem>
@@ -431,28 +431,28 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem>
           <ListItemIcon><AccountCircle />
           </ListItemIcon>
-          <ListItemText primary='Profile' />
+          <ListItemText primary={t("profile")} />
       </ListItem>
       </MenuItem>
       <MenuItem onClick={handleNotificationMenuOpen}>
       <ListItem>
           <ListItemIcon><NotificationsIcon />
           </ListItemIcon>
-          <ListItemText primary='Notifications' />
+          <ListItemText primary={t("notifications")}/>
       </ListItem>
       </MenuItem>
       <MenuItem onClick={handleThemeChange} >
       <ListItem>
           <ListItemIcon><Brightness3Icon/>
           </ListItemIcon>
-          <ListItemText primary='Dark Mode' />
+          <ListItemText primary={t("dark_mode")} />
       </ListItem>
       </MenuItem>
       <MenuItem onClick={handleLanguageMenuOpen}>
       <ListItem>
           <ListItemIcon><TranslateIcon/>
           </ListItemIcon>
-          <ListItemText primary='Language' />
+          <ListItemText primary={t("language")} />
       </ListItem>
       </MenuItem>
       </Menu>
@@ -506,7 +506,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><DashboardIcon/>
           </ListItemIcon>
-          <ListItemText primary='Dashboard' />
+          <ListItemText primary={t("dashboard")} />
       </ListItem>
       </Link>
 
@@ -514,7 +514,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><LocalMallIcon/>
           </ListItemIcon>
-          <ListItemText primary='Your Orders' />
+          <ListItemText primary={t("your_orders")} />
       </ListItem>
       </Link>
       <Link href="/[lang]/sales" as={`/${locale}/sales`} passHref>
@@ -528,7 +528,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><MessageIcon/>
           </ListItemIcon>
-          <ListItemText primary='Invoices' />
+          <ListItemText primary={t("invoices")} />
       </ListItem>
       </Link>
       <Divider/>
@@ -544,27 +544,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Link>
       <Divider/>
       <ListSubheader component="div" id="nested-list-subheader">
-      Quick Actions
+      {t("quick_actions")}
       </ListSubheader>
       <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref>
       <ListItem button>
           <ListItemIcon><AttachMoneyIcon/>
           </ListItemIcon>
-          <ListItemText primary='Take a payment' />
+          <ListItemText primary={t("take_a_payment")} />
       </ListItem>
       </Link>
       <Link href="/[lang]/send_an_invoice" as={`/${locale}/send_an_invoice`} passHref>
       <ListItem button>
           <ListItemIcon><SendIcon/>
           </ListItemIcon>
-          <ListItemText primary='Send an Invoice' />
+          <ListItemText primary={t("send_an_invoice")} />
       </ListItem>
       </Link>
       <Link href="/[lang]/finish_registration" as={`/${locale}/finish_registration`} passHref>
       <ListItem button>
           <ListItemIcon><AssignmentIcon/>
           </ListItemIcon>
-          <ListItemText primary='Finish signing up' />
+          <ListItemText primary= {t("finish_signing_up")} />
       </ListItem>
       </Link>
       </List>
@@ -602,10 +602,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                   
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
-                <Tooltip title="Language">
+                <Tooltip title={t("language")}>
                   <IconButton
                     edge='end'
-                    aria-label='Language Settings'
+                    aria-label={t("language")}
                     aria-haspopup='true'
                     onClick={handleLanguageMenuOpen}
                     color='primary'>
@@ -614,10 +614,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Tooltip>
                 </div>
                 <div className={classes.sectionDesktop}>
-                <Tooltip title="Dark Mode">
+                <Tooltip title={t("dark_mode")}>
                   <IconButton
                     edge="end"
-                    aria-label="Dark mode"
+                    aria-label={t("dark_mode")}
                     aria-haspopup="false"
                     onClick={handleThemeChange}
                     color="primary"
@@ -627,10 +627,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                   </Tooltip>
                 </div>
                 <div className={classes.sectionDesktop}>
-                <Tooltip title="Notifications">
+                <Tooltip title={t("notifications")}>
                   <IconButton
                     edge="end"
-                    aria-label="Notifications menu"
+                    aria-label={t("notifications")}
                     aria-controls={notificationsMenuId}
                     aria-haspopup="true"
                     onClick={handleNotificationMenuOpen}
@@ -643,9 +643,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                 
   
                 <div className={classes.sectionDesktop}>
-                <Tooltip title="Profile">
+                <Tooltip title={t("profile")}>
                   <IconButton
-                      aria-label="Account of current user"
+                      aria-label={t("profile")}
                       aria-controls={menuId}
                       aria-haspopup="true"
                       onClick={handleProfileMenuOpen}
