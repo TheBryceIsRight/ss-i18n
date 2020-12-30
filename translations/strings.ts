@@ -264,6 +264,10 @@ const strings: Strings = {
     no: "No",
     reset: "Reset",
     finish_signing_up: 'Finish signing up',
+    hero_title: "Flexibility to run your business better",
+    hero_subtitle: "Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.",
+    try_talech_now: "Try Talech now",
+
 
   },
   fr: {
@@ -529,6 +533,9 @@ const strings: Strings = {
     no: "Non",
     reset: "Réinitialiser",
     finish_signing_up: "Terminer l'inscription",
+    hero_title: "Flexibilité pour mieux gérer votre entreprise",
+    hero_subtitle: "Prenez chaque type de paiement rapidement et en toute sécurité grâce à la prévention de la fraude basée sur l'IA et à l'assistance téléphonique 24h / 24 et 7j / 7.",
+    try_talech_now: "Essayez Talech maintenant",
 
   },
   pl: {
@@ -794,6 +801,9 @@ const strings: Strings = {
     no: "Nie",
     reset: "Resetowanie",
     finish_signing_up: 'Zakończ rejestrację',
+    hero_title: "Elastyczność umożliwiająca lepsze prowadzenie firmy",
+    hero_subtitle: "Szybko i bezpiecznie przyjmuj każdy rodzaj płatności dzięki zapobieganiu oszustwom opartym na sztucznej inteligencji i całodobowej pomocy telefonicznej.",
+    try_talech_now: "Wypróbuj Talech teraz",
 
   },
   es: {
@@ -1059,6 +1069,9 @@ const strings: Strings = {
     no: "No",
     reset: "Reiniciar",
     finish_signing_up: 'Terminar de registrarse',
+    hero_title: "Flexibilidad para administrar mejor su negocio",
+    hero_subtitle: "Acepte todo tipo de pago de forma rápida y segura con la prevención de fraudes impulsada por IA y la asistencia telefónica las 24 horas, los 7 días de la semana.",
+    try_talech_now: "Prueba Talech ahora",
 
   }
 }

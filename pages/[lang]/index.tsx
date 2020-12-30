@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   Typography,
 } from '@material-ui/core';
@@ -9,6 +9,7 @@ import { Media, MediaContextProvider } from "../../utils/media";
 import withLocale from '../../hocs/withLocale';
 import StarterBundle from '../../components/StarterBundle';
 import StandardBundle from '../../components/StandardBundle';
+import useTranslation from '../../hooks/useTranslation';
 import PremiumBundle from '../../components/PremiumBundle';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -37,15 +38,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-class Hero extends React.Component {
-  static contextType = ThemeContext;
-
-  render() {
-    const heroImage = this.context ? '/Main.png' : '/Main_Dark.png' ;
-    const text_width_small = "200px";
-    const text_width = "300px";
-    const text_width_tablet = "400px";
-    const text_width_desktop = "500px";
+function Hero() {
+  const theme = useContext(ThemeContext);
+  const { t } = useTranslation();
+  const heroImage = theme ? '/Main.png' : '/Main_Dark.png' ;
+  const text_width_small = "200px";
+  const text_width = "300px";
+  const text_width_tablet = "400px";
+  const text_width_desktop = "500px";
 
     return <React.Fragment>
       <MediaContextProvider>
@@ -58,13 +58,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 120, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_small}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width_small}}>{t("hero_title")} </Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_small}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_small}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid>          
       </div>
@@ -79,13 +79,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 200, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start'  >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width}}>{t("hero_title")}</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1' style={{maxWidth:text_width}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid> 
       </div>
@@ -101,13 +101,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 100, left: 260, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_tablet}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width_tablet}}>{t("hero_title")}</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_tablet}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_tablet}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid>          
       </div>
@@ -123,13 +123,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 80, left: 400, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid>          
       </div>
@@ -145,13 +145,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 80, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid>          
       </div>
@@ -166,13 +166,13 @@ class Hero extends React.Component {
       <div style={{position: 'relative', top: 130, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
       <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
         <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>Flexibility to run your business better</Typography>
+        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
         </Grid>
         <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>Take every type of payment quickly and securely with AI-powered fraud prevention and 24/7 phone support.</Typography>
+        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
         </Grid>
         <Grid item>
-          <Button variant='contained' size='large'>Try talech now</Button>
+          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
         </Grid>
       </Grid>          
       </div>
@@ -180,9 +180,6 @@ class Hero extends React.Component {
       </MediaContextProvider>
       
     </React.Fragment>;
-    
-    
-  }
   
 }
 
