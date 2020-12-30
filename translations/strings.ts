@@ -1025,7 +1025,7 @@ const strings: Strings = {
     average_visits:"Promedio de visitas por cliente",
     positive_feedback:"Retroalimentación positiva",
     negative_feedback:"Retroalimentación negativa",
-    skip:"Evitar el registro",
+    skip:"Saltar registro",
     finance_company: "Finance Company",
     recent_orders: "Tus pedidos recientes",
     order_placed: "Pedido realizado",

@@ -19,11 +19,8 @@ import {
   MenuItem,
   FormControlLabel
 } from '@material-ui/core';
-import MuiTextField from '@material-ui/core/TextField';
 import {
-  fieldToTextField,
   TextField,
-  TextFieldProps,
   Switch,
 } from 'formik-material-ui';
 
@@ -83,22 +80,6 @@ interface Values {
         </SyntaxHighlighter>
       </Dialog>
     );
-  }
-
-
-  function UpperCasingTextField(props: TextFieldProps) {
-    const {
-      form: {setFieldValue},
-      field: {name},
-    } = props;
-    const onChange = React.useCallback(
-      event => {
-        const {value} = event.target;
-        setFieldValue(name, value ? value.toUpperCase() : '');
-      },
-      [setFieldValue, name]
-    );
-    return <MuiTextField {...fieldToTextField(props)} onChange={onChange} />;
   }
 
 
@@ -180,7 +161,7 @@ function Registration() {
             <Form>
                 <Box margin={1}>
                 <Field
-                    component={UpperCasingTextField}
+                    component={TextField}
                     name="email"
                     type="email"
                     label={t('email')}
@@ -189,7 +170,7 @@ function Registration() {
                 </Box>
                 <Box margin={1}>
                 <Field
-                    component={UpperCasingTextField}
+                    component={TextField}
                     name="email_confirm"
                     type="email"
                     label={t('confirm_email')}
