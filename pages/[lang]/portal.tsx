@@ -177,6 +177,7 @@ function Portal() {
                 <Card>
             <CardHeader
                 title={t('top_discussions')}
+                
             />
                 <CardContent >
                 <List>
@@ -928,7 +929,7 @@ function Portal() {
                 </Grid>
                 <Grid item>
                 
-                <Card className={classes.root} style={{minWidth:card_width}} >
+                <Card className={classes.root} style={{minWidth:card_width, maxWidth: card_width}} >
             <CardHeader
                 title={t('top_discussions')}
             />
@@ -1190,7 +1191,7 @@ function Portal() {
                 </Grid>
                 <Grid item>
                 
-                <Card className={classes.root} style={{minWidth:card_width}} >
+                <Card className={classes.root} style={{minWidth:card_width, maxWidth: card_width}}>
             <CardHeader
                 title={t('top_discussions')}
             />
