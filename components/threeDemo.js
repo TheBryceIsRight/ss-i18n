@@ -32,7 +32,7 @@ const Lights = () => {
       <ambientLight intensity={0.3} />
       {/* Diretion light */}
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight
+      {/* <directionalLight
         castShadow
         position={[0, 10, 0]}
         intensity={1.5}
@@ -43,7 +43,7 @@ const Lights = () => {
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
-      />
+      /> */}
       {/* Spotlight Large overhead light */}
       <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
     </>
@@ -58,7 +58,7 @@ const HTMLContent = ({
   position,
 }) => {
   const ref = useRef();
-  useFrame(() => (ref.current.rotation.y += 0.01));
+  useFrame(() => (ref.current.rotation.z += 0.005));
   const [refItem, inView] = useInView({
     threshold: 0,
   });
@@ -127,12 +127,10 @@ export default function ThreeDemo() {
           </HTMLContent>
           <OrbitControls
             enableDamping
-            enableZoom={true}
+            enableZoom={false}
             enablePan={false}
             dampingFactor={0.05}
             rotateSpeed={1.1}
-            minPolarAngle={Math.PI / 10}
-            maxPolarAngle={Math.PI / 0.01}
             />
         </Suspense>
       </Canvas>
