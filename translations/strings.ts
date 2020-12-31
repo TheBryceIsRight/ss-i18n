@@ -305,6 +305,28 @@ const strings: Strings = {
     dark_mode: "Dark Mode",
     quick_actions: "Quick Actions",
 
+    //take a payment
+    amount: "Amount",
+    action: "Action",
+    order_ref_no: "Order Ref Number",
+    payment_method: "Payment Method",
+    customer: "Customer",
+    run_demo_transaction: "Run Demo Transaction",
+    card_type: "Card Type",
+    card_no: "Card Number",
+    expires: "Expires",
+    exp_date: "July 2022",
+    issuer_name: "Issuer Name",
+    issuer_example: "Visa",
+    issuer_country: "Issuer Country",
+    country_example: "United States",
+    card_billing_currency: "Card Billing Currency",
+    customer_name: "Customer Name",
+    email_receipt: "Email receipt",
+    print_receipt: "Print Receipt",
+
+
+
 
   },
   fr: {
@@ -600,16 +622,36 @@ const strings: Strings = {
     invoice_terms: "Conditions de facturation",
     save_changes: "Sauvegarder les modifications",
 
-     //App Level
-     login: "S'identifier",
-     your_orders: "Vos commandes",
-     invoices: "Les factures",
-     logout: "Se déconnecter",
-     profile: "Profil",
-     settings: "Réglages",
-     notifications: "Notifications",
-     dark_mode: "Mode sombre",
-     quick_actions: "Actions rapides",
+    //App Level
+    login: "S'identifier",
+    your_orders: "Vos commandes",
+    invoices: "Les factures",
+    logout: "Se déconnecter",
+    profile: "Profil",
+    settings: "Réglages",
+    notifications: "Notifications",
+    dark_mode: "Mode sombre",
+    quick_actions: "Actions rapides",
+
+    //take a payment
+    amount: "Montant",
+    action: "Action",
+    order_ref_no: "Numéro de référence de la commande",
+    payment_method: "Mode de paiement",
+    customer: "Client",
+    run_demo_transaction: "Exécuter la transaction de démonstration",
+    card_type: "Type de carte",
+    card_no: "Numéro de carte",
+    expires: "Expire",
+    exp_date: "Juillet 2022",
+    issuer_name: "Nom de l'émetteur",
+    issuer_example: "Visa",
+    issuer_country: "Pays émetteur",
+    country_example: "États Unis",
+    card_billing_currency: "Devise de facturation de la carte",
+    customer_name: "Nom du client",
+    email_receipt: "E-mail de réception",
+    print_receipt: "Imprimer le reçu",
 
   },
   pl: {
@@ -916,6 +958,26 @@ const strings: Strings = {
     dark_mode: "Tryb ciemny",
     quick_actions: "Szybkie akcje",
 
+    //take a payment
+    amount: "Ilość",
+    action: "Akcja",
+    order_ref_no: "Numer referencyjny zamówienia",
+    payment_method: "Metoda płatności",
+    customer: "Klient",
+    run_demo_transaction: "Uruchom transakcję demonstracyjną",
+    card_type: "Typ karty",
+    card_no: "Numer karty",
+    expires: "Wygasa",
+    exp_date: "Lipiec 2022",
+    issuer_name: "Nazwa wystawcy",
+    issuer_example: "Visa",
+    issuer_country: "Kraj emitenta",
+    country_example: "Stany Zjednoczone",
+    card_billing_currency: "Waluta rozliczeniowa karty",
+    customer_name: "Nazwa klienta",
+    email_receipt: "Potwierdzenie e-mailem",
+    print_receipt: "Wydrukuj pokwitowanie",
+
   },
   es: {
     about: 'Sobre René Magritte',
@@ -1220,6 +1282,26 @@ const strings: Strings = {
     notifications: "Notificaciones",
     dark_mode: "Modo oscuro",
     quick_actions: "Acciones rápidas",
+
+    //take a payment
+    amount: "Cantidad",
+    action: "Acción",
+    order_ref_no: "Número de referencia de pedido",
+    payment_method: "Método de pago",
+    customer: "Cliente",
+    run_demo_transaction: "Ejecutar transacción",
+    card_type: "Tipo de tarjeta",
+    card_no: "Número de tarjeta",
+    expires: "Expira",
+    exp_date: "Julio 2022",
+    issuer_name: "Nombre del emisor",
+    issuer_example: "Visa",
+    issuer_country: "País emisor",
+    country_example: "Estados Unidos",
+    card_billing_currency: "Moneda de facturación de la tarjeta",
+    customer_name: "Nombre del cliente",
+    email_receipt: "Recibo por correo electrónico",
+    print_receipt: "Imprima el recibo",
 
 
   }

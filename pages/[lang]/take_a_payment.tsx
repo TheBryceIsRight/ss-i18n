@@ -265,7 +265,7 @@ function Take_a_payment() {
                 disabled={isSubmitting}
                 onClick={submitForm}
             >
-                Run Demo Transaction
+                {t("run_demo_transaction")}
             </Button>
 
             </Box>
@@ -283,7 +283,7 @@ function Take_a_payment() {
     return <React.Fragment>
       <Head>
         <title>
-        Take a Payment
+        {t("take_a_payment")}
         </title>
 
       </Head>
@@ -298,13 +298,13 @@ function Take_a_payment() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Take a payment
+            {t("take_a_payment")}
             </Typography>
           </Breadcrumbs>
         <br/>
         <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Take a payment</Typography>
+            <Typography variant='h3'>{t("take_a_payment")}</Typography>
             </Grid>
             <Grid item>
             <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
@@ -321,7 +321,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="currency"
-                            label="Currency"
+                            label={t("currency")}
                             value={items.currency}
                             select
                             variant="outlined"
@@ -339,7 +339,7 @@ function Take_a_payment() {
                         <MuiTextField
                             type="text"
                             name="select"
-                            label="Action"
+                            label= {t("action")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -359,7 +359,7 @@ function Take_a_payment() {
                         <Grid item>
                         <MuiTextField
                             name="order_ref"
-                            label="Order Ref Number"
+                            label={t("order_ref_no")}
                             variant='outlined'
                             value= {items.ref}
                             onChange= {handleChange('ref')}
@@ -369,7 +369,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="payment"
-                            label="Payment Method"
+                            label={t("payment_method")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -390,7 +390,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="customer"
-                            label="Customer"
+                            label= {t("customer")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -411,7 +411,7 @@ function Take_a_payment() {
                             <MuiTextField
                                 type="text"
                                 name="payment_method"
-                                label="Payment Method"
+                                label={t("payment_method")}
                                 select
                                 variant="outlined"
                                 margin="normal"
@@ -440,7 +440,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
                             <Typography variant='h5'>
-                                Amount
+                                {t("amount")}
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -451,48 +451,48 @@ function Take_a_payment() {
                     </Grid>
                     <List className={classes.root}>
                         <ListItem>
-                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                            <ListItemText primary={t("order_ref_no")} secondary= {items.ref} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                            <ListItemText primary={t("card_type")} secondary="Credit Card" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                            <ListItemText primary={t("card_no")} secondary= {items.payment}/>
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Expires" secondary="July 2022" />
+                            <ListItemText primary={t("expires")} secondary={t("exp_date")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                            <ListItemText primary={t("issuer_name")} secondary={t("issuer_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                            <ListItemText primary={t("issuer_country")} secondary= {t("country_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
-                        </ListItem>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary="Customer Name" secondary={items.customer} />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                            <ListItemText primary={t("card_billing_currency")} secondary={items.currency} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Billing Address" secondary="--" />
+                            <ListItemText primary={t("customer_name")} secondary={items.customer} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                            <ListItemText primary={t("email")} secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("email_receipt")} secondary={t("yes")} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary={t("billing_address")} secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("shipping_address")} secondary="89 Navasota Street Austin, TX 78702" />
                         </ListItem>
                         </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >Print Receipt</Button>
+                        <Button size="small" >{t("print_receipt")}</Button>
                     </CardActions>
                     </Card>
                 </Grid>
@@ -514,13 +514,14 @@ function Take_a_payment() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Take a payment
+            {t("take_a_payment")}
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Take a payment</Typography>
+            <Typography variant='h3'>{t("take_a_payment")}</Typography>
             </Grid>
             <Grid item>
             <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
@@ -529,7 +530,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
 
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            <MuiTextField id="standard-name" name="amount" value={name} label={t("amount")} onChange={handleTextChange} variant='outlined' InputProps={{
                             startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
                         }} />
                         </Grid>
@@ -537,7 +538,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="currency"
-                            label="Currency"
+                            label={t("currency")}
                             value={items.currency}
                             select
                             variant="outlined"
@@ -555,7 +556,7 @@ function Take_a_payment() {
                         <MuiTextField
                             type="text"
                             name="select"
-                            label="Action"
+                            label= {t("action")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -575,7 +576,7 @@ function Take_a_payment() {
                         <Grid item>
                         <MuiTextField
                             name="order_ref"
-                            label="Order Ref Number"
+                            label={t("order_ref_no")}
                             variant='outlined'
                             value= {items.ref}
                             onChange= {handleChange('ref')}
@@ -585,7 +586,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="payment"
-                            label="Payment Method"
+                            label={t("payment_method")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -606,7 +607,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="customer"
-                            label="Customer"
+                            label= {t("customer")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -627,7 +628,7 @@ function Take_a_payment() {
                             <MuiTextField
                                 type="text"
                                 name="payment_method"
-                                label="Payment Method"
+                                label={t("payment_method")}
                                 select
                                 variant="outlined"
                                 margin="normal"
@@ -656,7 +657,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
                             <Typography variant='h5'>
-                                Amount
+                                {t("amount")}
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -667,48 +668,48 @@ function Take_a_payment() {
                     </Grid>
                     <List className={classes.root}>
                         <ListItem>
-                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                            <ListItemText primary={t("order_ref_no")} secondary= {items.ref} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                            <ListItemText primary={t("card_type")} secondary="Credit Card" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                            <ListItemText primary={t("card_no")} secondary= {items.payment}/>
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Expires" secondary="July 2022" />
+                            <ListItemText primary={t("expires")} secondary={t("exp_date")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                            <ListItemText primary={t("issuer_name")} secondary={t("issuer_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                            <ListItemText primary={t("issuer_country")} secondary= {t("country_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
-                        </ListItem>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary="Customer Name" secondary={items.customer} />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                            <ListItemText primary={t("card_billing_currency")} secondary={items.currency} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Billing Address" secondary="--" />
+                            <ListItemText primary={t("customer_name")} secondary={items.customer} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                            <ListItemText primary={t("email")} secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("email_receipt")} secondary={t("yes")} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary={t("billing_address")} secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("shipping_address")} secondary="89 Navasota Street Austin, TX 78702" />
                         </ListItem>
                         </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >Print Receipt</Button>
+                        <Button size="small" >{t("print_receipt")}</Button>
                     </CardActions>
                     </Card>
                 </Grid>
@@ -716,12 +717,12 @@ function Take_a_payment() {
             </Grid>
 
         </Grid>
-
         </Media>
 
         {/*Desktop */}
         <Media at='lg'>
 
+        
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
@@ -729,13 +730,14 @@ function Take_a_payment() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Take a payment
+            {t("take_a_payment")}
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Take a payment</Typography>
+            <Typography variant='h3'>{t("take_a_payment")}</Typography>
             </Grid>
             <Grid item>
             <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
@@ -744,7 +746,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
 
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            <MuiTextField id="standard-name" name="amount" value={name} label={t("amount")} onChange={handleTextChange} variant='outlined' InputProps={{
                             startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
                         }} />
                         </Grid>
@@ -752,7 +754,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="currency"
-                            label="Currency"
+                            label={t("currency")}
                             value={items.currency}
                             select
                             variant="outlined"
@@ -770,7 +772,7 @@ function Take_a_payment() {
                         <MuiTextField
                             type="text"
                             name="select"
-                            label="Action"
+                            label= {t("action")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -790,7 +792,7 @@ function Take_a_payment() {
                         <Grid item>
                         <MuiTextField
                             name="order_ref"
-                            label="Order Ref Number"
+                            label={t("order_ref_no")}
                             variant='outlined'
                             value= {items.ref}
                             onChange= {handleChange('ref')}
@@ -800,7 +802,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="payment"
-                            label="Payment Method"
+                            label={t("payment_method")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -821,7 +823,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="customer"
-                            label="Customer"
+                            label= {t("customer")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -842,7 +844,7 @@ function Take_a_payment() {
                             <MuiTextField
                                 type="text"
                                 name="payment_method"
-                                label="Payment Method"
+                                label={t("payment_method")}
                                 select
                                 variant="outlined"
                                 margin="normal"
@@ -871,7 +873,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
                             <Typography variant='h5'>
-                                Amount
+                                {t("amount")}
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -882,48 +884,48 @@ function Take_a_payment() {
                     </Grid>
                     <List className={classes.root}>
                         <ListItem>
-                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                            <ListItemText primary={t("order_ref_no")} secondary= {items.ref} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                            <ListItemText primary={t("card_type")} secondary="Credit Card" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                            <ListItemText primary={t("card_no")} secondary= {items.payment}/>
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Expires" secondary="July 2022" />
+                            <ListItemText primary={t("expires")} secondary={t("exp_date")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                            <ListItemText primary={t("issuer_name")} secondary={t("issuer_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                            <ListItemText primary={t("issuer_country")} secondary= {t("country_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
-                        </ListItem>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary="Customer Name" secondary={items.customer} />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                            <ListItemText primary={t("card_billing_currency")} secondary={items.currency} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Billing Address" secondary="--" />
+                            <ListItemText primary={t("customer_name")} secondary={items.customer} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                            <ListItemText primary={t("email")} secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("email_receipt")} secondary={t("yes")} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary={t("billing_address")} secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("shipping_address")} secondary="89 Navasota Street Austin, TX 78702" />
                         </ListItem>
                         </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >Print Receipt</Button>
+                        <Button size="small" >{t("print_receipt")}</Button>
                     </CardActions>
                     </Card>
                 </Grid>
@@ -936,6 +938,7 @@ function Take_a_payment() {
 
         {/*High Resolution Desktop */}
         <Media at='xl'>
+        
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
@@ -943,13 +946,14 @@ function Take_a_payment() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Take a payment
+            {t("take_a_payment")}
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Take a payment</Typography>
+            <Typography variant='h3'>{t("take_a_payment")}</Typography>
             </Grid>
             <Grid item>
             <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
@@ -958,7 +962,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
 
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            <MuiTextField id="standard-name" name="amount" value={name} label={t("amount")} onChange={handleTextChange} variant='outlined' InputProps={{
                             startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
                         }} />
                         </Grid>
@@ -966,7 +970,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="currency"
-                            label="Currency"
+                            label={t("currency")}
                             value={items.currency}
                             select
                             variant="outlined"
@@ -984,7 +988,7 @@ function Take_a_payment() {
                         <MuiTextField
                             type="text"
                             name="select"
-                            label="Action"
+                            label= {t("action")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1004,7 +1008,7 @@ function Take_a_payment() {
                         <Grid item>
                         <MuiTextField
                             name="order_ref"
-                            label="Order Ref Number"
+                            label={t("order_ref_no")}
                             variant='outlined'
                             value= {items.ref}
                             onChange= {handleChange('ref')}
@@ -1014,7 +1018,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="payment"
-                            label="Payment Method"
+                            label={t("payment_method")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1035,7 +1039,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="customer"
-                            label="Customer"
+                            label= {t("customer")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1056,7 +1060,7 @@ function Take_a_payment() {
                             <MuiTextField
                                 type="text"
                                 name="payment_method"
-                                label="Payment Method"
+                                label={t("payment_method")}
                                 select
                                 variant="outlined"
                                 margin="normal"
@@ -1085,7 +1089,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
                             <Typography variant='h5'>
-                                Amount
+                                {t("amount")}
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -1096,48 +1100,48 @@ function Take_a_payment() {
                     </Grid>
                     <List className={classes.root}>
                         <ListItem>
-                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                            <ListItemText primary={t("order_ref_no")} secondary= {items.ref} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                            <ListItemText primary={t("card_type")} secondary="Credit Card" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                            <ListItemText primary={t("card_no")} secondary= {items.payment}/>
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Expires" secondary="July 2022" />
+                            <ListItemText primary={t("expires")} secondary={t("exp_date")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                            <ListItemText primary={t("issuer_name")} secondary={t("issuer_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                            <ListItemText primary={t("issuer_country")} secondary= {t("country_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
-                        </ListItem>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary="Customer Name" secondary={items.customer} />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                            <ListItemText primary={t("card_billing_currency")} secondary={items.currency} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Billing Address" secondary="--" />
+                            <ListItemText primary={t("customer_name")} secondary={items.customer} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                            <ListItemText primary={t("email")} secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("email_receipt")} secondary={t("yes")} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary={t("billing_address")} secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("shipping_address")} secondary="89 Navasota Street Austin, TX 78702" />
                         </ListItem>
                         </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >Print Receipt</Button>
+                        <Button size="small" >{t("print_receipt")}</Button>
                     </CardActions>
                     </Card>
                 </Grid>
@@ -1149,6 +1153,7 @@ function Take_a_payment() {
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
+        
         <br/>
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
         
@@ -1156,22 +1161,23 @@ function Take_a_payment() {
             <Button>{t('home')}</Button>
             </Link>
             <Typography color="textPrimary">
-            Take a payment
+            {t("take_a_payment")}
             </Typography>
           </Breadcrumbs>
         <br/>
-        <Grid container spacing={4} direction='column' alignItems='center' justify='center' className={classes.root} >
+        <br/>
+        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
             <Grid item>
-            <Typography variant='h3'>Take a payment</Typography>
+            <Typography variant='h3'>{t("take_a_payment")}</Typography>
             </Grid>
             <Grid item>
-            <Grid container spacing={10} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
+            <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
                 
                 <Grid item>
                     <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
 
                         <Grid item>
-                            <MuiTextField id="standard-name" name="amount" value={name} label="Amount" onChange={handleTextChange} variant='outlined' InputProps={{
+                            <MuiTextField id="standard-name" name="amount" value={name} label={t("amount")} onChange={handleTextChange} variant='outlined' InputProps={{
                             startAdornment: <InputAdornment position="start">{items.currency} </InputAdornment>,
                         }} />
                         </Grid>
@@ -1179,7 +1185,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="currency"
-                            label="Currency"
+                            label={t("currency")}
                             value={items.currency}
                             select
                             variant="outlined"
@@ -1197,7 +1203,7 @@ function Take_a_payment() {
                         <MuiTextField
                             type="text"
                             name="select"
-                            label="Action"
+                            label= {t("action")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1217,7 +1223,7 @@ function Take_a_payment() {
                         <Grid item>
                         <MuiTextField
                             name="order_ref"
-                            label="Order Ref Number"
+                            label={t("order_ref_no")}
                             variant='outlined'
                             value= {items.ref}
                             onChange= {handleChange('ref')}
@@ -1227,7 +1233,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="payment"
-                            label="Payment Method"
+                            label={t("payment_method")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1248,7 +1254,7 @@ function Take_a_payment() {
                             <MuiTextField
                             type="text"
                             name="customer"
-                            label="Customer"
+                            label= {t("customer")}
                             select
                             variant="outlined"
                             margin="normal"
@@ -1269,7 +1275,7 @@ function Take_a_payment() {
                             <MuiTextField
                                 type="text"
                                 name="payment_method"
-                                label="Payment Method"
+                                label={t("payment_method")}
                                 select
                                 variant="outlined"
                                 margin="normal"
@@ -1298,7 +1304,7 @@ function Take_a_payment() {
                     <Grid container spacing={2} direction='column' alignItems='center' justify='center' className={classes.root} >
                         <Grid item>
                             <Typography variant='h5'>
-                                Amount
+                                {t("amount")}
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -1309,48 +1315,48 @@ function Take_a_payment() {
                     </Grid>
                     <List className={classes.root}>
                         <ListItem>
-                            <ListItemText primary="Order Ref Number" secondary= {items.ref} />
+                            <ListItemText primary={t("order_ref_no")} secondary= {items.ref} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Card Type" secondary="Credit Card" />
+                            <ListItemText primary={t("card_type")} secondary="Credit Card" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Number" secondary= {items.payment}/>
+                            <ListItemText primary={t("card_no")} secondary= {items.payment}/>
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Expires" secondary="July 2022" />
+                            <ListItemText primary={t("expires")} secondary={t("exp_date")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Name" secondary="Visa" />
+                            <ListItemText primary={t("issuer_name")} secondary={t("issuer_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Issuer Country" secondary= "United States" />
+                            <ListItemText primary={t("issuer_country")} secondary= {t("country_example")} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Card Billing Currency" secondary={items.currency} />
-                        </ListItem>
-                        <Divider/>
-                        <ListItem>
-                            <ListItemText primary="Customer Name" secondary={items.customer} />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email" secondary="tossthefrisbee@yahoo.com" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="Email Receipt" secondary="Yes" />
+                            <ListItemText primary={t("card_billing_currency")} secondary={items.currency} />
                         </ListItem>
                         <Divider/>
                         <ListItem>
-                            <ListItemText primary="Billing Address" secondary="--" />
+                            <ListItemText primary={t("customer_name")} secondary={items.customer} />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Shipping Address" secondary="89 Navasota Street Austin, TX 78702" />
+                            <ListItemText primary={t("email")} secondary="tossthefrisbee@yahoo.com" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("email_receipt")} secondary={t("yes")} />
+                        </ListItem>
+                        <Divider/>
+                        <ListItem>
+                            <ListItemText primary={t("billing_address")} secondary="--" />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText primary={t("shipping_address")} secondary="89 Navasota Street Austin, TX 78702" />
                         </ListItem>
                         </List>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" >Print Receipt</Button>
+                        <Button size="small" >{t("print_receipt")}</Button>
                     </CardActions>
                     </Card>
                 </Grid>
@@ -1358,7 +1364,6 @@ function Take_a_payment() {
             </Grid>
 
         </Grid>
-        
        
         </Media>
         </MediaContextProvider>
