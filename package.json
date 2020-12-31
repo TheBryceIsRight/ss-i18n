@@ -21,6 +21,8 @@
     "@nivo/line": "^0.62.0",
     "@nivo/sankey": "^0.62.0",
     "@nivo/sunburst": "^0.62.0",
+    "@react-spring/web": "^9.0.0-rc.3",
+    "@react-three/drei": "^2.2.13",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-syntax-highlighter": "^13.5.0",
     "csstype": "^3.0.2",
@@ -29,14 +31,18 @@
     "formik-material-ui": "^3.0.0-alpha.0",
     "formik-material-ui-lab": "0.0.5",
     "formik-material-ui-pickers": "0.0.11",
+    "lerp": "^1.0.3",
     "moment": "^2.27.0",
     "next": "^9.3.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-intersection-observer": "^8.31.0",
     "react-map-gl": "^5.2.7",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-syntax-highlighter": "^15.4.3"
+    "react-syntax-highlighter": "^15.4.3",
+    "react-three-fiber": "^5.3.10",
+    "three": "^0.124.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.3",

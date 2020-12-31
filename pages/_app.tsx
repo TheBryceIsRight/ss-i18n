@@ -55,6 +55,7 @@ import SmartphoneIcon from '@material-ui/icons/Smartphone';
 import SendIcon from '@material-ui/icons/Send';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import ThreeDRotationIcon from '@material-ui/icons/ThreeDRotation';
 
 
 
@@ -540,6 +541,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ListItemIcon><SmartphoneIcon/>
           </ListItemIcon>
           <ListItemText primary='Talech Mobile' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/three" as={`/${locale}/three`} passHref>
+      <ListItem button>
+          <ListItemIcon><ThreeDRotationIcon/>
+          </ListItemIcon>
+          <ListItemText primary='R3F Demo' />
       </ListItem>
       </Link>
       <Divider/>
