@@ -547,7 +547,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><ThreeDRotationIcon/>
           </ListItemIcon>
-          <ListItemText primary='R3F Demo' />
+          <ListItemText primary='3D Interactive' />
       </ListItem>
       </Link>
       <Divider/>
