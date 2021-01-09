@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
-import React, { useRef, useEffect, useState, Suspense } from "react";
+import React, { useRef, useEffect, useState, Suspense, useContext } from "react";
 
 //Components
 import { Section } from "../components/section";
@@ -17,7 +17,7 @@ import { a, useTransition } from "@react-spring/web";
 
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
-
+import ThemeContext from '../components/Theme';
 
 
 function Model({ url }) {
@@ -32,7 +32,7 @@ const Lights = () => {
       <ambientLight intensity={0.3} />
       {/* Diretion light */}
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      {/* <directionalLight
+      <directionalLight
         castShadow
         position={[0, 10, 0]}
         intensity={1.5}
@@ -43,7 +43,7 @@ const Lights = () => {
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
-      /> */}
+      />
       {/* Spotlight Large overhead light */}
       <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
     </>
@@ -102,11 +102,15 @@ function Loader() {
 }
 
 export default function ThreeDemo() {
+
+  
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
   const onScroll = (e) => (state.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
+
+  const theme = useContext(ThemeContext) ? '/scene.gltf' : '/scene1.gltf';
 
   return (
     <>
@@ -120,10 +124,11 @@ export default function ThreeDemo() {
         {/* Lights Component */}
         <Lights />
         <Suspense fallback={null}>
+          
           <HTMLContent
             domContent={domContent}
-            modelPath='/scene.gltf'
-            position={500}>
+            modelPath={theme}
+            position={470}>
           </HTMLContent>
           <OrbitControls
             enableDamping
@@ -141,7 +146,7 @@ export default function ThreeDemo() {
         onScroll={onScroll}
         {...events}>
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-        <div style={{ height: "800px" }} />
+        <div style={{ height: "700px" }} />
       </div>
     </>
   );
