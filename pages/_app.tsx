@@ -550,6 +550,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ListItemText primary='3D Interactive' />
       </ListItem>
       </Link>
+      <Link href="/[lang]/three2" as={`/${locale}/three2`} passHref>
+      <ListItem button>
+          <ListItemIcon><ThreeDRotationIcon/>
+          </ListItemIcon>
+          <ListItemText primary='3D Figma' />
+      </ListItem>
+      </Link>
       <Divider/>
       <ListSubheader component="div" id="nested-list-subheader">
       {t("quick_actions")}
