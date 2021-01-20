@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 
 function Three() {
 
-    const DynamicComponentWithNoSSR = dynamic(() => import('../../components/threeDemo' ), {
+    const DynamicComponentWithNoSSR = dynamic(() => import('../../components/threeDemo2' ), {
         ssr: false
       });
 
