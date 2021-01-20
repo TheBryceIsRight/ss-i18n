@@ -14,7 +14,7 @@ export default class ThreeDemo2 extends React.Component {
 				const div = document.createElement( 'div' );
 				div.style.width = '411px';
 				div.style.height = '731px';
-				div.style.backgroundColor = '#000';
+				div.style.backgroundColor = '#101123';
 
 
 				const iframe = document.createElement( 'iframe' );
@@ -41,17 +41,17 @@ export default class ThreeDemo2 extends React.Component {
 				const container = document.getElementById( 'container' );
 
 				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 );
-				camera.position.set( 200, 200, 900 );
+				camera.position.set( 0, 0, 900 );
 
 				scene = new THREE.Scene();
 
-        renderer = new CSS3DRenderer();
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer = new CSS3DRenderer();
+				renderer.setSize( window.innerWidth*.7, window.innerHeight*.7 );
 				container.appendChild( renderer.domElement );
 
-        const group = new THREE.Group();
-        
-        group.add( new Element( -350, 120, -200, 0 ) );
+				const group = new THREE.Group();
+				
+				group.add( new Element( 0, 0, -200, 0 ) );
        
 				scene.add( group );
 
