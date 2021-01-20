@@ -2,7 +2,6 @@ import React from "react";
 import * as THREE from "three";
 import { TrackballControls } from './jsm/controls/TrackballControls.js';
 import { CSS3DRenderer, CSS3DObject } from './jsm/renderers/CSS3DRenderer.js';
-// import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
 
 export default class ThreeDemo2 extends React.Component {
   
