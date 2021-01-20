@@ -3,10 +3,10 @@
 import React, { useRef, useEffect, useState, Suspense, useContext } from "react";
 
 //Components
-import { Section } from "../components/section";
+import { Section } from "./section";
 
 // Page State
-import state from "../components/state";
+import state from "./state";
 
 // R3F
 import { Canvas, useFrame } from "react-three-fiber";
@@ -17,7 +17,7 @@ import { a, useTransition } from "@react-spring/web";
 
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
-import ThemeContext from '../components/Theme';
+import ThemeContext from './Theme';
 
 
 function Model({ url }) {

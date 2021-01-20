@@ -16,11 +16,13 @@ export default class ThreeDemo2 extends React.Component {
 				div.style.height = '731px';
 				div.style.backgroundColor = '#000';
 
+
 				const iframe = document.createElement( 'iframe' );
+				const url = "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fj5FLmnW2L5KyxVS5kt3r7t%2F3D-Secure-Sales-Tool-Copy%3Fnode-id%3D124%253A23041%26viewport%3D706%252C99%252C0.09623917192220688%26scaling%3Dscale-down";
 				iframe.style.width = '411px';
 				iframe.style.height = '731px';
 				iframe.style.border = '0px';
-				iframe.src = [ "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fj5FLmnW2L5KyxVS5kt3r7t%2F3D-Secure-Sales-Tool-Copy%3Fnode-id%3D124%253A23041%26viewport%3D706%252C99%252C0.09623917192220688%26scaling%3Dscale-down" ];
+				iframe.src = [ url ];
 				div.appendChild( iframe );
 
 				const object = new CSS3DObject( div );
