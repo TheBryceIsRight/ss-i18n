@@ -16,6 +16,8 @@ export default class MyDocument extends Document {
           <link rel='stylesheet' href='https://highlightjs.org/static/demo/styles/railscasts.css'/>
         </Head>
         <body>
+        
+
           <Main />
           <NextScript />
         </body>
