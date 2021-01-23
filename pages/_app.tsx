@@ -554,14 +554,21 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><ThreeDRotationIcon/>
           </ListItemIcon>
-          <ListItemText primary='3D Figma' />
+          <ListItemText primary='Figma' />
       </ListItem>
       </Link>
       <Link href="/[lang]/three3" as={`/${locale}/three3`} passHref>
       <ListItem button>
           <ListItemIcon><ThreeDRotationIcon/>
           </ListItemIcon>
-          <ListItemText primary='3D Particles' />
+          <ListItemText primary='Particles' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/three4" as={`/${locale}/three4`} passHref>
+      <ListItem button>
+          <ListItemIcon><ThreeDRotationIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Raytracing' />
       </ListItem>
       </Link>
       <Divider/>

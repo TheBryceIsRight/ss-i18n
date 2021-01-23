@@ -17,7 +17,7 @@ function Three() {
     return <React.Fragment>
       <Head>
         <title>
-        Three Demo
+        3D Model
         </title>
       </Head>
       <Typography variant='h3'>GLTF 3D Model Example</Typography>

@@ -31,6 +31,7 @@
     "formik-material-ui": "^3.0.0-alpha.0",
     "formik-material-ui-lab": "0.0.5",
     "formik-material-ui-pickers": "0.0.11",
+    "gsap": "^3.6.0",
     "lerp": "^1.0.3",
     "moment": "^2.27.0",
     "next": "^10.0.5",

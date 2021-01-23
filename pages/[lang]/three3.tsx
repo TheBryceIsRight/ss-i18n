@@ -18,7 +18,7 @@ function Three() {
     return <React.Fragment>
       <Head>
         <title>
-        3D Example
+        Lorenz Attractor
         </title>
       </Head>
       <Typography variant='h3'>Lorenz Attractor Simulation</Typography>

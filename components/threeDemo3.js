@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { TrackballControls } from './jsm/controls/TrackballControls.js';
 import {GLTFLoader} from "../node_modules/three/examples/jsm/loaders/GLTFLoader";
 
-export default class ThreeDemo2 extends React.Component {
+export default class ThreeDemo3 extends React.Component {
   
   componentDidMount() {
     

@@ -1,153 +1,229 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
-import React, { useRef, useEffect, useState, Suspense, useContext } from "react";
+import React from "react";
+import * as THREE from "three";
+import { TweenMax, Power2, Power4 } from "gsap";
 
-//Components
-import { Section } from "./section";
-
-// Page State
-import state from "./state";
-
-// R3F
-import { Canvas, useFrame } from "react-three-fiber";
-import { Html, useProgress, useGLTF, OrbitControls } from "@react-three/drei";
-
-// React Spring
-import { a, useTransition } from "@react-spring/web";
-
-//Intersection Observer
-import { useInView } from "react-intersection-observer";
-import ThemeContext from './Theme';
-
-
-function Model({ url }) {
-  const gltf = useGLTF(url, true);
-  return <primitive object={gltf.scene} dispose={null} />;
-}
-
-const Lights = () => {
-  return (
-    <>
-      {/* Ambient Light illuminates lights for all objects */}
-      <ambientLight intensity={0.3} />
-      {/* Diretion light */}
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight
-        castShadow
-        position={[0, 10, 0]}
-        intensity={1.5}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-far={50}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-      />
-      {/* Spotlight Large overhead light */}
-      <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
-    </>
-  );
-};
-
-const HTMLContent = ({
-  domContent,
-  children,
-  bgColor,
-  modelPath,
-  position,
-}) => {
-  const ref = useRef();
-  useFrame(() => (ref.current.rotation.z += 0.005));
-  const [refItem, inView] = useInView({
-    threshold: 0,
-  });
-  useEffect(() => {
-    inView && (document.body.style.background = bgColor);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
-  return (
-    <Section factor={1.5} offset={1}>
-      <group position={[0, position, 0]}>
-        <mesh ref={ref} position={[0, -35, 0]}>
-          <Model url={modelPath} />
-        </mesh>
-        <Html fullscreen portal={domContent}>
-          <div ref={refItem} className='container'>
-            <h1 className='title'>{children}</h1>
-          </div>
-        </Html>
-      </group>
-    </Section>
-  );
-};
-
-function Loader() {
-  const { active, progress } = useProgress();
-  const transition = useTransition(active, {
-    from: { opacity: 1, progress: 0 },
-    leave: { opacity: 0 },
-    update: { progress },
-  });
-  return transition(
-    ({ progress, opacity }, active) =>
-      active && (
-        <a.div className='loading' style={{ opacity }}>
-          <div className='loading-bar-container'>
-            <a.div className='loading-bar' style={{ width: progress }}></a.div>
-          </div>
-        </a.div>
-      )
-  );
-}
-
-export default function ThreeDemo() {
-
+export default class ThreeDemo extends React.Component {
   
-  const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
-  const onScroll = (e) => (state.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  componentDidMount() {
+    // Three JS Template
+  const renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer.setSize( window.innerWidth*0.64, window.innerHeight*0.7 );
+  renderer.shadowMap.enabled = false;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.needsUpdate = true;
 
-  const theme = useContext(ThemeContext) ? '/scene.gltf' : '/scene1.gltf';
+  const container = document.getElementById( 'container' );
+  container.appendChild( renderer.domElement );
+  window.addEventListener('resize', onWindowResize, false);
+  
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth*0.64, window.innerHeight*0.7 );
+  }
+  const camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 500 );
+  const scene = new THREE.Scene();
+  const cameraRange = 3;
 
-  return (
-    <>
-      {/* R3F Canvas */}
-      <Canvas
-        concurrent
-        colorManagement
-        camera={{ position: [0, 0, 200], fov: 70 }}
-        style={{minHeight:"700px"}}
-        >
-        {/* Lights Component */}
-        <Lights />
-        <Suspense fallback={null}>
-          
-          <HTMLContent
-            domContent={domContent}
-            modelPath={theme}
-            position={470}>
-          </HTMLContent>
-          <OrbitControls
-            enableDamping
-            enableZoom={false}
-            enablePan={false}
-            dampingFactor={0.05}
-            rotateSpeed={1.1}
-            />
-        </Suspense>
-      </Canvas>
-      <Loader />
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}
-        {...events}>
-        <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-        <div style={{ height: "700px" }} />
-      </div>
-    </>
-  );
+  const setcolor = 0x000000;
+
+  scene.background = new THREE.Color(setcolor)
+  scene.fog = new THREE.Fog(setcolor, 2.5, 3.5);
+
+  //-------------------------------------------------------------- SCENE
+
+  const sceneGruop = new THREE.Object3D();
+  const particularGruop = new THREE.Object3D();
+  const modularGruop = new THREE.Object3D();
+
+  function generateParticle(num, amp = 2) {
+    const gmaterial = new THREE.MeshPhysicalMaterial({color:0xFFFFFF, side:THREE.DoubleSide});
+
+    const gparticular = new THREE.CircleGeometry(0.2,5);
+
+    for (let i = 1; i < num; i++) {
+      const pscale = 0.001+Math.abs(mathRandom(0.03));
+      const particular = new THREE.Mesh(gparticular, gmaterial);
+      particular.position.set(mathRandom(amp),mathRandom(amp),mathRandom(amp));
+      particular.rotation.set(mathRandom(),mathRandom(),mathRandom());
+      particular.scale.set(pscale,pscale,pscale);
+      particular.speedValue = mathRandom(1);
+
+      particularGruop.add(particular);
+    }
+  }
+  generateParticle(200, 2);
+
+  sceneGruop.add(particularGruop);
+  scene.add(modularGruop);
+  scene.add(sceneGruop);
+
+  function mathRandom(num = 1) {
+    const setNumber = - Math.random() * num + Math.random() * num;
+    return setNumber;
+  }
+
+  //------------------------------------------------------------- INIT
+  function init() {
+    for (let i = 0; i<30; i++) {
+      const geometry = new THREE.IcosahedronGeometry(1);
+      const material = new THREE.MeshStandardMaterial({shading:THREE.FlatShading, color:0x111111, transparent:false, opacity:1, wireframe:false});
+      const cube = new THREE.Mesh(geometry, material);
+      cube.speedRotation = Math.random() * 0.1;
+      cube.positionX = mathRandom();
+      cube.positionY = mathRandom();
+      cube.positionZ = mathRandom();
+      cube.castShadow = true;
+      cube.receiveShadow = true;
+      
+      const newScaleValue = mathRandom(0.3);
+      
+      cube.scale.set(newScaleValue,newScaleValue,newScaleValue);
+      //---
+      cube.rotation.x = mathRandom(180 * Math.PI / 180);
+      cube.rotation.y = mathRandom(180 * Math.PI / 180);
+      cube.rotation.z = mathRandom(180 * Math.PI / 180);
+      //
+      cube.position.set(cube.positionX, cube.positionY, cube.positionZ);
+      modularGruop.add(cube);
+    }
+  }
+
+  //------------------------------------------------------------- CAMERA
+  camera.position.set(0, 0, cameraRange);
+  let cameraValue = false;
+  function cameraSet() {
+    if (!cameraValue) {
+      TweenMax.to(camera.position, 1, {z:cameraRange,ease:Power4.easeInOut});
+      cameraValue = true;
+    } else {
+      TweenMax.to(camera.position, 1, {z:cameraRange,  x:0, y:0, ease:Power4.easeInOut});
+      INTERSECTED = null;
+      cameraValue = false;
+    }
+  }
+
+  //------------------------------------------------------------- SCENE
+  const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.1);
+  //scene.add(ambientLight);
+
+  const light = new THREE.SpotLight(0xFFFFFF, 3);
+  light.position.set(5, 5, 2);
+  light.castShadow = true;
+  light.shadow.mapSize.width = 10000;
+  light.shadow.mapSize.height = light.shadow.mapSize.width;
+  light.penumbra = 0.5;
+
+  const lightBack = new THREE.PointLight(0x0FFFFF, 1);
+  lightBack.position.set(0, -3, -1);
+
+  scene.add(sceneGruop);
+  scene.add(light);
+  scene.add(lightBack);
+
+  const rectSize = 2;
+  const intensity = 100;
+  const rectLight = new THREE.RectAreaLight( 0x0FFFFF, intensity,  rectSize, rectSize );
+  rectLight.position.set( 0, 0, 1 );
+  rectLight.lookAt( 0, 0, 0 );
+  scene.add( rectLight )
+
+  // const rectLightHelper = new RectAreaLightHelper( rectLight );
+  //scene.add( rectLightHelper );
+
+  //------------------------------------------------------------- RAYCASTER
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+  let INTERSECTED = null;
+  let intersected;
+
+  function onMouseMove(event) {
+    event.preventDefault();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  }
+  function onMouseDown(event) {
+    event.preventDefault();
+    onMouseMove(event);
+    raycaster.setFromCamera(mouse, camera);
+    const intersected = raycaster.intersectObjects(modularGruop.children);
+    if (intersected.length > 0) {
+      cameraValue = false;
+      if (INTERSECTED != intersected[0].object) {
+        if (INTERSECTED) INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+        
+        INTERSECTED = intersected[0].object;
+        INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+        INTERSECTED.material.emissive.setHex(0xFFFF00);
+        //INTERSECTED.material.map = null;
+        //lightBack.position.set(INTERSECTED.position.x,INTERSECTED.position.y,INTERSECTED.position.z);
+        
+        TweenMax.to(camera.position, 1, {
+          x:INTERSECTED.position.x,
+          y:INTERSECTED.position.y,
+          z:INTERSECTED.position.z+3,
+          ease:Power2.easeInOut
+        });
+        
+      } else {
+        if (INTERSECTED) INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+        INTERSECTED = null;
+        
+      }
+    }
+    console.log(intersected.length);
+  }
+  // function onMouseUp(event) {
+    
+  // }
+
+  window.addEventListener('mousedown', onMouseDown, false);
+  // window.addEventListener('mouseup', onMouseUp, false);
+  window.addEventListener('mousemove', onMouseMove, false);
+
+  //------------------------------------------------------------- RENDER
+  const uSpeed = 0.1;
+  function animate() {
+    const time = performance.now() * 0.0003;
+    requestAnimationFrame(animate);
+    //---
+    for (let i = 0, l = particularGruop.children.length; i<l; i++) {
+      const newObject = particularGruop.children[i];
+      newObject.rotation.x += newObject.speedValue/10;
+      newObject.rotation.y += newObject.speedValue/10;
+      newObject.rotation.z += newObject.speedValue/10;
+      //---
+      //newObject.position.y = Math.sin(time) * 3;
+    }
+    
+    for (let i = 0, l = modularGruop.children.length; i<l; i++) {
+      const newCubes = modularGruop.children[i];
+      newCubes.rotation.x += 0.008;
+      newCubes.rotation.y += 0.005;
+      newCubes.rotation.z += 0.003;
+      //---
+      newCubes.position.x = Math.sin(time * newCubes.positionZ) * newCubes.positionY;
+      newCubes.position.y = Math.cos(time * newCubes.positionX) * newCubes.positionZ;
+      newCubes.position.z = Math.sin(time * newCubes.positionY) * newCubes.positionX;
+    }
+    //---
+    particularGruop.rotation.y += 0.005;
+    //---
+    modularGruop.rotation.y -= ((mouse.x * 4) + modularGruop.rotation.y) * uSpeed;
+    modularGruop.rotation.x -= ((-mouse.y * 4) + modularGruop.rotation.x) * uSpeed;
+    camera.lookAt(scene.position);
+    renderer.render( scene, camera );  
+  }
+
+  animate();
+  init();
+
+  }
+  render() {
+    return <React.Fragment>
+		<div id="container"></div>
+    </React.Fragment>
+   
+  }
 }

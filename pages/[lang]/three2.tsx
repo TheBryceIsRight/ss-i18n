@@ -15,7 +15,7 @@ function Three() {
     return <React.Fragment>
       <Head>
         <title>
-        Three Figma
+        3D Figma
         </title>
       </Head>
 
