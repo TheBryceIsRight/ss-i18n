@@ -547,7 +547,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ListItem button>
           <ListItemIcon><ThreeDRotationIcon/>
           </ListItemIcon>
-          <ListItemText primary='3D Interactive' />
+          <ListItemText primary='3D Model' />
       </ListItem>
       </Link>
       <Link href="/[lang]/three2" as={`/${locale}/three2`} passHref>
@@ -555,6 +555,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ListItemIcon><ThreeDRotationIcon/>
           </ListItemIcon>
           <ListItemText primary='3D Figma' />
+      </ListItem>
+      </Link>
+      <Link href="/[lang]/three3" as={`/${locale}/three3`} passHref>
+      <ListItem button>
+          <ListItemIcon><ThreeDRotationIcon/>
+          </ListItemIcon>
+          <ListItemText primary='3D Particles' />
       </ListItem>
       </Link>
       <Divider/>

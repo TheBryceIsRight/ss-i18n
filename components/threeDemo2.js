@@ -56,7 +56,7 @@ export default class ThreeDemo2 extends React.Component {
 				scene.add( group );
 
 				controls = new TrackballControls( camera, renderer.domElement );
-				controls.rotateSpeed = 4;
+				controls.rotateSpeed = 3;
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
@@ -96,7 +96,7 @@ export default class ThreeDemo2 extends React.Component {
   }
   render() {
     return <React.Fragment>
-       <div ref={ref => (this.mount = ref)} />
+       {/* <div ref={ref => (this.mount = ref)} /> */}
       <div id="container"></div>
       <div id="blocker"></div>
     </React.Fragment>
