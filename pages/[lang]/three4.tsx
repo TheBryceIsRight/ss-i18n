@@ -17,7 +17,7 @@ function Three() {
     return <React.Fragment>
       <Head>
         <title>
-        3D Example
+        Raytracing
         </title>
       </Head>
       <Typography variant='h3'>Raycasting Example</Typography>

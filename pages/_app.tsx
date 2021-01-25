@@ -571,6 +571,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ListItemText primary='Raytracing' />
       </ListItem>
       </Link>
+      <Link href="/[lang]/three5" as={`/${locale}/three5`} passHref>
+      <ListItem button>
+          <ListItemIcon><ThreeDRotationIcon/>
+          </ListItemIcon>
+          <ListItemText primary='Frosted Glass' />
+      </ListItem>
+      </Link>
       <Divider/>
       <ListSubheader component="div" id="nested-list-subheader">
       {t("quick_actions")}
