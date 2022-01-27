@@ -42,7 +42,7 @@
     "react-router-dom": "^5.2.0",
     "react-syntax-highlighter": "^15.4.3",
     "react-three-fiber": "^5.3.10",
-    "three": "^0.124.0",
+    "three": "^0.137.0",
     "three-css3drenderer": "^1.0.1",
     "three-orbit-controls": "^82.1.0",
     "three-trackballcontrols": "^0.9.0"
