@@ -33,7 +33,7 @@
     "formik-material-ui-pickers": "0.0.11",
     "gsap": "^3.6.0",
     "lerp": "^1.0.3",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "next": "^10.0.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
