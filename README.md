@@ -21,4 +21,4 @@ Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
 
 This is a companion repo to a blog post which can be found [here](https://w11i.me/how-to-build-multilingual-website-in-next-js).
 # ss-i18n
-=======
+
