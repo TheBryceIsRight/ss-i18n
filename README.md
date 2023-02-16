@@ -13,7 +13,6 @@ This is a simple example of a multilingual site implemented in [Next.js](https:/
 - written in TypeScript
 - uses only basic Next.js and React APIs (no custom server required, etc.)
 
-<<<<<<< HEAD
 # Demo
 
 Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
@@ -23,4 +22,3 @@ Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
 This is a companion repo to a blog post which can be found [here](https://w11i.me/how-to-build-multilingual-website-in-next-js).
 # ss-i18n
 =======
->>>>>>> 2316ac4113cc2b24cbe771275123580bdbdc20b9
